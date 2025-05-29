@@ -37,12 +37,8 @@ honda-ms.jp/
 │       ├── index.scss      # トップページ（全セクション・アニメーション統合）
 │       └── about.scss      # 会社概要（全セクション統合）
 ├── js/
-│   ├── components/         # コンポーネント別JavaScriptファイル
-│   │   ├── text-animation.js  # テキストアニメーション機能
-│   │   └── hero-swiper.js     # Swiperスライダー初期化
-│   └── pages/              # ページ別JavaScript
-│       ├── index.js        # トップページJS（将来）
-│       └── about.js        # 会社概要JS（将来）
+│   ├── index.js            # トップページ専用（完全統合版 - アニメーション・Swiper統合）
+│   └── about.js            # 会社概要専用（完全自己完結版）
 ├── images/                 # 画像ファイル
 │   ├── common/             # 共通画像
 │   ├── index/              # トップページ画像
@@ -125,11 +121,11 @@ scss/style.scss
 - **フォント読み込み検知**: 性能重視で head 内インライン
 - **理由**: FOUT（Flash of Unstyled Text）防止のため
 
-### 外部ファイル化
+### Page-Centric 統合型
 
-- **テキストアニメーション**: `js/components/text-animation.js`
-- **Swiper スライダー**: `js/components/hero-swiper.js`
-- **理由**: CMS 移植時のコンポーネント分離を容易にするため
+- **トップページ**: `js/index.js` - テキストアニメーション・Swiper 完全統合（124 行）
+- **会社概要**: `js/about.js` - 完全自己完結型（将来拡張用）
+- **理由**: 1 ページ = 1JS ファイルで保守性向上・CMS 移植時の明確な対応関係
 
 ## CMS 移植準備
 
@@ -146,9 +142,9 @@ scss/style.scss
 
 主要な設定値は `config/site-config.js` に集約されています。
 
-### 4. JavaScript 分離済み
+### 4. JavaScript 統合済み
 
-コンポーネント単位で JavaScript ファイルが分離されています。
+Page-Centric 型で JavaScript ファイルが統合されています。
 
 ## 設定変更方法
 

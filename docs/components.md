@@ -27,12 +27,8 @@ honda-ms.jp/
 │       ├── index.scss     # トップページ（547行）- 全セクション・アニメーション統合
 │       └── about.scss     # 会社概要（50行）- 完全自己完結
 ├── js/
-│   ├── components/        # コンポーネント別
-│   │   ├── text-animation.js  # テキストアニメーション機能
-│   │   └── hero-swiper.js     # Swiperスライダー初期化
-│   └── pages/             # ページ別メインJS（将来）
-│       ├── index.js       # トップページJS（将来）
-│       └── about.js       # 会社概要JS（将来）
+│   ├── index.js           # トップページ専用（完全統合版 - アニメーション・Swiper統合）
+│   └── about.js           # 会社概要専用（完全自己完結版）
 ├── images/
 │   ├── common/            # 共通画像（ロゴ、アイコン等）
 │   ├── index/             # トップページ画像
@@ -60,15 +56,17 @@ honda-ms.jp/
 ### 1. 明確な対応関係
 
 ```
-HTMLページ ↔ SCSSファイル ↔ CSSファイル（1:1:1）
+HTMLページ ↔ SCSSファイル ↔ CSSファイル ↔ JavaScriptファイル（1:1:1:1）
 
-index.html ↔ scss/pages/index.scss ↔ css/pages/index.css
-about.html ↔ scss/pages/about.scss ↔ css/pages/about.css
+index.html ↔ scss/pages/index.scss ↔ css/pages/index.css ↔ js/index.js
+about.html ↔ scss/pages/about.scss ↔ css/pages/about.css ↔ js/about.js
 ```
 
 ### 2. 完全自己完結型ページファイル
 
-#### index.scss（547 行）の内容構成
+#### index.scss（547 行）+ index.js（124 行）の統合構成
+
+**SCSS ファイル:**
 
 - **アニメーション定義**: hero-zoom-out 等
 - **ミッションセクション**: .mission-section
@@ -76,11 +74,24 @@ about.html ↔ scss/pages/about.scss ↔ css/pages/about.css
 - **ヒーローセクション**: .hero-section
 - **完全なレスポンシブ対応**: spx(), ppx(), タブレット・デスクトップ対応
 
-#### about.scss（50 行）の内容構成
+**JavaScript ファイル:**
+
+- **テキストアニメーション**: 1 文字ずつ表示・GSAP 統合
+- **Swiper スライダー**: フェード効果・自動再生・ページネーション
+- **設定値連携**: config/site-config.js と完全連携
+
+#### about.scss（50 行）+ about.js（24 行）の統合構成
+
+**SCSS ファイル:**
 
 - **ページ固有 body 設定**: body.page-about
 - **ヘッダーセクション**: .about-header
 - **将来拡張エリア**: コメントで予約済み
+
+**JavaScript ファイル:**
+
+- **将来拡張用**: 現在は基本的な初期化のみ
+- **拡張予定**: スムーススクロール・アニメーション・フォーム処理等
 
 ### 3. 最小限の共通ファイル
 
