@@ -544,3 +544,248 @@ body.page-index {
         }
     }
 }
+
+// ================================================
+// RECRUIT SECTION
+// 採用情報セクション（ギャラリーレイアウト）
+// ================================================
+.recruit-section {
+    background-color: #edf2f8;
+    padding: spx(140) 0;
+    position: relative;
+
+    @include tablet-up {
+        padding: ppx(220 * $pc-to-tab-ratio) 0 ppx(223 * $pc-to-tab-ratio);
+    }
+
+    @include desktop-up {
+        padding: ppx(220) 0 ppx(223);
+    }
+
+    .recruit__inner {
+        // 基本的なコンテナ設定
+    }
+
+    .recruit__header {
+        margin-left: spx(56);
+
+        @include tablet-up {
+            margin-left: ppx(220 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            margin-left: ppx(220);
+        }
+    }
+
+    .recruit__content {
+        // コンテンツ全体のコンテナ
+    }
+
+    .recruit__text {
+        margin-top: spx(52);
+
+        @include tablet-up {
+            margin-top: ppx(90 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            margin-top: ppx(90);
+        }
+    }
+
+    .recruit__catch {
+        font-family: $font-noto-serif-jp;
+        color: $base_color_1;
+        font-size: spx(58);
+        font-weight: 700;
+        line-height: 150%;
+        letter-spacing: spx(2.9);
+        margin-left: spx(57);
+
+        @include tablet-up {
+            font-size: ppx(75 * $pc-to-tab-ratio);
+            letter-spacing: ppx(3.75 * $pc-to-tab-ratio);
+            margin-left: ppx(220 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(75);
+            letter-spacing: ppx(3.75);
+            margin-left: ppx(220);
+        }
+    }
+
+    .recruit__desc {
+        color: $base_color_1;
+        font-size: spx(33);
+        font-weight: 500;
+        line-height: 200%;
+        letter-spacing: spx(0.33);
+        margin-top: spx(65);
+        width: spx(600);
+        margin-inline: auto;
+
+        @include tablet-up {
+            font-size: ppx(35 * $pc-to-tab-ratio);
+            letter-spacing: ppx(0.35 * $pc-to-tab-ratio);
+            margin-top: ppx(468 * $pc-to-tab-ratio);
+            width: ppx(771 * $pc-to-tab-ratio);
+            margin-inline: unset;
+            margin-left: ppx(1449 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(35);
+            letter-spacing: ppx(0.35);
+            margin-top: ppx(468);
+            width: ppx(771);
+            margin-left: ppx(1449);
+        }
+    }
+
+    .recruit__gallery {
+        position: relative;
+        width: 100vw;
+        overflow-x: hidden;
+        height: spx(843);
+
+        @include tablet-up {
+            position: unset;
+            height: auto;
+        }
+    }
+
+    .recruit__gallery-item {
+        position: absolute;
+        display: block;
+
+        // section-visual01（エンジニア）
+        &.section-visual01 {
+            width: spx(320);
+            top: spx(98);
+            left: 0;
+            opacity: 0.9;
+            z-index: 2;
+
+            @include tablet-up {
+                width: ppx(760 * $pc-to-tab-ratio);
+                top: ppx(922 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(760);
+                top: ppx(922);
+            }
+        }
+
+        // section-visual02（電話対応）
+        &.section-visual02 {
+            width: spx(209);
+            top: spx(98);
+            left: spx(327);
+            opacity: 0.9;
+            z-index: 2;
+
+            @include tablet-up {
+                width: ppx(453 * $pc-to-tab-ratio);
+                top: ppx(266 * $pc-to-tab-ratio);
+                left: unset;
+                right: 0;
+            }
+
+            @include desktop-up {
+                width: ppx(453);
+                top: ppx(266);
+            }
+        }
+
+        // section-visual03（受付女性）
+        &.section-visual03 {
+            width: spx(559);
+            top: spx(375);
+            right: 0;
+            opacity: 0.9;
+            z-index: 2;
+
+            @include tablet-up {
+                width: ppx(906 * $pc-to-tab-ratio);
+                top: ppx(480 * $pc-to-tab-ratio);
+                right: unset;
+                left: ppx(1126 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(906);
+                top: ppx(480);
+                left: ppx(1126);
+            }
+        }
+
+        // section-visual04（電話対応・ブラー）
+        &.section-visual04 {
+            width: spx(244);
+            top: 8vw;
+            right: spx(-110);
+            opacity: 0.8;
+            filter: blur(14px);
+            z-index: 1;
+
+            @include tablet-up {
+                width: ppx(463 * $pc-to-tab-ratio);
+                top: ppx(969 * $pc-to-tab-ratio);
+                right: unset;
+                left: ppx(867 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(463);
+                top: ppx(969);
+                left: ppx(867);
+            }
+        }
+
+        // section-visual05（商談・ブラー）
+        &.section-visual05 {
+            width: spx(172);
+            top: spx(415);
+            left: spx(-84);
+            opacity: 0.8;
+            filter: blur(15px);
+            z-index: 1;
+
+            @include tablet-up {
+                width: ppx(290 * $pc-to-tab-ratio);
+                top: ppx(835 * $pc-to-tab-ratio);
+                left: unset;
+                right: 0;
+            }
+
+            @include desktop-up {
+                width: ppx(290);
+                top: ppx(835);
+            }
+        }
+    }
+
+    .recruit__gallery-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .recruit__link-wrapper {
+        width: max-content;
+        margin-inline: auto;
+
+        @include tablet-up {
+            margin-inline: unset;
+            margin-top: ppx(48 * $pc-to-tab-ratio);
+            margin-left: ppx(1449 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            margin-top: ppx(48);
+            margin-left: ppx(1449);
+        }
+    }
+}
