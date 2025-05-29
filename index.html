@@ -13,17 +13,58 @@
 
     <!-- JavaScript -->
     <script>
+      // GSAPアニメーション関数を先に定義
+      function wrapChars(element) {
+        const text = element.textContent || '';
+        element.innerHTML = '';
+        text.split('').forEach((char) => {
+          const span = document.createElement('span');
+          span.textContent = char;
+          span.style.opacity = '0';
+          element.appendChild(span);
+        });
+        element.style.display = 'block';
+      }
+
+      function startGsapAnimation() {
+        const line1 = document.getElementById('line1');
+        const line2 = document.getElementById('line2');
+        if (line1) wrapChars(line1);
+        if (line2) wrapChars(line2);
+
+        gsap.to('#line1 span', {
+          opacity: 1,
+          duration: 1, //1文字が出現するまでの時間
+          stagger: 0.12, //次の文字が出現するまでの時間
+          ease: 'power2.out',
+          onComplete: () => {
+            setTimeout(() => {
+              gsap.to('#line2 span', {
+                opacity: 1,
+                duration: 1, //1文字が出現するまでの時間
+                stagger: 0.14, //次の文字が出現するまでの時間
+                ease: 'power2.out',
+              });
+            }, 500); //次の行が出現するまでの時間
+          },
+        });
+      }
+
       // フォント読み込み完了を待つ
       document.fonts.ready.then(() => {
         document.body.classList.remove('is-loading');
         document.body.classList.add('is-loaded');
+        // フォント読み込み完了後にアニメーション開始
+        startGsapAnimation();
       });
 
-      // フォールバック: 3秒経過したら強制的に表示
+      // フォールバック: 3秒経過したら強制的に表示とアニメーション開始
       setTimeout(() => {
         if (document.body.classList.contains('is-loading')) {
           document.body.classList.remove('is-loading');
           document.body.classList.add('is-loaded');
+          // フォールバック時もアニメーション開始
+          startGsapAnimation();
         }
       }, 3000);
     </script>
@@ -343,6 +384,9 @@
 
     <!-- Swiper JS -->
     <script src="node_modules/swiper/swiper-bundle.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="node_modules/gsap/dist/gsap.min.js"></script>
 
     <!-- Swiper 初期化 -->
     <script>

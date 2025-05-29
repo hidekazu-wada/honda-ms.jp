@@ -20,6 +20,7 @@
   "homepage": "https://github.com/hidekazu-wada/honda-ms.jp#readme",
   "dependencies": {
     "destyle.css": "^4.0.1",
+    "gsap": "^3.13.0",
     "swiper": "^11.2.8"
   }
 }
