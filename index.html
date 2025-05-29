@@ -413,10 +413,96 @@
     <!-- ================================================== -->
     <!-- COMPONENT: Mission Section -->
     <!-- ================================================== -->
-    <section class="mission-section"></section>
+    <section class="mission-section">
+      <div class="mission__inner">
+        <header class="mission__header">
+          <!-- SectionTitle Component (title="MISSION", subTitle="企業理念", variant="red") -->
+          <h2 class="section-title section-title--red">
+            <span class="section-title-main">MISSION</span>
+            <span class="section-title-sub">企業理念</span>
+          </h2>
+        </header>
+
+        <div class="mission__content">
+          <div class="mission__text">
+            <h3 class="mission__catch">
+              みんなに愛される<br />
+              会社づくり
+            </h3>
+            <p class="mission__desc">
+              ホンダ自動車販売グループは「人ありき、そして躍進」というスローガンのもと、人と企業の永続的な成長を目指しています。お客さまはもちろんのこと、社員や社員のご家族、そして地域から必要とされ愛される会社づくりをするべく、その礎となる「人」をとても大切にしています。
+            </p>
+          </div>
+
+          <figure class="mission__figure">
+            <picture>
+              <source
+                srcset="images/index/mission/section-visual.webp"
+                media="(min-width: 1024px)"
+                type="image/webp"
+                sizes="50vw"
+              />
+              <source
+                srcset="images/index/mission/section-visual.webp"
+                media="(max-width: 1023px)"
+                type="image/webp"
+                sizes="100vw"
+              />
+              <source
+                srcset="images/index/mission/fallback/section-visual.png"
+                media="(min-width: 1024px)"
+                type="image/png"
+                sizes="50vw"
+              />
+              <img
+                src="images/index/mission/fallback/section-visual.png"
+                alt="社員4名がオフィスでパソコンを見ながら笑顔で仕事をしている様子"
+                class="mission__visual"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </figure>
+
+          <div class="mission__link-wrapper">
+            <!-- PrimaryButton Component (text="企業理念はこちら", link="#", color="white") -->
+            <a href="#" class="primary-button primary-button--white">
+              企業理念はこちら
+              <span class="primary-button__icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 35 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow-icon"
+                >
+                  <path
+                    d="M2 30L16 16L2 2"
+                    stroke="white"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M19 30L33 16L19 2"
+                    stroke="white"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- ================================================== -->
     <!-- /COMPONENT: Mission Section -->
     <!-- ================================================== -->
+
+    <!-- ================================================== -->
+    <!-- FOOTER -->
+    <footer id="footer">
 
     <!-- ================================================== -->
     <!-- EXTERNAL LIBRARIES -->

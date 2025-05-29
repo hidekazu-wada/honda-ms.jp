@@ -3,7 +3,11 @@
     {
       "format": "expanded",
       "extensionName": ".css",
-      "savePath": "~/../css"
+      "savePath": "/css",
+      "savePathReplacementPairs": {
+        "/scss/pages/": "/css/pages/",
+        "/scss/": "/css/"
+      }
     }
   ],
   "liveSassCompile.settings.generateMap": true,

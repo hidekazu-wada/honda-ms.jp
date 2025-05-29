@@ -1,13 +1,18 @@
 @charset "UTF-8";
 /**
- * Main SCSS Entry Point
- * 白鷺CMS移植対応版
+ * Main SCSS Entry Point - 共通基盤のみ
+ * 白鷺CMS移植対応版（マルチページ）
  * 
  * 読み込み順序:
- * 1. Abstracts (変数、関数、mixins)
- * 2. Base (リセット、タイポグラフィ、レイアウト)
- * 3. Components (個別コンポーネント)
- * 4. Animations (アニメーション定義)
+ * 1. Abstracts (変数・関数・mixins統合版)
+ * 2. Base (リセット・タイポグラフィ・レイアウト統合版)
+ * 3. Common Components (インライン)
+ * 
+ * 注意: ページ固有スタイル（アニメーション、ヘッダー含む）は各ページで個別管理
+ */
+/**
+ * Abstracts - 統合版
+ * 変数・関数・mixins を1ファイルに統合
  */
 /*! destyle.css v4.0.1 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model and set borders */
@@ -15,8 +20,7 @@
 *,
 ::before,
 ::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border-style: solid;
   border-width: 0;
   min-width: 0;
@@ -33,6 +37,7 @@ html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   -webkit-tap-highlight-color: transparent; /* 3*/
+  scroll-behavior: smooth;
 }
 
 /* Sections */
@@ -42,6 +47,33 @@ html {
  */
 body {
   margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #f0f0f0;
+  background-image: var(--bg-mobile-fallback), var(--bg-mobile);
+  background-attachment: scroll;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  color: #231f20;
+}
+@media (min-width: 768px) {
+  body {
+    background-image: var(--bg-desktop-fallback), var(--bg-desktop);
+    background-attachment: fixed;
+  }
+}
+body.is-loading {
+  visibility: hidden;
+  opacity: 0;
+  transition: none;
+}
+body.is-loaded {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
 }
 
 /**
@@ -104,8 +136,7 @@ dd {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box; /* 1 */
+  box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
   border-top-width: 1px;
@@ -143,8 +174,7 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -219,8 +249,7 @@ optgroup,
 select,
 textarea {
   -webkit-appearance: none; /* 1 */
-  -moz-appearance: none;
-       appearance: none;
+  appearance: none;
   vertical-align: middle;
   color: inherit;
   font: inherit;
@@ -330,8 +359,7 @@ textarea {
  */
 [type=number] {
   -moz-appearance: textfield;
-  -webkit-appearance: textfield;
-          appearance: textfield;
+  appearance: textfield;
 }
 
 /**
@@ -389,56 +417,13 @@ th {
   font-weight: bold;
 }
 
+/* ============================================ */
+/* INTEGRATED BASE STYLES */
+/* ============================================ */
 /**
- * Typography Base Styles
- * フォント関連の基本設定
+ * Layout Base Styles & Typography
+ * 基本レイアウト・フォント設定・ページ状態管理
  */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Zen Kaku Gothic New", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 500;
-  color: #231f20;
-}
-
-/**
- * Layout Base Styles
- * 基本レイアウトとページ状態管理
- */
-body {
-  width: 100vw;
-  overflow-x: hidden;
-  background-color: #f0f0f0;
-  background-image: var(--bg-mobile-fallback), var(--bg-mobile);
-  background-attachment: scroll;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-@media (min-width: 768px) {
-  body {
-    background-image: var(--bg-desktop-fallback), var(--bg-desktop);
-    background-attachment: fixed;
-  }
-}
-body.is-loading {
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: none;
-  transition: none;
-}
-body.is-loaded {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition: opacity 0.3s ease-in;
-  transition: opacity 0.3s ease-in;
-}
-
 svg {
   overflow: visible !important;
 }
@@ -460,175 +445,7 @@ svg {
 .bg-wrapper img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
-/**
- * Hero Section Component
- * ヒーローセクションのスライダーとテキスト
- * Dependencies: Swiper.js, GSAP
- * CMS移植時: スライド枚数とテキスト内容の動的化
- */
-.hero-section {
-  position: relative;
-}
-.hero-section .hero-swiper {
-  width: 100%;
-  height: 100dvh;
-  overflow: hidden;
-}
-.hero-section .hero-swiper .swiper-slide {
-  width: 100%;
-  height: 100%;
-}
-.hero-section .hero-swiper .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  -webkit-animation: hero-zoom-out 7.5s ease-in-out forwards;
-          animation: hero-zoom-out 7.5s ease-in-out forwards;
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-}
-.hero-section .hero-swiper .swiper-slide.swiper-slide-active img {
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-.hero-section .hero-swiper .swiper-pagination {
-  position: absolute;
-  left: 8.3333333333vw !important;
-  bottom: 6.6666666667vw !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1.9444444444vw !important;
-}
-@media (min-width: 768px) {
-  .hero-section .hero-swiper .swiper-pagination {
-    gap: 0.64453125vw !important;
-    left: 6.74609375vw !important;
-    bottom: 3.22265625vw !important;
-  }
-}
-@media (min-width: 1024px) {
-  .hero-section .hero-swiper .swiper-pagination {
-    gap: 0.5859375vw !important;
-    left: 6.1328125vw !important;
-    bottom: 2.9296875vw !important;
-  }
-}
-.hero-section .hero-swiper .hero-bullet {
-  display: block;
-  width: 4.1666666667vw;
-  aspect-ratio: 1/1;
-  border-radius: 0;
-  background: #fff;
-  opacity: 1;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
-  cursor: pointer;
-}
-@media (min-width: 768px) {
-  .hero-section .hero-swiper .hero-bullet {
-    width: 1.71875vw;
-  }
-}
-@media (min-width: 1024px) {
-  .hero-section .hero-swiper .hero-bullet {
-    width: 1.5625vw;
-  }
-}
-.hero-section .hero-swiper .hero-bullet.is-active {
-  background: #c11313;
-}
-.hero-section .hero-swiper #main-title {
-  position: absolute;
-  top: 35.6944444444vw;
-  left: 8.3333333333vw;
-  z-index: 1;
-}
-@media (min-width: 768px) {
-  .hero-section .hero-swiper #main-title {
-    top: 22.34375vw;
-    left: 7.9921875vw;
-  }
-}
-@media (min-width: 1024px) {
-  .hero-section .hero-swiper #main-title {
-    top: 20.3125vw;
-    left: 7.265625vw;
-  }
-}
-.hero-section .hero-swiper #main-title #line1 {
-  color: #c11313;
-  font-size: 7.6388888889vw;
-  font-weight: 700;
-  line-height: 155%;
-}
-@media (min-width: 768px) {
-  .hero-section .hero-swiper #main-title #line1 {
-    font-size: 4.08203125vw;
-  }
-}
-@media (min-width: 1024px) {
-  .hero-section .hero-swiper #main-title #line1 {
-    font-size: 3.7109375vw;
-  }
-}
-.hero-section .hero-swiper #main-title #line2 {
-  color: #c11313;
-  font-size: 11.25vw;
-  font-weight: 700;
-  line-height: 155%;
-  margin-top: -1.6666666667vw;
-}
-@media (min-width: 768px) {
-  .hero-section .hero-swiper #main-title #line2 {
-    font-size: 6.23046875vw;
-    margin-top: -0.859375vw;
-  }
-}
-@media (min-width: 1024px) {
-  .hero-section .hero-swiper #main-title #line2 {
-    font-size: 5.6640625vw;
-    margin-top: -0.78125vw;
-  }
-}
-.hero-section .hero-swiper #main-title span {
-  display: inline;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-}
-
-/**
- * Animation Definitions
- * サイト全体で使用するアニメーション定義
- * CMS移植時: アニメーション設定の動的化
- */
-@-webkit-keyframes hero-zoom-out {
-  0% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@keyframes hero-zoom-out {
-  0% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */

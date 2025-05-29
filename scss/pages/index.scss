@@ -1,17 +1,25 @@
 /**
- * Index Page Styles
+ * Index Page Styles - 完全統合版
  * トップページ専用のスタイル定義
+ * 全セクション・アニメーション・レイアウトを1ファイルに統合
  */
 
 @use "../abstracts/variables" as *;
-@use "../abstracts/functions" as *;
-@use "../abstracts/mixins" as *;
 
 // ================================================
-// INDEX PAGE SPECIFIC COMPONENTS
+// ANIMATIONS
+// トップページ専用アニメーション定義
 // ================================================
-@use "../components/pages/hero"; // ヒーローセクション（トップページ専用）
-@use "../components/pages/mission"; // ミッションセクション（トップページ専用）
+
+// ヒーローセクションのズームアウトアニメーション
+@keyframes hero-zoom-out {
+    0% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 
 // ================================================
 // PAGE SPECIFIC STYLES
@@ -20,4 +28,519 @@
 // トップページ固有のbody設定
 body.page-index {
     // 特別な設定があれば追加
+}
+
+// ================================================
+// MISSION SECTION
+// ミッションセクション（トップページ専用）
+// ================================================
+.mission-section {
+    position: relative;
+    padding: spx(130) 0;
+
+    @include tablet-up {
+        padding: ppx(271 * $pc-to-tab-ratio) 0 ppx(316 * $pc-to-tab-ratio);
+    }
+
+    @include desktop-up {
+        padding: ppx(271) 0 ppx(316);
+    }
+
+    .mission__inner {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .mission__header {
+        color: $base_color_2;
+        margin-left: spx(56);
+
+        @include tablet-up {
+            margin-left: ppx(1307 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            margin-left: ppx(1307);
+        }
+    }
+
+    .mission__content {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .mission__text {
+        margin-top: spx(50);
+        margin-left: spx(60);
+
+        @include tablet-up {
+            margin-left: ppx(1307 * $pc-to-tab-ratio);
+            margin-top: ppx(83 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            margin-left: ppx(1307);
+            margin-top: ppx(83);
+        }
+    }
+
+    .mission__catch {
+        font-family: $font-noto-serif-jp;
+        color: $base_color_white;
+        font-size: spx(69);
+        font-weight: 700;
+        line-height: 130%;
+        letter-spacing: spx(6.21);
+
+        @include tablet-up {
+            font-size: ppx(95 * $pc-to-tab-ratio);
+            letter-spacing: ppx(9.5 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(95);
+            letter-spacing: ppx(9.5);
+        }
+    }
+
+    .mission__desc {
+        color: $base_color_white;
+        font-size: spx(31);
+        font-weight: 500;
+        line-height: 180%;
+        margin-top: spx(50);
+        width: spx(600);
+
+        @include tablet-up {
+            font-size: ppx(35 * $pc-to-tab-ratio);
+            line-height: 200%;
+            margin-top: ppx(97 * $pc-to-tab-ratio);
+            width: ppx(874 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(35);
+            line-height: 200%;
+            margin-top: ppx(97);
+            width: ppx(874);
+        }
+    }
+
+    .mission__figure {
+        text-align: center;
+
+        @include tablet-up {
+            text-align: unset;
+            position: absolute;
+            top: ppx(200 * $pc-to-tab-ratio);
+            left: 0;
+        }
+
+        @include desktop-up {
+            top: ppx(200);
+            left: 0;
+        }
+
+        img {
+            width: spx(602);
+            height: auto;
+            margin-top: spx(70);
+
+            @include tablet-up {
+                width: ppx(1000 * $pc-to-tab-ratio);
+                margin-top: 0;
+            }
+
+            @include desktop-up {
+                width: ppx(1000);
+                margin-top: 0;
+            }
+        }
+    }
+
+    .mission__visual {
+        width: spx(602);
+        height: auto;
+        margin-top: spx(70);
+
+        @include tablet-up {
+            width: ppx(1000 * $pc-to-tab-ratio);
+            margin-top: 0;
+        }
+
+        @include desktop-up {
+            width: ppx(1000);
+            margin-top: 0;
+        }
+    }
+
+    .mission__link-wrapper {
+        width: max-content;
+        margin-top: spx(70);
+        margin-inline: auto;
+
+        @include tablet-up {
+            margin-top: ppx(40 * $pc-to-tab-ratio);
+            margin-inline: unset;
+            margin-left: ppx(1307 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            margin-top: ppx(40);
+            margin-inline: unset;
+            margin-left: ppx(1307);
+        }
+    }
+}
+
+// ================================================
+// SECTION TITLE COMPONENT
+// 共通コンポーネント（複数セクションで使用）
+// ================================================
+.section-title {
+    display: flex;
+    flex-direction: column;
+    gap: spx(15);
+
+    @include tablet-up {
+        gap: ppx(20 * $pc-to-tab-ratio);
+    }
+
+    @include desktop-up {
+        gap: ppx(20);
+    }
+
+    &-main {
+        font-family: $font-noto-serif-jp;
+        font-size: spx(111);
+        font-weight: 700;
+        line-height: spx(111);
+
+        @include tablet-up {
+            font-size: ppx(145 * $pc-to-tab-ratio);
+            line-height: ppx(145 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(145);
+            line-height: ppx(145);
+        }
+    }
+
+    &-sub {
+        font-family: $font-noto-sans-jp;
+        font-size: spx(27);
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: spx(2.7);
+        display: flex;
+        align-items: center;
+        gap: spx(23);
+
+        @include tablet-up {
+            font-size: ppx(35 * $pc-to-tab-ratio);
+            letter-spacing: ppx(3.5 * $pc-to-tab-ratio);
+            gap: ppx(30 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(35);
+            letter-spacing: ppx(3.5);
+            gap: ppx(30);
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: spx(153);
+            height: 1px;
+            margin-left: spx(4);
+
+            @include tablet-up {
+                width: ppx(200 * $pc-to-tab-ratio);
+                margin-left: ppx(11 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(200);
+                margin-left: ppx(11);
+            }
+        }
+    }
+
+    &--red {
+        .section-title-main {
+            color: $base_color_2;
+        }
+
+        .section-title-sub {
+            color: $base_color_2;
+
+            &::before {
+                background-color: $base_color_2;
+            }
+        }
+    }
+
+    &--white {
+        .section-title-main {
+            color: $base_color_white;
+        }
+
+        .section-title-sub {
+            color: $base_color_white;
+
+            &::before {
+                background-color: $base_color_white;
+            }
+        }
+    }
+}
+
+// ================================================
+// PRIMARY BUTTON COMPONENT
+// 共通コンポーネント（複数セクションで使用）
+// ================================================
+.primary-button {
+    font-size: spx(35);
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: spx(1.75);
+    display: flex;
+    align-items: center;
+    gap: spx(40);
+    width: max-content;
+    height: spx(120);
+    padding-left: spx(80);
+    padding-right: spx(40);
+    border: 1px solid $base_color_white;
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+    text-decoration: none;
+
+    @include tablet-up {
+        font-size: ppx(35 * $pc-to-tab-ratio);
+        letter-spacing: ppx(1.75 * $pc-to-tab-ratio);
+        height: ppx(120 * $pc-to-tab-ratio);
+        gap: ppx(40 * $pc-to-tab-ratio);
+        padding-left: ppx(80 * $pc-to-tab-ratio);
+        padding-right: ppx(40 * $pc-to-tab-ratio);
+    }
+
+    @include desktop-up {
+        font-size: ppx(35);
+        letter-spacing: ppx(1.75);
+        height: ppx(120);
+        gap: ppx(40);
+        padding-left: ppx(80);
+        padding-right: ppx(40);
+    }
+
+    &__icon {
+        svg {
+            display: block;
+            width: spx(31);
+            height: auto;
+            vertical-align: middle;
+
+            @include tablet-up {
+                width: ppx(31 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(31);
+            }
+
+            path {
+                stroke: white;
+                transition: stroke 0.3s ease;
+            }
+        }
+    }
+
+    &--white {
+        color: $base_color_white;
+        border-color: $base_color_white;
+
+        @include hover {
+            &:hover {
+                color: $base_color_white;
+                background-color: $base_color_2;
+                border-color: $base_color_2;
+
+                svg {
+                    path {
+                        stroke: $base_color_white;
+                    }
+                }
+            }
+        }
+    }
+
+    &--dark {
+        color: $base_color_1;
+        border-color: $base_color_1;
+
+        svg {
+            path {
+                stroke: $base_color_1;
+            }
+        }
+
+        @include hover {
+            &:hover {
+                color: $base_color_white;
+                background-color: $base_color_2;
+                border-color: $base_color_2;
+
+                svg {
+                    path {
+                        stroke: $base_color_white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ================================================
+// HERO SECTION
+// ヒーローセクションのスライダーとテキスト
+// ================================================
+.hero-section {
+    position: relative;
+
+    .hero-swiper {
+        width: 100%;
+        height: 100dvh;
+        overflow: hidden;
+
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transform: scale(1.2);
+                animation: hero-zoom-out 7.5s ease-in-out forwards; //delayとspeedの合計値にする
+                animation-play-state: paused;
+            }
+
+            &.swiper-slide-active {
+                img {
+                    animation-play-state: running;
+                }
+            }
+        }
+
+        // ページネーション
+        .swiper-pagination {
+            position: absolute;
+            left: spx(60) !important;
+            bottom: spx(48) !important;
+            display: flex;
+            gap: spx(14) !important;
+
+            @include tablet-up {
+                gap: ppx(15 * $pc-to-tab-ratio) !important;
+                left: ppx(157 * $pc-to-tab-ratio) !important;
+                bottom: ppx(75 * $pc-to-tab-ratio) !important;
+            }
+
+            @include desktop-up {
+                gap: ppx(15) !important;
+                left: ppx(157) !important;
+                bottom: ppx(75) !important;
+            }
+        }
+
+        // ページネーションボタン
+        .hero-bullet {
+            display: block;
+            width: spx(30);
+            aspect-ratio: 1 / 1;
+            border-radius: 0;
+            background: #fff;
+            opacity: 1;
+            transition: transform 0.3s;
+            cursor: pointer;
+
+            @include tablet-up {
+                width: ppx(40 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(40);
+            }
+
+            &.is-active {
+                background: $base_color_2;
+            }
+        }
+
+        // メインタイトル
+        #main-title {
+            position: absolute;
+            top: spx(257);
+            left: spx(60);
+            z-index: 1;
+
+            @include tablet-up {
+                top: ppx(520 * $pc-to-tab-ratio);
+                left: ppx(186 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                top: ppx(520);
+                left: ppx(186);
+            }
+
+            #line1 {
+                color: $base_color_2;
+                font-size: spx(55);
+                font-weight: 700;
+                line-height: 155%;
+
+                @include tablet-up {
+                    font-size: ppx(95 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    font-size: ppx(95);
+                }
+            }
+
+            #line2 {
+                color: $base_color_2;
+                font-size: spx(81);
+                font-weight: 700;
+                line-height: 155%;
+                margin-top: spx(-12);
+
+                @include tablet-up {
+                    font-size: ppx(145 * $pc-to-tab-ratio);
+                    margin-top: ppx(-20 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    font-size: ppx(145);
+                    margin-top: ppx(-20);
+                }
+            }
+
+            span {
+                display: inline;
+                transition: opacity 0.3s;
+            }
+        }
+    }
 }

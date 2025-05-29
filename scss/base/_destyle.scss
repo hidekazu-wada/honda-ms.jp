@@ -25,6 +25,7 @@ html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   -webkit-tap-highlight-color: transparent; /* 3*/
+  scroll-behavior: smooth;
 }
 
 /* Sections */
@@ -36,6 +37,40 @@ html {
 
 body {
   margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #f0f0f0;
+
+  // モバイル向け背景設定
+  background-image: var(--bg-mobile-fallback), var(--bg-mobile);
+  background-attachment: scroll;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  // タブレット以上での固定背景設定
+  @media (min-width: 768px) {
+    background-image: var(--bg-desktop-fallback), var(--bg-desktop);
+    background-attachment: fixed;
+  }
+
+  // ローディング状態管理
+  &.is-loading {
+    visibility: hidden;
+    opacity: 0;
+    transition: none;
+  }
+
+  &.is-loaded {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+  }
+
+  // フォント設定
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  color: #231f20;
 }
 
 /**
@@ -413,4 +448,17 @@ th {
 th {
   text-align: left;
   font-weight: bold;
+}
+
+/* ============================================ */
+/* INTEGRATED BASE STYLES */
+/* ============================================ */
+
+/**
+ * Layout Base Styles & Typography
+ * 基本レイアウト・フォント設定・ページ状態管理
+ */
+
+svg {
+  overflow: visible !important;
 }

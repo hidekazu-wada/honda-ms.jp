@@ -1,3 +1,12 @@
+/**
+ * Abstracts - 統合版
+ * 変数・関数・mixins を1ファイルに統合
+ */
+
+// ================================================
+// 1. VARIABLES
+// ================================================
+
 //デザインカンプの大きさ
 $design_view_pc: 2560;
 $design_view_tab: 2048;
@@ -25,3 +34,59 @@ $font-noto-sans-jp: "Noto Sans JP", sans-serif;
 $base_color_white: #fff;
 $base_color_1: #231f20;
 $base_color_2: #c11313;
+
+// ================================================
+// 2. FUNCTIONS
+// ================================================
+
+//px→vw変換
+@function ppx($num_pc, $width_pc: $design_view_pc) {
+    // px単位を削除
+    @if (type-of($num_pc) == "number" and unit($num_pc) == "px") {
+        $num_pc: $num_pc / 1px;
+    }
+    @return (1vw * $num_pc / $width_pc * 100);
+}
+
+//tab用 基本はppx*係数を使うが、デザイン還付がある場合はtpxを使う
+@function tpx($num_tab, $width_tab: $design_view_tab) {
+    // px単位を削除
+    @if (type-of($num_tab) == "number" and unit($num_tab) == "px") {
+        $num_tab: $num_tab / 1px;
+    }
+    @return (1vw * $num_tab / $width_tab * 100);
+}
+
+//sp用
+@function spx($num_sp, $width_sp: $design_view_sp) {
+    // px単位を削除
+    @if (type-of($num_sp) == "number" and unit($num_sp) == "px") {
+        $num_sp: $num_sp / 1px;
+    }
+    @return (1vw * $num_sp / $width_sp * 100);
+}
+
+// ================================================
+// 3. MIXINS
+// ================================================
+
+// モバイルファースト用メディアクエリ設定
+@mixin tablet-up {
+    // タブレット以上のデバイス向け
+    @media (min-width: $breakpoint-tablet-up) {
+        @content;
+    }
+}
+
+@mixin desktop-up {
+    // PC以上のデバイス向け
+    @media (min-width: $breakpoint-desktop-up) {
+        @content;
+    }
+}
+
+@mixin hover {
+    @media (hover: hover) {
+        @content;
+    }
+}

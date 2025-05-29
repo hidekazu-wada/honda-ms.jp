@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../../scss/pages/about.scss","../../scss/abstracts/_variables.scss","../../scss/abstracts/_mixins.scss"],"names":[],"mappings":";AAAA;AAAA;AAAA;AAAA;AAAA;AAeA;EACI,OCSW;;;ADHf;EACI,kBCGW;EDFX;EACA;EACA;;AEdA;EFUJ;IAOQ;;;AAGJ;EACI,aCba;EDcb;EACA;;AEvBJ;EFoBA;IAMQ;;;;AAQZ;AAAA;AAAA;AAAA;AAAA","file":"about.css"}
