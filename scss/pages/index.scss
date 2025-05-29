@@ -22,15 +22,6 @@
 }
 
 // ================================================
-// PAGE SPECIFIC STYLES
-// ================================================
-
-// トップページ固有のbody設定
-body.page-index {
-    // 特別な設定があれば追加
-}
-
-// ================================================
 // MISSION SECTION
 // ミッションセクション（トップページ専用）
 // ================================================
@@ -347,7 +338,6 @@ body.page-index {
             display: block;
             width: spx(31);
             height: auto;
-            vertical-align: middle;
 
             @include tablet-up {
                 width: ppx(31 * $pc-to-tab-ratio);
@@ -562,10 +552,6 @@ body.page-index {
         padding: ppx(220) 0 ppx(223);
     }
 
-    .recruit__inner {
-        // 基本的なコンテナ設定
-    }
-
     .recruit__header {
         margin-left: spx(56);
 
@@ -576,10 +562,6 @@ body.page-index {
         @include desktop-up {
             margin-left: ppx(220);
         }
-    }
-
-    .recruit__content {
-        // コンテンツ全体のコンテナ
     }
 
     .recruit__text {

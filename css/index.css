@@ -340,7 +340,6 @@
   display: block;
   width: 4.3055555556vw;
   height: auto;
-  vertical-align: middle;
 }
 @media (min-width: 768px) {
   .primary-button__icon svg {
