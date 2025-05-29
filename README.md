@@ -27,17 +27,15 @@ honda-ms.jp/
 │   └── pages/              # ページ別CSS（コンパイル済み）
 │       ├── index.css       # トップページ専用
 │       └── about.css       # 会社概要専用
-├── scss/                   # SCSS ソースファイル（コンポーネント駆動型）
-│   ├── style.scss          # 共通スタイルエントリーポイント
-│   ├── abstracts/          # 抽象化レイヤー（変数、関数、mixins）
-│   ├── base/               # ベースレイヤー（リセット、基本設定）
-│   ├── layout/             # レイアウトコンポーネント（header、footer等）
-│   ├── components/         # コンポーネントレイヤー（個別機能）
-│   │   ├── common/         # 共通コンポーネント
-│   │   └── pages/          # ページ固有コンポーネント
-│   └── pages/              # ページ別メインSCSS
-│       ├── index.scss      # トップページスタイル
-│       └── about.scss      # 会社概要スタイル
+├── scss/                   # SCSS ソースファイル（極限統合型）
+│   ├── style.scss          # 共通基盤（背景コンポーネント含む）
+│   ├── abstracts/          # 統合レイヤー
+│   │   └── _variables.scss # 変数・関数・mixins統合版
+│   ├── base/               # 統合レイヤー
+│   │   └── _destyle.scss   # リセット・レイアウト・フォント統合版
+│   └── pages/              # ページ別完全自己完結型
+│       ├── index.scss      # トップページ（全セクション・アニメーション統合）
+│       └── about.scss      # 会社概要（全セクション統合）
 ├── js/
 │   ├── components/         # コンポーネント別JavaScriptファイル
 │   │   ├── text-animation.js  # テキストアニメーション機能
@@ -69,17 +67,56 @@ npm install
 
 ## SCSS 構成の特徴
 
-### コンポーネント駆動型アーキテクチャ
+### 極限統合型アーキテクチャ
 
-- **Abstracts Layer**: 変数、関数、mixins の抽象化
-- **Base Layer**: リセットと基本設定
-- **Components Layer**: 機能別コンポーネント
+- **極簡素化**: 最小限のファイル数で最大の効率
+- **Page-Centric**: ページごとに完全自己完結
+- **1 ページ = 1CSS ファイル**: CMS 移植時の明確な対応関係
+
+### 統合されたレイヤー
+
+1. **abstracts/\_variables.scss**: 変数・関数・mixins 統合（93 行）
+2. **base/\_destyle.scss**: リセット・レイアウト・フォント統合（465 行）
+3. **pages/index.scss**: 全セクション・アニメーション・コンポーネント統合（547 行）
+4. **pages/about.scss**: 会社概要用完全自己完結（50 行）
+5. **style.scss**: 共通基盤・背景コンポーネント統合（60 行）
 
 ### CMS 移植時のメリット
 
-1. **ファイル単位での修正**: 特定コンポーネントのみ変更可能
-2. **独立性**: 各コンポーネントが他に影響しない
-3. **段階的移植**: コンポーネント単位で順次 CMS 化可能
+1. **明確な対応関係**: 1HTML ページ ↔ 1SCSS ファイル ↔ 1CSS ファイル
+2. **簡素な構造**: ファイル探しに迷わない
+3. **自己完結性**: 各ページのスタイルが独立
+4. **効率的保守**: 変更箇所が明確
+
+## 開発フロー
+
+### 新セクション追加
+
+```bash
+# 1. HTMLに新セクション追加
+# 2. scss/pages/index.scss に直接スタイル記述
+# 3. コンパイル実行
+npx sass scss/pages/index.scss css/pages/index.css
+```
+
+### 新ページ追加
+
+```bash
+# 1. pages/contact.html 作成
+# 2. scss/pages/contact.scss 作成（完全自己完結型）
+# 3. コンパイル実行
+npx sass scss/pages/contact.scss css/pages/contact.css
+```
+
+### 共通要素変更
+
+```scss
+// 変数・関数・mixins変更
+scss/abstracts/_variables.scss
+
+// 背景・共通コンポーネント変更
+scss/style.scss
+```
 
 ## JavaScript 構成の方針
 
@@ -96,26 +133,22 @@ npm install
 
 ## CMS 移植準備
 
-### 1. コンポーネント分離済み
+### 1. 極限シンプル構造
 
-HTML ファイル内でコメントによりコンポーネントが明確に分離されています。
+最小限のファイル構成で迷いのない開発フロー
 
-### 2. 設定外部化済み
+### 2. 明確な対応関係
+
+- `index.html` ↔ `scss/pages/index.scss` ↔ `css/pages/index.css`
+- `pages/about.html` ↔ `scss/pages/about.scss` ↔ `css/pages/about.css`
+
+### 3. 設定外部化済み
 
 主要な設定値は `config/site-config.js` に集約されています。
 
-### 3. JavaScript 分離済み
+### 4. JavaScript 分離済み
 
 コンポーネント単位で JavaScript ファイルが分離されています。
-
-### 4. SCSS 構造化済み
-
-コンポーネント駆動型 SCSS アーキテクチャで管理されています。
-
-### 5. ドキュメント完備
-
-- コンポーネント構成: `docs/components.md`
-- 依存関係と設定項目の詳細記載
 
 ## 設定変更方法
 
@@ -146,8 +179,9 @@ hero: {
 ### スタイル変更
 
 ```scss
-// scss/components/_hero.scss
-// ヒーローセクションのスタイルのみ変更
+// scss/pages/index.scss
+// 該当セクションのスタイルを直接変更
+// 例: .hero-section, .mission-section など
 ```
 
 ## 白鷺 CMS 移植時のポイント
@@ -156,7 +190,21 @@ hero: {
 2. **画像パスの動的化**: ハードコードされた画像パスを CMS の画像管理機能と連携
 3. **テキスト内容の動的化**: ハードコードされたテキストを CMS のフィールドと連携
 4. **JavaScript の読み込み順序維持**: 設定 → ライブラリ → コンポーネント の順序を保持
-5. **コンポーネント別管理**: 各コンポーネントの HTML、CSS、JS ファイルを個別に管理可能
-6. **SCSS 段階的移植**: コンポーネント単位でスタイルの移植が可能
+5. **1 対 1 の明確な対応**: HTML ページ ↔ SCSS ファイル ↔ CSS ファイルの関係維持
+6. **統合型スタイル管理**: 各ページのスタイルが 1 ファイルに集約され保守しやすい
+
+## アーキテクチャ設計思想
+
+### YAGNI 原則採用
+
+「必要になるまで作らない」原則に基づき、過度な抽象化を排除
+
+### Page-Centric 設計
+
+ページを中心とした開発フローで最大の効率を実現
+
+### 極限統合型
+
+関連性の高い要素を積極的に統合し、ファイル数を最小限に抑制
 
 詳細は `docs/components.md` を参照してください。
