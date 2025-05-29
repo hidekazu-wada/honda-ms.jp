@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- トップページ統合CSS（547行）- 全セクション・アニメーション完全統合 -->
-    <link rel="stylesheet" href="css/pages/index.css" />
+    <link rel="stylesheet" href="css/index.css" />
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css" />
@@ -535,21 +535,18 @@
                   srcset="images/index/recruit/section-visual01.webp"
                   media="(min-width: 1024px)"
                   type="image/webp"
-                  sizes="30vw"
                 />
                 <!-- モバイル用 WebP -->
                 <source
                   srcset="images/index/recruit/section-visual01.webp"
                   media="(max-width: 1023px)"
                   type="image/webp"
-                  sizes="50vw"
                 />
                 <!-- デスクトップ用 PNG -->
                 <source
                   srcset="images/index/recruit/fallback/section-visual01.png"
                   media="(min-width: 1024px)"
                   type="image/png"
-                  sizes="30vw"
                 />
                 <img
                   src="images/index/recruit/fallback/section-visual01.png"
@@ -568,21 +565,18 @@
                   srcset="images/index/recruit/section-visual02.webp"
                   media="(min-width: 1024px)"
                   type="image/webp"
-                  sizes="30vw"
                 />
                 <!-- モバイル用 WebP -->
                 <source
                   srcset="images/index/recruit/section-visual02.webp"
                   media="(max-width: 1023px)"
                   type="image/webp"
-                  sizes="50vw"
                 />
                 <!-- デスクトップ用 PNG -->
                 <source
                   srcset="images/index/recruit/fallback/section-visual02.png"
                   media="(min-width: 1024px)"
                   type="image/png"
-                  sizes="30vw"
                 />
                 <img
                   src="images/index/recruit/fallback/section-visual02.png"
@@ -601,21 +595,18 @@
                   srcset="images/index/recruit/section-visual03.webp"
                   media="(min-width: 1024px)"
                   type="image/webp"
-                  sizes="50vw"
                 />
                 <!-- モバイル用 WebP -->
                 <source
                   srcset="images/index/recruit/section-visual03.webp"
                   media="(max-width: 1023px)"
                   type="image/webp"
-                  sizes="100vw"
                 />
                 <!-- デスクトップ用 PNG -->
                 <source
                   srcset="images/index/recruit/fallback/section-visual03.png"
                   media="(min-width: 1024px)"
                   type="image/png"
-                  sizes="50vw"
                 />
                 <img
                   src="images/index/recruit/fallback/section-visual03.png"
@@ -634,21 +625,18 @@
                   srcset="images/index/recruit/section-visual04.webp"
                   media="(min-width: 1024px)"
                   type="image/webp"
-                  sizes="50vw"
                 />
                 <!-- モバイル用 WebP -->
                 <source
                   srcset="images/index/recruit/section-visual04.webp"
                   media="(max-width: 1023px)"
                   type="image/webp"
-                  sizes="100vw"
                 />
                 <!-- デスクトップ用 PNG -->
                 <source
                   srcset="images/index/recruit/fallback/section-visual04.png"
                   media="(min-width: 1024px)"
                   type="image/png"
-                  sizes="50vw"
                 />
                 <img
                   src="images/index/recruit/fallback/section-visual04.png"
@@ -667,21 +655,18 @@
                   srcset="images/index/recruit/section-visual05.webp"
                   media="(min-width: 1024px)"
                   type="image/webp"
-                  sizes="50vw"
                 />
                 <!-- モバイル用 WebP -->
                 <source
                   srcset="images/index/recruit/section-visual05.webp"
                   media="(max-width: 1023px)"
                   type="image/webp"
-                  sizes="100vw"
                 />
                 <!-- デスクトップ用 PNG -->
                 <source
                   srcset="images/index/recruit/fallback/section-visual05.png"
                   media="(min-width: 1024px)"
                   type="image/png"
-                  sizes="50vw"
                 />
                 <img
                   src="images/index/recruit/fallback/section-visual05.png"
@@ -728,6 +713,184 @@
     </section>
     <!-- ================================================== -->
     <!-- /COMPONENT: Recruit Section -->
+    <!-- ================================================== -->
+
+    <!-- ================================================== -->
+    <!-- COMPONENT: News Section -->
+    <!-- Dependencies: レスポンシブ画像、ニュースリスト -->
+    <!-- Features: 3記事表示、日付表示、一覧リンク -->
+    <!-- CMS Note: ニュース記事配列とページネーションを動的化 -->
+    <!-- ================================================== -->
+    <section class="news-section">
+      <div class="news__inner">
+        <header class="news__header">
+          <!-- SectionTitle Component (title="NEWS", subTitle="お知らせ", variant="white") -->
+          <h2 class="section-title section-title--white">
+            <span class="section-title-main">NEWS</span>
+            <span class="section-title-sub">お知らせ</span>
+          </h2>
+        </header>
+
+        <div class="news__content">
+          <div class="news__list">
+            <article class="news__item">
+              <figure class="news__image">
+                <a href="#" class="news__image-link">
+                  <!-- 画像: ニュース記事サムネイル01 -->
+                  <picture>
+                    <source
+                      srcset="images/index/news/demo-image.webp"
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="images/index/news/demo-image.webp"
+                      media="(max-width: 1023px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="images/index/news/fallback/demo-image.png"
+                      media="(min-width: 1024px)"
+                      type="image/png"
+                    />
+                    <img
+                      src="images/index/news/fallback/demo-image.png"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </a>
+              </figure>
+              
+              <div class="news__item-content">
+                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
+                <h3 class="news__title">
+                  <a href="#" class="news__link">
+                    新サービス開始のお知らせ
+                  </a>
+                </h3>
+              </div>
+            </article>
+
+            <article class="news__item">
+              <figure class="news__image">
+                <a href="#" class="news__image-link">
+                  <!-- 画像: ニュース記事サムネイル02 -->
+                  <picture>
+                    <source
+                      srcset="images/index/news/demo-image.webp"
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="images/index/news/demo-image.webp"
+                      media="(max-width: 1023px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="images/index/news/fallback/demo-image.png"
+                      media="(min-width: 1024px)"
+                      type="image/png"
+                    />
+                    <img
+                      src="images/index/news/fallback/demo-image.png"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </a>
+              </figure>
+              
+              <div class="news__item-content">
+                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
+                <h3 class="news__title">
+                  <a href="#" class="news__link">
+                    2024年度上半期営業時間変更および新店舗オープンのご案内について
+                  </a>
+                </h3>
+              </div>
+            </article>
+
+            <article class="news__item">
+              <figure class="news__image">
+                <a href="#" class="news__image-link">
+                  <!-- 画像: ニュース記事サムネイル03 -->
+                  <picture>
+                    <source
+                      srcset="images/index/news/demo-image.webp"
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="images/index/news/demo-image.webp"
+                      media="(max-width: 1023px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="images/index/news/fallback/demo-image.png"
+                      media="(min-width: 1024px)"
+                      type="image/png"
+                    />
+                    <img
+                      src="images/index/news/fallback/demo-image.png"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </a>
+              </figure>
+              
+              <div class="news__item-content">
+                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
+                <h3 class="news__title">
+                  <a href="#" class="news__link">
+                    ホンダ自動車販売グループにおける2024年度第1四半期決算発表ならびに今後の事業展開戦略に関する重要なお知らせとステークホルダーの皆様への感謝の意を込めたメッセージについて
+                  </a>
+                </h3>
+              </div>
+            </article>
+          </div>
+
+          <div class="news__link-wrapper">
+            <!-- PrimaryButton Component (text="お知らせ一覧へ", link="#", color="white") -->
+            <a href="#" class="primary-button primary-button--white">
+              お知らせ一覧へ
+              <span class="primary-button__icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 35 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow-icon"
+                >
+                  <path
+                    d="M2 30L16 16L2 2"
+                    stroke="white"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M19 30L33 16L19 2"
+                    stroke="white"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================================================== -->
+    <!-- /COMPONENT: News Section -->
     <!-- ================================================== -->
 
     <!-- ================================================== -->

@@ -787,3 +787,263 @@
         }
     }
 }
+
+// ================================================
+// NEWS SECTION
+// ニュースセクション（このページ専用）
+// ================================================
+.news-section {
+    padding: spx(140) 0;
+    @include tablet-up {
+        padding: ppx(220 * $pc-to-tab-ratio) 0;
+    }
+    @include desktop-up {
+        padding: ppx(220) 0;
+    }
+
+    .news__inner {
+        @include tablet-up {
+            display: flex;
+            gap: ppx(316 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            gap: ppx(316);
+        }
+    }
+
+    .news__header {
+        margin-left: spx(56);
+        @include tablet-up {
+            margin-left: ppx(220 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            margin-left: ppx(220);
+        }
+    }
+
+    .news__content {
+        position: relative;
+        margin-top: spx(62);
+        @include tablet-up {
+            margin-top: ppx(44 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            margin-top: ppx(44);
+        }
+        &::before {
+            @include tablet-up {
+                content: "";
+                display: block;
+                width: ppx(15 * $pc-to-tab-ratio);
+                height: ppx(651 * $pc-to-tab-ratio);
+                background-color: $base_color_2;
+                position: absolute;
+                top: ppx(134 * $pc-to-tab-ratio);
+                left: ppx(-154 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                content: "";
+                display: block;
+                width: ppx(15);
+                height: ppx(651);
+                top: ppx(134);
+                left: ppx(-154);
+            }
+        }
+    }
+
+    .news__list {
+        display: flex;
+        flex-flow: column;
+        gap: spx(50);
+        width: max-content;
+        margin-inline: auto;
+        @include tablet-up {
+            gap: ppx(40 * $pc-to-tab-ratio);
+            margin-inline: unset;
+        }
+        @include desktop-up {
+            gap: ppx(40);
+        }
+    }
+
+    .news__item {
+        position: relative;
+        width: max-content;
+        padding-bottom: spx(35);
+        padding-top: 26vw;
+        @include tablet-up {
+            padding-bottom: ppx(40 * $pc-to-tab-ratio);
+            padding-top: 0;
+            display: flex;
+            gap: ppx(90 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            padding-bottom: ppx(40);
+            padding-top: 0;
+            gap: ppx(90);
+        }
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: $base_color_white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        &:last-child {
+            @include tablet-up {
+                &::after {
+                    display: none;
+                }
+            }
+            @include desktop-up {
+            }
+        }
+    }
+
+    .news__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: spx(330);
+        height: spx(220);
+        overflow: hidden;
+        @include tablet-up {
+            position: static;
+            top: unset;
+            left: unset;
+            width: ppx(360 * $pc-to-tab-ratio);
+            height: ppx(240 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            width: ppx(360);
+            height: ppx(240);
+        }
+    }
+
+    .news__image-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .news__item-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition:
+            transform 0.3s ease,
+            filter 0.3s ease;
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    // ホバー効果: 画像リンクと見出しリンクのみでエフェクト発動
+    @include hover {
+        .news__image-link:hover .news__item-image {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+            @include tablet-up {
+            }
+            @include desktop-up {
+            }
+        }
+
+        // 見出しホバー時の画像エフェクト（JavaScript併用またはCSS workaround）
+        .news__item:has(.news__link:hover) .news__item-image {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+            @include tablet-up {
+            }
+            @include desktop-up {
+            }
+        }
+    }
+
+    .news__item-content {
+        width: spx(600);
+        @include tablet-up {
+            width: 32vw;
+        }
+        @include desktop-up {
+            width: ppx(900);
+        }
+    }
+
+    .news__date {
+        color: $base_color_2;
+        font-size: spx(30);
+        font-weight: 700;
+        line-height: spx(26);
+        letter-spacing: spx(1.5);
+        margin-left: spx(360);
+
+        @include tablet-up {
+            font-size: ppx(30 * $pc-to-tab-ratio);
+            line-height: ppx(26 * $pc-to-tab-ratio);
+            letter-spacing: ppx(1.5 * $pc-to-tab-ratio);
+            margin-left: 0;
+        }
+
+        @include desktop-up {
+            font-size: ppx(30);
+            line-height: ppx(26);
+            letter-spacing: ppx(1.5);
+            margin-left: 0;
+        }
+    }
+
+    .news__title {
+        margin-top: spx(30);
+        @include tablet-up {
+            margin-top: ppx(18);
+        }
+        @include desktop-up {
+            margin-top: ppx(18);
+        }
+    }
+
+    .news__link {
+        color: $base_color_white;
+        font-size: spx(28);
+        font-weight: 500;
+        line-height: 150%;
+
+        @include tablet-up {
+            font-size: ppx(35 * $pc-to-tab-ratio);
+            line-height: 160%;
+        }
+
+        @include desktop-up {
+            font-size: ppx(35);
+            line-height: 160%;
+        }
+    }
+
+    .news__link-wrapper {
+        margin-top: spx(70);
+        width: max-content;
+        margin-inline: auto;
+        @include tablet-up {
+            margin-top: ppx(70 * $pc-to-tab-ratio);
+            margin-inline: unset;
+            margin-right: 0;
+            margin-left: auto;
+        }
+        @include desktop-up {
+            margin-top: ppx(70);
+        }
+    }
+}

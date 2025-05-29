@@ -1,0 +1,90 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# HTML マークアップ＆SCSS生成ルール
+
+## HTMLマークアップ要件
+
+- セマンティックなHTML5要素を使用
+- デスクトップ・モバイル両対応のマークアップ
+- クラス名は簡潔に（BEM記法推奨、長すぎない）
+- 画像等の外部要素は `<!-- 画像: ○○ -->` でコメント化
+- 既存コンポーネントのマークアップパターンがあれば参考にする
+- アクセシビリティを考慮（aria属性、alt属性など）
+
+## SCSS要件
+
+- HTMLの構造に対応したネストセレクタのみ記述
+- **プロパティは一切書かない（空のルールセットのみ）**
+- 全セレクタに以下のmixin構造を必須で含める：
+
+```scss
+@include tablet-up {
+    
+}
+@include desktop-up {
+    
+}
+```
+
+## 出力形式テンプレート
+
+### HTMLマークアップ例
+```html
+<section class="hero">
+  <div class="hero__inner">
+    <!-- 画像: メインビジュアル -->
+    <h1 class="hero__title">タイトル</h1>
+  </div>
+</section>
+```
+
+### SCSS例
+```scss
+.hero {
+  @include tablet-up {
+      
+  }
+  @include desktop-up {
+      
+  }
+  
+  &__inner {
+    @include tablet-up {
+        
+    }
+    @include desktop-up {
+        
+    }
+  }
+  
+  &__title {
+    @include tablet-up {
+        
+    }
+    @include desktop-up {
+        
+    }
+  }
+}
+```
+
+## Astroプロジェクト固有のルール
+
+- レスポンシブ対応には既存のmixin（`tablet-up`, `desktop-up`）を使用
+
+
+## 重要事項
+
+- **SCSSにはプロパティを書かず、ネスト構造とmixinのみ記述**
+- レスポンシブ対応は必須（全てのセレクタにmixin構造を含める）
+- セマンティックなマークアップを最優先
+- BEM記法でクラス名を命名（block__element--modifier）
+- 既存のコードがあれば、それを活かす形で柔軟にマークアップする
