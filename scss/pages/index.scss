@@ -1047,3 +1047,178 @@
         }
     }
 }
+
+// ================================================
+// SERVICE SECTION
+// サービスセクション（このページ専用）
+// ================================================
+.service-section {
+    background-color: red;
+    @include tablet-up {
+    }
+    @include desktop-up {
+    }
+
+    .service__inner {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .service__header {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .service__content {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .service__grid {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .service__card {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+
+        // ブランドカラー別バリエーション
+        &--honda {
+            @include tablet-up {
+            }
+            @include desktop-up {
+            }
+        }
+
+        &--kyne {
+            @include tablet-up {
+            }
+            @include desktop-up {
+            }
+        }
+
+        &--fuji {
+            @include tablet-up {
+            }
+            @include desktop-up {
+            }
+        }
+
+        &--fjkensetsu {
+            @include tablet-up {
+            }
+            @include desktop-up {
+            }
+        }
+    }
+
+    .service__card-inner {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .service__logo {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .service__logo-image {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .service__company-name {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .service__list {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .service__item {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .service__link-wrapper {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .service__link {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+
+        // ブランドカラー別ボタン
+        &--honda {
+            @include tablet-up {
+            }
+            @include desktop-up {
+            }
+        }
+
+        &--kyne {
+            @include tablet-up {
+            }
+            @include desktop-up {
+            }
+        }
+
+        &--fuji {
+            @include tablet-up {
+            }
+            @include desktop-up {
+            }
+        }
+
+        &--fjkensetsu {
+            @include tablet-up {
+            }
+            @include desktop-up {
+            }
+        }
+    }
+
+    .service__link-icon {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+
+    .service__bottom-link-wrapper {
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
+}

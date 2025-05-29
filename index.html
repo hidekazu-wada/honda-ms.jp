@@ -894,6 +894,294 @@
     <!-- ================================================== -->
 
     <!-- ================================================== -->
+    <!-- COMPONENT: Service Section -->
+    <!-- Dependencies: レスポンシブ画像、グリッドレイアウト -->
+    <!-- Features: 4社カード表示、各社ブランドカラー、詳細リンク -->
+    <!-- CMS Note: サービス会社配列とリンク先を動的化 -->
+    <!-- ================================================== -->
+    <section class="service-section">
+      <div class="service__inner">
+        <header class="service__header">
+          <!-- SectionTitle Component (title="SERVICE", subTitle="事業領域", variant="red") -->
+          <h2 class="section-title section-title--red">
+            <span class="section-title-main">SERVICE</span>
+            <span class="section-title-sub">事業領域</span>
+          </h2>
+        </header>
+
+        <div class="service__content">
+          <div class="service__grid">
+            <article class="service__card service__card--honda">
+              <div class="service__card-inner">
+                <figure class="service__logo">
+                  <!-- 画像: HONDAロゴ -->
+                  <picture>
+                    <source
+                      srcset="images/index/service/honda-logo.webp"
+                      type="image/webp"
+                      sizes="60vw"
+                    />
+                    <img
+                      src="images/index/service/fallback/honda-logo.png"
+                      alt="ホンダ自動車販売株式会社ロゴ"
+                      class="service__logo-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </figure>
+
+                <h3 class="service__company-name">ホンダ自動車販売株式会社</h3>
+
+                <ul class="service__list">
+                  <li class="service__item">Honda Cars山梨東</li>
+                  <li class="service__item">カーセブン</li>
+                  <li class="service__item">ドコモ（ショップ／法人営業）</li>
+                  <li class="service__item">結婚相談所</li>
+                </ul>
+
+                <div class="service__link-wrapper">
+                  <a href="#" class="service__link service__link--honda">
+                    <span class="service__link-icon" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 35 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="arrow-icon"
+                      >
+                        <path
+                          d="M2 30L16 16L2 2"
+                          stroke="white"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="M19 30L33 16L19 2"
+                          stroke="white"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service__card service__card--kyne">
+              <div class="service__card-inner">
+                <figure class="service__logo">
+                  <!-- 画像: Kyneロゴ -->
+                  <picture>
+                    <source
+                      srcset="images/index/service/kyne-logo.webp"
+                      type="image/webp"
+                      sizes="60vw"
+                    />
+                    <img
+                      src="images/index/service/fallback/kyne-logo.png"
+                      alt="株式会社ケインズロゴ"
+                      class="service__logo-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </figure>
+
+                <h3 class="service__company-name">株式会社ケインズ</h3>
+
+                <ul class="service__list">
+                  <li class="service__item">auショップ</li>
+                  <li class="service__item">ソフトバンクショップ</li>
+                  <li class="service__item">エニタイムフィットネス</li>
+                </ul>
+
+                <div class="service__link-wrapper">
+                  <a href="#" class="service__link service__link--kyne">
+                    <span class="service__link-icon" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 35 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="arrow-icon"
+                      >
+                        <path
+                          d="M2 30L16 16L2 2"
+                          stroke="white"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="M19 30L33 16L19 2"
+                          stroke="white"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service__card service__card--fuji">
+              <div class="service__card-inner">
+                <figure class="service__logo">
+                  <!-- 画像: FJロゴ（紫） -->
+                  <picture>
+                    <source
+                      srcset="images/index/service/fuji-logo.webp"
+                      type="image/webp"
+                      sizes="60vw"
+                    />
+                    <img
+                      src="images/index/service/fallback/fuji-logo.png"
+                      alt="有限会社富士ロゴ"
+                      class="service__logo-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </figure>
+
+                <h3 class="service__company-name">有限会社富士</h3>
+
+                <ul class="service__list">
+                  <li class="service__item">Jネットレンタカー</li>
+                  <li class="service__item">FJワインセラー</li>
+                  <li class="service__item">人材派遣／人材紹介</li>
+                  <li class="service__item">カフェ</li>
+                </ul>
+
+                <div class="service__link-wrapper">
+                  <a href="#" class="service__link service__link--fuji">
+                    <span class="service__link-icon" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 35 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="arrow-icon"
+                      >
+                        <path
+                          d="M2 30L16 16L2 2"
+                          stroke="white"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="M19 30L33 16L19 2"
+                          stroke="white"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service__card service__card--fjkensetsu">
+              <div class="service__card-inner">
+                <figure class="service__logo">
+                  <!-- 画像: FJ建設ロゴ -->
+                  <picture>
+                    <source
+                      srcset="images/index/service/fjkensetsu-logo.webp"
+                      type="image/webp"
+                      sizes="60vw"
+                    />
+                    <img
+                      src="images/index/service/fallback/fjkensetsu-logo.png"
+                      alt="FJ建設株式会社ロゴ"
+                      class="service__logo-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </figure>
+
+                <h3 class="service__company-name">FJ建設株式会社</h3>
+
+                <ul class="service__list">
+                  <li class="service__item">商業建築</li>
+                  <li class="service__item">不動産開発</li>
+                </ul>
+
+                <div class="service__link-wrapper">
+                  <a href="#" class="service__link service__link--fjkensetsu">
+                    <span class="service__link-icon" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 35 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="arrow-icon"
+                      >
+                        <path
+                          d="M2 30L16 16L2 2"
+                          stroke="white"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="M19 30L33 16L19 2"
+                          stroke="white"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="service__bottom-link-wrapper">
+            <!-- PrimaryButton Component (text="事業内容はこちら", link="#", color="white") -->
+            <a href="#" class="primary-button primary-button--white">
+              事業内容はこちら
+              <span class="primary-button__icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 35 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow-icon"
+                >
+                  <path
+                    d="M2 30L16 16L2 2"
+                    stroke="white"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M19 30L33 16L19 2"
+                    stroke="white"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================================================== -->
+    <!-- /COMPONENT: Service Section -->
+    <!-- ================================================== -->
+
+    <!-- ================================================== -->
     <!-- FOOTER -->
     <footer id="footer">
 
