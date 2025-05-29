@@ -20,7 +20,8 @@
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-style: solid;
   border-width: 0;
   min-width: 0;
@@ -68,11 +69,13 @@ body {
 body.is-loading {
   visibility: hidden;
   opacity: 0;
+  -webkit-transition: none;
   transition: none;
 }
 body.is-loaded {
   visibility: visible;
   opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in;
   transition: opacity 0.3s ease-in;
 }
 
@@ -136,7 +139,8 @@ dd {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box; /* 1 */
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
   border-top-width: 1px;
@@ -174,7 +178,8 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -249,7 +254,8 @@ optgroup,
 select,
 textarea {
   -webkit-appearance: none; /* 1 */
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   vertical-align: middle;
   color: inherit;
   font: inherit;
@@ -359,7 +365,8 @@ textarea {
  */
 [type=number] {
   -moz-appearance: textfield;
-  appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
 }
 
 /**
@@ -445,7 +452,6 @@ svg {
 .bg-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-
-/*# sourceMappingURL=style.css.map */
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=style.css.map */
