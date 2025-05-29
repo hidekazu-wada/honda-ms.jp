@@ -33,35 +33,4 @@ window.IndexPageConfig = {
       // 他のスライドデータ...
     ],
   },
-
-  // ミッションセクション設定
-  mission: {
-    animation: {
-      staggerDelay: 0.1, // 各アイテムのアニメーション遅延時間
-      fadeInDuration: 0.8, // フェードインの持続時間
-      slideUpDistance: 30, // スライドアップの距離（px）
-    },
-    content: {
-      title: 'ミッション',
-      mainText:
-        'ここにメインのミッションテキストが入ります。後から編集してください。',
-      values: [
-        {
-          id: 1,
-          title: '価値1',
-          description: 'ここに価値1の説明が入ります。後から編集してください。',
-        },
-        {
-          id: 2,
-          title: '価値2',
-          description: 'ここに価値2の説明が入ります。後から編集してください。',
-        },
-        {
-          id: 3,
-          title: '価値3',
-          description: 'ここに価値3の説明が入ります。後から編集してください。',
-        },
-      ],
-    },
-  },
 };

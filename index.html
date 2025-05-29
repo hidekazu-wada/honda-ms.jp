@@ -412,83 +412,8 @@
 
     <!-- ================================================== -->
     <!-- COMPONENT: Mission Section -->
-    <!-- Purpose: Company mission and values -->
-    <!-- Dependencies: GSAP (for scroll animations - future implementation) -->
-    <!-- CMS Note: テキスト内容とvaluesを動的化 -->
     <!-- ================================================== -->
-    <section class="mission-section">
-      <div class="mission-container">
-        <!-- ========================================== -->
-        <!-- MISSION TITLE: CMS移植時の変換パターン -->
-        <!-- 
-        現在: 静的HTML
-        CMS移植後: 
-        <h2 class="mission-title"><%= @mission_content.title %></h2>
-        -->
-        <!-- ========================================== -->
-        <h2 class="mission-title">ミッション</h2>
-
-        <div class="mission-content">
-          <!-- ========================================== -->
-          <!-- MISSION TEXT: CMS移植時の変換パターン -->
-          <!-- 
-          現在: 静的HTML
-          CMS移植後: 
-          <div class="mission-text"><%= simple_format(@mission_content.main_text) %></div>
-          -->
-          <!-- ========================================== -->
-          <div class="mission-text">
-            <!-- TODO: 実際のミッションテキストを後から入力 -->
-            ここにメインのミッションテキストが入ります。<br />
-            後から実際の内容に書き換えてください。<br />
-            複数行にわたるテキストも設定可能です。
-          </div>
-
-          <!-- ========================================== -->
-          <!-- MISSION VALUES: CMS移植時の変換パターン -->
-          <!-- 
-          現在: 静的HTML (設定ファイル参照)
-          CMS移植後:
-          <div class="mission-values">
-            <% @mission_values.each do |value| %>
-              <div class="mission-value-item">
-                <h3 class="value-title"><%= value.title %></h3>
-                <p class="value-description"><%= simple_format(value.description) %></p>
-              </div>
-            <% end %>
-          </div>
-          
-          参考データ構造: config/pages/index.js の mission.content.values を参照
-          -->
-          <!-- ========================================== -->
-          <div class="mission-values">
-            <div class="mission-value-item">
-              <h3 class="value-title">価値1</h3>
-              <p class="value-description">
-                <!-- TODO: 価値1の説明を後から入力 -->
-                ここに価値1の説明が入ります。後から実際の内容に書き換えてください。
-              </p>
-            </div>
-
-            <div class="mission-value-item">
-              <h3 class="value-title">価値2</h3>
-              <p class="value-description">
-                <!-- TODO: 価値2の説明を後から入力 -->
-                ここに価値2の説明が入ります。後から実際の内容に書き換えてください。
-              </p>
-            </div>
-
-            <div class="mission-value-item">
-              <h3 class="value-title">価値3</h3>
-              <p class="value-description">
-                <!-- TODO: 価値3の説明を後から入力 -->
-                ここに価値3の説明が入ります。後から実際の内容に書き換えてください。
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="mission-section"></section>
     <!-- ================================================== -->
     <!-- /COMPONENT: Mission Section -->
     <!-- ================================================== -->
