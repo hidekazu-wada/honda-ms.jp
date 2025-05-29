@@ -1,0 +1,75 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+/**
+ * Header Layout Component
+ * 全ページ共通のヘッダーレイアウト
+ * CMS移植時: ナビゲーションメニューの動的化
+ */
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba($base_color_1, 0.9);
+    backdrop-filter: blur(10px);
+
+    // ヘッダーの基本構造（将来実装予定）
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: spx(20) spx(60);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include tablet-up {
+            padding: ppx(25 * $pc-to-tab-ratio) ppx(80 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            padding: ppx(25) ppx(80);
+        }
+    }
+
+    .header-logo {
+        font-size: spx(24);
+        font-weight: 700;
+        color: $base_color_2;
+
+        @include tablet-up {
+            font-size: ppx(28 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(28);
+        }
+    }
+
+    .header-nav {
+        display: none;
+
+        @include tablet-up {
+            display: flex;
+            gap: ppx(30 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            gap: ppx(30);
+        }
+
+        a {
+            color: $base_color_2;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}

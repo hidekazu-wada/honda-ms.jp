@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>会社概要 - Honda Motor Sports</title>
+
+    <!-- ================================================== -->
+    <!-- EXTERNAL DEPENDENCIES -->
+    <!-- 共通CSS：全ページで使用 -->
+    <!-- ページ固有CSS：このページ専用 -->
+    <!-- ================================================== -->
+
+    <!-- 共通CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- ページ固有CSS -->
+    <link rel="stylesheet" href="../css/pages/about.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?
+        family=Inter:wght@500;700
+        &family=Noto+Sans+JP:wght@500;700
+        &family=Noto+Serif+JP:wght@700
+        &display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ================================================== -->
+    <!-- CORE SCRIPTS: Font Loading (Critical - Inline) -->
+    <!-- Note: フォント読み込み部分は性能のためインライン維持 -->
+    <!-- ================================================== -->
+    <script>
+      // フォント読み込み完了を待つ
+      document.fonts.ready.then(() => {
+        document.body.classList.remove('is-loading');
+        document.body.classList.add('is-loaded');
+      });
+
+      // フォールバック: 設定された時間経過したら強制的に表示
+      const timeoutDuration = 3000;
+      setTimeout(() => {
+        if (document.body.classList.contains('is-loading')) {
+          document.body.classList.remove('is-loading');
+          document.body.classList.add('is-loaded');
+        }
+      }, timeoutDuration);
+    </script>
+  </head>
+  <body class="is-loading page-about">
+    <!-- ================================================== -->
+    <!-- COMPONENT: Background Wrapper -->
+    <!-- 全ページ共通の背景 -->
+    <!-- ================================================== -->
+    <div class="bg-wrapper">
+      <picture>
+        <source
+          srcset="../images/common/about-bg.webp"
+          media="(min-width: 1024px)"
+          type="image/webp"
+        />
+        <img
+          src="../images/common/about-bg.png"
+          alt="会社概要背景"
+          loading="eager"
+          decoding="sync"
+        />
+      </picture>
+    </div>
+
+    <!-- ================================================== -->
+    <!-- COMPONENT: About Section -->
+    <!-- 会社概要ページ専用コンテンツ -->
+    <!-- ================================================== -->
+    <section class="about-section">
+      <div class="about-container">
+        <h1 class="about-title">会社概要</h1>
+        <div class="about-content">
+          <p>ここに会社概要の内容が入ります。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== -->
+    <!-- PAGE SPECIFIC SCRIPTS -->
+    <!-- ================================================== -->
+    <!-- Site Configuration -->
+    <script src="../config/site-config.js"></script>
+    <script src="../config/pages/about.js"></script>
+
+    <!-- Page Specific JS -->
+    <script src="../js/pages/about.js"></script>
+  </body>
+</html>

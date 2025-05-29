@@ -1,61 +1,13 @@
-@use "./variables" as *;
-@use "./functions" as *;
-@use "./mixins" as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
 
-html {
-    scroll-behavior: smooth;
-    body {
-        width: 100vw;
-        overflow-x: hidden;
-        @include zen-kaku-gothic-new-regular;
-        background-color: #f0f0f0;
-        // モバイル向け背景設定
-        background-image: var(--bg-mobile-fallback), var(--bg-mobile);
-        background-attachment: scroll;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-
-        // タブレット以上での固定背景設定
-        @include tablet-up {
-            background-image: var(--bg-desktop-fallback), var(--bg-desktop);
-            background-attachment: fixed;
-        }
-
-        font-family: $font-noto-sans-jp;
-        font-weight: 500;
-        color: $base_color_1;
-        &.is-loading {
-            visibility: hidden;
-            opacity: 0;
-            transition: none;
-        }
-        &.is-loaded {
-            visibility: visible;
-            opacity: 1;
-            transition: opacity 0.3s ease-in;
-        }
-    }
-}
-
-svg {
-    overflow: visible !important;
-}
-
-.bg-wrapper {
-    width: 100vw;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-color: $base_color_1;
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
+/**
+ * Hero Section Component
+ * ヒーローセクションのスライダーとテキスト
+ * Dependencies: Swiper.js, GSAP
+ * CMS移植時: スライド枚数とテキスト内容の動的化
+ */
 
 .hero-section {
     position: relative;
@@ -86,6 +38,7 @@ svg {
             }
         }
 
+        // ページネーション
         .swiper-pagination {
             position: absolute;
             left: spx(60) !important;
@@ -106,6 +59,7 @@ svg {
             }
         }
 
+        // ページネーションボタン
         .hero-bullet {
             display: block;
             width: spx(30);
@@ -128,60 +82,61 @@ svg {
                 background: $base_color_2;
             }
         }
+
+        // メインタイトル
         #main-title {
             position: absolute;
             top: spx(257);
             left: spx(60);
             z-index: 1;
+
             @include tablet-up {
                 top: ppx(520 * $pc-to-tab-ratio);
                 left: ppx(186 * $pc-to-tab-ratio);
             }
+
             @include desktop-up {
                 top: ppx(520);
                 left: ppx(186);
             }
+
             #line1 {
                 color: $base_color_2;
                 font-size: spx(55);
                 font-weight: 700;
                 line-height: 155%;
+
                 @include tablet-up {
                     font-size: ppx(95 * $pc-to-tab-ratio);
                 }
+
                 @include desktop-up {
                     font-size: ppx(95);
                 }
             }
+
             #line2 {
                 color: $base_color_2;
                 font-size: spx(81);
                 font-weight: 700;
                 line-height: 155%;
                 margin-top: spx(-12);
+
                 @include tablet-up {
                     font-size: ppx(145 * $pc-to-tab-ratio);
                     margin-top: ppx(-20 * $pc-to-tab-ratio);
                 }
+
                 @include desktop-up {
                     font-size: ppx(145);
                     margin-top: ppx(-20);
                 }
             }
+
             span {
                 display: inline;
                 transition: opacity 0.3s;
             }
         }
-    }
-}
-
-// キーフレームは外部に定義
-@keyframes hero-zoom-out {
-    0% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
     }
 }

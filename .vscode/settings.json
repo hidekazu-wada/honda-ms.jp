@@ -8,11 +8,19 @@
   ],
   "liveSassCompile.settings.generateMap": true,
   "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
+  "liveSassCompile.settings.includeItems": [
+    "/scss/style.scss",
+    "/scss/pages/**/*.scss"
+  ],
+  "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"],
   "cSpell.words": [
+    "autoplay",
     "contenteditable",
     "destyle",
+    "FOUT",
     "GSAP",
     "kaku",
+    "srcset",
     "stylable",
     "styleable",
     "wght"

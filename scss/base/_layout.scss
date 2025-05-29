@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+/**
+ * Layout Base Styles
+ * 基本レイアウトとページ状態管理
+ */
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: #f0f0f0;
+
+    // モバイル向け背景設定
+    background-image: var(--bg-mobile-fallback), var(--bg-mobile);
+    background-attachment: scroll;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    // タブレット以上での固定背景設定
+    @include tablet-up {
+        background-image: var(--bg-desktop-fallback), var(--bg-desktop);
+        background-attachment: fixed;
+    }
+
+    // ローディング状態管理
+    &.is-loading {
+        visibility: hidden;
+        opacity: 0;
+        transition: none;
+    }
+
+    &.is-loaded {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.3s ease-in;
+    }
+}
+
+svg {
+    overflow: visible !important;
+}

@@ -5,68 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
+    <!-- ================================================== -->
+    <!-- EXTERNAL DEPENDENCIES -->
+    <!-- CSS Framework: destyle (via SCSS compilation) -->
+    <!-- Slider: Swiper.js -->
+    <!-- Animation: GSAP -->
+    <!-- Fonts: Google Fonts (Inter, Noto Sans JP, Noto Serif JP) -->
+    <!-- ================================================== -->
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- ページ専用CSS -->
+    <link rel="stylesheet" href="css/pages/index.css" />
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css" />
 
-    <!-- JavaScript -->
+    <!-- ================================================== -->
+    <!-- CORE SCRIPTS: Font Loading (Critical - Inline) -->
+    <!-- Note: フォント読み込み部分は性能のためインライン維持 -->
+    <!-- ================================================== -->
     <script>
-      // GSAPアニメーション関数を先に定義
-      function wrapChars(element) {
-        const text = element.textContent || '';
-        element.innerHTML = '';
-        text.split('').forEach((char) => {
-          const span = document.createElement('span');
-          span.textContent = char;
-          span.style.opacity = '0';
-          element.appendChild(span);
-        });
-        element.style.display = 'block';
-      }
-
-      function startGsapAnimation() {
-        const line1 = document.getElementById('line1');
-        const line2 = document.getElementById('line2');
-        if (line1) wrapChars(line1);
-        if (line2) wrapChars(line2);
-
-        gsap.to('#line1 span', {
-          opacity: 1,
-          duration: 1, //1文字が出現するまでの時間
-          stagger: 0.12, //次の文字が出現するまでの時間
-          ease: 'power2.out',
-          onComplete: () => {
-            setTimeout(() => {
-              gsap.to('#line2 span', {
-                opacity: 1,
-                duration: 1, //1文字が出現するまでの時間
-                stagger: 0.14, //次の文字が出現するまでの時間
-                ease: 'power2.out',
-              });
-            }, 500); //次の行が出現するまでの時間
-          },
-        });
-      }
-
       // フォント読み込み完了を待つ
       document.fonts.ready.then(() => {
         document.body.classList.remove('is-loading');
         document.body.classList.add('is-loaded');
         // フォント読み込み完了後にアニメーション開始
-        startGsapAnimation();
+        if (window.TextAnimation) {
+          window.TextAnimation.startGsapAnimation();
+        }
       });
 
-      // フォールバック: 3秒経過したら強制的に表示とアニメーション開始
+      // フォールバック: 設定された時間経過したら強制的に表示とアニメーション開始
+      const timeoutDuration = window.SiteConfig?.fonts?.loadTimeout || 3000;
       setTimeout(() => {
         if (document.body.classList.contains('is-loading')) {
           document.body.classList.remove('is-loading');
           document.body.classList.add('is-loaded');
           // フォールバック時もアニメーション開始
-          startGsapAnimation();
+          if (window.TextAnimation) {
+            window.TextAnimation.startGsapAnimation();
+          }
         }
-      }, 3000);
+      }, timeoutDuration); // 設定値を使用
     </script>
 
     <!-- Google Fonts -->
@@ -82,6 +64,12 @@
     />
   </head>
   <body class="is-loading">
+    <!-- ================================================== -->
+    <!-- COMPONENT: Background Wrapper -->
+    <!-- Purpose: Global background image -->
+    <!-- Dependencies: Responsive images (WebP/PNG fallback) -->
+    <!-- CMS Note: 背景画像のパスを動的化 -->
+    <!-- ================================================== -->
     <div class="bg-wrapper">
       <picture>
         <!-- デスクトップ用 WebP -->
@@ -123,9 +111,46 @@
         />
       </picture>
     </div>
+    <!-- ================================================== -->
+    <!-- /COMPONENT: Background Wrapper -->
+    <!-- ================================================== -->
 
+    <!-- ================================================== -->
+    <!-- COMPONENT: Hero Section -->
+    <!-- Dependencies: Swiper.js, GSAP, Google Fonts -->
+    <!-- Features: Auto-slide carousel, Text animation, Pagination -->
+    <!-- Settings: 5s autoplay, 2.5s fade, 6 slides -->
+    <!-- CMS Note: スライド枚数とテキスト内容を動的化 -->
+    <!-- ================================================== -->
     <section class="hero-section">
       <div class="swiper hero-swiper">
+        <!-- ========================================== -->
+        <!-- SWIPER SLIDES: CMS移植時の変換パターン -->
+        <!-- 
+        現在: 静的HTML (SEO・性能重視)
+        CMS移植後:
+        <% @hero_slides.each_with_index do |slide, index| %>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="<%= asset_path(slide.desktop_webp) %>" 
+                      media="(min-width: 1024px)" type="image/webp" />
+              <source srcset="<%= asset_path(slide.mobile_webp) %>" 
+                      media="(min-width: 768px) and (max-width: 1023px)" type="image/webp" />
+              <source srcset="<%= asset_path(slide.mobile_webp) %>" 
+                      media="(max-width: 767px)" type="image/webp" />
+              <source srcset="<%= asset_path(slide.desktop_png) %>" 
+                      media="(min-width: 1024px)" type="image/png" />
+              <source srcset="<%= asset_path(slide.mobile_png) %>" 
+                      media="(min-width: 768px) and (max-width: 1023px)" type="image/png" />
+              <img src="<%= asset_path(slide.mobile_png) %>" 
+                   alt="<%= slide.alt_text %>" loading="eager" decoding="sync" />
+            </picture>
+          </div>
+        <% end %>
+        
+        参考データ構造: config/site-config.js の slidesData を参照
+        -->
+        <!-- ========================================== -->
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <picture>
@@ -381,6 +406,98 @@
         </h1>
       </div>
     </section>
+    <!-- ================================================== -->
+    <!-- /COMPONENT: Hero Section -->
+    <!-- ================================================== -->
+
+    <!-- ================================================== -->
+    <!-- COMPONENT: Mission Section -->
+    <!-- Purpose: Company mission and values -->
+    <!-- Dependencies: GSAP (for scroll animations - future implementation) -->
+    <!-- CMS Note: テキスト内容とvaluesを動的化 -->
+    <!-- ================================================== -->
+    <section class="mission-section">
+      <div class="mission-container">
+        <!-- ========================================== -->
+        <!-- MISSION TITLE: CMS移植時の変換パターン -->
+        <!-- 
+        現在: 静的HTML
+        CMS移植後: 
+        <h2 class="mission-title"><%= @mission_content.title %></h2>
+        -->
+        <!-- ========================================== -->
+        <h2 class="mission-title">ミッション</h2>
+
+        <div class="mission-content">
+          <!-- ========================================== -->
+          <!-- MISSION TEXT: CMS移植時の変換パターン -->
+          <!-- 
+          現在: 静的HTML
+          CMS移植後: 
+          <div class="mission-text"><%= simple_format(@mission_content.main_text) %></div>
+          -->
+          <!-- ========================================== -->
+          <div class="mission-text">
+            <!-- TODO: 実際のミッションテキストを後から入力 -->
+            ここにメインのミッションテキストが入ります。<br />
+            後から実際の内容に書き換えてください。<br />
+            複数行にわたるテキストも設定可能です。
+          </div>
+
+          <!-- ========================================== -->
+          <!-- MISSION VALUES: CMS移植時の変換パターン -->
+          <!-- 
+          現在: 静的HTML (設定ファイル参照)
+          CMS移植後:
+          <div class="mission-values">
+            <% @mission_values.each do |value| %>
+              <div class="mission-value-item">
+                <h3 class="value-title"><%= value.title %></h3>
+                <p class="value-description"><%= simple_format(value.description) %></p>
+              </div>
+            <% end %>
+          </div>
+          
+          参考データ構造: config/pages/index.js の mission.content.values を参照
+          -->
+          <!-- ========================================== -->
+          <div class="mission-values">
+            <div class="mission-value-item">
+              <h3 class="value-title">価値1</h3>
+              <p class="value-description">
+                <!-- TODO: 価値1の説明を後から入力 -->
+                ここに価値1の説明が入ります。後から実際の内容に書き換えてください。
+              </p>
+            </div>
+
+            <div class="mission-value-item">
+              <h3 class="value-title">価値2</h3>
+              <p class="value-description">
+                <!-- TODO: 価値2の説明を後から入力 -->
+                ここに価値2の説明が入ります。後から実際の内容に書き換えてください。
+              </p>
+            </div>
+
+            <div class="mission-value-item">
+              <h3 class="value-title">価値3</h3>
+              <p class="value-description">
+                <!-- TODO: 価値3の説明を後から入力 -->
+                ここに価値3の説明が入ります。後から実際の内容に書き換えてください。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================================================== -->
+    <!-- /COMPONENT: Mission Section -->
+    <!-- ================================================== -->
+
+    <!-- ================================================== -->
+    <!-- EXTERNAL LIBRARIES -->
+    <!-- ================================================== -->
+    <!-- Site Configuration -->
+    <script src="config/site-config.js"></script>
 
     <!-- Swiper JS -->
     <script src="node_modules/swiper/swiper-bundle.min.js"></script>
@@ -388,28 +505,13 @@
     <!-- GSAP -->
     <script src="node_modules/gsap/dist/gsap.min.js"></script>
 
-    <!-- Swiper 初期化 -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const heroSwiper = new Swiper('.hero-swiper', {
-          effect: 'fade',
-          fadeEffect: {
-            crossFade: true,
-          },
-          autoplay: {
-            delay: 5000, //1枚の表示時間
-            disableOnInteraction: false,
-          },
-          loop: true,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            bulletClass: 'hero-bullet',
-            bulletActiveClass: 'is-active',
-          },
-          speed: 2500, //フェードのスピード
-        });
-      });
-    </script>
+    <!-- ================================================== -->
+    <!-- COMPONENT SCRIPTS -->
+    <!-- ================================================== -->
+    <!-- Text Animation Component -->
+    <script src="js/components/text-animation.js"></script>
+
+    <!-- Hero Swiper Component -->
+    <script src="js/components/hero-swiper.js"></script>
   </body>
 </html>

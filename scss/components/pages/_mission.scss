@@ -1,0 +1,167 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/functions" as *;
+@use "../../abstracts/mixins" as *;
+
+/**
+ * Mission Section Component
+ * ミッションセクション（トップページ専用）
+ * CMS移植時: テキスト内容の動的化
+ */
+
+.mission-section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: spx(60) spx(20);
+
+    @include tablet-up {
+        padding: ppx(80 * $pc-to-tab-ratio) ppx(40 * $pc-to-tab-ratio);
+    }
+
+    @include desktop-up {
+        padding: ppx(100) ppx(60);
+    }
+
+    .mission-container {
+        max-width: 1200px;
+        width: 100%;
+        text-align: center;
+
+        .mission-title {
+            font-size: spx(32);
+            font-weight: 700;
+            color: $base_color_2;
+            margin-bottom: spx(40);
+            font-family: $font_family_jp_serif;
+
+            @include tablet-up {
+                font-size: ppx(42 * $pc-to-tab-ratio);
+                margin-bottom: ppx(60 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(48);
+                margin-bottom: ppx(80);
+            }
+        }
+
+        .mission-content {
+            .mission-text {
+                font-size: spx(16);
+                line-height: 1.8;
+                color: $base_color_2;
+                margin-bottom: spx(30);
+                font-family: $font_family_jp;
+
+                @include tablet-up {
+                    font-size: ppx(18 * $pc-to-tab-ratio);
+                    margin-bottom: ppx(40 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    font-size: ppx(20);
+                    margin-bottom: ppx(50);
+                }
+            }
+
+            .mission-values {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: spx(30);
+                margin-top: spx(60);
+
+                @include tablet-up {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: ppx(40 * $pc-to-tab-ratio);
+                    margin-top: ppx(80 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: ppx(50);
+                    margin-top: ppx(100);
+                }
+
+                .mission-value-item {
+                    padding: spx(30);
+                    background-color: rgba($base_color_2, 0.05);
+                    border-radius: spx(12);
+
+                    @include tablet-up {
+                        padding: ppx(40 * $pc-to-tab-ratio);
+                        border-radius: ppx(16 * $pc-to-tab-ratio);
+                    }
+
+                    @include desktop-up {
+                        padding: ppx(50);
+                        border-radius: ppx(20);
+                    }
+
+                    .value-title {
+                        font-size: spx(20);
+                        font-weight: 700;
+                        color: $base_color_2;
+                        margin-bottom: spx(15);
+                        font-family: $font_family_jp;
+
+                        @include tablet-up {
+                            font-size: ppx(24 * $pc-to-tab-ratio);
+                            margin-bottom: ppx(20 * $pc-to-tab-ratio);
+                        }
+
+                        @include desktop-up {
+                            font-size: ppx(28);
+                            margin-bottom: ppx(25);
+                        }
+                    }
+
+                    .value-description {
+                        font-size: spx(14);
+                        line-height: 1.6;
+                        color: $base_color_2;
+                        font-family: $font_family_jp;
+
+                        @include tablet-up {
+                            font-size: ppx(16 * $pc-to-tab-ratio);
+                        }
+
+                        @include desktop-up {
+                            font-size: ppx(18);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ================================================
+// MISSION SECTION ANIMATIONS
+// ================================================
+// CMS移植時: アニメーション設定を外部化
+
+/* TODO: アニメーション実装
+.mission-section {
+    .mission-title,
+    .mission-text,
+    .mission-value-item {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+        
+        &.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .mission-value-item {
+        &:nth-child(1) { transition-delay: 0.1s; }
+        &:nth-child(2) { transition-delay: 0.2s; }
+        &:nth-child(3) { transition-delay: 0.3s; }
+    }
+}
+*/

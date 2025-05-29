@@ -1,3 +1,14 @@
+@charset "UTF-8";
+/**
+ * Main SCSS Entry Point
+ * 白鷺CMS移植対応版
+ * 
+ * 読み込み順序:
+ * 1. Abstracts (変数、関数、mixins)
+ * 2. Base (リセット、タイポグラフィ、レイアウト)
+ * 3. Components (個別コンポーネント)
+ * 4. Animations (アニメーション定義)
+ */
 /*! destyle.css v4.0.1 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model and set borders */
 /* ============================================ */
@@ -378,38 +389,50 @@ th {
   font-weight: bold;
 }
 
+/**
+ * Typography Base Styles
+ * フォント関連の基本設定
+ */
 html {
   scroll-behavior: smooth;
 }
-html body {
-  width: 100vw;
-  overflow-x: hidden;
+
+body {
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  color: #231f20;
+}
+
+/**
+ * Layout Base Styles
+ * 基本レイアウトとページ状態管理
+ */
+body {
+  width: 100vw;
+  overflow-x: hidden;
   background-color: #f0f0f0;
   background-image: var(--bg-mobile-fallback), var(--bg-mobile);
   background-attachment: scroll;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 500;
-  color: #231f20;
 }
 @media (min-width: 768px) {
-  html body {
+  body {
     background-image: var(--bg-desktop-fallback), var(--bg-desktop);
     background-attachment: fixed;
   }
 }
-html body.is-loading {
+body.is-loading {
   visibility: hidden;
   opacity: 0;
   -webkit-transition: none;
   transition: none;
 }
-html body.is-loaded {
+body.is-loaded {
   visibility: visible;
   opacity: 1;
   -webkit-transition: opacity 0.3s ease-in;
@@ -420,6 +443,11 @@ svg {
   overflow: visible !important;
 }
 
+/**
+ * Background Component
+ * 全体背景画像の管理
+ * CMS移植時: 画像パスの動的化が必要
+ */
 .bg-wrapper {
   width: 100vw;
   height: 100%;
@@ -436,6 +464,12 @@ svg {
      object-fit: cover;
 }
 
+/**
+ * Hero Section Component
+ * ヒーローセクションのスライダーとテキスト
+ * Dependencies: Swiper.js, GSAP
+ * CMS移植時: スライド枚数とテキスト内容の動的化
+ */
 .hero-section {
   position: relative;
 }
@@ -573,6 +607,11 @@ svg {
   transition: opacity 0.3s;
 }
 
+/**
+ * Animation Definitions
+ * サイト全体で使用するアニメーション定義
+ * CMS移植時: アニメーション設定の動的化
+ */
 @-webkit-keyframes hero-zoom-out {
   0% {
     -webkit-transform: scale(1.2);
@@ -583,7 +622,6 @@ svg {
             transform: scale(1);
   }
 }
-
 @keyframes hero-zoom-out {
   0% {
     -webkit-transform: scale(1.2);

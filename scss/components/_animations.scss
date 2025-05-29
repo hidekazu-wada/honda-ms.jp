@@ -1,0 +1,15 @@
+/**
+ * Animation Definitions
+ * サイト全体で使用するアニメーション定義
+ * CMS移植時: アニメーション設定の動的化
+ */
+
+// ヒーローセクションのズームアウトアニメーション
+@keyframes hero-zoom-out {
+    0% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

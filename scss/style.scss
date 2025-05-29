@@ -1,5 +1,49 @@
-@use "./_destyle";
-@use "./_variables" as *;
-@use "./_functions" as *;
-@use "./_mixins" as *;
-@use "./_global" as *;
+/**
+ * Main SCSS Entry Point - Multi-Page Architecture
+ * 白鷺CMS移植対応版（マルチページ）
+ * 
+ * 読み込み順序:
+ * 1. Abstracts (変数、関数、mixins)
+ * 2. Base (リセット、タイポグラフィ、レイアウト)
+ * 3. Layout (共通レイアウト)
+ * 4. Components/Common (共通コンポーネント)
+ * 5. Animations (アニメーション定義)
+ * 
+ * 注意: ページ固有スタイルは各ページで個別読み込み
+ */
+
+// ================================================
+// 1. ABSTRACTS LAYER
+// ================================================
+@use "./abstracts/variables" as *;
+@use "./abstracts/functions" as *;
+@use "./abstracts/mixins" as *;
+
+// ================================================
+// 2. BASE LAYER
+// ================================================
+@use "./base/destyle"; // CSSリセット
+@use "./base/typography"; // フォント基本設定
+@use "./base/layout"; // レイアウト基本設定
+
+// ================================================
+// 3. LAYOUT LAYER (共通レイアウト)
+// ================================================
+@use "./layout/header"; // ヘッダー（将来実装）
+
+// ================================================
+// 4. COMPONENTS/COMMON LAYER (共通コンポーネント)
+// ================================================
+@use "./components/common/background"; // 背景コンポーネント
+
+// ================================================
+// 5. ANIMATIONS LAYER
+// ================================================
+@use "./components/animations"; // アニメーション定義
+
+// ================================================
+// 6. PAGE SPECIFIC STYLES
+// ================================================
+// 注意: ページ固有スタイルは各HTMLファイルで個別に読み込み
+// 例: <link rel="stylesheet" href="../css/pages/index.css" />
+//     <link rel="stylesheet" href="../css/pages/about.css" />
