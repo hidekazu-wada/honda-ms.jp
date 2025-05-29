@@ -8,6 +8,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css" />
+
     <!-- JavaScript -->
     <script>
       // フォント読み込み完了を待つ
@@ -80,260 +83,289 @@
       </picture>
     </div>
 
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <picture>
-            <!-- デスクトップ用 WebP -->
-            <source
-              srcset="images/index/hero/slide01-desktop.webp"
-              media="(min-width: 1024px)"
-              type="image/webp"
-            />
-            <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-            <source
-              srcset="images/index/hero/slide01-mobile.webp"
-              media="(min-width: 768px) and (max-width: 1023px)"
-              type="image/webp"
-            />
-            <!-- モバイル用 WebP -->
-            <source
-              srcset="images/index/hero/slide01-mobile.webp"
-              media="(max-width: 767px)"
-              type="image/webp"
-            />
-            <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-            <source
-              srcset="images/index/hero/fallback/slide01-desktop.png"
-              media="(min-width: 1024px)"
-              type="image/png"
-            />
-            <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-            <source
-              srcset="images/index/hero/fallback/slide01-mobile.png"
-              media="(min-width: 768px) and (max-width: 1023px)"
-              type="image/png"
-            />
-            <!-- フォールバック画像 -->
-            <img
-              src="images/index/hero/fallback/slide01-mobile.png"
-              alt="ヒーローイメージ"
-              loading="eager"
-              decoding="sync"
-            />
-          </picture>
+    <section class="hero-section">
+      <div class="swiper hero-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture>
+              <!-- デスクトップ用 WebP -->
+              <source
+                srcset="images/index/hero/slide01-desktop.webp"
+                media="(min-width: 1024px)"
+                type="image/webp"
+              />
+              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+              <source
+                srcset="images/index/hero/slide01-mobile.webp"
+                media="(min-width: 768px) and (max-width: 1023px)"
+                type="image/webp"
+              />
+              <!-- モバイル用 WebP -->
+              <source
+                srcset="images/index/hero/slide01-mobile.webp"
+                media="(max-width: 767px)"
+                type="image/webp"
+              />
+              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+              <source
+                srcset="images/index/hero/fallback/slide01-desktop.png"
+                media="(min-width: 1024px)"
+                type="image/png"
+              />
+              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+              <source
+                srcset="images/index/hero/fallback/slide01-mobile.png"
+                media="(min-width: 768px) and (max-width: 1023px)"
+                type="image/png"
+              />
+              <!-- フォールバック画像 -->
+              <img
+                src="images/index/hero/fallback/slide01-mobile.png"
+                alt="ヒーローイメージ"
+                loading="eager"
+                decoding="sync"
+              />
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <!-- デスクトップ用 WebP -->
+              <source
+                srcset="images/index/hero/slide02-desktop.webp"
+                media="(min-width: 1024px)"
+                type="image/webp"
+              />
+              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+              <source
+                srcset="images/index/hero/slide02-mobile.webp"
+                media="(min-width: 768px) and (max-width: 1023px)"
+                type="image/webp"
+              />
+              <!-- モバイル用 WebP -->
+              <source
+                srcset="images/index/hero/slide02-mobile.webp"
+                media="(max-width: 767px)"
+                type="image/webp"
+              />
+              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+              <source
+                srcset="images/index/hero/fallback/slide02-desktop.png"
+                media="(min-width: 1024px)"
+                type="image/png"
+              />
+              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+              <source
+                srcset="images/index/hero/fallback/slide02-mobile.png"
+                media="(min-width: 768px) and (max-width: 1023px)"
+                type="image/png"
+              />
+              <!-- フォールバック画像 -->
+              <img
+                src="images/index/hero/fallback/slide02-mobile.png"
+                alt="ヒーローイメージ"
+                loading="eager"
+                decoding="sync"
+              />
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <!-- デスクトップ用 WebP -->
+              <source
+                srcset="images/index/hero/slide03-desktop.webp"
+                media="(min-width: 1024px)"
+                type="image/webp"
+              />
+              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+              <source
+                srcset="images/index/hero/slide03-mobile.webp"
+                media="(min-width: 768px) and (max-width: 1023px)"
+                type="image/webp"
+              />
+              <!-- モバイル用 WebP -->
+              <source
+                srcset="images/index/hero/slide03-mobile.webp"
+                media="(max-width: 767px)"
+                type="image/webp"
+              />
+              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+              <source
+                srcset="images/index/hero/fallback/slide03-desktop.png"
+                media="(min-width: 1024px)"
+                type="image/png"
+              />
+              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+              <source
+                srcset="images/index/hero/fallback/slide03-mobile.png"
+                media="(min-width: 768px) and (max-width: 1023px)"
+                type="image/png"
+              />
+              <!-- フォールバック画像 -->
+              <img
+                src="images/index/hero/fallback/slide03-mobile.png"
+                alt="ヒーローイメージ"
+                loading="eager"
+                decoding="sync"
+              />
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <!-- デスクトップ用 WebP -->
+              <source
+                srcset="images/index/hero/slide04-desktop.webp"
+                media="(min-width: 1024px)"
+                type="image/webp"
+              />
+              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+              <source
+                srcset="images/index/hero/slide04-mobile.webp"
+                media="(min-width: 768px) and (max-width: 1023px)"
+                type="image/webp"
+              />
+              <!-- モバイル用 WebP -->
+              <source
+                srcset="images/index/hero/slide04-mobile.webp"
+                media="(max-width: 767px)"
+                type="image/webp"
+              />
+              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+              <source
+                srcset="images/index/hero/fallback/slide04-desktop.png"
+                media="(min-width: 1024px)"
+                type="image/png"
+              />
+              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+              <source
+                srcset="images/index/hero/fallback/slide04-mobile.png"
+                media="(min-width: 768px) and (max-width: 1023px)"
+                type="image/png"
+              />
+              <!-- フォールバック画像 -->
+              <img
+                src="images/index/hero/fallback/slide04-mobile.png"
+                alt="ヒーローイメージ"
+                loading="eager"
+                decoding="sync"
+              />
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <!-- デスクトップ用 WebP -->
+              <source
+                srcset="images/index/hero/slide05-desktop.webp"
+                media="(min-width: 1024px)"
+                type="image/webp"
+              />
+              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+              <source
+                srcset="images/index/hero/slide05-mobile.webp"
+                media="(min-width: 768px) and (max-width: 1023px)"
+                type="image/webp"
+              />
+              <!-- モバイル用 WebP -->
+              <source
+                srcset="images/index/hero/slide05-mobile.webp"
+                media="(max-width: 767px)"
+                type="image/webp"
+              />
+              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+              <source
+                srcset="images/index/hero/fallback/slide05-desktop.png"
+                media="(min-width: 1024px)"
+                type="image/png"
+              />
+              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+              <source
+                srcset="images/index/hero/fallback/slide05-mobile.png"
+                media="(min-width: 768px) and (max-width: 1023px)"
+                type="image/png"
+              />
+              <!-- フォールバック画像 -->
+              <img
+                src="images/index/hero/fallback/slide05-mobile.png"
+                alt="ヒーローイメージ"
+                loading="eager"
+                decoding="sync"
+              />
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <!-- デスクトップ用 WebP -->
+              <source
+                srcset="images/index/hero/slide06-desktop.webp"
+                media="(min-width: 1024px)"
+                type="image/webp"
+              />
+              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+              <source
+                srcset="images/index/hero/slide06-mobile.webp"
+                media="(min-width: 768px) and (max-width: 1023px)"
+                type="image/webp"
+              />
+              <!-- モバイル用 WebP -->
+              <source
+                srcset="images/index/hero/slide06-mobile.webp"
+                media="(max-width: 767px)"
+                type="image/webp"
+              />
+              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+              <source
+                srcset="images/index/hero/fallback/slide06-desktop.png"
+                media="(min-width: 1024px)"
+                type="image/png"
+              />
+              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+              <source
+                srcset="images/index/hero/fallback/slide06-mobile.png"
+                media="(min-width: 768px) and (max-width: 1023px)"
+                type="image/png"
+              />
+              <!-- フォールバック画像 -->
+              <img
+                src="images/index/hero/fallback/slide06-mobile.png"
+                alt="ヒーローイメージ"
+                loading="eager"
+                decoding="sync"
+              />
+            </picture>
+          </div>
         </div>
-        <div class="swiper-slide">
-          <picture>
-            <!-- デスクトップ用 WebP -->
-            <source
-              srcset="images/index/hero/slide02-desktop.webp"
-              media="(min-width: 1024px)"
-              type="image/webp"
-            />
-            <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-            <source
-              srcset="images/index/hero/slide02-mobile.webp"
-              media="(min-width: 768px) and (max-width: 1023px)"
-              type="image/webp"
-            />
-            <!-- モバイル用 WebP -->
-            <source
-              srcset="images/index/hero/slide02-mobile.webp"
-              media="(max-width: 767px)"
-              type="image/webp"
-            />
-            <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-            <source
-              srcset="images/index/hero/fallback/slide02-desktop.png"
-              media="(min-width: 1024px)"
-              type="image/png"
-            />
-            <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-            <source
-              srcset="images/index/hero/fallback/slide02-mobile.png"
-              media="(min-width: 768px) and (max-width: 1023px)"
-              type="image/png"
-            />
-            <!-- フォールバック画像 -->
-            <img
-              src="images/index/hero/fallback/slide02-mobile.png"
-              alt="ヒーローイメージ"
-              loading="eager"
-              decoding="sync"
-            />
-          </picture>
-        </div>
-        <div class="swiper-slide">
-          <picture>
-            <!-- デスクトップ用 WebP -->
-            <source
-              srcset="images/index/hero/slide03-desktop.webp"
-              media="(min-width: 1024px)"
-              type="image/webp"
-            />
-            <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-            <source
-              srcset="images/index/hero/slide03-mobile.webp"
-              media="(min-width: 768px) and (max-width: 1023px)"
-              type="image/webp"
-            />
-            <!-- モバイル用 WebP -->
-            <source
-              srcset="images/index/hero/slide03-mobile.webp"
-              media="(max-width: 767px)"
-              type="image/webp"
-            />
-            <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-            <source
-              srcset="images/index/hero/fallback/slide03-desktop.png"
-              media="(min-width: 1024px)"
-              type="image/png"
-            />
-            <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-            <source
-              srcset="images/index/hero/fallback/slide03-mobile.png"
-              media="(min-width: 768px) and (max-width: 1023px)"
-              type="image/png"
-            />
-            <!-- フォールバック画像 -->
-            <img
-              src="images/index/hero/fallback/slide03-mobile.png"
-              alt="ヒーローイメージ"
-              loading="eager"
-              decoding="sync"
-            />
-          </picture>
-        </div>
-        <div class="swiper-slide">
-          <picture>
-            <!-- デスクトップ用 WebP -->
-            <source
-              srcset="images/index/hero/slide04-desktop.webp"
-              media="(min-width: 1024px)"
-              type="image/webp"
-            />
-            <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-            <source
-              srcset="images/index/hero/slide04-mobile.webp"
-              media="(min-width: 768px) and (max-width: 1023px)"
-              type="image/webp"
-            />
-            <!-- モバイル用 WebP -->
-            <source
-              srcset="images/index/hero/slide04-mobile.webp"
-              media="(max-width: 767px)"
-              type="image/webp"
-            />
-            <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-            <source
-              srcset="images/index/hero/fallback/slide04-desktop.png"
-              media="(min-width: 1024px)"
-              type="image/png"
-            />
-            <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-            <source
-              srcset="images/index/hero/fallback/slide04-mobile.png"
-              media="(min-width: 768px) and (max-width: 1023px)"
-              type="image/png"
-            />
-            <!-- フォールバック画像 -->
-            <img
-              src="images/index/hero/fallback/slide04-mobile.png"
-              alt="ヒーローイメージ"
-              loading="eager"
-              decoding="sync"
-            />
-          </picture>
-        </div>
-        <div class="swiper-slide">
-          <picture>
-            <!-- デスクトップ用 WebP -->
-            <source
-              srcset="images/index/hero/slide05-desktop.webp"
-              media="(min-width: 1024px)"
-              type="image/webp"
-            />
-            <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-            <source
-              srcset="images/index/hero/slide05-mobile.webp"
-              media="(min-width: 768px) and (max-width: 1023px)"
-              type="image/webp"
-            />
-            <!-- モバイル用 WebP -->
-            <source
-              srcset="images/index/hero/slide05-mobile.webp"
-              media="(max-width: 767px)"
-              type="image/webp"
-            />
-            <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-            <source
-              srcset="images/index/hero/fallback/slide05-desktop.png"
-              media="(min-width: 1024px)"
-              type="image/png"
-            />
-            <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-            <source
-              srcset="images/index/hero/fallback/slide05-mobile.png"
-              media="(min-width: 768px) and (max-width: 1023px)"
-              type="image/png"
-            />
-            <!-- フォールバック画像 -->
-            <img
-              src="images/index/hero/fallback/slide05-mobile.png"
-              alt="ヒーローイメージ"
-              loading="eager"
-              decoding="sync"
-            />
-          </picture>
-        </div>
-        <div class="swiper-slide">
-          <picture>
-            <!-- デスクトップ用 WebP -->
-            <source
-              srcset="images/index/hero/slide06-desktop.webp"
-              media="(min-width: 1024px)"
-              type="image/webp"
-            />
-            <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-            <source
-              srcset="images/index/hero/slide06-mobile.webp"
-              media="(min-width: 768px) and (max-width: 1023px)"
-              type="image/webp"
-            />
-            <!-- モバイル用 WebP -->
-            <source
-              srcset="images/index/hero/slide06-mobile.webp"
-              media="(max-width: 767px)"
-              type="image/webp"
-            />
-            <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-            <source
-              srcset="images/index/hero/fallback/slide06-desktop.png"
-              media="(min-width: 1024px)"
-              type="image/png"
-            />
-            <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-            <source
-              srcset="images/index/hero/fallback/slide06-mobile.png"
-              media="(min-width: 768px) and (max-width: 1023px)"
-              type="image/png"
-            />
-            <!-- フォールバック画像 -->
-            <img
-              src="images/index/hero/fallback/slide06-mobile.png"
-              alt="ヒーローイメージ"
-              loading="eager"
-              decoding="sync"
-            />
-          </picture>
-        </div>
+        <div class="swiper-pagination"></div>
+        <h1 id="main-title">
+          <span class="line" id="line1">幸せなくらしを、</span><br />
+          <span class="line" id="line2">もっと、ずっと。</span>
+        </h1>
       </div>
-      <div class="swiper-pagination"></div>
-      <h1 id="main-title">
-        <span class="line" id="line1">幸せなくらしを、</span><br />
-        <span class="line" id="line2">もっと、ずっと。</span>
-      </h1>
-    </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="node_modules/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Swiper 初期化 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const heroSwiper = new Swiper('.hero-swiper', {
+          effect: 'fade',
+          fadeEffect: {
+            crossFade: true,
+          },
+          autoplay: {
+            delay: 5000, //1枚の表示時間
+            disableOnInteraction: false,
+          },
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            bulletClass: 'hero-bullet',
+            bulletActiveClass: 'is-active',
+          },
+          speed: 2500, //フェードのスピード
+        });
+      });
+    </script>
   </body>
 </html>

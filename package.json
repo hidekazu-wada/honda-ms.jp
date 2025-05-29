@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/hidekazu-wada/honda-ms.jp#readme",
   "dependencies": {
-    "destyle.css": "^4.0.1"
+    "destyle.css": "^4.0.1",
+    "swiper": "^11.2.8"
   }
 }
