@@ -1,0 +1,57 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+html {
+    scroll-behavior: smooth;
+    body {
+        width: 100vw;
+        overflow-x: hidden;
+        @include zen-kaku-gothic-new-regular;
+        background-color: #f0f0f0;
+        // モバイル向け背景設定
+        background-image: var(--bg-mobile-fallback), var(--bg-mobile);
+        background-attachment: scroll;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        // タブレット以上での固定背景設定
+        @include tablet-up {
+            background-image: var(--bg-desktop-fallback), var(--bg-desktop);
+            background-attachment: fixed;
+        }
+
+        font-family: $font-noto-sans-jp;
+        font-weight: 500;
+        color: $base_color_1;
+        &.is-loading {
+            visibility: hidden;
+            opacity: 0;
+            transition: none;
+        }
+        &.is-loaded {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.3s ease-in;
+        }
+    }
+}
+
+svg {
+    overflow: visible !important;
+}
+
+.bg-wrapper {
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: $base_color_1;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
