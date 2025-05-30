@@ -399,6 +399,26 @@
     @include desktop-up {
         padding: ppx(271) 0 ppx(316);
     }
+    &::after {
+        content: "";
+        display: block;
+        width: spx(15);
+        height: spx(480);
+        background-color: $base_color_2;
+        position: absolute;
+        top: spx(353);
+        right: 0;
+        @include tablet-up {
+            width: ppx(15 * $pc-to-tab-ratio);
+            height: ppx(650 * $pc-to-tab-ratio);
+            top: ppx(540 * $pc-to-tab-ratio);
+            right: 0;
+        }
+        @include desktop-up {
+            top: ppx(540);
+            right: 0;
+        }
+    }
 
     .mission__header {
         color: $base_color_2;
@@ -1576,6 +1596,21 @@
             @include desktop-up {
                 width: ppx(70);
                 height: ppx(70);
+            }
+
+            path {
+                fill: $base_color_white;
+                transition: fill 0.3s ease;
+            }
+        }
+
+        @include hover {
+            &:hover {
+                svg {
+                    path {
+                        fill: $base_color_2;
+                    }
+                }
             }
         }
     }

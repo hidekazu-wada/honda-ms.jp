@@ -378,6 +378,30 @@
     padding: 10.5859375vw 0 12.34375vw;
   }
 }
+.mission-section::after {
+  content: "";
+  display: block;
+  width: 2.0833333333vw;
+  height: 66.6666666667vw;
+  background-color: #c11313;
+  position: absolute;
+  top: 49.0277777778vw;
+  right: 0;
+}
+@media (min-width: 768px) {
+  .mission-section::after {
+    width: 0.64453125vw;
+    height: 27.9296875vw;
+    top: 23.203125vw;
+    right: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .mission-section::after {
+    top: 21.09375vw;
+    right: 0;
+  }
+}
 .mission-section .mission__header {
   color: #c11313;
   margin-left: 7.7777777778vw;
@@ -1673,6 +1697,16 @@
   .footer__social-link svg {
     width: 2.734375vw;
     height: 2.734375vw;
+  }
+}
+.footer__social-link svg path {
+  fill: #fff;
+  -webkit-transition: fill 0.3s ease;
+  transition: fill 0.3s ease;
+}
+@media (hover: hover) {
+  .footer__social-link:hover svg path {
+    fill: #c11313;
   }
 }
 .footer__copyright {
