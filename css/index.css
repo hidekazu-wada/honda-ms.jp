@@ -1275,6 +1275,11 @@
 .service-section .service__card--fjkensetsu .service__link .service__link-icon {
   background-color: #003968;
 }
+@media (hover: hover) {
+  .service-section .service__card:hover .service__link-icon {
+    opacity: 0.7;
+  }
+}
 .service-section .service__logo-image {
   width: 100%;
   height: auto;
@@ -1393,6 +1398,8 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding: 3.8888888889vw 3.4722222222vw;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 @media (min-width: 768px) {
   .service-section .service__link-icon {
