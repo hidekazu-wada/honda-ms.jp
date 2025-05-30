@@ -3,7 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta
+      name="description"
+      content="ホンダ自動車販売グループが提供するもの。それは「人のくらしを幸せにするもの」。ルーツである自動車販売から始まり、通信事業、フィットネス、建設、飲食など、山梨県を中心に、埼玉県、千葉県、神奈川県、東京都をフィールドとして事業展開しています。"
+    />
+    <meta
+      name="keywords"
+      content="ホンダ自動車販売グループ,通信事業,フィットネス,建設,飲食,求人,リクルート,山梨県,埼玉県,千葉県,神奈川県,東京都"
+    />
+    <title>ホンダ自動車販売グループ｜HONDA MOTOR SALES GROUP</title>
 
     <!-- ================================================== -->
     <!-- EXTERNAL DEPENDENCIES -->
@@ -65,837 +73,1351 @@
   </head>
   <body class="is-loading">
     <!-- ================================================== -->
-    <!-- COMPONENT: Background Wrapper -->
-    <!-- Purpose: Global background image -->
-    <!-- Dependencies: Responsive images (WebP/PNG fallback) -->
-    <!-- CMS Note: 背景画像のパスを動的化 -->
+    <!-- MAIN CONTENT -->
     <!-- ================================================== -->
-    <div class="bg-wrapper">
-      <picture>
-        <!-- デスクトップ用 WebP -->
-        <source
-          srcset="images/global/desktop-bg.webp"
-          media="(min-width: 1024px)"
-          type="image/webp"
-        />
-        <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-        <source
-          srcset="images/global/mobile-bg.webp"
-          media="(min-width: 768px) and (max-width: 1023px)"
-          type="image/webp"
-        />
-        <!-- モバイル用 WebP -->
-        <source
-          srcset="images/global/mobile-bg.webp"
-          media="(max-width: 767px)"
-          type="image/webp"
-        />
-        <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-        <source
-          srcset="images/global/desktop-bg.png"
-          media="(min-width: 1024px)"
-          type="image/png"
-        />
-        <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-        <source
-          srcset="images/global/mobile-bg.png"
-          media="(min-width: 768px) and (max-width: 1023px)"
-          type="image/png"
-        />
-        <!-- フォールバック画像 -->
-        <img
-          src="images/global/mobile-bg.png"
-          alt="ヒーローイメージ"
-          loading="eager"
-          decoding="sync"
-        />
-      </picture>
-    </div>
-    <!-- ================================================== -->
-    <!-- /COMPONENT: Background Wrapper -->
-    <!-- ================================================== -->
+    <main>
+      <!-- ================================================== -->
+      <!-- COMPONENT: Background Wrapper -->
+      <!-- Purpose: Main content background image -->
+      <!-- Dependencies: Responsive images (WebP/PNG fallback) -->
+      <!-- CMS Note: 背景画像のパスを動的化 -->
+      <!-- ================================================== -->
+      <div class="bg-wrapper">
+        <picture>
+          <!-- デスクトップ用 WebP -->
+          <source
+            srcset="images/global/desktop-bg.webp"
+            media="(min-width: 1024px)"
+            type="image/webp"
+          />
+          <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+          <source
+            srcset="images/global/mobile-bg.webp"
+            media="(min-width: 768px) and (max-width: 1023px)"
+            type="image/webp"
+          />
+          <!-- モバイル用 WebP -->
+          <source
+            srcset="images/global/mobile-bg.webp"
+            media="(max-width: 767px)"
+            type="image/webp"
+          />
+          <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+          <source
+            srcset="images/global/desktop-bg.png"
+            media="(min-width: 1024px)"
+            type="image/png"
+          />
+          <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+          <source
+            srcset="images/global/mobile-bg.png"
+            media="(min-width: 768px) and (max-width: 1023px)"
+            type="image/png"
+          />
+          <!-- フォールバック画像 -->
+          <img
+            src="images/global/mobile-bg.png"
+            alt="ヒーローイメージ"
+            loading="eager"
+            decoding="sync"
+          />
+        </picture>
+      </div>
+      <!-- ================================================== -->
+      <!-- /COMPONENT: Background Wrapper -->
+      <!-- ================================================== -->
 
-    <!-- ================================================== -->
-    <!-- COMPONENT: Hero Section -->
-    <!-- Dependencies: Swiper.js, GSAP, Google Fonts -->
-    <!-- Features: Auto-slide carousel, Text animation, Pagination -->
-    <!-- Settings: 5s autoplay, 2.5s fade, 6 slides -->
-    <!-- CMS Note: スライド枚数とテキスト内容を動的化 -->
-    <!-- ================================================== -->
-    <section class="hero-section">
-      <div class="swiper hero-swiper">
-        <!-- ========================================== -->
-        <!-- SWIPER SLIDES: CMS移植時の変換パターン -->
-        <!-- 
-        現在: 静的HTML (SEO・性能重視)
-        CMS移植後:
-        <% @hero_slides.each_with_index do |slide, index| %>
-          <div class="swiper-slide">
-            <picture>
-              <source srcset="<%= asset_path(slide.desktop_webp) %>" 
-                      media="(min-width: 1024px)" type="image/webp" />
-              <source srcset="<%= asset_path(slide.mobile_webp) %>" 
-                      media="(min-width: 768px) and (max-width: 1023px)" type="image/webp" />
-              <source srcset="<%= asset_path(slide.mobile_webp) %>" 
-                      media="(max-width: 767px)" type="image/webp" />
-              <source srcset="<%= asset_path(slide.desktop_png) %>" 
-                      media="(min-width: 1024px)" type="image/png" />
-              <source srcset="<%= asset_path(slide.mobile_png) %>" 
-                      media="(min-width: 768px) and (max-width: 1023px)" type="image/png" />
-              <img src="<%= asset_path(slide.mobile_png) %>" 
-                   alt="<%= slide.alt_text %>" loading="eager" decoding="sync" />
-            </picture>
+      <!-- ================================================== -->
+      <!-- HEADER SECTION -->
+      <!-- ================================================== -->
+      <header class="header">
+        <div class="header__inner">
+          <div class="header__logo">
+            <img
+              src="images/global/header-logo.png"
+              alt="HONDA MOTOR SALES GROUP"
+              class="header__logo-image"
+            />
           </div>
-        <% end %>
-        
-        参考データ構造: config/site-config.js の slidesData を参照
-        -->
-        <!-- ========================================== -->
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <picture>
-              <!-- デスクトップ用 WebP -->
-              <source
-                srcset="images/index/hero/slide01-desktop.webp"
-                media="(min-width: 1024px)"
-                type="image/webp"
-              />
-              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-              <source
-                srcset="images/index/hero/slide01-mobile.webp"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/webp"
-              />
-              <!-- モバイル用 WebP -->
-              <source
-                srcset="images/index/hero/slide01-mobile.webp"
-                media="(max-width: 767px)"
-                type="image/webp"
-              />
-              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-              <source
-                srcset="images/index/hero/fallback/slide01-desktop.png"
-                media="(min-width: 1024px)"
-                type="image/png"
-              />
-              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-              <source
-                srcset="images/index/hero/fallback/slide01-mobile.png"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/png"
-              />
-              <!-- フォールバック画像 -->
-              <img
-                src="images/index/hero/fallback/slide01-mobile.png"
-                alt="ヒーローイメージ"
-                loading="eager"
-                decoding="sync"
-              />
-            </picture>
-          </div>
-          <div class="swiper-slide">
-            <picture>
-              <!-- デスクトップ用 WebP -->
-              <source
-                srcset="images/index/hero/slide02-desktop.webp"
-                media="(min-width: 1024px)"
-                type="image/webp"
-              />
-              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-              <source
-                srcset="images/index/hero/slide02-mobile.webp"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/webp"
-              />
-              <!-- モバイル用 WebP -->
-              <source
-                srcset="images/index/hero/slide02-mobile.webp"
-                media="(max-width: 767px)"
-                type="image/webp"
-              />
-              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-              <source
-                srcset="images/index/hero/fallback/slide02-desktop.png"
-                media="(min-width: 1024px)"
-                type="image/png"
-              />
-              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-              <source
-                srcset="images/index/hero/fallback/slide02-mobile.png"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/png"
-              />
-              <!-- フォールバック画像 -->
-              <img
-                src="images/index/hero/fallback/slide02-mobile.png"
-                alt="ヒーローイメージ"
-                loading="eager"
-                decoding="sync"
-              />
-            </picture>
-          </div>
-          <div class="swiper-slide">
-            <picture>
-              <!-- デスクトップ用 WebP -->
-              <source
-                srcset="images/index/hero/slide03-desktop.webp"
-                media="(min-width: 1024px)"
-                type="image/webp"
-              />
-              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-              <source
-                srcset="images/index/hero/slide03-mobile.webp"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/webp"
-              />
-              <!-- モバイル用 WebP -->
-              <source
-                srcset="images/index/hero/slide03-mobile.webp"
-                media="(max-width: 767px)"
-                type="image/webp"
-              />
-              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-              <source
-                srcset="images/index/hero/fallback/slide03-desktop.png"
-                media="(min-width: 1024px)"
-                type="image/png"
-              />
-              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-              <source
-                srcset="images/index/hero/fallback/slide03-mobile.png"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/png"
-              />
-              <!-- フォールバック画像 -->
-              <img
-                src="images/index/hero/fallback/slide03-mobile.png"
-                alt="ヒーローイメージ"
-                loading="eager"
-                decoding="sync"
-              />
-            </picture>
-          </div>
-          <div class="swiper-slide">
-            <picture>
-              <!-- デスクトップ用 WebP -->
-              <source
-                srcset="images/index/hero/slide04-desktop.webp"
-                media="(min-width: 1024px)"
-                type="image/webp"
-              />
-              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-              <source
-                srcset="images/index/hero/slide04-mobile.webp"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/webp"
-              />
-              <!-- モバイル用 WebP -->
-              <source
-                srcset="images/index/hero/slide04-mobile.webp"
-                media="(max-width: 767px)"
-                type="image/webp"
-              />
-              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-              <source
-                srcset="images/index/hero/fallback/slide04-desktop.png"
-                media="(min-width: 1024px)"
-                type="image/png"
-              />
-              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-              <source
-                srcset="images/index/hero/fallback/slide04-mobile.png"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/png"
-              />
-              <!-- フォールバック画像 -->
-              <img
-                src="images/index/hero/fallback/slide04-mobile.png"
-                alt="ヒーローイメージ"
-                loading="eager"
-                decoding="sync"
-              />
-            </picture>
-          </div>
-          <div class="swiper-slide">
-            <picture>
-              <!-- デスクトップ用 WebP -->
-              <source
-                srcset="images/index/hero/slide05-desktop.webp"
-                media="(min-width: 1024px)"
-                type="image/webp"
-              />
-              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-              <source
-                srcset="images/index/hero/slide05-mobile.webp"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/webp"
-              />
-              <!-- モバイル用 WebP -->
-              <source
-                srcset="images/index/hero/slide05-mobile.webp"
-                media="(max-width: 767px)"
-                type="image/webp"
-              />
-              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-              <source
-                srcset="images/index/hero/fallback/slide05-desktop.png"
-                media="(min-width: 1024px)"
-                type="image/png"
-              />
-              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-              <source
-                srcset="images/index/hero/fallback/slide05-mobile.png"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/png"
-              />
-              <!-- フォールバック画像 -->
-              <img
-                src="images/index/hero/fallback/slide05-mobile.png"
-                alt="ヒーローイメージ"
-                loading="eager"
-                decoding="sync"
-              />
-            </picture>
-          </div>
-          <div class="swiper-slide">
-            <picture>
-              <!-- デスクトップ用 WebP -->
-              <source
-                srcset="images/index/hero/slide06-desktop.webp"
-                media="(min-width: 1024px)"
-                type="image/webp"
-              />
-              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-              <source
-                srcset="images/index/hero/slide06-mobile.webp"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/webp"
-              />
-              <!-- モバイル用 WebP -->
-              <source
-                srcset="images/index/hero/slide06-mobile.webp"
-                media="(max-width: 767px)"
-                type="image/webp"
-              />
-              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-              <source
-                srcset="images/index/hero/fallback/slide06-desktop.png"
-                media="(min-width: 1024px)"
-                type="image/png"
-              />
-              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-              <source
-                srcset="images/index/hero/fallback/slide06-mobile.png"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/png"
-              />
-              <!-- フォールバック画像 -->
-              <img
-                src="images/index/hero/fallback/slide06-mobile.png"
-                alt="ヒーローイメージ"
-                loading="eager"
-                decoding="sync"
-              />
-            </picture>
+          <button
+            class="header__menu-trigger"
+            type="button"
+            aria-expanded="false"
+            aria-label="メニューを開く"
+          >
+            <span class="header__menu-icon">
+              <!-- ハンバーガー用SVG -->
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="header__menu-hamburger"
+                width="68"
+                height="42"
+                viewBox="0 0 68 42"
+                fill="none"
+              >
+                <path
+                  d="M0 2H68"
+                  stroke="red"
+                  stroke-width="4"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M0 21H68"
+                  stroke="red"
+                  stroke-width="4"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M0 40H68"
+                  stroke="red"
+                  stroke-width="4"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <!-- ×用SVG -->
+              <svg
+                class="header__menu-close"
+                xmlns="http://www.w3.org/2000/svg"
+                width="68"
+                height="42"
+                viewBox="0 0 68 42"
+                fill="none"
+              >
+                <path
+                  d="M1.52393 39.7505L66.4758 2.25049"
+                  stroke="red"
+                  stroke-width="5"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M1.52393 2.25049L66.4758 39.7505"
+                  stroke="red"
+                  stroke-width="5"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span class="header__menu-text"></span>
+          </button>
+        </div>
+      </header>
+      <!-- ================================================== -->
+      <!-- /HEADER SECTION -->
+      <!-- ================================================== -->
+
+      <!-- ================================================== -->
+      <!-- GLOBAL NAVIGATION SECTION -->
+      <!-- ================================================== -->
+      <nav class="global-nav">
+        <div class="global-nav__inner">
+          <button
+            class="global-nav__close"
+            type="button"
+            aria-label="メニューを閉じる"
+          >
+            <div class="global-nav__close-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="68"
+                height="42"
+                viewBox="0 0 68 42"
+                fill="none"
+              >
+                <path
+                  d="M1.52393 39.7505L66.4758 2.25049"
+                  stroke="white"
+                  stroke-width="5"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M1.52393 2.25049L66.4758 39.7505"
+                  stroke="white"
+                  stroke-width="5"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <span class="global-nav__close-text"></span>
+          </button>
+          <div class="global-nav__content">
+            <ul class="global-nav__list">
+              <li class="global-nav__item">
+                <a href="#" class="global-nav__link">TOP</a>
+              </li>
+              <li class="global-nav__item">
+                <a href="#" class="global-nav__link">企業理念</a>
+              </li>
+              <li class="global-nav__item">
+                <a href="#" class="global-nav__link">事業内容</a>
+              </li>
+              <li class="global-nav__item">
+                <a href="#" class="global-nav__link">グループについて</a>
+              </li>
+              <li class="global-nav__item">
+                <a href="#" class="global-nav__link">採用情報</a>
+              </li>
+              <li class="global-nav__item">
+                <a href="#" class="global-nav__link">お知らせ</a>
+              </li>
+            </ul>
+            <div class="global-nav__company">
+              <h3>GROUP COMPANY</h3>
+              <ul class="global-nav__company-list">
+                <li>
+                  <a href="#" class="global-nav__company-link"
+                    >ホンダ自動車販売株式会社</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="global-nav__company-link"
+                    >株式会社ケインズ</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="global-nav__company-link">有限会社富士</a>
+                </li>
+                <li>
+                  <a href="#" class="global-nav__company-link"
+                    >FJ建設株式会社</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
-        <h1 id="main-title">
-          <span class="line" id="line1">幸せなくらしを、</span><br />
-          <span class="line" id="line2">もっと、ずっと。</span>
-        </h1>
-      </div>
-    </section>
-    <!-- ================================================== -->
-    <!-- /COMPONENT: Hero Section -->
-    <!-- ================================================== -->
+      </nav>
+      <!-- ================================================== -->
+      <!-- /GLOBAL NAVIGATION SECTION -->
+      <!-- ================================================== -->
 
-    <!-- ================================================== -->
-    <!-- COMPONENT: Mission Section -->
-    <!-- ================================================== -->
-    <section class="mission-section">
-      <div class="mission__inner">
-        <header class="mission__header">
-          <!-- SectionTitle Component (title="MISSION", subTitle="企業理念", variant="red") -->
-          <h2 class="section-title section-title--red">
-            <span class="section-title-main">MISSION</span>
-            <span class="section-title-sub">企業理念</span>
-          </h2>
-        </header>
-
-        <div class="mission__content">
-          <div class="mission__text">
-            <h3 class="mission__catch">
-              みんなに愛される<br />
-              会社づくり
-            </h3>
-            <p class="mission__desc">
-              ホンダ自動車販売グループは「人ありき、そして躍進」というスローガンのもと、人と企業の永続的な成長を目指しています。お客さまはもちろんのこと、社員や社員のご家族、そして地域から必要とされ愛される会社づくりをするべく、その礎となる「人」をとても大切にしています。
-            </p>
+      <!-- ================================================== -->
+      <!-- COMPONENT: Hero Section -->
+      <!-- Dependencies: Swiper.js, GSAP, Google Fonts -->
+      <!-- Features: Auto-slide carousel, Text animation, Pagination -->
+      <!-- Settings: 5s autoplay, 2.5s fade, 6 slides -->
+      <!-- CMS Note: スライド枚数とテキスト内容を動的化 -->
+      <!-- ================================================== -->
+      <section class="hero-section">
+        <div class="swiper hero-swiper">
+          <!-- ========================================== -->
+          <!-- SWIPER SLIDES: CMS移植時の変換パターン -->
+          <!-- 
+          現在: 静的HTML (SEO・性能重視)
+          CMS移植後:
+          <% @hero_slides.each_with_index do |slide, index| %>
+            <div class="swiper-slide">
+              <picture>
+                <source srcset="<%= asset_path(slide.desktop_webp) %>" 
+                        media="(min-width: 1024px)" type="image/webp" />
+                <source srcset="<%= asset_path(slide.mobile_webp) %>" 
+                        media="(min-width: 768px) and (max-width: 1023px)" type="image/webp" />
+                <source srcset="<%= asset_path(slide.mobile_webp) %>" 
+                        media="(max-width: 767px)" type="image/webp" />
+                <source srcset="<%= asset_path(slide.desktop_png) %>" 
+                        media="(min-width: 1024px)" type="image/png" />
+                <source srcset="<%= asset_path(slide.mobile_png) %>" 
+                        media="(min-width: 768px) and (max-width: 1023px)" type="image/png" />
+                <img src="<%= asset_path(slide.mobile_png) %>" 
+                     alt="<%= slide.alt_text %>" loading="eager" decoding="sync" />
+              </picture>
+            </div>
+          <% end %>
+          
+          参考データ構造: config/site-config.js の slidesData を参照
+          -->
+          <!-- ========================================== -->
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <picture>
+                <!-- デスクトップ用 WebP -->
+                <source
+                  srcset="images/index/hero/slide01-desktop.webp"
+                  media="(min-width: 1024px)"
+                  type="image/webp"
+                />
+                <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+                <source
+                  srcset="images/index/hero/slide01-mobile.webp"
+                  media="(min-width: 768px) and (max-width: 1023px)"
+                  type="image/webp"
+                />
+                <!-- モバイル用 WebP -->
+                <source
+                  srcset="images/index/hero/slide01-mobile.webp"
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+                <source
+                  srcset="images/index/hero/fallback/slide01-desktop.png"
+                  media="(min-width: 1024px)"
+                  type="image/png"
+                />
+                <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+                <source
+                  srcset="images/index/hero/fallback/slide01-mobile.png"
+                  media="(min-width: 768px) and (max-width: 1023px)"
+                  type="image/png"
+                />
+                <!-- フォールバック画像 -->
+                <img
+                  src="images/index/hero/fallback/slide01-mobile.png"
+                  alt="ヒーローイメージ"
+                  loading="eager"
+                  decoding="sync"
+                />
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <!-- デスクトップ用 WebP -->
+                <source
+                  srcset="images/index/hero/slide02-desktop.webp"
+                  media="(min-width: 1024px)"
+                  type="image/webp"
+                />
+                <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+                <source
+                  srcset="images/index/hero/slide02-mobile.webp"
+                  media="(min-width: 768px) and (max-width: 1023px)"
+                  type="image/webp"
+                />
+                <!-- モバイル用 WebP -->
+                <source
+                  srcset="images/index/hero/slide02-mobile.webp"
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+                <source
+                  srcset="images/index/hero/fallback/slide02-desktop.png"
+                  media="(min-width: 1024px)"
+                  type="image/png"
+                />
+                <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+                <source
+                  srcset="images/index/hero/fallback/slide02-mobile.png"
+                  media="(min-width: 768px) and (max-width: 1023px)"
+                  type="image/png"
+                />
+                <!-- フォールバック画像 -->
+                <img
+                  src="images/index/hero/fallback/slide02-mobile.png"
+                  alt="ヒーローイメージ"
+                  loading="eager"
+                  decoding="sync"
+                />
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <!-- デスクトップ用 WebP -->
+                <source
+                  srcset="images/index/hero/slide03-desktop.webp"
+                  media="(min-width: 1024px)"
+                  type="image/webp"
+                />
+                <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+                <source
+                  srcset="images/index/hero/slide03-mobile.webp"
+                  media="(min-width: 768px) and (max-width: 1023px)"
+                  type="image/webp"
+                />
+                <!-- モバイル用 WebP -->
+                <source
+                  srcset="images/index/hero/slide03-mobile.webp"
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+                <source
+                  srcset="images/index/hero/fallback/slide03-desktop.png"
+                  media="(min-width: 1024px)"
+                  type="image/png"
+                />
+                <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+                <source
+                  srcset="images/index/hero/fallback/slide03-mobile.png"
+                  media="(min-width: 768px) and (max-width: 1023px)"
+                  type="image/png"
+                />
+                <!-- フォールバック画像 -->
+                <img
+                  src="images/index/hero/fallback/slide03-mobile.png"
+                  alt="ヒーローイメージ"
+                  loading="eager"
+                  decoding="sync"
+                />
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <!-- デスクトップ用 WebP -->
+                <source
+                  srcset="images/index/hero/slide04-desktop.webp"
+                  media="(min-width: 1024px)"
+                  type="image/webp"
+                />
+                <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+                <source
+                  srcset="images/index/hero/slide04-mobile.webp"
+                  media="(min-width: 768px) and (max-width: 1023px)"
+                  type="image/webp"
+                />
+                <!-- モバイル用 WebP -->
+                <source
+                  srcset="images/index/hero/slide04-mobile.webp"
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+                <source
+                  srcset="images/index/hero/fallback/slide04-desktop.png"
+                  media="(min-width: 1024px)"
+                  type="image/png"
+                />
+                <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+                <source
+                  srcset="images/index/hero/fallback/slide04-mobile.png"
+                  media="(min-width: 768px) and (max-width: 1023px)"
+                  type="image/png"
+                />
+                <!-- フォールバック画像 -->
+                <img
+                  src="images/index/hero/fallback/slide04-mobile.png"
+                  alt="ヒーローイメージ"
+                  loading="eager"
+                  decoding="sync"
+                />
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <!-- デスクトップ用 WebP -->
+                <source
+                  srcset="images/index/hero/slide05-desktop.webp"
+                  media="(min-width: 1024px)"
+                  type="image/webp"
+                />
+                <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+                <source
+                  srcset="images/index/hero/slide05-mobile.webp"
+                  media="(min-width: 768px) and (max-width: 1023px)"
+                  type="image/webp"
+                />
+                <!-- モバイル用 WebP -->
+                <source
+                  srcset="images/index/hero/slide05-mobile.webp"
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+                <source
+                  srcset="images/index/hero/fallback/slide05-desktop.png"
+                  media="(min-width: 1024px)"
+                  type="image/png"
+                />
+                <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+                <source
+                  srcset="images/index/hero/fallback/slide05-mobile.png"
+                  media="(min-width: 768px) and (max-width: 1023px)"
+                  type="image/png"
+                />
+                <!-- フォールバック画像 -->
+                <img
+                  src="images/index/hero/fallback/slide05-mobile.png"
+                  alt="ヒーローイメージ"
+                  loading="eager"
+                  decoding="sync"
+                />
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <!-- デスクトップ用 WebP -->
+                <source
+                  srcset="images/index/hero/slide06-desktop.webp"
+                  media="(min-width: 1024px)"
+                  type="image/webp"
+                />
+                <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+                <source
+                  srcset="images/index/hero/slide06-mobile.webp"
+                  media="(min-width: 768px) and (max-width: 1023px)"
+                  type="image/webp"
+                />
+                <!-- モバイル用 WebP -->
+                <source
+                  srcset="images/index/hero/slide06-mobile.webp"
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+                <source
+                  srcset="images/index/hero/fallback/slide06-desktop.png"
+                  media="(min-width: 1024px)"
+                  type="image/png"
+                />
+                <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+                <source
+                  srcset="images/index/hero/fallback/slide06-mobile.png"
+                  media="(min-width: 768px) and (max-width: 1023px)"
+                  type="image/png"
+                />
+                <!-- フォールバック画像 -->
+                <img
+                  src="images/index/hero/fallback/slide06-mobile.png"
+                  alt="ヒーローイメージ"
+                  loading="eager"
+                  decoding="sync"
+                />
+              </picture>
+            </div>
           </div>
+          <div class="swiper-pagination"></div>
+          <h1 id="main-title">
+            <span class="line" id="line1">幸せなくらしを、</span><br />
+            <span class="line" id="line2">もっと、ずっと。</span>
+          </h1>
+        </div>
+      </section>
+      <!-- ================================================== -->
+      <!-- /COMPONENT: Hero Section -->
+      <!-- ================================================== -->
 
-          <figure class="mission__figure">
-            <picture>
-              <source
-                srcset="images/index/mission/section-visual.webp"
-                media="(min-width: 1024px)"
-                type="image/webp"
-                sizes="50vw"
-              />
-              <source
-                srcset="images/index/mission/section-visual.webp"
-                media="(max-width: 1023px)"
-                type="image/webp"
-                sizes="100vw"
-              />
-              <source
-                srcset="images/index/mission/fallback/section-visual.png"
-                media="(min-width: 1024px)"
-                type="image/png"
-                sizes="50vw"
-              />
-              <img
-                src="images/index/mission/fallback/section-visual.png"
-                alt="社員4名がオフィスでパソコンを見ながら笑顔で仕事をしている様子"
-                class="mission__visual"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
-          </figure>
+      <!-- ================================================== -->
+      <!-- COMPONENT: Mission Section -->
+      <!-- ================================================== -->
+      <section class="mission-section">
+        <div class="mission__inner">
+          <header class="mission__header">
+            <!-- SectionTitle Component (title="MISSION", subTitle="企業理念", variant="red") -->
+            <h2 class="section-title section-title--red">
+              <span class="section-title-main">MISSION</span>
+              <span class="section-title-sub">企業理念</span>
+            </h2>
+          </header>
 
-          <div class="mission__link-wrapper">
-            <!-- PrimaryButton Component (text="企業理念はこちら", link="#", color="white") -->
-            <a href="#" class="primary-button primary-button--white">
-              企業理念はこちら
-              <span class="primary-button__icon" aria-hidden="true">
-                <svg
-                  viewBox="0 0 35 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-icon"
-                >
-                  <path
-                    d="M2 30L16 16L2 2"
-                    stroke="white"
-                    stroke-width="4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                  <path
-                    d="M19 30L33 16L19 2"
-                    stroke="white"
-                    stroke-width="4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                </svg>
-              </span>
-            </a>
+          <div class="mission__content">
+            <div class="mission__text">
+              <h3 class="mission__catch">
+                みんなに愛される<br />
+                会社づくり
+              </h3>
+              <p class="mission__desc">
+                ホンダ自動車販売グループは「人ありき、そして躍進」というスローガンのもと、人と企業の永続的な成長を目指しています。お客さまはもちろんのこと、社員や社員のご家族、そして地域から必要とされ愛される会社づくりをするべく、その礎となる「人」をとても大切にしています。
+              </p>
+            </div>
+
+            <figure class="mission__figure">
+              <picture>
+                <source
+                  srcset="images/index/mission/section-visual.webp"
+                  media="(min-width: 1024px)"
+                  type="image/webp"
+                  sizes="50vw"
+                />
+                <source
+                  srcset="images/index/mission/section-visual.webp"
+                  media="(max-width: 1023px)"
+                  type="image/webp"
+                  sizes="100vw"
+                />
+                <source
+                  srcset="images/index/mission/fallback/section-visual.png"
+                  media="(min-width: 1024px)"
+                  type="image/png"
+                  sizes="50vw"
+                />
+                <img
+                  src="images/index/mission/fallback/section-visual.png"
+                  alt="社員4名がオフィスでパソコンを見ながら笑顔で仕事をしている様子"
+                  class="mission__visual"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </figure>
+
+            <div class="mission__link-wrapper">
+              <!-- PrimaryButton Component (text="企業理念はこちら", link="#", color="white") -->
+              <a href="#" class="primary-button primary-button--white">
+                企業理念はこちら
+                <span class="primary-button__icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 35 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="arrow-icon"
+                  >
+                    <path
+                      d="M2 30L16 16L2 2"
+                      stroke="white"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M19 30L33 16L19 2"
+                      stroke="white"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- ================================================== -->
-    <!-- /COMPONENT: Mission Section -->
-    <!-- ================================================== -->
+      </section>
+      <!-- ================================================== -->
+      <!-- /COMPONENT: Mission Section -->
+      <!-- ================================================== -->
 
-    <!-- ================================================== -->
-    <!-- COMPONENT: Recruit Section -->
-    <!-- Dependencies: レスポンシブ画像、複雑な絶対配置レイアウト -->
-    <!-- Features: 5画像ギャラリー、ブラー効果、重なり配置 -->
-    <!-- CMS Note: 画像配列とテキスト内容を動的化 -->
-    <!-- ================================================== -->
-    <section class="recruit-section">
-      <div class="recruit__inner">
-        <header class="recruit__header">
-          <!-- SectionTitle Component (title="RECRUIT", subTitle="採用情報", variant="red") -->
-          <h2 class="section-title section-title--red">
-            <span class="section-title-main">RECRUIT</span>
-            <span class="section-title-sub">採用情報</span>
-          </h2>
-        </header>
+      <!-- ================================================== -->
+      <!-- COMPONENT: Recruit Section -->
+      <!-- Dependencies: レスポンシブ画像、複雑な絶対配置レイアウト -->
+      <!-- Features: 5画像ギャラリー、ブラー効果、重なり配置 -->
+      <!-- CMS Note: 画像配列とテキスト内容を動的化 -->
+      <!-- ================================================== -->
+      <section class="recruit-section">
+        <div class="recruit__inner">
+          <header class="recruit__header">
+            <!-- SectionTitle Component (title="RECRUIT", subTitle="採用情報", variant="red") -->
+            <h2 class="section-title section-title--red">
+              <span class="section-title-main">RECRUIT</span>
+              <span class="section-title-sub">採用情報</span>
+            </h2>
+          </header>
 
-        <div class="recruit__content">
-          <div class="recruit__text">
-            <h3 class="recruit__catch">
-              安心できる環境で輝く<br />
-              それぞれの「人間力」
-            </h3>
-            <p class="recruit__desc">
-              「人のくらしを幸せにするもの」をキーワードに事業展開するホンダ自動車販売グループは、社員も、その家族も安心できる環境。ぜひあなたの「人間力」を発揮してください。
-            </p>
-          </div>
+          <div class="recruit__content">
+            <div class="recruit__text">
+              <h3 class="recruit__catch">
+                安心できる環境で輝く<br />
+                それぞれの「人間力」
+              </h3>
+              <p class="recruit__desc">
+                「人のくらしを幸せにするもの」をキーワードに事業展開するホンダ自動車販売グループは、社員も、その家族も安心できる環境。ぜひあなたの「人間力」を発揮してください。
+              </p>
+            </div>
 
-          <div class="recruit__gallery">
-            <figure class="recruit__gallery-item section-visual01">
-              <picture>
-                <!-- デスクトップ用 WebP -->
-                <source
-                  srcset="images/index/recruit/section-visual01.webp"
-                  media="(min-width: 1024px)"
-                  type="image/webp"
-                />
-                <!-- モバイル用 WebP -->
-                <source
-                  srcset="images/index/recruit/section-visual01.webp"
-                  media="(max-width: 1023px)"
-                  type="image/webp"
-                />
-                <!-- デスクトップ用 PNG -->
-                <source
-                  srcset="images/index/recruit/fallback/section-visual01.png"
-                  media="(min-width: 1024px)"
-                  type="image/png"
-                />
-                <img
-                  src="images/index/recruit/fallback/section-visual01.png"
-                  alt="エンジニアが車両整備を行っている様子"
-                  class="recruit__gallery-image"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </figure>
-
-            <figure class="recruit__gallery-item section-visual02">
-              <picture>
-                <!-- デスクトップ用 WebP -->
-                <source
-                  srcset="images/index/recruit/section-visual02.webp"
-                  media="(min-width: 1024px)"
-                  type="image/webp"
-                />
-                <!-- モバイル用 WebP -->
-                <source
-                  srcset="images/index/recruit/section-visual02.webp"
-                  media="(max-width: 1023px)"
-                  type="image/webp"
-                />
-                <!-- デスクトップ用 PNG -->
-                <source
-                  srcset="images/index/recruit/fallback/section-visual02.png"
-                  media="(min-width: 1024px)"
-                  type="image/png"
-                />
-                <img
-                  src="images/index/recruit/fallback/section-visual02.png"
-                  alt="スーツ姿の男性が笑顔で電話対応している様子"
-                  class="recruit__gallery-image"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </figure>
-
-            <figure class="recruit__gallery-item section-visual03">
-              <picture>
-                <!-- デスクトップ用 WebP -->
-                <source
-                  srcset="images/index/recruit/section-visual03.webp"
-                  media="(min-width: 1024px)"
-                  type="image/webp"
-                />
-                <!-- モバイル用 WebP -->
-                <source
-                  srcset="images/index/recruit/section-visual03.webp"
-                  media="(max-width: 1023px)"
-                  type="image/webp"
-                />
-                <!-- デスクトップ用 PNG -->
-                <source
-                  srcset="images/index/recruit/fallback/section-visual03.png"
-                  media="(min-width: 1024px)"
-                  type="image/png"
-                />
-                <img
-                  src="images/index/recruit/fallback/section-visual03.png"
-                  alt="HONDAロゴ前で笑顔の受付女性"
-                  class="recruit__gallery-image"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </figure>
-
-            <figure class="recruit__gallery-item section-visual04">
-              <picture>
-                <!-- デスクトップ用 WebP -->
-                <source
-                  srcset="images/index/recruit/section-visual04.webp"
-                  media="(min-width: 1024px)"
-                  type="image/webp"
-                />
-                <!-- モバイル用 WebP -->
-                <source
-                  srcset="images/index/recruit/section-visual04.webp"
-                  media="(max-width: 1023px)"
-                  type="image/webp"
-                />
-                <!-- デスクトップ用 PNG -->
-                <source
-                  srcset="images/index/recruit/fallback/section-visual04.png"
-                  media="(min-width: 1024px)"
-                  type="image/png"
-                />
-                <img
-                  src="images/index/recruit/fallback/section-visual04.png"
-                  alt="スーツ姿の男性が笑顔で電話対応している様子(ブラー)"
-                  class="recruit__gallery-image"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </figure>
-
-            <figure class="recruit__gallery-item section-visual05">
-              <picture>
-                <!-- デスクトップ用 WebP -->
-                <source
-                  srcset="images/index/recruit/section-visual05.webp"
-                  media="(min-width: 1024px)"
-                  type="image/webp"
-                />
-                <!-- モバイル用 WebP -->
-                <source
-                  srcset="images/index/recruit/section-visual05.webp"
-                  media="(max-width: 1023px)"
-                  type="image/webp"
-                />
-                <!-- デスクトップ用 PNG -->
-                <source
-                  srcset="images/index/recruit/fallback/section-visual05.png"
-                  media="(min-width: 1024px)"
-                  type="image/png"
-                />
-                <img
-                  src="images/index/recruit/fallback/section-visual05.png"
-                  alt="商談の様子（ブラー）"
-                  class="recruit__gallery-image"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </figure>
-          </div>
-
-          <div class="recruit__link-wrapper">
-            <!-- PrimaryButton Component (text="採用情報はこちら", link="#", color="dark") -->
-            <a href="#" class="primary-button primary-button--dark">
-              採用情報はこちら
-              <span class="primary-button__icon" aria-hidden="true">
-                <svg
-                  viewBox="0 0 35 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-icon"
-                >
-                  <path
-                    d="M2 30L16 16L2 2"
-                    stroke="white"
-                    stroke-width="4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                  <path
-                    d="M19 30L33 16L19 2"
-                    stroke="white"
-                    stroke-width="4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                </svg>
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ================================================== -->
-    <!-- /COMPONENT: Recruit Section -->
-    <!-- ================================================== -->
-
-    <!-- ================================================== -->
-    <!-- COMPONENT: News Section -->
-    <!-- Dependencies: レスポンシブ画像、ニュースリスト -->
-    <!-- Features: 3記事表示、日付表示、一覧リンク -->
-    <!-- CMS Note: ニュース記事配列とページネーションを動的化 -->
-    <!-- ================================================== -->
-    <section class="news-section">
-      <div class="news__inner">
-        <header class="news__header">
-          <!-- SectionTitle Component (title="NEWS", subTitle="お知らせ", variant="white") -->
-          <h2 class="section-title section-title--white">
-            <span class="section-title-main">NEWS</span>
-            <span class="section-title-sub">お知らせ</span>
-          </h2>
-        </header>
-
-        <div class="news__content">
-          <div class="news__list">
-            <article class="news__item">
-              <figure class="news__image">
-                <a href="#" class="news__image-link">
-                  <!-- 画像: ニュース記事サムネイル01 -->
-                  <picture>
-                    <source
-                      srcset="images/index/news/demo-image.webp"
-                      media="(min-width: 1024px)"
-                      type="image/webp"
-                    />
-                    <source
-                      srcset="images/index/news/demo-image.webp"
-                      media="(max-width: 1023px)"
-                      type="image/webp"
-                    />
-                    <source
-                      srcset="images/index/news/fallback/demo-image.png"
-                      media="(min-width: 1024px)"
-                      type="image/png"
-                    />
-                    <img
-                      src="images/index/news/fallback/demo-image.png"
-                      alt="ニュース記事のサムネイル画像"
-                      class="news__item-image"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </picture>
-                </a>
+            <div class="recruit__gallery">
+              <figure class="recruit__gallery-item section-visual01">
+                <picture>
+                  <!-- デスクトップ用 WebP -->
+                  <source
+                    srcset="images/index/recruit/section-visual01.webp"
+                    media="(min-width: 1024px)"
+                    type="image/webp"
+                  />
+                  <!-- モバイル用 WebP -->
+                  <source
+                    srcset="images/index/recruit/section-visual01.webp"
+                    media="(max-width: 1023px)"
+                    type="image/webp"
+                  />
+                  <!-- デスクトップ用 PNG -->
+                  <source
+                    srcset="images/index/recruit/fallback/section-visual01.png"
+                    media="(min-width: 1024px)"
+                    type="image/png"
+                  />
+                  <img
+                    src="images/index/recruit/fallback/section-visual01.png"
+                    alt="エンジニアが車両整備を行っている様子"
+                    class="recruit__gallery-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </figure>
-              
-              <div class="news__item-content">
-                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
-                <h3 class="news__title">
-                  <a href="#" class="news__link">
-                    新サービス開始のお知らせ
-                  </a>
-                </h3>
-              </div>
-            </article>
 
-            <article class="news__item">
-              <figure class="news__image">
-                <a href="#" class="news__image-link">
-                  <!-- 画像: ニュース記事サムネイル02 -->
-                  <picture>
-                    <source
-                      srcset="images/index/news/demo-image.webp"
-                      media="(min-width: 1024px)"
-                      type="image/webp"
-                    />
-                    <source
-                      srcset="images/index/news/demo-image.webp"
-                      media="(max-width: 1023px)"
-                      type="image/webp"
-                    />
-                    <source
-                      srcset="images/index/news/fallback/demo-image.png"
-                      media="(min-width: 1024px)"
-                      type="image/png"
-                    />
-                    <img
-                      src="images/index/news/fallback/demo-image.png"
-                      alt="ニュース記事のサムネイル画像"
-                      class="news__item-image"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </picture>
-                </a>
+              <figure class="recruit__gallery-item section-visual02">
+                <picture>
+                  <!-- デスクトップ用 WebP -->
+                  <source
+                    srcset="images/index/recruit/section-visual02.webp"
+                    media="(min-width: 1024px)"
+                    type="image/webp"
+                  />
+                  <!-- モバイル用 WebP -->
+                  <source
+                    srcset="images/index/recruit/section-visual02.webp"
+                    media="(max-width: 1023px)"
+                    type="image/webp"
+                  />
+                  <!-- デスクトップ用 PNG -->
+                  <source
+                    srcset="images/index/recruit/fallback/section-visual02.png"
+                    media="(min-width: 1024px)"
+                    type="image/png"
+                  />
+                  <img
+                    src="images/index/recruit/fallback/section-visual02.png"
+                    alt="スーツ姿の男性が笑顔で電話対応している様子"
+                    class="recruit__gallery-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </figure>
-              
-              <div class="news__item-content">
-                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
-                <h3 class="news__title">
-                  <a href="#" class="news__link">
-                    2024年度上半期営業時間変更および新店舗オープンのご案内について
-                  </a>
-                </h3>
-              </div>
-            </article>
 
-            <article class="news__item">
-              <figure class="news__image">
-                <a href="#" class="news__image-link">
-                  <!-- 画像: ニュース記事サムネイル03 -->
-                  <picture>
-                    <source
-                      srcset="images/index/news/demo-image.webp"
-                      media="(min-width: 1024px)"
-                      type="image/webp"
-                    />
-                    <source
-                      srcset="images/index/news/demo-image.webp"
-                      media="(max-width: 1023px)"
-                      type="image/webp"
-                    />
-                    <source
-                      srcset="images/index/news/fallback/demo-image.png"
-                      media="(min-width: 1024px)"
-                      type="image/png"
-                    />
-                    <img
-                      src="images/index/news/fallback/demo-image.png"
-                      alt="ニュース記事のサムネイル画像"
-                      class="news__item-image"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </picture>
-                </a>
+              <figure class="recruit__gallery-item section-visual03">
+                <picture>
+                  <!-- デスクトップ用 WebP -->
+                  <source
+                    srcset="images/index/recruit/section-visual03.webp"
+                    media="(min-width: 1024px)"
+                    type="image/webp"
+                  />
+                  <!-- モバイル用 WebP -->
+                  <source
+                    srcset="images/index/recruit/section-visual03.webp"
+                    media="(max-width: 1023px)"
+                    type="image/webp"
+                  />
+                  <!-- デスクトップ用 PNG -->
+                  <source
+                    srcset="images/index/recruit/fallback/section-visual03.png"
+                    media="(min-width: 1024px)"
+                    type="image/png"
+                  />
+                  <img
+                    src="images/index/recruit/fallback/section-visual03.png"
+                    alt="HONDAロゴ前で笑顔の受付女性"
+                    class="recruit__gallery-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </figure>
-              
-              <div class="news__item-content">
-                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
-                <h3 class="news__title">
-                  <a href="#" class="news__link">
-                    ホンダ自動車販売グループにおける2024年度第1四半期決算発表ならびに今後の事業展開戦略に関する重要なお知らせとステークホルダーの皆様への感謝の意を込めたメッセージについて
-                  </a>
-                </h3>
-              </div>
-            </article>
-          </div>
 
-          <div class="news__link-wrapper">
-            <!-- PrimaryButton Component (text="お知らせ一覧へ", link="#", color="white") -->
-            <a href="#" class="primary-button primary-button--white">
-              お知らせ一覧へ
-              <span class="primary-button__icon" aria-hidden="true">
-                <svg
-                  viewBox="0 0 35 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-icon"
-                >
-                  <path
-                    d="M2 30L16 16L2 2"
-                    stroke="white"
-                    stroke-width="4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                  <path
-                    d="M19 30L33 16L19 2"
-                    stroke="white"
-                    stroke-width="4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                </svg>
-              </span>
-            </a>
+              <figure class="recruit__gallery-item section-visual04">
+                <picture>
+                  <!-- デスクトップ用 WebP -->
+                  <source
+                    srcset="images/index/recruit/section-visual04.webp"
+                    media="(min-width: 1024px)"
+                    type="image/webp"
+                  />
+                  <!-- モバイル用 WebP -->
+                  <source
+                    srcset="images/index/recruit/section-visual04.webp"
+                    media="(max-width: 1023px)"
+                    type="image/webp"
+                  />
+                  <!-- デスクトップ用 PNG -->
+                  <source
+                    srcset="images/index/recruit/fallback/section-visual04.png"
+                    media="(min-width: 1024px)"
+                    type="image/png"
+                  />
+                  <img
+                    src="images/index/recruit/fallback/section-visual04.png"
+                    alt="スーツ姿の男性が笑顔で電話対応している様子(ブラー)"
+                    class="recruit__gallery-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </figure>
+
+              <figure class="recruit__gallery-item section-visual05">
+                <picture>
+                  <!-- デスクトップ用 WebP -->
+                  <source
+                    srcset="images/index/recruit/section-visual05.webp"
+                    media="(min-width: 1024px)"
+                    type="image/webp"
+                  />
+                  <!-- モバイル用 WebP -->
+                  <source
+                    srcset="images/index/recruit/section-visual05.webp"
+                    media="(max-width: 1023px)"
+                    type="image/webp"
+                  />
+                  <!-- デスクトップ用 PNG -->
+                  <source
+                    srcset="images/index/recruit/fallback/section-visual05.png"
+                    media="(min-width: 1024px)"
+                    type="image/png"
+                  />
+                  <img
+                    src="images/index/recruit/fallback/section-visual05.png"
+                    alt="商談の様子（ブラー）"
+                    class="recruit__gallery-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </figure>
+            </div>
+
+            <div class="recruit__link-wrapper">
+              <!-- PrimaryButton Component (text="採用情報はこちら", link="#", color="dark") -->
+              <a href="#" class="primary-button primary-button--dark">
+                採用情報はこちら
+                <span class="primary-button__icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 35 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="arrow-icon"
+                  >
+                    <path
+                      d="M2 30L16 16L2 2"
+                      stroke="white"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M19 30L33 16L19 2"
+                      stroke="white"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- ================================================== -->
-    <!-- /COMPONENT: News Section -->
-    <!-- ================================================== -->
+      </section>
+      <!-- ================================================== -->
+      <!-- /COMPONENT: Recruit Section -->
+      <!-- ================================================== -->
+
+      <!-- ================================================== -->
+      <!-- COMPONENT: News Section -->
+      <!-- Dependencies: レスポンシブ画像、ニュースリスト -->
+      <!-- Features: 3記事表示、日付表示、一覧リンク -->
+      <!-- CMS Note: ニュース記事配列とページネーションを動的化 -->
+      <!-- ================================================== -->
+      <section class="news-section">
+        <div class="news__inner">
+          <header class="news__header">
+            <!-- SectionTitle Component (title="NEWS", subTitle="お知らせ", variant="white") -->
+            <h2 class="section-title section-title--white">
+              <span class="section-title-main">NEWS</span>
+              <span class="section-title-sub">お知らせ</span>
+            </h2>
+          </header>
+
+          <div class="news__content">
+            <div class="news__list">
+              <article class="news__item">
+                <figure class="news__image">
+                  <a href="#" class="news__image-link">
+                    <!-- 画像: ニュース記事サムネイル01 -->
+                    <picture>
+                      <source
+                        srcset="images/index/news/demo-image.webp"
+                        media="(min-width: 1024px)"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="images/index/news/demo-image.webp"
+                        media="(max-width: 1023px)"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="images/index/news/fallback/demo-image.png"
+                        media="(min-width: 1024px)"
+                        type="image/png"
+                      />
+                      <img
+                        src="images/index/news/fallback/demo-image.png"
+                        alt="ニュース記事のサムネイル画像"
+                        class="news__item-image"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </picture>
+                  </a>
+                </figure>
+
+                <div class="news__item-content">
+                  <time class="news__date" datetime="2024-05-01"
+                    >2024.05.01</time
+                  >
+                  <h3 class="news__title">
+                    <a href="#" class="news__link">
+                      新サービス開始のお知らせ
+                    </a>
+                  </h3>
+                </div>
+              </article>
+
+              <article class="news__item">
+                <figure class="news__image">
+                  <a href="#" class="news__image-link">
+                    <!-- 画像: ニュース記事サムネイル02 -->
+                    <picture>
+                      <source
+                        srcset="images/index/news/demo-image.webp"
+                        media="(min-width: 1024px)"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="images/index/news/demo-image.webp"
+                        media="(max-width: 1023px)"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="images/index/news/fallback/demo-image.png"
+                        media="(min-width: 1024px)"
+                        type="image/png"
+                      />
+                      <img
+                        src="images/index/news/fallback/demo-image.png"
+                        alt="ニュース記事のサムネイル画像"
+                        class="news__item-image"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </picture>
+                  </a>
+                </figure>
+
+                <div class="news__item-content">
+                  <time class="news__date" datetime="2024-05-01"
+                    >2024.05.01</time
+                  >
+                  <h3 class="news__title">
+                    <a href="#" class="news__link">
+                      2024年度上半期営業時間変更および新店舗オープンのご案内について
+                    </a>
+                  </h3>
+                </div>
+              </article>
+
+              <article class="news__item">
+                <figure class="news__image">
+                  <a href="#" class="news__image-link">
+                    <!-- 画像: ニュース記事サムネイル03 -->
+                    <picture>
+                      <source
+                        srcset="images/index/news/demo-image.webp"
+                        media="(min-width: 1024px)"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="images/index/news/demo-image.webp"
+                        media="(max-width: 1023px)"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="images/index/news/fallback/demo-image.png"
+                        media="(min-width: 1024px)"
+                        type="image/png"
+                      />
+                      <img
+                        src="images/index/news/fallback/demo-image.png"
+                        alt="ニュース記事のサムネイル画像"
+                        class="news__item-image"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </picture>
+                  </a>
+                </figure>
+
+                <div class="news__item-content">
+                  <time class="news__date" datetime="2024-05-01"
+                    >2024.05.01</time
+                  >
+                  <h3 class="news__title">
+                    <a href="#" class="news__link">
+                      ホンダ自動車販売グループにおける2024年度第1四半期決算発表ならびに今後の事業展開戦略に関する重要なお知らせとステークホルダーの皆様への感謝の意を込めたメッセージについて
+                    </a>
+                  </h3>
+                </div>
+              </article>
+            </div>
+
+            <div class="news__link-wrapper">
+              <!-- PrimaryButton Component (text="お知らせ一覧へ", link="#", color="white") -->
+              <a href="#" class="primary-button primary-button--white">
+                お知らせ一覧へ
+                <span class="primary-button__icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 35 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="arrow-icon"
+                  >
+                    <path
+                      d="M2 30L16 16L2 2"
+                      stroke="white"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M19 30L33 16L19 2"
+                      stroke="white"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ================================================== -->
+      <!-- /COMPONENT: News Section -->
+      <!-- ================================================== -->
+
+      <!-- ================================================== -->
+      <!-- COMPONENT: Service Section -->
+      <!-- Dependencies: レスポンシブ画像、グリッドレイアウト -->
+      <!-- Features: 4社カード表示、各社ブランドカラー、詳細リンク -->
+      <!-- CMS Note: サービス会社配列とリンク先を動的化 -->
+      <!-- ================================================== -->
+      <section class="service-section">
+        <div class="service__inner">
+          <header class="service__header">
+            <!-- SectionTitle Component (title="SERVICE", subTitle="事業領域", variant="red") -->
+            <h2 class="section-title section-title--red">
+              <span class="section-title-main">SERVICE</span>
+              <span class="section-title-sub">事業領域</span>
+            </h2>
+          </header>
+
+          <div class="service__content">
+            <div class="service__grid">
+              <a href="#" class="service__card service__card--honda">
+                <article class="service__card-content">
+                  <div class="service__card-inner">
+                    <div class="service__logo">
+                      <!-- 画像: HONDAロゴ -->
+                      <img
+                        src="images/index/service/logo01.png"
+                        alt="ホンダ自動車販売株式会社ロゴ"
+                        class="service__logo-image"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+
+                    <span class="service__line"></span>
+
+                    <ul class="service__list">
+                      <li class="service__item">Honda Cars山梨東</li>
+                      <li class="service__item">カーセブン</li>
+                      <li class="service__item">
+                        ドコモ（ショップ／法人営業）
+                      </li>
+                      <li class="service__item">結婚相談所</li>
+                    </ul>
+
+                    <div class="service__link-wrapper">
+                      <span class="service__link service__link--honda">
+                        <span class="service__link-icon" aria-hidden="true">
+                          <svg
+                            viewBox="0 0 35 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="arrow-icon"
+                          >
+                            <path
+                              d="M2 30L16 16L2 2"
+                              stroke="white"
+                              stroke-width="4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                            <path
+                              d="M19 30L33 16L19 2"
+                              stroke="white"
+                              stroke-width="4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+
+              <a href="#" class="service__card service__card--kyne">
+                <article class="service__card-content">
+                  <div class="service__card-inner">
+                    <div class="service__logo">
+                      <!-- 画像: Kyneロゴ -->
+                      <img
+                        src="images/index/service/logo02.png"
+                        alt="株式会社ケインズロゴ"
+                        class="service__logo-image"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <span class="service__line"></span>
+
+                    <ul class="service__list">
+                      <li class="service__item">auショップ</li>
+                      <li class="service__item">ソフトバンクショップ</li>
+                      <li class="service__item">エニタイムフィットネス</li>
+                    </ul>
+
+                    <div class="service__link-wrapper">
+                      <span class="service__link service__link--kyne">
+                        <span class="service__link-icon" aria-hidden="true">
+                          <svg
+                            viewBox="0 0 35 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="arrow-icon"
+                          >
+                            <path
+                              d="M2 30L16 16L2 2"
+                              stroke="white"
+                              stroke-width="4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                            <path
+                              d="M19 30L33 16L19 2"
+                              stroke="white"
+                              stroke-width="4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+
+              <a href="#" class="service__card service__card--fuji">
+                <article class="service__card-content">
+                  <div class="service__card-inner">
+                    <div class="service__logo">
+                      <!-- 画像: FJロゴ（紫） -->
+                      <img
+                        src="images/index/service/logo03.png"
+                        alt="有限会社富士ロゴ"
+                        class="service__logo-image"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+
+                    <span class="service__line"></span>
+
+                    <ul class="service__list">
+                      <li class="service__item">Jネットレンタカー</li>
+                      <li class="service__item">FJワインセラー</li>
+                      <li class="service__item">人材派遣／人材紹介</li>
+                      <li class="service__item">カフェ</li>
+                    </ul>
+
+                    <div class="service__link-wrapper">
+                      <span class="service__link service__link--fuji">
+                        <span class="service__link-icon" aria-hidden="true">
+                          <svg
+                            viewBox="0 0 35 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="arrow-icon"
+                          >
+                            <path
+                              d="M2 30L16 16L2 2"
+                              stroke="white"
+                              stroke-width="4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                            <path
+                              d="M19 30L33 16L19 2"
+                              stroke="white"
+                              stroke-width="4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+
+              <a href="#" class="service__card service__card--fjkensetsu">
+                <article class="service__card-content">
+                  <div class="service__card-inner">
+                    <div class="service__logo">
+                      <!-- 画像: FJ建設ロゴ -->
+                      <img
+                        src="images/index/service/logo04.png"
+                        alt="FJ建設株式会社ロゴ"
+                        class="service__logo-image"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+
+                    <span class="service__line"></span>
+
+                    <ul class="service__list">
+                      <li class="service__item">商業建築</li>
+                      <li class="service__item">不動産開発</li>
+                    </ul>
+
+                    <div class="service__link-wrapper">
+                      <span class="service__link service__link--fjkensetsu">
+                        <span class="service__link-icon" aria-hidden="true">
+                          <svg
+                            viewBox="0 0 35 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="arrow-icon"
+                          >
+                            <path
+                              d="M2 30L16 16L2 2"
+                              stroke="white"
+                              stroke-width="4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                            <path
+                              d="M19 30L33 16L19 2"
+                              stroke="white"
+                              stroke-width="4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+
+            <div class="service__bottom-link-wrapper">
+              <!-- PrimaryButton Component (text="事業内容はこちら", link="#", color="dark") -->
+              <a href="#" class="primary-button primary-button--dark">
+                事業内容はこちら
+                <span class="primary-button__icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 35 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="arrow-icon"
+                  >
+                    <path
+                      d="M2 30L16 16L2 2"
+                      stroke="white"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M19 30L33 16L19 2"
+                      stroke="white"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ================================================== -->
+      <!-- /COMPONENT: Service Section -->
+      <!-- ================================================== -->
+    </main>
 
     <!-- ================================================== -->
     <!-- FOOTER -->
-    <footer id="footer">
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__content">
+          <div class="footer__brand">
+            <div class="footer__logo">
+              <img
+                src="images/global/footer-logo.png"
+                alt="HONDA MOTOR SALES GROUP"
+                class="footer__logo-image"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <p class="footer__company-name">
+              HONDA MOTOR SALES <br class="sp" />GROUP
+            </p>
+          </div>
+
+          <div class="footer__divider"></div>
+
+          <address class="footer__contact">
+            <div class="footer__contact-item footer__contact-item--address">
+              <span class="footer__postal-code">〒403-0007</span>
+              <span class="footer__address">山梨県富士吉田市中曽根4-5-15</span>
+            </div>
+            <div class="footer__contact-item footer__contact-item--tel">
+              <span class="footer__contact-label">TEL</span>
+              <a href="tel:0555-30-0300" class="footer__contact-link"
+                >0555-30-0300</a
+              >
+            </div>
+            <div class="footer__contact-item footer__contact-item--fax">
+              <span class="footer__contact-label">FAX</span>
+              <span class="footer__contact-value">0555-24-7300</span>
+            </div>
+          </address>
+
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="70"
+                height="70"
+                viewBox="0 0 70 70"
+                fill="none"
+              >
+                <path
+                  d="M35 6.30592C44.3456 6.30592 45.4515 6.34204 49.1428 6.51014C52.5549 6.66574 54.4082 7.23534 55.6418 7.71464C57.2756 8.34954 58.4412 9.10809 59.6666 10.332C60.8919 11.5574 61.6505 12.723 62.284 14.3568C62.7633 15.5904 63.3329 17.4437 63.4885 20.8558C63.6566 24.5457 63.6927 25.653 63.6927 34.9986C63.6927 44.3443 63.6566 45.4501 63.4885 49.1414C63.3329 52.5535 62.7633 54.4068 62.284 55.6405C61.6491 57.2742 60.8905 58.4398 59.6666 59.6652C58.4412 60.8905 57.2756 61.6491 55.6418 62.2826C54.4082 62.7619 52.5549 63.3315 49.1428 63.4871C45.4529 63.6552 44.3456 63.6913 35 63.6913C25.6543 63.6913 24.5471 63.6552 20.8572 63.4871C17.4451 63.3315 15.5918 62.7619 14.3582 62.2826C12.7244 61.6477 11.5588 60.8891 10.3334 59.6652C9.10809 58.4398 8.34954 57.2742 7.71603 55.6405C7.23673 54.4068 6.66713 52.5535 6.51153 49.1414C6.34343 45.4515 6.30731 44.3443 6.30731 34.9986C6.30731 25.653 6.34343 24.5471 6.51153 20.8558C6.66713 17.4437 7.23673 15.5904 7.71603 14.3568C8.35093 12.723 9.10948 11.5574 10.3334 10.332C11.5574 9.1067 12.7244 8.34815 14.3582 7.71464C15.5918 7.23534 17.4451 6.66574 20.8572 6.51014C24.5471 6.34204 25.6543 6.30592 35 6.30592ZM35 0C25.4946 0 24.3026 0.040289 20.5696 0.21117C16.845 0.380661 14.2998 0.972492 12.0742 1.83801C9.77216 2.7327 7.82023 3.92887 5.87524 5.87524C3.92887 7.82162 2.7327 9.77216 1.83801 12.0742C0.972492 14.2998 0.380661 16.845 0.21117 20.5696C0.040289 24.3026 0 25.4946 0 35C0 44.5054 0.040289 45.6974 0.21117 49.4304C0.380661 53.155 0.972492 55.7002 1.83801 57.9258C2.7327 60.2278 3.92887 62.1798 5.87524 64.1248C7.82162 66.0711 9.77216 67.2673 12.0742 68.162C14.2998 69.0275 16.845 69.6193 20.5696 69.7888C24.3026 69.9597 25.4946 70 35 70C44.5054 70 45.6974 69.9597 49.4304 69.7888C53.155 69.6193 55.7002 69.0275 57.9258 68.162C60.2278 67.2673 62.1798 66.0711 64.1248 64.1248C66.0711 62.1784 67.2673 60.2278 68.162 57.9258C69.0275 55.7002 69.6193 53.155 69.7888 49.4304C69.9597 45.6974 70 44.5054 70 35C70 25.4946 69.9597 24.3026 69.7888 20.5696C69.6193 16.845 69.0275 14.2998 68.162 12.0742C67.2673 9.77216 66.0711 7.82023 64.1248 5.87524C62.1784 3.92887 60.2278 2.7327 57.9258 1.83801C55.7002 0.972492 53.155 0.380661 49.4304 0.21117C45.6974 0.040289 44.5054 0 35 0Z"
+                  fill="white"
+                />
+                <path
+                  d="M35 17.0273C25.0736 17.0273 17.0283 25.074 17.0283 34.999C17.0283 44.924 25.075 52.9707 35 52.9707C44.925 52.9707 52.9716 44.924 52.9716 34.999C52.9716 25.074 44.925 17.0273 35 17.0273ZM35 46.6661C28.5565 46.6661 23.3342 41.4425 23.3342 35.0004C23.3342 28.5583 28.5579 23.3347 35 23.3347C41.442 23.3347 46.6657 28.5583 46.6657 35.0004C46.6657 41.4425 41.442 46.6661 35 46.6661Z"
+                  fill="white"
+                />
+                <path
+                  d="M53.6832 20.5148C56.0026 20.5148 57.883 18.6345 57.883 16.315C57.883 13.9955 56.0026 12.1152 53.6832 12.1152C51.3637 12.1152 49.4834 13.9955 49.4834 16.315C49.4834 18.6345 51.3637 20.5148 53.6832 20.5148Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">
+            Copyright © HONDA MOTOR SALES Co.,Ltd. <br class="sp" />All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <!-- ================================================== -->
     <!-- EXTERNAL LIBRARIES -->
@@ -914,5 +1436,118 @@
     <!-- ================================================== -->
     <!-- Index Page - 完全統合版（テキストアニメーション + Swiper） -->
     <script src="js/index.js"></script>
+
+    <!-- ================================================== -->
+    <!-- MENU CONTROL SCRIPT -->
+    <!-- ================================================== -->
+    <script>
+      // メニュー制御スクリプト
+      document.addEventListener('DOMContentLoaded', function () {
+        const menuTrigger = document.querySelector('.header__menu-trigger');
+        const globalNav = document.querySelector('.global-nav');
+        const navClose = document.querySelector('.global-nav__close');
+        const body = document.body;
+        let isMenuOpen = false;
+        let isAnimating = false; // アニメーション中の重複防止
+
+        // タブレット以上判定関数
+        function isTabletOrDesktop() {
+          return window.innerWidth >= 768;
+        }
+
+        // メニューを開く関数
+        function openMenu() {
+          if (isAnimating) return;
+          isAnimating = true;
+          isMenuOpen = true;
+
+          // 1. ヘッダーボタンの状態変更（スマホのみ）
+          if (!isTabletOrDesktop()) {
+            menuTrigger.classList.add('is-active');
+            menuTrigger.setAttribute('aria-label', 'メニューを閉じる');
+          }
+          menuTrigger.setAttribute('aria-expanded', 'true');
+          body.classList.add('is-menu-open');
+
+          // 2. グローバルナビの背景をスライドイン
+          globalNav.classList.add('is-open');
+
+          // 3. 少し待ってからコンテンツをフェードイン
+          setTimeout(() => {
+            globalNav.classList.add('is-content-visible');
+            isAnimating = false;
+          }, 200); // 200ms後にコンテンツ表示
+        }
+
+        // メニューを閉じる関数
+        function closeMenu() {
+          if (isAnimating) return;
+          isAnimating = true;
+          isMenuOpen = false;
+
+          // 1. ヘッダーボタンの状態変更（スマホのみ）
+          if (!isTabletOrDesktop()) {
+            menuTrigger.classList.remove('is-active');
+            menuTrigger.setAttribute('aria-label', 'メニューを開く');
+          }
+          menuTrigger.setAttribute('aria-expanded', 'false');
+          body.classList.remove('is-menu-open');
+
+          // 2. まずコンテンツをフェードアウト
+          globalNav.classList.remove('is-content-visible');
+
+          // 3. 少し待ってからグローバルナビの背景をスライドアウト
+          setTimeout(() => {
+            globalNav.classList.remove('is-open');
+            isAnimating = false;
+          }, 200); // 200ms後に背景を閉じる
+        }
+
+        // メニューの開閉切り替え関数
+        function toggleMenu() {
+          if (isMenuOpen) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        }
+
+        // ヘッダーのメニューボタンクリック
+        menuTrigger.addEventListener('click', toggleMenu);
+
+        // グローバルナビのクローズボタンクリック（デスクトップ用）
+        if (navClose) {
+          navClose.addEventListener('click', closeMenu);
+        }
+
+        // ESCキーでメニューを閉じる
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && isMenuOpen) {
+            closeMenu();
+          }
+        });
+
+        // グローバルナビの背景クリックでメニューを閉じる（スマホ用）
+        globalNav.addEventListener('click', function (e) {
+          if (e.target === globalNav) {
+            closeMenu();
+          }
+        });
+
+        // ウィンドウリサイズ時の処理（タブレット以上⇔スマホ切り替え対応）
+        window.addEventListener('resize', function () {
+          if (isMenuOpen) {
+            // リサイズ時にメニューが開いている場合、状態をリセット
+            if (isTabletOrDesktop()) {
+              // タブレット以上に切り替わった場合、ヘッダーボタンをリセット
+              menuTrigger.classList.remove('is-active');
+            } else {
+              // スマホに切り替わった場合、ヘッダーボタンを活性化
+              menuTrigger.classList.add('is-active');
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>

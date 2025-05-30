@@ -436,13 +436,13 @@ svg {
 }
 
 /**
- * Background Component
- * 全体背景画像の管理
+ * Background Component - Main Content Background
+ * mainタグ内に配置されたメインコンテンツ背景
  * CMS移植時: 画像パスの動的化が必要
  */
 .bg-wrapper {
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
