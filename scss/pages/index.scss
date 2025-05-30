@@ -1418,4 +1418,15 @@
             margin-top: ppx(100);
         }
     }
+
+    .service__card-content {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: inherit;
+        @include tablet-up {
+        }
+        @include desktop-up {
+        }
+    }
 }

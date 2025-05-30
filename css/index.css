@@ -1431,4 +1431,10 @@
   .service-section .service__bottom-link-wrapper {
     margin-top: 3.90625vw;
   }
+}
+.service-section .service__card-content {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
 }/*# sourceMappingURL=index.css.map */
