@@ -1420,7 +1420,6 @@
         @include tablet-up {
             margin: 0 ppx(220 * $pc-to-tab-ratio);
             flex-flow: row;
-            gap: unset;
             align-items: flex-end;
             justify-content: space-between;
             gap: unset;
@@ -1428,9 +1427,6 @@
         @include desktop-up {
             margin: 0 ppx(220);
         }
-    }
-
-    &__content {
     }
 
     &__brand {
@@ -1508,10 +1504,6 @@
     }
 
     &__contact-item {
-        @include tablet-up {
-        }
-        @include desktop-up {
-        }
         &--address {
             font-size: spx(30);
             font-weight: 500;
@@ -1557,47 +1549,13 @@
         }
     }
 
-    &__postal-code {
-        @include tablet-up {
-        }
-        @include desktop-up {
-        }
-    }
-
-    &__address {
-        @include tablet-up {
-        }
-        @include desktop-up {
-        }
-    }
-
-    &__contact-label {
-        @include tablet-up {
-        }
-        @include desktop-up {
-        }
-    }
-
-    &__contact-link {
-        @include tablet-up {
-        }
-        @include desktop-up {
-        }
-    }
-
-    &__contact-value {
-        @include tablet-up {
-        }
-        @include desktop-up {
-        }
-    }
-
     &__social {
         position: absolute;
         top: spx(523);
         left: spx(70);
         @include tablet-up {
             top: ppx(160 * $pc-to-tab-ratio);
+
             left: unset;
             right: ppx(230 * $pc-to-tab-ratio);
         }
@@ -1608,10 +1566,6 @@
     }
 
     &__social-link {
-        @include tablet-up {
-        }
-        @include desktop-up {
-        }
         svg {
             width: spx(70);
             height: spx(70);
@@ -1629,10 +1583,6 @@
     &__copyright {
         text-align: center;
         width: max-content;
-        @include tablet-up {
-        }
-        @include desktop-up {
-        }
     }
 
     &__copyright-text {
