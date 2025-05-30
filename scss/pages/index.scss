@@ -257,9 +257,151 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 10vw;
+    height: spx(120);
     background-color: $base_color_white;
     z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    @include tablet-up {
+        height: ppx(120 * $pc-to-tab-ratio);
+    }
+
+    @include desktop-up {
+        height: ppx(120);
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        padding: 0 spx(60);
+
+        @include tablet-up {
+            padding: 0 ppx(220 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            padding: 0 ppx(220);
+        }
+    }
+
+    &__logo {
+        height: spx(60);
+
+        @include tablet-up {
+            height: ppx(60 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            height: ppx(60);
+        }
+    }
+
+    &__logo-image {
+        height: 100%;
+        width: auto;
+    }
+
+    &__menu-trigger {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: spx(8);
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: $base_color_1;
+        font-family: $font-noto-sans-jp;
+
+        @include tablet-up {
+            gap: ppx(8 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            gap: ppx(8);
+        }
+    }
+
+    &__menu-icon {
+        position: relative;
+        width: spx(24);
+        height: spx(24);
+
+        @include tablet-up {
+            width: ppx(24 * $pc-to-tab-ratio);
+            height: ppx(24 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            width: ppx(24);
+            height: ppx(24);
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.3s ease;
+        }
+    }
+
+    &__menu-hamburger {
+        opacity: 1;
+
+        .is-active & {
+            opacity: 0;
+
+            // タブレット以上では切り替えを無効化
+            @include tablet-up {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__menu-close {
+        opacity: 0;
+
+        .is-active & {
+            opacity: 1;
+
+            // タブレット以上では切り替えを無効化
+            @include tablet-up {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__menu-text {
+        font-size: spx(24);
+        font-weight: 500;
+        line-height: 1;
+
+        @include tablet-up {
+            font-size: ppx(24 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(24);
+        }
+
+        &::after {
+            content: "MENU";
+        }
+
+        .is-active & {
+            &::after {
+                content: "CLOSE";
+
+                // タブレット以上では切り替えを無効化
+                @include tablet-up {
+                    content: "MENU";
+                }
+            }
+        }
+    }
 }
 // ================================================
 // /HEADER SECTION
@@ -271,17 +413,228 @@
 // ================================================
 .global-nav {
     position: fixed;
-    z-index: 50;
-    width: 30vw;
-    height: 100dvh;
-    background-color: $base_color_2;
-    position: absolute;
     top: 0;
     right: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: $base_color_2;
+    z-index: 50;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+
     @include tablet-up {
+        width: ppx(600 * $pc-to-tab-ratio);
         z-index: 200;
+        top: 0;
     }
+
     @include desktop-up {
+        width: ppx(600);
+    }
+
+    &.is-open {
+        transform: translateX(0);
+    }
+
+    &__inner {
+        padding: spx(60);
+        color: $base_color_white;
+        height: 100%;
+
+        @include tablet-up {
+            padding: ppx(60 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            padding: ppx(60);
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: spx(30);
+        right: spx(30);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: spx(8);
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: $base_color_white;
+        font-family: $font-noto-sans-jp;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+
+        @include tablet-up {
+            top: ppx(30 * $pc-to-tab-ratio);
+            right: ppx(30 * $pc-to-tab-ratio);
+            gap: ppx(8 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            top: ppx(30);
+            right: ppx(30);
+            gap: ppx(8);
+        }
+
+        // スマホのみ非表示
+        @media (max-width: 767px) {
+            display: none;
+        }
+
+        .is-content-visible & {
+            opacity: 1;
+        }
+    }
+
+    &__close-icon {
+        width: spx(34);
+        height: spx(21);
+
+        @include desktop-up {
+            width: ppx(34);
+            height: ppx(21);
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__close-text {
+        font-size: spx(14);
+        font-weight: 500;
+        line-height: 1;
+
+        @include desktop-up {
+            font-size: ppx(14);
+        }
+
+        &::after {
+            content: "CLOSE";
+        }
+    }
+
+    &__content {
+        padding-top: spx(120);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+
+        @include tablet-up {
+            padding-top: ppx(100 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            padding-top: ppx(100);
+        }
+
+        .is-content-visible & {
+            opacity: 1;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    &__link {
+        display: block;
+        padding: spx(20) 0;
+        color: $base_color_white;
+        text-decoration: none;
+        font-size: spx(32);
+        font-weight: 500;
+        transition: opacity 0.3s ease;
+
+        @include tablet-up {
+            padding: ppx(20 * $pc-to-tab-ratio) 0;
+            font-size: ppx(32 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            padding: ppx(20) 0;
+            font-size: ppx(32);
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__company {
+        margin-top: spx(60);
+
+        @include tablet-up {
+            margin-top: ppx(60 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            margin-top: ppx(60);
+        }
+
+        h3 {
+            color: $base_color_white;
+            font-size: spx(28);
+            font-weight: 700;
+            margin-bottom: spx(30);
+
+            @include tablet-up {
+                font-size: ppx(28 * $pc-to-tab-ratio);
+                margin-bottom: ppx(30 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(28);
+                margin-bottom: ppx(30);
+            }
+        }
+    }
+
+    &__company-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: spx(15);
+
+        @include tablet-up {
+            gap: ppx(15 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            gap: ppx(15);
+        }
+    }
+
+    &__company-link {
+        display: block;
+        color: $base_color_white;
+        text-decoration: none;
+        font-size: spx(24);
+        font-weight: 400;
+        transition: opacity 0.3s ease;
+
+        @include tablet-up {
+            font-size: ppx(24 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(24);
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
     }
 }
 // ================================================
