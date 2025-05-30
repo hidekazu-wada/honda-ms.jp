@@ -1053,10 +1053,17 @@
 // サービスセクション（このページ専用）
 // ================================================
 .service-section {
-    background-color: red;
+    background-image: url(../images/index/service/section-bg-mobile.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: spx(140) 0;
     @include tablet-up {
+        background-image: url(../images/index/service/section-bg-desktop.webp);
+        padding: ppx(220 * $pc-to-tab-ratio) 0;
     }
     @include desktop-up {
+        padding: ppx(220) 0;
     }
 
     .service__inner {
@@ -1067,6 +1074,8 @@
     }
 
     .service__header {
+        width: max-content;
+        margin-inline: auto;
         @include tablet-up {
         }
         @include desktop-up {
@@ -1081,44 +1090,180 @@
     }
 
     .service__grid {
+        display: flex;
+        flex-flow: column;
+        gap: spx(30);
+        margin-top: spx(53);
+        align-items: center;
+
         @include tablet-up {
+            flex-flow: row;
+            gap: ppx(17 * $pc-to-tab-ratio);
+            margin-top: ppx(90 * $pc-to-tab-ratio);
+            align-items: unset;
+            justify-content: center;
         }
         @include desktop-up {
+            gap: ppx(17);
+            margin-top: ppx(90);
         }
     }
 
     .service__card {
+        position: relative;
+        width: spx(517);
+        height: auto;
+        background-color: $base_color_white;
+        padding-bottom: spx(128);
+        box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.25);
+
         @include tablet-up {
+            width: ppx(517 * $pc-to-tab-ratio);
+            padding-bottom: ppx(124 * $pc-to-tab-ratio);
         }
         @include desktop-up {
+            width: ppx(517);
+            padding-bottom: ppx(124);
         }
 
         // ブランドカラー別バリエーション
         &--honda {
+            padding-top: spx(49);
             @include tablet-up {
+                padding-top: ppx(41 * $pc-to-tab-ratio);
             }
             @include desktop-up {
+                padding-top: ppx(41);
+            }
+            .service__logo {
+                width: spx(272);
+                height: auto;
+                margin-left: spx(122);
+                @include tablet-up {
+                    width: ppx(272 * $pc-to-tab-ratio);
+                    margin-left: ppx(123 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(272);
+                    margin-left: ppx(123);
+                }
+            }
+            .service__item::before {
+                color: $base_color_2; // Honda用カラー
+            }
+            .service__link {
+                @include tablet-up {
+                }
+                @include desktop-up {
+                }
+                .service__link-icon {
+                    background-color: $base_color_2;
+                }
             }
         }
 
         &--kyne {
+            padding-top: spx(5);
             @include tablet-up {
+                padding-top: ppx(35 * $pc-to-tab-ratio);
             }
             @include desktop-up {
+                padding-top: ppx(35);
+            }
+            .service__logo {
+                width: spx(311);
+                height: auto;
+                margin-left: spx(122);
+                @include tablet-up {
+                    width: ppx(311 * $pc-to-tab-ratio);
+                    margin-left: ppx(116 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(311);
+                    margin-left: ppx(116);
+                }
+            }
+            .service__item::before {
+                color: $kyne_color; // Kyne用カラー
+            }
+            .service__link {
+                @include tablet-up {
+                }
+                @include desktop-up {
+                }
+                .service__link-icon {
+                    background-color: $kyne_color;
+                }
             }
         }
 
         &--fuji {
+            padding-top: spx(65);
             @include tablet-up {
+                padding-top: ppx(74 * $pc-to-tab-ratio);
             }
             @include desktop-up {
+                padding-top: ppx(74);
+            }
+            .service__logo {
+                width: spx(151);
+                height: auto;
+                margin-left: spx(183);
+                @include tablet-up {
+                    width: ppx(151 * $pc-to-tab-ratio);
+                    margin-left: ppx(183 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(151);
+                    margin-left: ppx(183);
+                }
+            }
+            .service__item::before {
+                color: $fuji_color; // Fuji用カラー
+            }
+            .service__link {
+                @include tablet-up {
+                }
+                @include desktop-up {
+                }
+                .service__link-icon {
+                    background-color: $fuji_color;
+                }
             }
         }
 
         &--fjkensetsu {
+            padding-top: spx(65);
             @include tablet-up {
+                padding-top: ppx(76 * $pc-to-tab-ratio);
             }
             @include desktop-up {
+                padding-top: ppx(76);
+            }
+            .service__logo {
+                width: spx(187);
+                height: auto;
+                margin-left: spx(165);
+                @include tablet-up {
+                    width: ppx(187 * $pc-to-tab-ratio);
+                    margin-left: ppx(165 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(187);
+                    margin-left: ppx(165);
+                }
+            }
+            .service__item::before {
+                color: $fjkensetsu_color; // FJ建設用カラー
+            }
+            .service__link {
+                @include tablet-up {
+                }
+                @include desktop-up {
+                }
+                .service__link-icon {
+                    background-color: $fjkensetsu_color;
+                }
             }
         }
     }
@@ -1138,87 +1283,129 @@
     }
 
     .service__logo-image {
+        width: 100%;
+        height: auto;
         @include tablet-up {
         }
         @include desktop-up {
         }
     }
 
-    .service__company-name {
+    .service__line {
+        display: block;
+        width: spx(409);
+        height: 1px;
+        background-color: $gray_1;
+        margin-top: spx(25);
+        margin-bottom: spx(52);
+        margin-inline: auto;
         @include tablet-up {
+            width: ppx(409 * $pc-to-tab-ratio);
+            margin-top: ppx(26 * $pc-to-tab-ratio);
+            margin-bottom: ppx(52 * $pc-to-tab-ratio);
         }
         @include desktop-up {
+            width: ppx(409);
+            margin-top: ppx(26);
+            margin-bottom: ppx(52);
         }
     }
 
     .service__list {
+        width: spx(427);
+        margin-inline: auto;
+        display: flex;
+        flex-flow: column;
+        gap: spx(13);
         @include tablet-up {
+            width: ppx(427 * $pc-to-tab-ratio);
+            gap: ppx(13 * $pc-to-tab-ratio);
+            min-height: ppx(247 * $pc-to-tab-ratio);
         }
         @include desktop-up {
+            width: ppx(427);
+            gap: ppx(13);
+            min-height: ppx(247);
         }
     }
 
     .service__item {
+        color: $base_color_1;
+        font-size: spx(28);
+        font-weight: 500;
+        line-height: 140%;
+        display: grid;
+        grid-template-columns: max-content auto;
+        gap: spx(6);
+
         @include tablet-up {
+            font-size: ppx(28 * $pc-to-tab-ratio);
+            gap: ppx(6 * $pc-to-tab-ratio);
         }
+
         @include desktop-up {
+            font-size: ppx(28);
+            gap: ppx(6);
+        }
+        &::before {
+            content: "－";
+            display: block;
         }
     }
 
     .service__link-wrapper {
+        width: max-content;
+        position: absolute;
+        bottom: spx(25);
+        right: spx(25);
+
         @include tablet-up {
+            bottom: ppx(25 * $pc-to-tab-ratio);
+            right: ppx(25 * $pc-to-tab-ratio);
         }
         @include desktop-up {
+            bottom: ppx(25);
+            right: ppx(25);
         }
     }
 
     .service__link {
+        display: block;
+        width: max-content;
         @include tablet-up {
         }
         @include desktop-up {
-        }
-
-        // ブランドカラー別ボタン
-        &--honda {
-            @include tablet-up {
-            }
-            @include desktop-up {
-            }
-        }
-
-        &--kyne {
-            @include tablet-up {
-            }
-            @include desktop-up {
-            }
-        }
-
-        &--fuji {
-            @include tablet-up {
-            }
-            @include desktop-up {
-            }
-        }
-
-        &--fjkensetsu {
-            @include tablet-up {
-            }
-            @include desktop-up {
-            }
         }
     }
 
     .service__link-icon {
+        width: spx(83);
+        height: spx(83);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: spx(28) spx(25);
         @include tablet-up {
+            width: ppx(83 * $pc-to-tab-ratio);
+            height: ppx(83 * $pc-to-tab-ratio);
+            padding: ppx(28 * $pc-to-tab-ratio) ppx(25 * $pc-to-tab-ratio);
         }
         @include desktop-up {
+            width: ppx(83);
+            height: ppx(83);
+            padding: ppx(28) ppx(25);
         }
     }
 
     .service__bottom-link-wrapper {
+        margin-top: spx(70);
+        width: max-content;
+        margin-inline: auto;
         @include tablet-up {
+            margin-top: ppx(100 * $pc-to-tab-ratio);
         }
         @include desktop-up {
+            margin-top: ppx(100);
         }
     }
 }
