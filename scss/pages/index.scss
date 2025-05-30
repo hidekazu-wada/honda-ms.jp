@@ -257,17 +257,17 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: spx(120);
+    height: $header-height-mobile;
     background-color: $base_color_white;
     z-index: 100;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     @include tablet-up {
-        height: ppx(120 * $pc-to-tab-ratio);
+        height: $header-height-tablet;
     }
 
     @include desktop-up {
-        height: ppx(120);
+        height: $header-height-desktop;
     }
 
     &__inner {

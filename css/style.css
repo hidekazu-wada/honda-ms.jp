@@ -14,13 +14,23 @@
  * Abstracts - 統合版
  * 変数・関数・mixins を1ファイルに統合
  */
+/**
+ * Main SCSS Entry Point - 共通基盤のみ
+ * 白鷺CMS移植対応版（マルチページ）
+ * 
+ * 読み込み順序:
+ * 1. Abstracts (変数・関数・mixins統合版)
+ * 2. Base (リセット・タイポグラフィ・レイアウト統合版)
+ * 3. Common Components (インライン)
+ * 
+ * 注意: ページ固有スタイル（アニメーション、ヘッダー含む）は各ページで個別管理
+ */
 /*! destyle.css v4.0.1 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model and set borders */
 /* ============================================ */
 *,
 ::before,
 ::after {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-style: solid;
   border-width: 0;
@@ -39,14 +49,6 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
   -webkit-tap-highlight-color: transparent; /* 3*/
   scroll-behavior: smooth;
-
-  /* ========================================== */
-  /* HEADER HEIGHT VARIABLES - 一元管理 */
-  /* ヘッダー高さ変更時はここのみ修正 */
-  /* ========================================== */
-  --header-height-mobile: 16.6666666667vw;
-  --header-height-tablet: 5.15625vw;
-  --header-height-desktop: 4.6875vw;
 }
 
 /* Sections */
@@ -77,13 +79,11 @@ body {
 body.is-loading {
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: none;
   transition: none;
 }
 body.is-loaded {
   visibility: visible;
   opacity: 1;
-  -webkit-transition: opacity 0.3s ease-in;
   transition: opacity 0.3s ease-in;
 }
 
@@ -93,16 +93,16 @@ body.is-loaded {
  */
 main {
   display: block;
-  padding-top: var(--header-height-mobile);
+  padding-top: 16.6666666667vw;
 }
 @media (min-width: 768px) {
   main {
-    padding-top: var(--header-height-tablet);
+    padding-top: 5.15625vw;
   }
 }
 @media (min-width: 1024px) {
   main {
-    padding-top: var(--header-height-desktop);
+    padding-top: 4.6875vw;
   }
 }
 
@@ -159,7 +159,6 @@ dd {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  -webkit-box-sizing: content-box;
   box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
@@ -198,7 +197,6 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted; /* 2 */
 }
 
@@ -274,7 +272,6 @@ optgroup,
 select,
 textarea {
   -webkit-appearance: none; /* 1 */
-  -moz-appearance: none;
   appearance: none;
   vertical-align: middle;
   color: inherit;
@@ -385,7 +382,6 @@ textarea {
  */
 [type='number'] {
   -moz-appearance: textfield;
-  -webkit-appearance: textfield;
   appearance: textfield;
 }
 
@@ -472,6 +468,5 @@ svg {
 .bg-wrapper img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
-} /*# sourceMappingURL=style.css.map */
+}

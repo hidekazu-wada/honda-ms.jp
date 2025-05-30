@@ -39,6 +39,11 @@ $kyne_color: #67c072;
 $fuji_color: #5c1a86;
 $fjkensetsu_color: #003968;
 
+//ヘッダー高さ（全ページ共通管理）
+$header-height-mobile: spx(120); // 120px相当をvwに変換
+$header-height-tablet: tpx(105); // 105px相当をvwに変換
+$header-height-desktop: ppx(120); // 120px相当をvwに変換
+
 // ================================================
 // 2. FUNCTIONS
 // ================================================

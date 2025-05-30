@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as *;
+
 /*! destyle.css v4.0.1 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 
 /* Reset box-model and set borders */
@@ -75,10 +77,20 @@ body {
 
 /**
  * Render the `main` element consistently in IE.
+ * Add padding-top to account for fixed header.
  */
 
 main {
   display: block;
+  padding-top: $header-height-mobile;
+
+  @include tablet-up {
+    padding-top: $header-height-tablet;
+  }
+
+  @include desktop-up {
+    padding-top: $header-height-desktop;
+  }
 }
 
 /* Vertical rhythm */
