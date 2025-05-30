@@ -288,6 +288,7 @@
 
     &__logo {
         height: spx(60);
+        margin: 0; // h1のデフォルトマージンをリセット
 
         @include tablet-up {
             height: ppx(60 * $pc-to-tab-ratio);
@@ -298,9 +299,23 @@
         }
     }
 
+    &__logo-link {
+        display: block;
+        height: 100%;
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+
+        @include hover {
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
     &__logo-image {
         height: 100%;
         width: auto;
+        display: block;
     }
 
     &__menu-trigger {
@@ -400,6 +415,107 @@
                     content: "MENU";
                 }
             }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: spx(20);
+
+        @include tablet-up {
+            gap: ppx(30 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            gap: ppx(30);
+        }
+    }
+
+    &__recruit-btn {
+        display: none;
+
+        @include tablet-up {
+            display: flex;
+            align-items: center;
+            background-color: $base_color_2;
+            padding: ppx(15 * $pc-to-tab-ratio) ppx(25 * $pc-to-tab-ratio);
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            border-radius: ppx(5 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            padding: ppx(15) ppx(25);
+            border-radius: ppx(5);
+        }
+
+        @include hover {
+            &:hover {
+                background-color: darken($base_color_2, 10%);
+            }
+        }
+    }
+
+    &__recruit-content {
+        display: flex;
+        align-items: center;
+        gap: ppx(15 * $pc-to-tab-ratio);
+
+        @include desktop-up {
+            gap: ppx(15);
+        }
+    }
+
+    &__recruit-text-group {
+        display: flex;
+        flex-direction: column;
+        gap: ppx(2 * $pc-to-tab-ratio);
+
+        @include desktop-up {
+            gap: ppx(2);
+        }
+    }
+
+    &__recruit-text {
+        font-family: $font-noto-sans-jp;
+        font-size: ppx(18 * $pc-to-tab-ratio);
+        font-weight: 700;
+        color: $base_color_white;
+        line-height: 1;
+
+        @include desktop-up {
+            font-size: ppx(18);
+        }
+    }
+
+    &__recruit-subtext {
+        font-family: $font-noto-sans-jp;
+        font-size: ppx(12 * $pc-to-tab-ratio);
+        font-weight: 500;
+        color: $base_color_white;
+        line-height: 1;
+
+        @include desktop-up {
+            font-size: ppx(12);
+        }
+    }
+
+    &__recruit-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__recruit-arrow {
+        font-family: $font-noto-sans-jp;
+        font-size: ppx(16 * $pc-to-tab-ratio);
+        font-weight: 700;
+        color: $base_color_white;
+        line-height: 1;
+
+        @include desktop-up {
+            font-size: ppx(16);
         }
     }
 }
@@ -1865,11 +1981,12 @@
         @include desktop-up {
             width: ppx(162);
         }
-        .footer__logo-image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
+    }
+
+    &__logo-image {
+        display: block;
+        width: 100%;
+        height: auto;
     }
 
     &__company-name {
@@ -1886,6 +2003,10 @@
         @include desktop-up {
             font-size: ppx(45);
         }
+    }
+
+    &__company-name-text {
+        display: block;
     }
 
     &__divider {
