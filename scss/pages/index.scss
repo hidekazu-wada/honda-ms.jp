@@ -670,17 +670,8 @@
     }
 
     &__inner {
-        padding: spx(60);
         color: $base_color_white;
         height: 100%;
-
-        @include tablet-up {
-            padding: ppx(60 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            padding: ppx(60);
-        }
     }
 
     &__close {
@@ -690,7 +681,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: spx(8);
+        gap: spx(10);
+        width: spx(84);
+        height: spx(75);
         background: none;
         border: none;
         cursor: pointer;
@@ -700,15 +693,19 @@
         transition: opacity 0.4s ease;
 
         @include tablet-up {
-            top: ppx(30 * $pc-to-tab-ratio);
-            right: ppx(30 * $pc-to-tab-ratio);
-            gap: ppx(8 * $pc-to-tab-ratio);
+            gap: ppx(10 * $pc-to-tab-ratio);
+            width: ppx(91 * $pc-to-tab-ratio);
+            height: ppx(85 * $pc-to-tab-ratio);
+            top: ppx(45 * $pc-to-tab-ratio);
+            right: ppx(35 * $pc-to-tab-ratio);
         }
 
         @include desktop-up {
-            top: ppx(30);
-            right: ppx(30);
-            gap: ppx(8);
+            gap: ppx(10);
+            width: ppx(91);
+            height: ppx(85);
+            top: ppx(45);
+            right: ppx(35);
         }
 
         // スマホのみ非表示
@@ -719,48 +716,92 @@
         .is-content-visible & {
             opacity: 1;
         }
+
+        @include hover {
+            &:hover {
+                .global-nav__close-icon svg path {
+                    stroke: rgba(255, 255, 255, 0.7);
+                }
+
+                .global-nav__close-text {
+                    color: rgba(255, 255, 255, 0.7);
+                }
+            }
+        }
     }
 
     &__close-icon {
-        width: spx(34);
-        height: spx(21);
-
-        @include desktop-up {
-            width: ppx(34);
-            height: ppx(21);
-        }
+        position: relative;
 
         svg {
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: spx(64);
+            height: auto;
+            transition: opacity 0.3s ease;
+
+            @include tablet-up {
+                width: ppx(64 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(64);
+            }
+
+            path {
+                stroke: $base_color_white;
+                transition: stroke 0.3s ease;
+            }
         }
     }
 
+    &__close-hamburger {
+        display: none; // グローバルナビでは常に非表示
+    }
+
+    &__close-x {
+        opacity: 1; // 常に表示
+    }
+
     &__close-text {
-        font-size: spx(14);
-        font-weight: 500;
-        line-height: 1;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: spx(26);
+        font-weight: 700;
+        line-height: 100%;
+        letter-spacing: spx(-0.78);
+        transition: color 0.3s ease;
+
+        @include tablet-up {
+            font-size: ppx(26 * $pc-to-tab-ratio);
+            letter-spacing: ppx(-0.78 * $pc-to-tab-ratio);
+        }
 
         @include desktop-up {
-            font-size: ppx(14);
+            font-size: ppx(26);
+            letter-spacing: ppx(-0.78);
         }
 
         &::after {
-            content: "CLOSE";
+            content: "CLOSE"; // 常にCLOSEを表示
         }
     }
 
     &__content {
-        padding-top: spx(120);
+        padding-top: spx(210);
         opacity: 0;
         transition: opacity 0.4s ease;
 
         @include tablet-up {
-            padding-top: ppx(100 * $pc-to-tab-ratio);
+            padding-top: ppx(208 * $pc-to-tab-ratio);
         }
 
         @include desktop-up {
-            padding-top: ppx(100);
+            padding-top: ppx(208);
         }
 
         .is-content-visible & {
@@ -770,102 +811,187 @@
 
     &__list {
         list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    &__item {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    &__link {
-        display: block;
-        padding: spx(20) 0;
-        color: $base_color_white;
-        text-decoration: none;
-        font-size: spx(32);
-        font-weight: 500;
-        transition: opacity 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        gap: spx(45);
+        margin-left: spx(129);
 
         @include tablet-up {
-            padding: ppx(20 * $pc-to-tab-ratio) 0;
-            font-size: ppx(32 * $pc-to-tab-ratio);
+            gap: ppx(45 * $pc-to-tab-ratio);
+            margin-left: ppx(219 * $pc-to-tab-ratio);
         }
 
         @include desktop-up {
-            padding: ppx(20) 0;
-            font-size: ppx(32);
+            gap: ppx(45);
+            margin-left: ppx(219);
+        }
+    }
+
+    &__link {
+        transition: opacity 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: spx(25);
+        width: max-content;
+        @include tablet-up {
+            gap: ppx(25 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            gap: ppx(25);
         }
 
-        &:hover {
-            opacity: 0.7;
+        @include hover {
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &__link-arrow {
+        width: spx(22);
+        height: auto;
+        @include tablet-up {
+            width: ppx(22 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            width: ppx(22);
+        }
+    }
+
+    &__link-text {
+        display: block;
+        font-size: spx(36);
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: spx(10.8);
+
+        @include tablet-up {
+            font-size: ppx(36 * $pc-to-tab-ratio);
+            letter-spacing: ppx(10.8 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(36);
+            letter-spacing: ppx(10.8);
         }
     }
 
     &__company {
-        margin-top: spx(60);
+        margin-top: spx(120);
+        padding-bottom: spx(210);
 
         @include tablet-up {
-            margin-top: ppx(60 * $pc-to-tab-ratio);
+            margin-top: ppx(120 * $pc-to-tab-ratio);
+            padding-bottom: 0;
         }
 
         @include desktop-up {
-            margin-top: ppx(60);
+            margin-top: ppx(120);
         }
 
-        h3 {
-            color: $base_color_white;
-            font-size: spx(28);
+        &-title {
+            font-family: $font-noto-serif-jp;
+            font-size: spx(36);
             font-weight: 700;
-            margin-bottom: spx(30);
+            line-height: normal;
+            letter-spacing: spx(1.8);
+            margin-left: spx(178);
 
             @include tablet-up {
-                font-size: ppx(28 * $pc-to-tab-ratio);
-                margin-bottom: ppx(30 * $pc-to-tab-ratio);
+                font-size: ppx(36 * $pc-to-tab-ratio);
+                letter-spacing: ppx(1.8 * $pc-to-tab-ratio);
+                margin-left: ppx(268 * $pc-to-tab-ratio);
             }
 
             @include desktop-up {
-                font-size: ppx(28);
-                margin-bottom: ppx(30);
+                font-size: ppx(36);
+                letter-spacing: ppx(1.8);
+                margin-left: ppx(268);
             }
         }
     }
 
     &__company-list {
         list-style: none;
-        margin: 0;
-        padding: 0;
         display: flex;
         flex-direction: column;
         gap: spx(15);
+        margin-top: spx(24);
+        margin-inline: auto;
+        width: max-content;
 
         @include tablet-up {
             gap: ppx(15 * $pc-to-tab-ratio);
+            margin-top: ppx(24 * $pc-to-tab-ratio);
         }
 
         @include desktop-up {
             gap: ppx(15);
+            margin-top: ppx(24);
         }
     }
 
     &__company-link {
-        display: block;
-        color: $base_color_white;
-        text-decoration: none;
-        font-size: spx(24);
-        font-weight: 400;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         transition: opacity 0.3s ease;
+        width: spx(494);
+        height: spx(77);
+        background-color: $base_color_white;
+        border-radius: spx(60);
+        color: $base_color_2;
+        @include tablet-up {
+            width: ppx(494 * $pc-to-tab-ratio);
+            height: ppx(77 * $pc-to-tab-ratio);
+            border-radius: ppx(60 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            width: ppx(494);
+            height: ppx(77);
+            border-radius: ppx(60);
+        }
+
+        @include hover {
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+    &__company-link-text {
+        display: block;
+        color: $base_color_2;
+        font-size: spx(26);
+        font-weight: 700;
+        line-height: 120%;
+        width: spx(374);
+        text-align: center;
 
         @include tablet-up {
-            font-size: ppx(24 * $pc-to-tab-ratio);
+            font-size: ppx(26 * $pc-to-tab-ratio);
+            width: ppx(374 * $pc-to-tab-ratio);
         }
 
         @include desktop-up {
-            font-size: ppx(24);
+            font-size: ppx(26);
+            width: ppx(374);
         }
-
-        &:hover {
-            opacity: 0.7;
+    }
+    &__company-link-arrow {
+        width: spx(25);
+        height: auto;
+        position: absolute;
+        top: 50%;
+        right: spx(26);
+        transform: translateY(-50%);
+        @include tablet-up {
+            width: ppx(25 * $pc-to-tab-ratio);
+            right: ppx(26 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            width: ppx(25);
+            right: ppx(26);
         }
     }
 }
