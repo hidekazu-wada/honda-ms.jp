@@ -34,15 +34,16 @@ $font-noto-sans-jp: "Noto Sans JP", sans-serif;
 $base_color_white: #fff;
 $base_color_1: #231f20;
 $base_color_2: #c11313;
+$base_color_3: #e3a113;
 $gray_1: #ececec;
 $kyne_color: #67c072;
 $fuji_color: #5c1a86;
 $fjkensetsu_color: #003968;
 
 //ヘッダー高さ（全ページ共通管理）
-$header-height-mobile: 10vw; // 120px相当をvwに変換
-$header-height-tablet: 8vw; // 105px相当をvwに変換
-$header-height-desktop: 4vw; // 262px相当をvwに変換
+$header-height-mobile: 16.667vw; // 120px相当をvwに変換
+$header-height-tablet: 7vw; // 105px相当をvwに変換
+$header-height-desktop: 5.469vw; // 262px相当をvwに変換
 
 // ================================================
 // 2. FUNCTIONS
