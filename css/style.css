@@ -8,7 +8,8 @@
  * 2. Functions (関数定義)
  * 3. Mixins (ミックスイン定義)
  * 4. Global (グローバルスタイル)
- * 5. Page Specific (ページ固有スタイル)
+ * 5. Layout Components (レイアウトコンポーネント)
+ * 6. Page Specific (ページ固有スタイル)
  * 
  * 注意: Reset CSS (destyle) は HTML で直接読み込み
  */
@@ -33,7 +34,8 @@
  * 2. Functions (関数定義)
  * 3. Mixins (ミックスイン定義)
  * 4. Global (グローバルスタイル)
- * 5. Page Specific (ページ固有スタイル)
+ * 5. Layout Components (レイアウトコンポーネント)
+ * 6. Page Specific (ページ固有スタイル)
  * 
  * 注意: Reset CSS (destyle) は HTML で直接読み込み
  */
@@ -104,7 +106,1186 @@ svg {
  * 2. Functions (関数定義)
  * 3. Mixins (ミックスイン定義)
  * 4. Global (グローバルスタイル)
- * 5. Page Specific (ページ固有スタイル)
+ * 5. Layout Components (レイアウトコンポーネント)
+ * 6. Page Specific (ページ固有スタイル)
+ * 
+ * 注意: Reset CSS (destyle) は HTML で直接読み込み
+ */
+/**
+ * Header Component
+ * 全ページ共通ヘッダーコンポーネント
+ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 16.667vw;
+  background-color: #fff;
+  z-index: 100;
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+}
+@media (min-width: 768px) {
+  .header {
+    height: 7vw;
+  }
+}
+@media (min-width: 1024px) {
+  .header {
+    height: 5.469vw;
+  }
+}
+.header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  padding-left: 2.7777777778vw;
+  padding-right: 3.4722222222vw;
+}
+@media (min-width: 768px) {
+  .header__inner {
+    padding-left: 2.1484375vw;
+    padding-right: 1.84765625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .header__inner {
+    padding-left: 1.953125vw;
+    padding-right: 1.6796875vw;
+  }
+}
+.header__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2.2222222222vw;
+}
+@media (min-width: 768px) {
+  .header__left {
+    gap: 0.859375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .header__left {
+    gap: 0.78125vw;
+  }
+}
+.header__logo {
+  width: 17.7777777778vw;
+  height: auto;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .header__logo {
+    width: 6.9609375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .header__logo {
+    width: 6.328125vw;
+  }
+}
+.header__logo-link {
+  display: block;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+@media (hover: hover) {
+  .header__logo-link:hover {
+    opacity: 0.8;
+  }
+}
+.header__logo-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.header__company-name-text {
+  color: #c11313;
+  font-size: 4.3055555556vw;
+  font-weight: 700;
+  line-height: 110%;
+}
+@media (min-width: 768px) {
+  .header__company-name-text {
+    font-size: 1.71875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .header__company-name-text {
+    font-size: 1.5625vw;
+  }
+}
+.header__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__social-link {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header__social-link {
+    display: block;
+  }
+}
+@media (hover: hover) {
+  .header__social-link:hover .header__social-icon path {
+    fill: #e3a113;
+  }
+}
+@media (min-width: 768px) {
+  .header__social-icon {
+    display: block;
+    width: 2.578125vw;
+    height: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .header__social-icon {
+    width: 2.34375vw;
+  }
+}
+@media (min-width: 768px) {
+  .header__social-icon path {
+    fill: #c11313;
+    -webkit-transition: fill 0.3s ease;
+    transition: fill 0.3s ease;
+  }
+}
+.header__recruit-btn {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header__recruit-btn {
+    display: block;
+    background-color: #c11313;
+    text-decoration: none;
+    height: 100%;
+    margin-left: 2.1484375vw;
+    margin-right: 1.84765625vw;
+    -webkit-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+  }
+}
+@media (min-width: 1024px) {
+  .header__recruit-btn {
+    margin-left: 1.953125vw;
+    margin-right: 1.6796875vw;
+  }
+}
+@media (hover: hover) {
+  .header__recruit-btn:hover {
+    background-color: #e3a113;
+  }
+}
+@media (min-width: 768px) {
+  .header__recruit-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1.24609375vw;
+    padding: 1.4vw 1.16015625vw 0 3.78125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .header__recruit-content {
+    gap: 1.1328125vw;
+    padding: 0.8vw 1.0546875vw 0 3.4375vw;
+  }
+}
+@media (min-width: 768px) {
+  .header__recruit-text-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: calc(0.5vw * 1.1);
+    text-align: center;
+  }
+}
+@media (min-width: 1024px) {
+  .header__recruit-text-group {
+    gap: 0.5vw;
+  }
+}
+@media (min-width: 768px) {
+  .header__recruit-text {
+    font-family: "Noto Serif JP", serif;
+    color: #fff;
+    font-weight: 700;
+    font-size: 2.1484375vw;
+    line-height: 1;
+    letter-spacing: 0.12890625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .header__recruit-text {
+    font-size: 1.953125vw;
+    letter-spacing: 0.1171875vw;
+  }
+}
+@media (min-width: 768px) {
+  .header__recruit-subtext {
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.98828125vw;
+    line-height: 1;
+    letter-spacing: 0.177890625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .header__recruit-subtext {
+    font-size: 0.8984375vw;
+    letter-spacing: 0.16171875vw;
+  }
+}
+@media (min-width: 768px) {
+  .header__recruit-arrow {
+    width: 1.33203125vw;
+    height: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .header__recruit-arrow {
+    width: 1.2109375vw;
+  }
+}
+.header__menu-trigger {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.3888888889vw;
+  width: 11.6666666667vw;
+  height: 10.4166666667vw;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #231f20;
+}
+@media (min-width: 768px) {
+  .header__menu-trigger {
+    gap: 0.4296875vw;
+    width: 3.91015625vw;
+    height: 3.65234375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .header__menu-trigger {
+    gap: 0.390625vw;
+    width: 3.5546875vw;
+    height: 3.3203125vw;
+  }
+}
+@media (hover: hover) {
+  .header__menu-trigger:hover .header__menu-icon path {
+    stroke: #e3a113;
+  }
+  .header__menu-trigger:hover .header__menu-text {
+    color: #e3a113;
+  }
+}
+.header__menu-icon svg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 9.4444444444vw;
+  height: auto;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+@media (min-width: 768px) {
+  .header__menu-icon svg {
+    width: 2.921875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .header__menu-icon svg {
+    width: 2.65625vw;
+  }
+}
+.header__menu-icon svg path {
+  stroke: #c11313;
+  -webkit-transition: stroke 0.3s ease;
+  transition: stroke 0.3s ease;
+}
+.header__menu-hamburger {
+  opacity: 1;
+  width: 9.4444444444vw;
+}
+.is-active .header__menu-hamburger {
+  opacity: 0;
+}
+@media (min-width: 768px) {
+  .is-active .header__menu-hamburger {
+    opacity: 1;
+  }
+}
+@media (min-width: 768px) {
+  .header__menu-hamburger {
+    width: 2.921875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .header__menu-hamburger {
+    width: 2.65625vw;
+  }
+}
+.header__menu-close {
+  opacity: 0;
+  width: 8.8888888889vw;
+}
+.is-active .header__menu-close {
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  .is-active .header__menu-close {
+    opacity: 0;
+  }
+}
+@media (min-width: 768px) {
+  .header__menu-close {
+    width: 2.75vw;
+  }
+}
+@media (min-width: 1024px) {
+  .header__menu-close {
+    width: 2.5vw;
+  }
+}
+.header__menu-text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #c11313;
+  font-size: 3.6111111111vw;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.1083333333vw;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+@media (min-width: 768px) {
+  .header__menu-text {
+    font-size: 1.1171875vw;
+    letter-spacing: -0.033515625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .header__menu-text {
+    font-size: 1.015625vw;
+    letter-spacing: -0.03046875vw;
+  }
+}
+.header__menu-text::after {
+  content: "MENU";
+}
+.is-active .header__menu-text::after {
+  content: "CLOSE";
+}
+@media (min-width: 768px) {
+  .is-active .header__menu-text::after {
+    content: "MENU";
+  }
+}
+
+/**
+ * Main SCSS Entry Point - 統合版
+ * 全てのpartialファイルを読み込んで統合CSSを生成
+ * 
+ * 読み込み順序:
+ * 1. Variables (変数定義)
+ * 2. Functions (関数定義)
+ * 3. Mixins (ミックスイン定義)
+ * 4. Global (グローバルスタイル)
+ * 5. Layout Components (レイアウトコンポーネント)
+ * 6. Page Specific (ページ固有スタイル)
+ * 
+ * 注意: Reset CSS (destyle) は HTML で直接読み込み
+ */
+/**
+ * Global Navigation Component
+ * 全ページ共通グローバルナビゲーションコンポーネント
+ */
+.global-nav {
+  /* 基本レイアウト */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100dvh;
+  background-color: #c11313;
+  z-index: 50;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  overflow-y: auto;
+  /* オープン状態 */
+  /* 内部コンテナ */
+  /* ================================================
+   * クローズボタンスタイル
+   * ================================================ */
+  /* ================================================
+   * メインコンテンツエリア
+   * ================================================ */
+  /* ================================================
+   * メインナビゲーション
+   * ================================================ */
+  /* ================================================
+   * グループ会社セクション
+   * ================================================ */
+}
+@media (min-width: 768px) {
+  .global-nav {
+    width: 38.671875vw;
+    z-index: 200;
+    top: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav {
+    width: 35.15625vw;
+  }
+}
+.global-nav.is-open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.global-nav__inner {
+  color: #fff;
+  height: 100%;
+}
+.global-nav__close {
+  position: absolute;
+  top: 4.1666666667vw;
+  right: 4.1666666667vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.3888888889vw;
+  width: 11.6666666667vw;
+  height: 10.4166666667vw;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-family: "Noto Sans JP", sans-serif;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+  /* スマホのみ非表示 */
+}
+@media (min-width: 768px) {
+  .global-nav__close {
+    gap: 0.4296875vw;
+    width: 3.91015625vw;
+    height: 3.65234375vw;
+    top: 1.93359375vw;
+    right: 1.50390625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav__close {
+    gap: 0.390625vw;
+    width: 3.5546875vw;
+    height: 3.3203125vw;
+    top: 1.7578125vw;
+    right: 1.3671875vw;
+  }
+}
+@media (max-width: 767px) {
+  .global-nav__close {
+    display: none;
+  }
+}
+.is-content-visible .global-nav__close {
+  opacity: 1;
+}
+@media (hover: hover) {
+  .global-nav__close:hover .global-nav__close-icon svg path {
+    stroke: rgba(255, 255, 255, 0.7);
+  }
+  .global-nav__close:hover .global-nav__close-text {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+.global-nav__close-icon {
+  position: relative;
+}
+.global-nav__close-icon svg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 8.8888888889vw;
+  height: auto;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+@media (min-width: 768px) {
+  .global-nav__close-icon svg {
+    width: 2.75vw;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav__close-icon svg {
+    width: 2.5vw;
+  }
+}
+.global-nav__close-icon svg path {
+  stroke: #fff;
+  -webkit-transition: stroke 0.3s ease;
+  transition: stroke 0.3s ease;
+}
+.global-nav__close-hamburger {
+  display: none;
+}
+.global-nav__close-x {
+  opacity: 1;
+}
+.global-nav__close-text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 3.6111111111vw;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.1083333333vw;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+@media (min-width: 768px) {
+  .global-nav__close-text {
+    font-size: 1.1171875vw;
+    letter-spacing: -0.033515625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav__close-text {
+    font-size: 1.015625vw;
+    letter-spacing: -0.03046875vw;
+  }
+}
+.global-nav__close-text::after {
+  content: "CLOSE";
+}
+.global-nav__content {
+  padding-top: 29.1666666667vw;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+}
+@media (min-width: 768px) {
+  .global-nav__content {
+    padding-top: 8.9375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav__content {
+    padding-top: 8.125vw;
+  }
+}
+.is-content-visible .global-nav__content {
+  opacity: 1;
+}
+.global-nav__main-nav {
+  /* メインナビゲーションの基本スタイルは子要素で定義 */
+}
+.global-nav__list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 6.25vw;
+  margin-left: 17.9166666667vw;
+}
+@media (min-width: 768px) {
+  .global-nav__list {
+    gap: 1.93359375vw;
+    margin-left: 9.41015625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav__list {
+    gap: 1.7578125vw;
+    margin-left: 8.5546875vw;
+  }
+}
+.global-nav__item {
+  /* アイテム自体にはスタイルなし、リンクでスタイル定義 */
+}
+.global-nav__link {
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3.4722222222vw;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  text-decoration: none;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .global-nav__link {
+    gap: 1.07421875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav__link {
+    gap: 0.9765625vw;
+  }
+}
+@media (hover: hover) {
+  .global-nav__link:hover {
+    opacity: 0.7;
+  }
+}
+.global-nav__link-arrow {
+  width: 3.0555555556vw;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .global-nav__link-arrow {
+    width: 0.9453125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav__link-arrow {
+    width: 0.859375vw;
+  }
+}
+.global-nav__link-text {
+  display: block;
+  font-size: 5vw;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.5vw;
+}
+@media (min-width: 768px) {
+  .global-nav__link-text {
+    font-size: 1.546875vw;
+    letter-spacing: 0.4640625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav__link-text {
+    font-size: 1.40625vw;
+    letter-spacing: 0.421875vw;
+  }
+}
+.global-nav__company {
+  margin-top: 16.6666666667vw;
+  padding-bottom: 29.1666666667vw;
+}
+@media (min-width: 768px) {
+  .global-nav__company {
+    margin-top: 5.15625vw;
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav__company {
+    margin-top: 4.6875vw;
+  }
+}
+.global-nav__company-title {
+  font-family: "Noto Serif JP", serif;
+  font-size: 5vw;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.25vw;
+  margin-left: 24.7222222222vw;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .global-nav__company-title {
+    font-size: 1.546875vw;
+    letter-spacing: 0.07734375vw;
+    margin-left: 11.515625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav__company-title {
+    font-size: 1.40625vw;
+    letter-spacing: 0.0703125vw;
+    margin-left: 10.46875vw;
+  }
+}
+.global-nav__company-list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2.0833333333vw;
+  margin-top: 3.3333333333vw;
+  margin-inline: auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+@media (min-width: 768px) {
+  .global-nav__company-list {
+    gap: 0.64453125vw;
+    margin-top: 1.03125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav__company-list {
+    gap: 0.5859375vw;
+    margin-top: 0.9375vw;
+  }
+}
+.global-nav__company-item {
+  /* アイテム自体にはスタイルなし、リンクでスタイル定義 */
+}
+.global-nav__company-link {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  width: 68.6111111111vw;
+  height: 10.6944444444vw;
+  background-color: #fff;
+  border-radius: 8.3333333333vw;
+  color: #c11313;
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  .global-nav__company-link {
+    width: 21.2265625vw;
+    height: 3.30859375vw;
+    border-radius: 2.578125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav__company-link {
+    width: 19.296875vw;
+    height: 3.0078125vw;
+    border-radius: 2.34375vw;
+  }
+}
+@media (hover: hover) {
+  .global-nav__company-link:hover {
+    opacity: 0.7;
+  }
+}
+.global-nav__company-link-text {
+  display: block;
+  color: #c11313;
+  font-size: 3.6111111111vw;
+  font-weight: 700;
+  line-height: 120%;
+  width: 51.9444444444vw;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .global-nav__company-link-text {
+    font-size: 1.1171875vw;
+    width: 16.0703125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav__company-link-text {
+    font-size: 1.015625vw;
+    width: 14.609375vw;
+  }
+}
+.global-nav__company-link-arrow {
+  width: 3.4722222222vw;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  right: 3.6111111111vw;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .global-nav__company-link-arrow {
+    width: 1.07421875vw;
+    right: 1.1171875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .global-nav__company-link-arrow {
+    width: 0.9765625vw;
+    right: 1.015625vw;
+  }
+}
+
+/**
+ * Main SCSS Entry Point - 統合版
+ * 全てのpartialファイルを読み込んで統合CSSを生成
+ * 
+ * 読み込み順序:
+ * 1. Variables (変数定義)
+ * 2. Functions (関数定義)
+ * 3. Mixins (ミックスイン定義)
+ * 4. Global (グローバルスタイル)
+ * 5. Layout Components (レイアウトコンポーネント)
+ * 6. Page Specific (ページ固有スタイル)
+ * 
+ * 注意: Reset CSS (destyle) は HTML で直接読み込み
+ */
+/**
+ * Footer Component
+ * 全ページ共通フッターコンポーネント
+ */
+.footer {
+  position: relative;
+  background: -webkit-gradient(linear, left bottom, left top, from(#231f20), to(#332e2f));
+  background: linear-gradient(0deg, #231f20 0%, #332e2f 100%);
+  color: #fff;
+  padding: 8.1944444444vw 0 28.8888888889vw;
+}
+@media (min-width: 768px) {
+  .footer {
+    padding: 6.23046875vw 0 6.40234375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .footer {
+    padding: 5.6640625vw 0 5.8203125vw;
+  }
+}
+.footer__inner {
+  margin: 0 8.3333333333vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  gap: 13.8888888889vw;
+}
+@media (min-width: 768px) {
+  .footer__inner {
+    margin: 0 9.453125vw;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: unset;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__inner {
+    margin: 0 8.59375vw;
+  }
+}
+.footer__brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  gap: 0.6944444444vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (min-width: 768px) {
+  .footer__brand {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    gap: 0.859375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__brand {
+    gap: 0.78125vw;
+  }
+}
+.footer__logo {
+  width: 39.8611111111vw;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .footer__logo {
+    width: 6.9609375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__logo {
+    width: 6.328125vw;
+  }
+}
+.footer__logo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.footer__company-name {
+  font-size: 6.5277777778vw;
+  font-weight: 700;
+  line-height: 110%;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .footer__company-name {
+    font-size: 1.93359375vw;
+    text-align: left;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__company-name {
+    font-size: 1.7578125vw;
+  }
+}
+.footer__company-name-text {
+  display: block;
+}
+.footer__divider {
+  width: 83.3333333333vw;
+  height: 1px;
+  background-color: #fff;
+  margin-top: 11.1111111111vw;
+  margin-bottom: 5.5555555556vw;
+}
+@media (min-width: 768px) {
+  .footer__divider {
+    width: 38vw;
+    margin-top: 4.125vw;
+    margin-bottom: 1.67578125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__divider {
+    width: 41.40625vw;
+    margin-top: 3.75vw;
+    margin-bottom: 1.5234375vw;
+  }
+}
+.footer__contact {
+  margin-left: 17.5vw;
+}
+@media (min-width: 768px) {
+  .footer__contact {
+    margin-left: 0.4296875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__contact {
+    margin-left: 0.390625vw;
+  }
+}
+.footer__contact-item--address {
+  font-size: 4.1666666667vw;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.2083333333vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  margin-bottom: 1.3888888889vw;
+}
+@media (min-width: 768px) {
+  .footer__contact-item--address {
+    font-size: 1.2890625vw;
+    letter-spacing: 0.064453125vw;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    gap: 1em;
+    margin-bottom: 0.34375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__contact-item--address {
+    font-size: 1.171875vw;
+    line-height: 160%;
+    letter-spacing: 0.1171875vw;
+    margin-bottom: 0.3125vw;
+  }
+}
+.footer__contact-item--tel, .footer__contact-item--fax {
+  font-size: 4.1666666667vw;
+  font-weight: 500;
+  line-height: 160%;
+  letter-spacing: 0.2083333333vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+}
+@media (min-width: 768px) {
+  .footer__contact-item--tel, .footer__contact-item--fax {
+    font-size: 1.2890625vw;
+    letter-spacing: 0.064453125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__contact-item--tel, .footer__contact-item--fax {
+    font-size: 1.171875vw;
+    letter-spacing: 0.1171875vw;
+  }
+}
+.footer__social {
+  position: absolute;
+  top: 72.6388888889vw;
+  left: 9.7222222222vw;
+}
+@media (min-width: 768px) {
+  .footer__social {
+    top: 6.875vw;
+    left: unset;
+    right: 9.8828125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__social {
+    top: 6.25vw;
+    right: 8.984375vw;
+  }
+}
+.footer__social-link svg {
+  width: 9.7222222222vw;
+  height: 9.7222222222vw;
+}
+@media (min-width: 768px) {
+  .footer__social-link svg {
+    width: 3.0078125vw;
+    height: 3.0078125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__social-link svg {
+    width: 2.734375vw;
+    height: 2.734375vw;
+  }
+}
+.footer__social-link svg path {
+  fill: #fff;
+  -webkit-transition: fill 0.3s ease;
+  transition: fill 0.3s ease;
+}
+@media (hover: hover) {
+  .footer__social-link:hover svg path {
+    fill: #c11313;
+  }
+}
+.footer__copyright {
+  text-align: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.footer__copyright-text {
+  font-size: 3.1944444444vw;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.1597222222vw;
+}
+@media (min-width: 768px) {
+  .footer__copyright-text {
+    font-size: 1.07421875vw;
+    letter-spacing: 0.0859375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__copyright-text {
+    font-size: 0.9765625vw;
+    letter-spacing: 0.078125vw;
+  }
+}
+.footer__copyright-text .sp {
+  display: block;
+}
+@media (min-width: 768px) {
+  .footer__copyright-text .sp {
+    display: none;
+  }
+}
+
+/**
+ * Main SCSS Entry Point - 統合版
+ * 全てのpartialファイルを読み込んで統合CSSを生成
+ * 
+ * 読み込み順序:
+ * 1. Variables (変数定義)
+ * 2. Functions (関数定義)
+ * 3. Mixins (ミックスイン定義)
+ * 4. Global (グローバルスタイル)
+ * 5. Layout Components (レイアウトコンポーネント)
+ * 6. Page Specific (ページ固有スタイル)
  * 
  * 注意: Reset CSS (destyle) は HTML で直接読み込み
  */
@@ -2713,7 +3894,8 @@ svg {
  * 2. Functions (関数定義)
  * 3. Mixins (ミックスイン定義)
  * 4. Global (グローバルスタイル)
- * 5. Page Specific (ページ固有スタイル)
+ * 5. Layout Components (レイアウトコンポーネント)
+ * 6. Page Specific (ページ固有スタイル)
  * 
  * 注意: Reset CSS (destyle) は HTML で直接読み込み
  */
@@ -5312,7 +6494,8 @@ svg {
  * 2. Functions (関数定義)
  * 3. Mixins (ミックスイン定義)
  * 4. Global (グローバルスタイル)
- * 5. Page Specific (ページ固有スタイル)
+ * 5. Layout Components (レイアウトコンポーネント)
+ * 6. Page Specific (ページ固有スタイル)
  * 
  * 注意: Reset CSS (destyle) は HTML で直接読み込み
  */

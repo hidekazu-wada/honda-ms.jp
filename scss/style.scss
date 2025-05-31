@@ -7,7 +7,8 @@
  * 2. Functions (関数定義)
  * 3. Mixins (ミックスイン定義)
  * 4. Global (グローバルスタイル)
- * 5. Page Specific (ページ固有スタイル)
+ * 5. Layout Components (レイアウトコンポーネント)
+ * 6. Page Specific (ページ固有スタイル)
  * 
  * 注意: Reset CSS (destyle) は HTML で直接読み込み
  */
@@ -25,14 +26,21 @@
 @use "global";
 
 // ================================================
-// 3. PAGES LAYER
+// 3. LAYOUT COMPONENTS LAYER
+// ================================================
+@use "header";
+@use "global-nav";
+@use "footer";
+
+// ================================================
+// 4. PAGES LAYER
 // ================================================
 @use "index";
 @use "news";
 @use "about";
 
 // ================================================
-// 4. UTILITIES & COMPONENTS
+// 5. UTILITIES & COMPONENTS
 // ================================================
 
 // アクセシビリティ補助クラス

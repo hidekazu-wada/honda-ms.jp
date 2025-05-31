@@ -1,0 +1,399 @@
+/**
+ * Header Component
+ * 全ページ共通ヘッダーコンポーネント
+ */
+
+@use "variables" as *;
+@use "functions" as *;
+@use "mixins" as *;
+
+// ================================================
+// HEADER SECTION
+// ヘッダーセクション（全ページ共通）
+// ================================================
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-height-mobile;
+    background-color: $base_color_white;
+    z-index: 100;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+
+    @include tablet-up {
+        height: $header-height-tablet;
+    }
+
+    @include desktop-up {
+        height: $header-height-desktop;
+    }
+
+    // ヘッダー内側コンテナ
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        padding-left: spx(20);
+        padding-right: spx(25);
+
+        @include tablet-up {
+            padding-left: ppx(50 * $pc-to-tab-ratio);
+            padding-right: ppx(43 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            padding-left: ppx(50);
+            padding-right: ppx(43);
+        }
+    }
+
+    // 左側エリア（ロゴ + 会社名）
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: spx(16);
+
+        @include tablet-up {
+            gap: ppx(20 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            gap: ppx(20);
+        }
+    }
+
+    // ロゴ
+    &__logo {
+        width: spx(128);
+        height: auto;
+        margin: 0; // h1のデフォルトマージンをリセット
+
+        @include tablet-up {
+            width: ppx(162 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            width: ppx(162);
+        }
+    }
+
+    &__logo-link {
+        display: block;
+        transition: opacity 0.3s ease;
+
+        @include hover {
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    &__logo-image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    // 会社名
+    &__company-name {
+        &-text {
+            color: $base_color_2;
+            font-size: spx(31);
+            font-weight: 700;
+            line-height: 110%;
+
+            @include tablet-up {
+                font-size: ppx(40 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(40);
+            }
+        }
+    }
+
+    // 右側ナビゲーションエリア
+    &__right {
+        display: flex;
+        align-items: center;
+    }
+
+    // SNSリンク
+    &__social-link {
+        display: none;
+
+        @include tablet-up {
+            display: block;
+        }
+
+        @include hover {
+            &:hover {
+                .header__social-icon path {
+                    fill: $base_color_3;
+                }
+            }
+        }
+    }
+
+    &__social-icon {
+        @include tablet-up {
+            display: block;
+            width: ppx(60 * $pc-to-tab-ratio);
+            height: auto;
+        }
+
+        @include desktop-up {
+            width: ppx(60);
+        }
+
+        path {
+            @include tablet-up {
+                fill: $base_color_2;
+                transition: fill 0.3s ease;
+            }
+        }
+    }
+
+    // RECRUITボタン
+    &__recruit-btn {
+        display: none;
+
+        @include tablet-up {
+            display: block;
+            background-color: $base_color_2;
+            text-decoration: none;
+            height: 100%;
+            margin-left: ppx(50 * $pc-to-tab-ratio);
+            margin-right: ppx(43 * $pc-to-tab-ratio);
+            transition: background-color 0.3s ease;
+        }
+
+        @include desktop-up {
+            margin-left: ppx(50);
+            margin-right: ppx(43);
+        }
+
+        @include hover {
+            &:hover {
+                background-color: $base_color_3;
+            }
+        }
+    }
+
+    &__recruit-content {
+        @include tablet-up {
+            display: flex;
+            align-items: center;
+            gap: ppx(29 * $pc-to-tab-ratio);
+            padding: 1.4vw ppx(27 * $pc-to-tab-ratio) 0 ppx(88 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            gap: ppx(29);
+            padding: 0.8vw ppx(27) 0 ppx(88);
+        }
+    }
+
+    &__recruit-text-group {
+        @include tablet-up {
+            display: flex;
+            flex-direction: column;
+            gap: calc(0.5vw * #{$pc-to-tab-ratio});
+            text-align: center;
+        }
+
+        @include desktop-up {
+            gap: 0.5vw;
+        }
+    }
+
+    &__recruit-text {
+        @include tablet-up {
+            font-family: $font-noto-serif-jp;
+            color: $base_color_white;
+            font-weight: 700;
+            font-size: ppx(50 * $pc-to-tab-ratio);
+            line-height: 1;
+            letter-spacing: ppx(3 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(50);
+            letter-spacing: ppx(3);
+        }
+    }
+
+    &__recruit-subtext {
+        @include tablet-up {
+            color: $base_color_white;
+            font-weight: 500;
+            font-size: ppx(23 * $pc-to-tab-ratio);
+            line-height: 1;
+            letter-spacing: ppx(4.14 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(23);
+            letter-spacing: ppx(4.14);
+        }
+    }
+
+    &__recruit-arrow {
+        @include tablet-up {
+            width: ppx(31 * $pc-to-tab-ratio);
+            height: auto;
+        }
+
+        @include desktop-up {
+            width: ppx(31);
+        }
+    }
+
+    // ハンバーガーメニュー
+    &__menu-trigger {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: spx(10);
+        width: spx(84);
+        height: spx(75);
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: $base_color_1;
+
+        @include tablet-up {
+            gap: ppx(10 * $pc-to-tab-ratio);
+            width: ppx(91 * $pc-to-tab-ratio);
+            height: ppx(85 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            gap: ppx(10);
+            width: ppx(91);
+            height: ppx(85);
+        }
+
+        @include hover {
+            &:hover {
+                .header__menu-icon path {
+                    stroke: $base_color_3;
+                }
+
+                .header__menu-text {
+                    color: $base_color_3;
+                }
+            }
+        }
+    }
+
+    &__menu-icon {
+        svg {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: spx(68);
+            height: auto;
+            transition: opacity 0.3s ease;
+
+            @include tablet-up {
+                width: ppx(68 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(68);
+            }
+
+            path {
+                stroke: $base_color_2;
+                transition: stroke 0.3s ease;
+            }
+        }
+    }
+
+    &__menu-hamburger {
+        opacity: 1;
+
+        .is-active & {
+            opacity: 0;
+
+            @include tablet-up {
+                opacity: 1; // タブレット以上では切り替えを無効化
+            }
+        }
+
+        // ハンバーガー用のサイズ調整
+        width: spx(68);
+
+        @include tablet-up {
+            width: ppx(68 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            width: ppx(68);
+        }
+    }
+
+    &__menu-close {
+        opacity: 0;
+
+        .is-active & {
+            opacity: 1;
+
+            @include tablet-up {
+                opacity: 0; // タブレット以上では切り替えを無効化
+            }
+        }
+
+        // クローズ用のサイズ調整
+        width: spx(64);
+
+        @include tablet-up {
+            width: ppx(64 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            width: ppx(64);
+        }
+    }
+
+    &__menu-text {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $base_color_2;
+        font-size: spx(26);
+        font-weight: 700;
+        line-height: 100%;
+        letter-spacing: spx(-0.78);
+        transition: color 0.3s ease;
+
+        @include tablet-up {
+            font-size: ppx(26 * $pc-to-tab-ratio);
+            letter-spacing: ppx(-0.78 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(26);
+            letter-spacing: ppx(-0.78);
+        }
+
+        &::after {
+            content: "MENU";
+        }
+
+        .is-active & {
+            &::after {
+                content: "CLOSE";
+
+                @include tablet-up {
+                    content: "MENU"; // タブレット以上では切り替えを無効化
+                }
+            }
+        }
+    }
+}
