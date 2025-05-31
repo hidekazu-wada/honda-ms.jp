@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ホンダ自動車販売グループが提供するもの。それは「人のくらしを幸せにするもの」。ルーツである自動車販売から始まり、通信事業、フィットネス、建設、飲食など、山梨県を中心に、埼玉県、千葉県、神奈川県、東京都をフィールドとして事業展開しています。"
+    />
+    <meta
+      name="keywords"
+      content="ホンダ自動車販売グループ,通信事業,フィットネス,建設,飲食,求人,リクルート,山梨県,埼玉県,千葉県,神奈川県,東京都"
+    />
+    <title>
+      お知らせ一覧｜ホンダ自動車販売グループ｜HONDA MOTOR SALES GROUP
+    </title>
+
+    <!-- ================================================== -->
+    <!-- EXTERNAL DEPENDENCIES -->
+    <!-- CSS Framework: destyle (via SCSS compilation) -->
+    <!-- Slider: Swiper.js -->
+    <!-- Animation: GSAP -->
+    <!-- Fonts: Google Fonts (Inter, Noto Sans JP, Noto Serif JP) -->
+    <!-- ================================================== -->
+
+    <!-- 共通基盤CSS（背景コンポーネント含む）- 全ページ共通 -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- ニュースページ専用CSS -->
+    <link rel="stylesheet" href="../css/news.css" />
+
+    <!-- ================================================== -->
+    <!-- CORE SCRIPTS: Font Loading (Critical - Inline) -->
+    <!-- Note: フォント読み込み部分は性能のためインライン維持 -->
+    <!-- ================================================== -->
+    <script>
+      // フォント読み込み完了を待つ
+      document.fonts.ready.then(() => {
+        document.body.classList.remove('is-loading');
+        document.body.classList.add('is-loaded');
+      });
+
+      // フォールバック: 3秒経過したら強制的に表示
+      setTimeout(() => {
+        if (document.body.classList.contains('is-loading')) {
+          document.body.classList.remove('is-loading');
+          document.body.classList.add('is-loaded');
+        }
+      }, 3000);
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?
+        family=Inter:wght@500;700
+        &family=Noto+Sans+JP:wght@500;700
+        &family=Noto+Serif+JP:wght@700
+        &display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="is-loading">
+    <!-- ================================================== -->
+    <!-- MAIN CONTENT -->
+    <!-- ================================================== -->
+    <main>
+      <!-- ================================================== -->
+      <!-- COMPONENT: Background Wrapper -->
+      <!-- Purpose: Main content background image -->
+      <!-- Dependencies: Responsive images (WebP/PNG fallback) -->
+      <!-- CMS Note: 背景画像のパスを動的化 -->
+      <!-- ================================================== -->
+      <div class="bg-wrapper">
+        <picture>
+          <!-- デスクトップ用 WebP -->
+          <source
+            srcset="../images/global/desktop-bg.webp"
+            media="(min-width: 1024px)"
+            type="image/webp"
+          />
+          <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+          <source
+            srcset="../images/global/mobile-bg.webp"
+            media="(min-width: 768px) and (max-width: 1023px)"
+            type="image/webp"
+          />
+          <!-- モバイル用 WebP -->
+          <source
+            srcset="../images/global/mobile-bg.webp"
+            media="(max-width: 767px)"
+            type="image/webp"
+          />
+          <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+          <source
+            srcset="../images/global/desktop-bg.png"
+            media="(min-width: 1024px)"
+            type="image/png"
+          />
+          <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+          <source
+            srcset="../images/global/mobile-bg.png"
+            media="(min-width: 768px) and (max-width: 1023px)"
+            type="image/png"
+          />
+          <!-- フォールバック画像 -->
+          <img
+            src="../images/global/mobile-bg.png"
+            alt="ヒーローイメージ"
+            loading="eager"
+            decoding="sync"
+          />
+        </picture>
+      </div>
+      <!-- ================================================== -->
+      <!-- /COMPONENT: Background Wrapper -->
+      <!-- ================================================== -->
+
+      <!-- ================================================== -->
+      <!-- HEADER SECTION -->
+      <!-- ================================================== -->
+      <header class="header">
+        <div class="header__inner">
+          <div class="header__left">
+            <!-- ロゴ（メインヘッダー） -->
+            <h1 class="header__logo">
+              <a href="../" class="header__logo-link">
+                <img
+                  src="../images/global/header-logo.png"
+                  alt="HONDA MOTOR SALES GROUP"
+                  class="header__logo-image"
+                />
+              </a>
+            </h1>
+
+            <!-- 会社名（サブテキスト） -->
+            <div class="header__company-name">
+              <span class="header__company-name-text"
+                ><a href="../">HONDA MOTOR SALES<br />GROUP</a></span
+              >
+            </div>
+          </div>
+
+          <!-- ナビゲーションエリア -->
+          <nav
+            class="header__right"
+            role="navigation"
+            aria-label="メインナビゲーション"
+          >
+            <!-- Instagramリンク -->
+            <a href="#" class="header__social-link" aria-label="Instagram">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="70"
+                height="70"
+                viewBox="0 0 70 70"
+                fill="none"
+                class="header__social-icon"
+                aria-hidden="true"
+              >
+                <path
+                  d="M35 6.30592C44.3456 6.30592 45.4515 6.34204 49.1428 6.51014C52.5549 6.66574 54.4082 7.23534 55.6418 7.71464C57.2756 8.34954 58.4412 9.10809 59.6666 10.332C60.8919 11.5574 61.6505 12.723 62.284 14.3568C62.7633 15.5904 63.3329 17.4437 63.4885 20.8558C63.6566 24.5457 63.6927 25.653 63.6927 34.9986C63.6927 44.3443 63.6566 45.4501 63.4885 49.1414C63.3329 52.5535 62.7633 54.4068 62.284 55.6405C61.6491 57.2742 60.8905 58.4398 59.6666 59.6652C58.4412 60.8905 57.2756 61.6491 55.6418 62.2826C54.4082 62.7619 52.5549 63.3315 49.1428 63.4871C45.4529 63.6552 44.3456 63.6913 35 63.6913C25.6543 63.6913 24.5471 63.6552 20.8572 63.4871C17.4451 63.3315 15.5918 62.7619 14.3582 62.2826C12.7244 61.6477 11.5588 60.8891 10.3334 59.6652C9.10809 58.4398 8.34954 57.2742 7.71603 55.6405C7.23673 54.4068 6.66713 52.5535 6.51153 49.1414C6.34343 45.4515 6.30731 44.3443 6.30731 34.9986C6.30731 25.653 6.34343 24.5471 6.51153 20.8558C6.66713 17.4437 7.23673 15.5904 7.71603 14.3568C8.35093 12.723 9.10948 11.5574 10.3334 10.332C11.5574 9.1067 12.7244 8.34815 14.3582 7.71464C15.5918 7.23534 17.4451 6.66574 20.8572 6.51014C24.5471 6.34204 25.6543 6.30592 35 6.30592ZM35 0C25.4946 0 24.3026 0.040289 20.5696 0.21117C16.845 0.380661 14.2998 0.972492 12.0742 1.83801C9.77216 2.7327 7.82023 3.92887 5.87524 5.87524C3.92887 7.82162 2.7327 9.77216 1.83801 12.0742C0.972492 14.2998 0.380661 16.845 0.21117 20.5696C0.040289 24.3026 0 25.4946 0 35C0 44.5054 0.040289 45.6974 0.21117 49.4304C0.380661 53.155 0.972492 55.7002 1.83801 57.9258C2.7327 60.2278 3.92887 62.1798 5.87524 64.1248C7.82162 66.0711 9.77216 67.2673 12.0742 68.162C14.2998 69.0275 16.845 69.6193 20.5696 69.7888C24.3026 69.9597 25.4946 70 35 70C44.5054 70 45.6974 69.9597 49.4304 69.7888C53.155 69.6193 55.7002 69.0275 57.9258 68.162C60.2278 67.2673 62.1798 66.0711 64.1248 64.1248C66.0711 62.1784 67.2673 60.2278 68.162 57.9258C69.0275 55.7002 69.6193 53.155 69.7888 49.4304C69.9597 45.6974 70 44.5054 70 35C70 25.4946 69.9597 24.3026 69.7888 20.5696C69.6193 16.845 69.0275 14.2998 68.162 12.0742C67.2673 9.77216 66.0711 7.82023 64.1248 5.87524C62.1784 3.92887 60.2278 2.7327 57.9258 1.83801C55.7002 0.972492 53.155 0.380661 49.4304 0.21117C45.6974 0.040289 44.5054 0 35 0Z"
+                  fill="red"
+                />
+                <path
+                  d="M35 17.0273C25.0736 17.0273 17.0283 25.074 17.0283 34.999C17.0283 44.924 25.075 52.9707 35 52.9707C44.925 52.9707 52.9716 44.924 52.9716 34.999C52.9716 25.074 44.925 17.0273 35 17.0273ZM35 46.6661C28.5565 46.6661 23.3342 41.4425 23.3342 35.0004C23.3342 28.5583 28.5579 23.3347 35 23.3347C41.442 23.3347 46.6657 28.5583 46.6657 35.0004C46.6657 41.4425 41.442 46.6661 35 46.6661Z"
+                  fill="red"
+                />
+                <path
+                  d="53.6832 20.5148C56.0026 20.5148 57.883 18.6345 57.883 16.315C57.883 13.9955 56.0026 12.1152 53.6832 12.1152C51.3637 12.1152 49.4834 13.9955 49.4834 16.315C49.4834 18.6345 51.3637 20.5148 53.6832 20.5148Z"
+                  fill="red"
+                />
+              </svg>
+            </a>
+
+            <!-- RECRUITボタン（デスクトップ・タブレットのみ表示） -->
+            <a
+              href="#recruit"
+              class="header__recruit-btn"
+              aria-label="採用情報ページへ"
+            >
+              <div class="header__recruit-content">
+                <div class="header__recruit-text-group">
+                  <span class="header__recruit-text">RECRUIT</span>
+                  <span class="header__recruit-subtext">採用情報はこちら</span>
+                </div>
+                <svg
+                  viewBox="0 0 35 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="header__recruit-arrow"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 30L16 16L2 2"
+                    stroke="white"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M19 30L33 16L19 2"
+                    stroke="white"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+
+            <!-- ハンバーガーメニュー -->
+            <button
+              class="header__menu-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-label="メニューを開く"
+              aria-controls="global-nav"
+            >
+              <span class="header__menu-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="header__menu-hamburger"
+                  width="68"
+                  height="42"
+                  viewBox="0 0 68 42"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M0 2H68"
+                    stroke="red"
+                    stroke-width="4"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M0 21H68"
+                    stroke="red"
+                    stroke-width="4"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M0 40H68"
+                    stroke="red"
+                    stroke-width="4"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <svg
+                  class="header__menu-close"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="68"
+                  height="42"
+                  viewBox="0 0 68 42"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M1.52393 39.7505L66.4758 2.25049"
+                    stroke="red"
+                    stroke-width="5"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M1.52393 2.25049L66.4758 39.7505"
+                    stroke="red"
+                    stroke-width="5"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span class="header__menu-text"></span>
+            </button>
+          </nav>
+        </div>
+      </header>
+      <!-- ================================================== -->
+      <!-- /HEADER SECTION -->
+      <!-- ================================================== -->
+
+      <!-- ================================================== -->
+      <!-- GLOBAL NAVIGATION SECTION -->
+      <!-- ================================================== -->
+      <nav
+        class="global-nav"
+        id="global-nav"
+        aria-label="グローバルナビゲーション"
+      >
+        <div class="global-nav__inner">
+          <!-- クローズボタン -->
+          <button
+            class="global-nav__close"
+            type="button"
+            aria-label="メニューを閉じる"
+          >
+            <span class="global-nav__close-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="global-nav__close-hamburger"
+                width="68"
+                height="42"
+                viewBox="0 0 68 42"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M0 2H68"
+                  stroke="white"
+                  stroke-width="4"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M0 21H68"
+                  stroke="white"
+                  stroke-width="4"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M0 40H68"
+                  stroke="white"
+                  stroke-width="4"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <svg
+                class="global-nav__close-x"
+                xmlns="http://www.w3.org/2000/svg"
+                width="68"
+                height="42"
+                viewBox="0 0 68 42"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M1.52393 39.7505L66.4758 2.25049"
+                  stroke="white"
+                  stroke-width="5"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M1.52393 2.25049L66.4758 39.7505"
+                  stroke="white"
+                  stroke-width="5"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span class="global-nav__close-text"></span>
+          </button>
+
+          <!-- ナビゲーションコンテンツ -->
+          <div class="global-nav__content">
+            <!-- メインナビゲーション -->
+            <section
+              class="global-nav__main-nav"
+              aria-labelledby="main-nav-heading"
+            >
+              <h2 id="main-nav-heading" class="sr-only">メインメニュー</h2>
+              <ul class="global-nav__list" role="list">
+                <li class="global-nav__item">
+                  <a
+                    href="#"
+                    class="global-nav__link"
+                    aria-label="トップページへ"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="26"
+                      height="24"
+                      viewBox="0 0 26 24"
+                      fill="none"
+                      class="global-nav__link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 22L12 12L2 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 22L24 12L14 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="global-nav__link-text">TOP</span>
+                  </a>
+                </li>
+                <li class="global-nav__item">
+                  <a
+                    href="#"
+                    class="global-nav__link"
+                    aria-label="企業理念ページへ"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="26"
+                      height="24"
+                      viewBox="0 0 26 24"
+                      fill="none"
+                      class="global-nav__link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 22L12 12L2 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 22L24 12L14 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="global-nav__link-text">企業理念</span>
+                  </a>
+                </li>
+                <li class="global-nav__item">
+                  <a
+                    href="#"
+                    class="global-nav__link"
+                    aria-label="事業内容ページへ"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="26"
+                      height="24"
+                      viewBox="0 0 26 24"
+                      fill="none"
+                      class="global-nav__link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 22L12 12L2 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 22L24 12L14 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="global-nav__link-text">事業内容</span>
+                  </a>
+                </li>
+                <li class="global-nav__item">
+                  <a
+                    href="#"
+                    class="global-nav__link"
+                    aria-label="グループについてページへ"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="26"
+                      height="24"
+                      viewBox="0 0 26 24"
+                      fill="none"
+                      class="global-nav__link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 22L12 12L2 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 22L24 12L14 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="global-nav__link-text">グループについて</span>
+                  </a>
+                </li>
+                <li class="global-nav__item">
+                  <a
+                    href="#"
+                    class="global-nav__link"
+                    aria-label="採用情報ページへ"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="26"
+                      height="24"
+                      viewBox="0 0 26 24"
+                      fill="none"
+                      class="global-nav__link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 22L12 12L2 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 22L24 12L14 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="global-nav__link-text">採用情報</span>
+                  </a>
+                </li>
+                <li class="global-nav__item">
+                  <a
+                    href="#"
+                    class="global-nav__link"
+                    aria-label="お知らせページへ"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="26"
+                      height="24"
+                      viewBox="0 0 26 24"
+                      fill="none"
+                      class="global-nav__link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 22L12 12L2 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 22L24 12L14 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="global-nav__link-text">お知らせ</span>
+                  </a>
+                </li>
+              </ul>
+            </section>
+
+            <!-- グループ会社セクション -->
+            <section
+              class="global-nav__company"
+              aria-labelledby="company-nav-heading"
+            >
+              <h2 id="company-nav-heading" class="global-nav__company-title">
+                GROUP COMPANY
+              </h2>
+              <ul class="global-nav__company-list" role="list">
+                <li class="global-nav__company-item">
+                  <a
+                    href="#"
+                    class="global-nav__company-link"
+                    aria-label="ホンダ自動車販売株式会社のページへ"
+                  >
+                    <span class="global-nav__company-link-text"
+                      >ホンダ自動車販売株式会社</span
+                    >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="29"
+                      height="29"
+                      viewBox="0 0 29 29"
+                      fill="none"
+                      class="global-nav__company-link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M22.8332 15.8887V24.2219C22.8332 24.9587 22.5405 25.6652 22.0196 26.1861C21.4987 26.707 20.7921 26.9997 20.0554 26.9997H4.77776C4.04105 26.9997 3.33452 26.707 2.81359 26.1861C2.29266 25.6652 2 24.9587 2 24.2219V8.94426C2 8.20756 2.29266 7.50102 2.81359 6.98009C3.33452 6.45916 4.04105 6.1665 4.77776 6.1665H13.111"
+                        stroke="#C11313"
+                        stroke-width="3.33331"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M18.667 2H27.0003V10.3333"
+                        stroke="#C11313"
+                        stroke-width="3.33331"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M11.7222 17.2777L26.9999 2"
+                        stroke="#C11313"
+                        stroke-width="3.33331"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li class="global-nav__company-item">
+                  <a
+                    href="#"
+                    class="global-nav__company-link"
+                    aria-label="株式会社ケインズのページへ"
+                  >
+                    <span class="global-nav__company-link-text"
+                      >株式会社ケインズ</span
+                    >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="29"
+                      height="29"
+                      viewBox="0 0 29 29"
+                      fill="none"
+                      class="global-nav__company-link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M22.8332 15.8887V24.2219C22.8332 24.9587 22.5405 25.6652 22.0196 26.1861C21.4987 26.707 20.7921 26.9997 20.0554 26.9997H4.77776C4.04105 26.9997 3.33452 26.707 2.81359 26.1861C2.29266 25.6652 2 24.9587 2 24.2219V8.94426C2 8.20756 2.29266 7.50102 2.81359 6.98009C3.33452 6.45916 4.04105 6.1665 4.77776 6.1665H13.111"
+                        stroke="#C11313"
+                        stroke-width="3.33331"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M18.667 2H27.0003V10.3333"
+                        stroke="#C11313"
+                        stroke-width="3.33331"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M11.7222 17.2777L26.9999 2"
+                        stroke="#C11313"
+                        stroke-width="3.33331"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li class="global-nav__company-item">
+                  <a
+                    href="#"
+                    class="global-nav__company-link"
+                    aria-label="有限会社富士のページへ"
+                  >
+                    <span class="global-nav__company-link-text"
+                      >有限会社富士</span
+                    >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="29"
+                      height="29"
+                      viewBox="0 0 29 29"
+                      fill="none"
+                      class="global-nav__company-link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M22.8332 15.8887V24.2219C22.8332 24.9587 22.5405 25.6652 22.0196 26.1861C21.4987 26.707 20.7921 26.9997 20.0554 26.9997H4.77776C4.04105 26.9997 3.33452 26.707 2.81359 26.1861C2.29266 25.6652 2 24.9587 2 24.2219V8.94426C2 8.20756 2.29266 7.50102 2.81359 6.98009C3.33452 6.45916 4.04105 6.1665 4.77776 6.1665H13.111"
+                        stroke="#C11313"
+                        stroke-width="3.33331"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M18.667 2H27.0003V10.3333"
+                        stroke="#C11313"
+                        stroke-width="3.33331"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M11.7222 17.2777L26.9999 2"
+                        stroke="#C11313"
+                        stroke-width="3.33331"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li class="global-nav__company-item">
+                  <a
+                    href="#"
+                    class="global-nav__company-link"
+                    aria-label="FJ建設株式会社のページへ"
+                  >
+                    <span class="global-nav__company-link-text"
+                      >FJ建設株式会社</span
+                    >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="29"
+                      height="29"
+                      viewBox="0 0 29 29"
+                      fill="none"
+                      class="global-nav__company-link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M22.8332 15.8887V24.2219C22.8332 24.9587 22.5405 25.6652 22.0196 26.1861C21.4987 26.707 20.7921 26.9997 20.0554 26.9997H4.77776C4.04105 26.9997 3.33452 26.707 2.81359 26.1861C2.29266 25.6652 2 24.9587 2 24.2219V8.94426C2 8.20756 2.29266 7.50102 2.81359 6.98009C3.33452 6.45916 4.04105 6.1665 4.77776 6.1665H13.111"
+                        stroke="#C11313"
+                        stroke-width="3.33331"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M18.667 2H27.0003V10.3333"
+                        stroke="#C11313"
+                        stroke-width="3.33331"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M11.7222 17.2777L26.9999 2"
+                        stroke="#C11313"
+                        stroke-width="3.33331"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </nav>
+      <!-- ================================================== -->
+      <!-- /GLOBAL NAVIGATION SECTION -->
+      <!-- ================================================== -->
+    </main>
+
+    <!-- ================================================== -->
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__content">
+          <div class="footer__brand">
+            <div class="footer__logo">
+              <img
+                src="../images/global/footer-logo.png"
+                alt="HONDA MOTOR SALES GROUP"
+                class="footer__logo-image"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <p class="footer__company-name">
+              HONDA MOTOR SALES <br class="sp" />GROUP
+            </p>
+          </div>
+
+          <div class="footer__divider"></div>
+
+          <address class="footer__contact">
+            <div class="footer__contact-item footer__contact-item--address">
+              <span class="footer__postal-code">〒403-0007</span>
+              <span class="footer__address">山梨県富士吉田市中曽根4-5-15</span>
+            </div>
+            <div class="footer__contact-item footer__contact-item--tel">
+              <span class="footer__contact-label">TEL</span>
+              <a href="tel:0555-30-0300" class="footer__contact-link"
+                >0555-30-0300</a
+              >
+            </div>
+            <div class="footer__contact-item footer__contact-item--fax">
+              <span class="footer__contact-label">FAX</span>
+              <span class="footer__contact-value">0555-24-7300</span>
+            </div>
+          </address>
+
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="70"
+                height="70"
+                viewBox="0 0 70 70"
+                fill="none"
+              >
+                <path
+                  d="M35 6.30592C44.3456 6.30592 45.4515 6.34204 49.1428 6.51014C52.5549 6.66574 54.4082 7.23534 55.6418 7.71464C57.2756 8.34954 58.4412 9.10809 59.6666 10.332C60.8919 11.5574 61.6505 12.723 62.284 14.3568C62.7633 15.5904 63.3329 17.4437 63.4885 20.8558C63.6566 24.5457 63.6927 25.653 63.6927 34.9986C63.6927 44.3443 63.6566 45.4501 63.4885 49.1414C63.3329 52.5535 62.7633 54.4068 62.284 55.6405C61.6491 57.2742 60.8905 58.4398 59.6666 59.6652C58.4412 60.8905 57.2756 61.6491 55.6418 62.2826C54.4082 62.7619 52.5549 63.3315 49.1428 63.4871C45.4529 63.6552 44.3456 63.6913 35 63.6913C25.6543 63.6913 24.5471 63.6552 20.8572 63.4871C17.4451 63.3315 15.5918 62.7619 14.3582 62.2826C12.7244 61.6477 11.5588 60.8891 10.3334 59.6652C9.10809 58.4398 8.34954 57.2742 7.71603 55.6405C7.23673 54.4068 6.66713 52.5535 6.51153 49.1414C6.34343 45.4515 6.30731 44.3443 6.30731 34.9986C6.30731 25.653 6.34343 24.5471 6.51153 20.8558C6.66713 17.4437 7.23673 15.5904 7.71603 14.3568C8.35093 12.723 9.10948 11.5574 10.3334 10.332C11.5574 9.1067 12.7244 8.34815 14.3582 7.71464C15.5918 7.23534 17.4451 6.66574 20.8572 6.51014C24.5471 6.34204 25.6543 6.30592 35 6.30592ZM35 0C25.4946 0 24.3026 0.040289 20.5696 0.21117C16.845 0.380661 14.2998 0.972492 12.0742 1.83801C9.77216 2.7327 7.82023 3.92887 5.87524 5.87524C3.92887 7.82162 2.7327 9.77216 1.83801 12.0742C0.972492 14.2998 0.380661 16.845 0.21117 20.5696C0.040289 24.3026 0 25.4946 0 35C0 44.5054 0.040289 45.6974 0.21117 49.4304C0.380661 53.155 0.972492 55.7002 1.83801 57.9258C2.7327 60.2278 3.92887 62.1798 5.87524 64.1248C7.82162 66.0711 9.77216 67.2673 12.0742 68.162C14.2998 69.0275 16.845 69.6193 20.5696 69.7888C24.3026 69.9597 25.4946 70 35 70C44.5054 70 45.6974 69.9597 49.4304 69.7888C53.155 69.6193 55.7002 69.0275 57.9258 68.162C60.2278 67.2673 62.1798 66.0711 64.1248 64.1248C66.0711 62.1784 67.2673 60.2278 68.162 57.9258C69.0275 55.7002 69.6193 53.155 69.7888 49.4304C69.9597 45.6974 70 44.5054 70 35C70 25.4946 69.9597 24.3026 69.7888 20.5696C69.6193 16.845 69.0275 14.2998 68.162 12.0742C67.2673 9.77216 66.0711 7.82023 64.1248 5.87524C62.1784 3.92887 60.2278 2.7327 57.9258 1.83801C55.7002 0.972492 53.155 0.380661 49.4304 0.21117C45.6974 0.040289 44.5054 0 35 0Z"
+                  fill="white"
+                />
+                <path
+                  d="M35 17.0273C25.0736 17.0273 17.0283 25.074 17.0283 34.999C17.0283 44.924 25.075 52.9707 35 52.9707C44.925 52.9707 52.9716 44.924 52.9716 34.999C52.9716 25.074 44.925 17.0273 35 17.0273ZM35 46.6661C28.5565 46.6661 23.3342 41.4425 23.3342 35.0004C23.3342 28.5583 28.5579 23.3347 35 23.3347C41.442 23.3347 46.6657 28.5583 46.6657 35.0004C46.6657 41.4425 41.442 46.6661 35 46.6661Z"
+                  fill="white"
+                />
+                <path
+                  d="M53.6832 20.5148C56.0026 20.5148 57.883 18.6345 57.883 16.315C57.883 13.9955 56.0026 12.1152 53.6832 12.1152C51.3637 12.1152 49.4834 13.9955 49.4834 16.315C49.4834 18.6345 51.3637 20.5148 53.6832 20.5148Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">
+            Copyright © HONDA MOTOR SALES Co.,Ltd. <br class="sp" />All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================================================== -->
+    <!-- MENU CONTROL SCRIPT -->
+    <!-- ================================================== -->
+    <script>
+      // メニュー制御スクリプト
+      document.addEventListener('DOMContentLoaded', function () {
+        const menuTrigger = document.querySelector('.header__menu-trigger');
+        const globalNav = document.querySelector('.global-nav');
+        const navClose = document.querySelector('.global-nav__close');
+        const body = document.body;
+        let isMenuOpen = false;
+        let isAnimating = false; // アニメーション中の重複防止
+
+        // タブレット以上判定関数
+        function isTabletOrDesktop() {
+          return window.innerWidth >= 768;
+        }
+
+        // メニューを開く関数
+        function openMenu() {
+          if (isAnimating) return;
+          isAnimating = true;
+          isMenuOpen = true;
+
+          // 1. ヘッダーボタンの状態変更（スマホのみ）
+          if (!isTabletOrDesktop()) {
+            menuTrigger.classList.add('is-active');
+            menuTrigger.setAttribute('aria-label', 'メニューを閉じる');
+          }
+          menuTrigger.setAttribute('aria-expanded', 'true');
+          body.classList.add('is-menu-open');
+
+          // 2. グローバルナビの背景をスライドイン
+          globalNav.classList.add('is-open');
+
+          // 3. 少し待ってからコンテンツをフェードイン
+          setTimeout(() => {
+            globalNav.classList.add('is-content-visible');
+            isAnimating = false;
+          }, 200); // 200ms後にコンテンツ表示
+        }
+
+        // メニューを閉じる関数
+        function closeMenu() {
+          if (isAnimating) return;
+          isAnimating = true;
+          isMenuOpen = false;
+
+          // 1. ヘッダーボタンの状態変更（スマホのみ）
+          if (!isTabletOrDesktop()) {
+            menuTrigger.classList.remove('is-active');
+            menuTrigger.setAttribute('aria-label', 'メニューを開く');
+          }
+          menuTrigger.setAttribute('aria-expanded', 'false');
+          body.classList.remove('is-menu-open');
+
+          // 2. まずコンテンツをフェードアウト
+          globalNav.classList.remove('is-content-visible');
+
+          // 3. 少し待ってからグローバルナビの背景をスライドアウト
+          setTimeout(() => {
+            globalNav.classList.remove('is-open');
+            isAnimating = false;
+          }, 200); // 200ms後に背景を閉じる
+        }
+
+        // メニューの開閉切り替え関数
+        function toggleMenu() {
+          if (isMenuOpen) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        }
+
+        // ヘッダーのメニューボタンクリック
+        menuTrigger.addEventListener('click', toggleMenu);
+
+        // グローバルナビのクローズボタンクリック（デスクトップ用）
+        if (navClose) {
+          navClose.addEventListener('click', closeMenu);
+        }
+
+        // ESCキーでメニューを閉じる
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && isMenuOpen) {
+            closeMenu();
+          }
+        });
+
+        // グローバルナビの背景クリックでメニューを閉じる（スマホ用）
+        globalNav.addEventListener('click', function (e) {
+          if (e.target === globalNav) {
+            closeMenu();
+          }
+        });
+
+        // ウィンドウリサイズ時の処理（タブレット以上⇔スマホ切り替え対応）
+        window.addEventListener('resize', function () {
+          if (isMenuOpen) {
+            // リサイズ時にメニューが開いている場合、状態をリセット
+            if (isTabletOrDesktop()) {
+              // タブレット以上に切り替わった場合、ヘッダーボタンをリセット
+              menuTrigger.classList.remove('is-active');
+            } else {
+              // スマホに切り替わった場合、ヘッダーボタンを活性化
+              menuTrigger.classList.add('is-active');
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
