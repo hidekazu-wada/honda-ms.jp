@@ -292,8 +292,13 @@
       <!-- ================================================== -->
       <!-- GLOBAL NAVIGATION SECTION -->
       <!-- ================================================== -->
-      <nav class="global-nav" id="global-nav">
+      <nav
+        class="global-nav"
+        id="global-nav"
+        aria-label="グローバルナビゲーション"
+      >
         <div class="global-nav__inner">
+          <!-- クローズボタン -->
           <button
             class="global-nav__close"
             type="button"
@@ -353,182 +358,232 @@
             </span>
             <span class="global-nav__close-text"></span>
           </button>
+
+          <!-- ナビゲーションコンテンツ -->
           <div class="global-nav__content">
-            <ul class="global-nav__list">
-              <li class="global-nav__item">
-                <a href="#" class="global-nav__link">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="26"
-                    height="24"
-                    viewBox="0 0 26 24"
-                    fill="none"
-                    class="global-nav__link-arrow"
+            <!-- メインナビゲーション -->
+            <section
+              class="global-nav__main-nav"
+              aria-labelledby="main-nav-heading"
+            >
+              <h2 id="main-nav-heading" class="sr-only">メインメニュー</h2>
+              <ul class="global-nav__list" role="list">
+                <li class="global-nav__item">
+                  <a
+                    href="#"
+                    class="global-nav__link"
+                    aria-label="トップページへ"
                   >
-                    <path
-                      d="M2 22L12 12L2 2"
-                      stroke="white"
-                      stroke-width="2.85714"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M14 22L24 12L14 2"
-                      stroke="white"
-                      stroke-width="2.85714"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span class="global-nav__link-text">TOP</span>
-                </a>
-              </li>
-              <li class="global-nav__item">
-                <a href="#" class="global-nav__link">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="26"
-                    height="24"
-                    viewBox="0 0 26 24"
-                    fill="none"
-                    class="global-nav__link-arrow"
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="26"
+                      height="24"
+                      viewBox="0 0 26 24"
+                      fill="none"
+                      class="global-nav__link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 22L12 12L2 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 22L24 12L14 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="global-nav__link-text">TOP</span>
+                  </a>
+                </li>
+                <li class="global-nav__item">
+                  <a
+                    href="#"
+                    class="global-nav__link"
+                    aria-label="企業理念ページへ"
                   >
-                    <path
-                      d="M2 22L12 12L2 2"
-                      stroke="white"
-                      stroke-width="2.85714"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M14 22L24 12L14 2"
-                      stroke="white"
-                      stroke-width="2.85714"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span class="global-nav__link-text">企業理念</span>
-                </a>
-              </li>
-              <li class="global-nav__item">
-                <a href="#" class="global-nav__link">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="26"
-                    height="24"
-                    viewBox="0 0 26 24"
-                    fill="none"
-                    class="global-nav__link-arrow"
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="26"
+                      height="24"
+                      viewBox="0 0 26 24"
+                      fill="none"
+                      class="global-nav__link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 22L12 12L2 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 22L24 12L14 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="global-nav__link-text">企業理念</span>
+                  </a>
+                </li>
+                <li class="global-nav__item">
+                  <a
+                    href="#"
+                    class="global-nav__link"
+                    aria-label="事業内容ページへ"
                   >
-                    <path
-                      d="M2 22L12 12L2 2"
-                      stroke="white"
-                      stroke-width="2.85714"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M14 22L24 12L14 2"
-                      stroke="white"
-                      stroke-width="2.85714"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span class="global-nav__link-text">事業内容</span>
-                </a>
-              </li>
-              <li class="global-nav__item">
-                <a href="#" class="global-nav__link">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="26"
-                    height="24"
-                    viewBox="0 0 26 24"
-                    fill="none"
-                    class="global-nav__link-arrow"
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="26"
+                      height="24"
+                      viewBox="0 0 26 24"
+                      fill="none"
+                      class="global-nav__link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 22L12 12L2 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 22L24 12L14 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="global-nav__link-text">事業内容</span>
+                  </a>
+                </li>
+                <li class="global-nav__item">
+                  <a
+                    href="#"
+                    class="global-nav__link"
+                    aria-label="グループについてページへ"
                   >
-                    <path
-                      d="M2 22L12 12L2 2"
-                      stroke="white"
-                      stroke-width="2.85714"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M14 22L24 12L14 2"
-                      stroke="white"
-                      stroke-width="2.85714"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span class="global-nav__link-text">グループについて</span>
-                </a>
-              </li>
-              <li class="global-nav__item">
-                <a href="#" class="global-nav__link">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="26"
-                    height="24"
-                    viewBox="0 0 26 24"
-                    fill="none"
-                    class="global-nav__link-arrow"
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="26"
+                      height="24"
+                      viewBox="0 0 26 24"
+                      fill="none"
+                      class="global-nav__link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 22L12 12L2 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 22L24 12L14 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="global-nav__link-text">グループについて</span>
+                  </a>
+                </li>
+                <li class="global-nav__item">
+                  <a
+                    href="#"
+                    class="global-nav__link"
+                    aria-label="採用情報ページへ"
                   >
-                    <path
-                      d="M2 22L12 12L2 2"
-                      stroke="white"
-                      stroke-width="2.85714"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M14 22L24 12L14 2"
-                      stroke="white"
-                      stroke-width="2.85714"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span class="global-nav__link-text">採用情報</span>
-                </a>
-              </li>
-              <li class="global-nav__item">
-                <a href="#" class="global-nav__link">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="26"
-                    height="24"
-                    viewBox="0 0 26 24"
-                    fill="none"
-                    class="global-nav__link-arrow"
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="26"
+                      height="24"
+                      viewBox="0 0 26 24"
+                      fill="none"
+                      class="global-nav__link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 22L12 12L2 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 22L24 12L14 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="global-nav__link-text">採用情報</span>
+                  </a>
+                </li>
+                <li class="global-nav__item">
+                  <a
+                    href="#"
+                    class="global-nav__link"
+                    aria-label="お知らせページへ"
                   >
-                    <path
-                      d="M2 22L12 12L2 2"
-                      stroke="white"
-                      stroke-width="2.85714"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M14 22L24 12L14 2"
-                      stroke="white"
-                      stroke-width="2.85714"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span class="global-nav__link-text">お知らせ</span>
-                </a>
-              </li>
-            </ul>
-            <div class="global-nav__company">
-              <h3 class="global-nav__company-title">GROUP COMPANY</h3>
-              <ul class="global-nav__company-list">
-                <li>
-                  <a href="#" class="global-nav__company-link">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="26"
+                      height="24"
+                      viewBox="0 0 26 24"
+                      fill="none"
+                      class="global-nav__link-arrow"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 22L12 12L2 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 22L24 12L14 2"
+                        stroke="white"
+                        stroke-width="2.85714"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="global-nav__link-text">お知らせ</span>
+                  </a>
+                </li>
+              </ul>
+            </section>
+
+            <!-- グループ会社セクション -->
+            <section
+              class="global-nav__company"
+              aria-labelledby="company-nav-heading"
+            >
+              <h2 id="company-nav-heading" class="global-nav__company-title">
+                GROUP COMPANY
+              </h2>
+              <ul class="global-nav__company-list" role="list">
+                <li class="global-nav__company-item">
+                  <a
+                    href="#"
+                    class="global-nav__company-link"
+                    aria-label="ホンダ自動車販売株式会社のページへ"
+                  >
                     <span class="global-nav__company-link-text"
                       >ホンダ自動車販売株式会社</span
                     >
@@ -539,6 +594,7 @@
                       viewBox="0 0 29 29"
                       fill="none"
                       class="global-nav__company-link-arrow"
+                      aria-hidden="true"
                     >
                       <path
                         d="M22.8332 15.8887V24.2219C22.8332 24.9587 22.5405 25.6652 22.0196 26.1861C21.4987 26.707 20.7921 26.9997 20.0554 26.9997H4.77776C4.04105 26.9997 3.33452 26.707 2.81359 26.1861C2.29266 25.6652 2 24.9587 2 24.2219V8.94426C2 8.20756 2.29266 7.50102 2.81359 6.98009C3.33452 6.45916 4.04105 6.1665 4.77776 6.1665H13.111"
@@ -564,8 +620,12 @@
                     </svg>
                   </a>
                 </li>
-                <li>
-                  <a href="#" class="global-nav__company-link">
+                <li class="global-nav__company-item">
+                  <a
+                    href="#"
+                    class="global-nav__company-link"
+                    aria-label="株式会社ケインズのページへ"
+                  >
                     <span class="global-nav__company-link-text"
                       >株式会社ケインズ</span
                     >
@@ -576,6 +636,7 @@
                       viewBox="0 0 29 29"
                       fill="none"
                       class="global-nav__company-link-arrow"
+                      aria-hidden="true"
                     >
                       <path
                         d="M22.8332 15.8887V24.2219C22.8332 24.9587 22.5405 25.6652 22.0196 26.1861C21.4987 26.707 20.7921 26.9997 20.0554 26.9997H4.77776C4.04105 26.9997 3.33452 26.707 2.81359 26.1861C2.29266 25.6652 2 24.9587 2 24.2219V8.94426C2 8.20756 2.29266 7.50102 2.81359 6.98009C3.33452 6.45916 4.04105 6.1665 4.77776 6.1665H13.111"
@@ -601,8 +662,12 @@
                     </svg>
                   </a>
                 </li>
-                <li>
-                  <a href="#" class="global-nav__company-link">
+                <li class="global-nav__company-item">
+                  <a
+                    href="#"
+                    class="global-nav__company-link"
+                    aria-label="有限会社富士のページへ"
+                  >
                     <span class="global-nav__company-link-text"
                       >有限会社富士</span
                     >
@@ -613,6 +678,7 @@
                       viewBox="0 0 29 29"
                       fill="none"
                       class="global-nav__company-link-arrow"
+                      aria-hidden="true"
                     >
                       <path
                         d="M22.8332 15.8887V24.2219C22.8332 24.9587 22.5405 25.6652 22.0196 26.1861C21.4987 26.707 20.7921 26.9997 20.0554 26.9997H4.77776C4.04105 26.9997 3.33452 26.707 2.81359 26.1861C2.29266 25.6652 2 24.9587 2 24.2219V8.94426C2 8.20756 2.29266 7.50102 2.81359 6.98009C3.33452 6.45916 4.04105 6.1665 4.77776 6.1665H13.111"
@@ -638,8 +704,12 @@
                     </svg>
                   </a>
                 </li>
-                <li>
-                  <a href="#" class="global-nav__company-link">
+                <li class="global-nav__company-item">
+                  <a
+                    href="#"
+                    class="global-nav__company-link"
+                    aria-label="FJ建設株式会社のページへ"
+                  >
                     <span class="global-nav__company-link-text"
                       >FJ建設株式会社</span
                     >
@@ -650,6 +720,7 @@
                       viewBox="0 0 29 29"
                       fill="none"
                       class="global-nav__company-link-arrow"
+                      aria-hidden="true"
                     >
                       <path
                         d="M22.8332 15.8887V24.2219C22.8332 24.9587 22.5405 25.6652 22.0196 26.1861C21.4987 26.707 20.7921 26.9997 20.0554 26.9997H4.77776C4.04105 26.9997 3.33452 26.707 2.81359 26.1861C2.29266 25.6652 2 24.9587 2 24.2219V8.94426C2 8.20756 2.29266 7.50102 2.81359 6.98009C3.33452 6.45916 4.04105 6.1665 4.77776 6.1665H13.111"
@@ -676,7 +747,7 @@
                   </a>
                 </li>
               </ul>
-            </div>
+            </section>
           </div>
         </div>
       </nav>

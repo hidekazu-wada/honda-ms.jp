@@ -640,10 +640,27 @@
 }
 
 // ================================================
+// ACCESSIBILITY UTILITIES
+// アクセシビリティ補助クラス
+// ================================================
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// ================================================
 // GLOBAL NAVIGATION SECTION
 // グローバルナビゲーションセクション（このページ専用）
 // ================================================
 .global-nav {
+    /* 基本レイアウト */
     position: fixed;
     top: 0;
     right: 0;
@@ -665,15 +682,20 @@
         width: ppx(900);
     }
 
+    /* オープン状態 */
     &.is-open {
         transform: translateX(0);
     }
 
+    /* 内部コンテナ */
     &__inner {
         color: $base_color_white;
         height: 100%;
     }
 
+    /* ================================================
+     * クローズボタンスタイル
+     * ================================================ */
     &__close {
         position: absolute;
         top: spx(30);
@@ -708,7 +730,7 @@
             right: ppx(35);
         }
 
-        // スマホのみ非表示
+        /* スマホのみ非表示 */
         @media (max-width: 767px) {
             display: none;
         }
@@ -791,6 +813,9 @@
         }
     }
 
+    /* ================================================
+     * メインコンテンツエリア
+     * ================================================ */
     &__content {
         padding-top: spx(210);
         opacity: 0;
@@ -807,6 +832,13 @@
         .is-content-visible & {
             opacity: 1;
         }
+    }
+
+    /* ================================================
+     * メインナビゲーション
+     * ================================================ */
+    &__main-nav {
+        /* メインナビゲーションの基本スタイルは子要素で定義 */
     }
 
     &__list {
@@ -827,15 +859,23 @@
         }
     }
 
+    &__item {
+        /* アイテム自体にはスタイルなし、リンクでスタイル定義 */
+    }
+
     &__link {
         transition: opacity 0.3s ease;
         display: flex;
         align-items: center;
         gap: spx(25);
         width: max-content;
+        text-decoration: none;
+        color: $base_color_white;
+
         @include tablet-up {
             gap: ppx(25 * $pc-to-tab-ratio);
         }
+
         @include desktop-up {
             gap: ppx(25);
         }
@@ -850,9 +890,11 @@
     &__link-arrow {
         width: spx(22);
         height: auto;
+
         @include tablet-up {
             width: ppx(22 * $pc-to-tab-ratio);
         }
+
         @include desktop-up {
             width: ppx(22);
         }
@@ -876,6 +918,9 @@
         }
     }
 
+    /* ================================================
+     * グループ会社セクション
+     * ================================================ */
     &__company {
         margin-top: spx(120);
         padding-bottom: spx(210);
@@ -896,6 +941,7 @@
             line-height: normal;
             letter-spacing: spx(1.8);
             margin-left: spx(178);
+            color: $base_color_white;
 
             @include tablet-up {
                 font-size: ppx(36 * $pc-to-tab-ratio);
@@ -931,6 +977,10 @@
         }
     }
 
+    &__company-item {
+        /* アイテム自体にはスタイルなし、リンクでスタイル定義 */
+    }
+
     &__company-link {
         position: relative;
         display: flex;
@@ -942,11 +992,14 @@
         background-color: $base_color_white;
         border-radius: spx(60);
         color: $base_color_2;
+        text-decoration: none;
+
         @include tablet-up {
             width: ppx(494 * $pc-to-tab-ratio);
             height: ppx(77 * $pc-to-tab-ratio);
             border-radius: ppx(60 * $pc-to-tab-ratio);
         }
+
         @include desktop-up {
             width: ppx(494);
             height: ppx(77);
@@ -959,6 +1012,7 @@
             }
         }
     }
+
     &__company-link-text {
         display: block;
         color: $base_color_2;
@@ -978,6 +1032,7 @@
             width: ppx(374);
         }
     }
+
     &__company-link-arrow {
         width: spx(25);
         height: auto;
@@ -985,10 +1040,12 @@
         top: 50%;
         right: spx(26);
         transform: translateY(-50%);
+
         @include tablet-up {
             width: ppx(25 * $pc-to-tab-ratio);
             right: ppx(26 * $pc-to-tab-ratio);
         }
+
         @include desktop-up {
             width: ppx(25);
             right: ppx(26);

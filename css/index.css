@@ -630,7 +630,20 @@
   }
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .global-nav {
+  /* 基本レイアウト */
   position: fixed;
   top: 0;
   right: 0;
@@ -645,6 +658,20 @@
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   overflow-y: auto;
+  /* オープン状態 */
+  /* 内部コンテナ */
+  /* ================================================
+   * クローズボタンスタイル
+   * ================================================ */
+  /* ================================================
+   * メインコンテンツエリア
+   * ================================================ */
+  /* ================================================
+   * メインナビゲーション
+   * ================================================ */
+  /* ================================================
+   * グループ会社セクション
+   * ================================================ */
 }
 @media (min-width: 768px) {
   .global-nav {
@@ -691,6 +718,7 @@
   opacity: 0;
   -webkit-transition: opacity 0.4s ease;
   transition: opacity 0.4s ease;
+  /* スマホのみ非表示 */
 }
 @media (min-width: 768px) {
   .global-nav__close {
@@ -808,6 +836,9 @@
 .is-content-visible .global-nav__content {
   opacity: 1;
 }
+.global-nav__main-nav {
+  /* メインナビゲーションの基本スタイルは子要素で定義 */
+}
 .global-nav__list {
   list-style: none;
   display: -webkit-box;
@@ -832,6 +863,9 @@
     margin-left: 8.5546875vw;
   }
 }
+.global-nav__item {
+  /* アイテム自体にはスタイルなし、リンクでスタイル定義 */
+}
 .global-nav__link {
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
@@ -845,6 +879,8 @@
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  text-decoration: none;
+  color: #fff;
 }
 @media (min-width: 768px) {
   .global-nav__link {
@@ -916,6 +952,7 @@
   line-height: normal;
   letter-spacing: 0.25vw;
   margin-left: 24.7222222222vw;
+  color: #fff;
 }
 @media (min-width: 768px) {
   .global-nav__company-title {
@@ -959,6 +996,9 @@
     margin-top: 0.9375vw;
   }
 }
+.global-nav__company-item {
+  /* アイテム自体にはスタイルなし、リンクでスタイル定義 */
+}
 .global-nav__company-link {
   position: relative;
   display: -webkit-box;
@@ -977,6 +1017,7 @@
   background-color: #fff;
   border-radius: 8.3333333333vw;
   color: #c11313;
+  text-decoration: none;
 }
 @media (min-width: 768px) {
   .global-nav__company-link {
