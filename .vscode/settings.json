@@ -3,20 +3,19 @@
     {
       "format": "expanded",
       "extensionName": ".css",
-      "savePath": "/css",
-      "savePathReplacementPairs": {
-        "/scss/pages/": "/css/pages/",
-        "/scss/": "/css/"
-      }
+      "savePath": "/css"
     }
   ],
   "liveSassCompile.settings.generateMap": true,
   "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
-  "liveSassCompile.settings.includeItems": [
-    "/scss/style.scss",
-    "/scss/pages/**/*.scss"
+  "liveSassCompile.settings.includeItems": ["/scss/**/*.scss"],
+  "liveSassCompile.settings.excludeList": [
+    "**/node_modules/**",
+    ".vscode/**",
+    "/scss/abstracts/**",
+    "/scss/base/**",
+    "/scss/backup/**"
   ],
-  "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"],
   "cSpell.words": [
     "autoplay",
     "contenteditable",

@@ -4,7 +4,9 @@
  * 全セクションを1ファイルに統合（コンパイル後と対応）
  */
 
-@use "../abstracts/variables" as *;
+@use "variables" as *;
+@use "functions" as *;
+@use "mixins" as *;
 
 // ================================================
 // PAGE SPECIFIC STYLES

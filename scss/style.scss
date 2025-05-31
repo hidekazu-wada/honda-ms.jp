@@ -1,35 +1,54 @@
 /**
- * Main SCSS Entry Point - 共通基盤のみ
- * 白鷺CMS移植対応版（マルチページ）
+ * Main SCSS Entry Point - 統合版
+ * 全てのpartialファイルを読み込んで統合CSSを生成
  * 
  * 読み込み順序:
- * 1. Abstracts (変数・関数・mixins統合版)
- * 2. Base (リセット・タイポグラフィ・レイアウト統合版)
- * 3. Common Components (インライン)
+ * 1. Variables (変数定義)
+ * 2. Functions (関数定義)
+ * 3. Mixins (ミックスイン定義)
+ * 4. Global (グローバルスタイル)
+ * 5. Page Specific (ページ固有スタイル)
  * 
- * 注意: ページ固有スタイル（アニメーション、ヘッダー含む）は各ページで個別管理
+ * 注意: Reset CSS (destyle) は HTML で直接読み込み
  */
 
 // ================================================
-// 1. ABSTRACTS LAYER (統合版)
+// 1. FOUNDATION LAYER
 // ================================================
-@use "./abstracts/variables" as *;
+@use "variables" as *;
+@use "functions" as *;
+@use "mixins" as *;
 
 // ================================================
-// 2. BASE LAYER (統合版)
+// 2. GLOBAL LAYER
 // ================================================
-@use "./base/destyle"; // CSSリセット・タイポグラフィ・レイアウト統合版
+@use "global";
 
 // ================================================
-// 3. COMMON COMPONENTS (インライン)
+// 3. PAGES LAYER
+// ================================================
+@use "index";
+@use "news";
+@use "about";
+
+// ================================================
+// 4. UTILITIES & COMPONENTS
 // ================================================
 
-/**
- * Background Component - Main Content Background
- * mainタグ内に配置されたメインコンテンツ背景
- * CMS移植時: 画像パスの動的化が必要
- */
+// アクセシビリティ補助クラス
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
 
+// Background Component - Main Content Background
 .bg-wrapper {
     width: 100vw;
     height: 100vh;

@@ -1,0 +1,42 @@
+/**
+ * Variables Only
+ * 変数定義のみ（独立したファイル）
+ */
+
+//デザインカンプの大きさ
+$design_view_pc: 2560;
+$design_view_tab: 2048;
+$design_view_sp: 720;
+
+//ビューポート値の設定
+$viewport_sp: 375;
+$viewport_tab: 768;
+$viewport_pc: 1024;
+
+// tpx()関数用 PC基準からタブレット用に変換
+//$pc-to-tab-ratio: $design_view_tab / $design_view_pc;
+$pc-to-tab-ratio: 1.1;
+
+//ブレイクポイント
+$breakpoint-tablet-up: 768px;
+$breakpoint-desktop-up: 1024px;
+
+//フォント
+$font-inter: "Inter", sans-serif;
+$font-noto-serif-jp: "Noto Serif JP", serif;
+$font-noto-sans-jp: "Noto Sans JP", sans-serif;
+
+//カラー
+$base_color_white: #fff;
+$base_color_1: #231f20;
+$base_color_2: #c11313;
+$base_color_3: #e3a113;
+$gray_1: #ececec;
+$kyne_color: #67c072;
+$fuji_color: #5c1a86;
+$fjkensetsu_color: #003968;
+
+//ヘッダー高さ（全ページ共通管理）
+$header-height-mobile: 16.667vw; // 120px相当をvwに変換
+$header-height-tablet: 7vw; // 105px相当をvwに変換
+$header-height-desktop: 5.469vw; // 262px相当をvwに変換

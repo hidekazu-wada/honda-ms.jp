@@ -1,0 +1,31 @@
+/**
+ * Functions Only
+ * 関数定義のみ（独立したファイル）
+ */
+
+//px→vw変換
+@function ppx($num_pc, $width_pc: 2560) {
+    // px単位を削除
+    @if (type-of($num_pc) == "number" and unit($num_pc) == "px") {
+        $num_pc: $num_pc / 1px;
+    }
+    @return (1vw * $num_pc / $width_pc * 100);
+}
+
+//tab用 基本はppx*係数を使うが、デザイン還付がある場合はtpxを使う
+@function tpx($num_tab, $width_tab: 2048) {
+    // px単位を削除
+    @if (type-of($num_tab) == "number" and unit($num_tab) == "px") {
+        $num_tab: $num_tab / 1px;
+    }
+    @return (1vw * $num_tab / $width_tab * 100);
+}
+
+//sp用
+@function spx($num_sp, $width_sp: 720) {
+    // px単位を削除
+    @if (type-of($num_sp) == "number" and unit($num_sp) == "px") {
+        $num_sp: $num_sp / 1px;
+    }
+    @return (1vw * $num_sp / $width_sp * 100);
+}
