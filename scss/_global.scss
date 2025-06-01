@@ -56,3 +56,299 @@ svg {
         object-fit: cover;
     }
 }
+
+// ================================================
+// SHARED COMPONENTS
+// 共通コンポーネント（全ページで使用可能）
+// ================================================
+
+// ================================================
+// SECTION TITLE COMPONENT
+// セクションタイトル共通コンポーネント
+// 使用箇所: トップページ（Mission, Recruit）、ニュースページ
+// バリエーション: --red, --white
+// ================================================
+.section-title {
+    display: flex;
+    flex-direction: column;
+    gap: spx(15);
+
+    @include tablet-up {
+        gap: ppx(20 * $pc-to-tab-ratio);
+    }
+
+    @include desktop-up {
+        gap: ppx(20);
+    }
+
+    &-main {
+        font-family: $font-noto-serif-jp;
+        font-size: spx(111);
+        font-weight: 700;
+        line-height: spx(111);
+
+        @include tablet-up {
+            font-size: ppx(145 * $pc-to-tab-ratio);
+            line-height: ppx(145 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(145);
+            line-height: ppx(145);
+        }
+    }
+
+    &-sub {
+        font-family: $font-noto-sans-jp;
+        font-size: spx(27);
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: spx(2.7);
+        display: flex;
+        align-items: center;
+        gap: spx(23);
+
+        @include tablet-up {
+            font-size: ppx(35 * $pc-to-tab-ratio);
+            letter-spacing: ppx(3.5 * $pc-to-tab-ratio);
+            gap: ppx(30 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(35);
+            letter-spacing: ppx(3.5);
+            gap: ppx(30);
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: spx(153);
+            height: 1px;
+            margin-left: spx(4);
+
+            @include tablet-up {
+                width: ppx(200 * $pc-to-tab-ratio);
+                margin-left: ppx(11 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(200);
+                margin-left: ppx(11);
+            }
+        }
+    }
+
+    &--red {
+        .section-title-main {
+            color: $base_color_2;
+        }
+
+        .section-title-sub {
+            color: $base_color_2;
+
+            &::before {
+                background-color: $base_color_2;
+            }
+        }
+    }
+
+    &--white {
+        .section-title-main {
+            color: $base_color_white;
+        }
+
+        .section-title-sub {
+            color: $base_color_white;
+
+            &::before {
+                background-color: $base_color_white;
+            }
+        }
+    }
+}
+
+// ================================================
+// PRIMARY BUTTON COMPONENT
+// プライマリボタン共通コンポーネント
+// 使用箇所: トップページ（Mission, Recruit）、ニュースページ
+// バリエーション: --white, --dark
+// ================================================
+.primary-button {
+    font-size: spx(35);
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: spx(1.75);
+    display: flex;
+    align-items: center;
+    gap: spx(40);
+    width: max-content;
+    height: spx(120);
+    padding-left: spx(80);
+    padding-right: spx(40);
+    border: 1px solid $base_color_white;
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+    text-decoration: none;
+
+    @include tablet-up {
+        font-size: ppx(35 * $pc-to-tab-ratio);
+        letter-spacing: ppx(1.75 * $pc-to-tab-ratio);
+        height: ppx(120 * $pc-to-tab-ratio);
+        gap: ppx(40 * $pc-to-tab-ratio);
+        padding-left: ppx(80 * $pc-to-tab-ratio);
+        padding-right: ppx(40 * $pc-to-tab-ratio);
+    }
+
+    @include desktop-up {
+        font-size: ppx(35);
+        letter-spacing: ppx(1.75);
+        height: ppx(120);
+        gap: ppx(40);
+        padding-left: ppx(80);
+        padding-right: ppx(40);
+    }
+
+    &__icon {
+        svg {
+            display: block;
+            width: spx(31);
+            height: auto;
+
+            @include tablet-up {
+                width: ppx(31 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(31);
+            }
+
+            path {
+                stroke: white;
+                transition: stroke 0.3s ease;
+            }
+        }
+    }
+
+    &--white {
+        color: $base_color_white;
+        border-color: $base_color_white;
+
+        @include hover {
+            &:hover {
+                color: $base_color_white;
+                background-color: $base_color_2;
+                border-color: $base_color_2;
+
+                svg {
+                    path {
+                        stroke: $base_color_white;
+                    }
+                }
+            }
+        }
+    }
+
+    &--dark {
+        color: $base_color_1;
+        border-color: $base_color_1;
+
+        svg {
+            path {
+                stroke: $base_color_1;
+            }
+        }
+
+        @include hover {
+            &:hover {
+                color: $base_color_white;
+                background-color: $base_color_2;
+                border-color: $base_color_2;
+
+                svg {
+                    path {
+                        stroke: $base_color_white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ================================================
+// BREADCRUMBS COMPONENT
+// パンくずリストコンポーネント
+// ================================================
+.breadcrumbs {
+    width: spx(600);
+    margin-inline: auto;
+    margin-bottom: spx(50);
+    @include tablet-up {
+        width: ppx(2120 * $pc-to-tab-ratio);
+        margin-bottom: ppx(80 * $pc-to-tab-ratio);
+    }
+    @include desktop-up {
+        width: ppx(2120);
+        margin-bottom: ppx(80);
+    }
+
+    .breadcrumbs__list {
+        display: flex;
+        align-items: baseline;
+        gap: 0.5em;
+    }
+
+    .breadcrumbs__item {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    .breadcrumbs__link {
+        color: $base_color_white;
+        font-size: spx(22);
+        font-weight: 500;
+        line-height: 160%;
+        letter-spacing: spx(2.2);
+        transition: color 0.3s ease;
+
+        @include tablet-up {
+            font-size: ppx(24 * $pc-to-tab-ratio);
+            letter-spacing: ppx(2.4 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(24);
+            letter-spacing: ppx(2.4);
+        }
+
+        &:hover {
+            color: $base_color_2;
+        }
+    }
+
+    .breadcrumbs__separator {
+        color: $base_color_white;
+        font-size: spx(22);
+        font-weight: 500;
+        line-height: 160%;
+        letter-spacing: spx(2.2);
+        transition: color 0.3s ease;
+
+        @include tablet-up {
+            font-size: ppx(24 * $pc-to-tab-ratio);
+            letter-spacing: ppx(2.4 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(24);
+            letter-spacing: ppx(2.4);
+        }
+    }
+
+    .breadcrumbs__current {
+        color: $base_color_white;
+    }
+}

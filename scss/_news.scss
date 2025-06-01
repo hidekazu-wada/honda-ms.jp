@@ -10,170 +10,52 @@
 
 .news-page {
     // Section Title Component (共通コンポーネント)
-    .section-title {
-        display: flex;
-        flex-direction: column;
-        gap: spx(15);
-
-        @include tablet-up {
-            gap: ppx(20 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            gap: ppx(20);
-        }
-
-        &-main {
-            font-family: $font-noto-serif-jp;
-            font-size: spx(111);
-            font-weight: 700;
-            line-height: spx(111);
-
-            @include tablet-up {
-                font-size: ppx(145 * $pc-to-tab-ratio);
-                line-height: ppx(145 * $pc-to-tab-ratio);
-            }
-
-            @include desktop-up {
-                font-size: ppx(145);
-                line-height: ppx(145);
-            }
-        }
-
-        &-sub {
-            font-family: $font-noto-sans-jp;
-            font-size: spx(27);
-            font-weight: 500;
-            line-height: 100%;
-            letter-spacing: spx(2.7);
-            display: flex;
-            align-items: center;
-            gap: spx(23);
-
-            @include tablet-up {
-                font-size: ppx(35 * $pc-to-tab-ratio);
-                letter-spacing: ppx(3.5 * $pc-to-tab-ratio);
-                gap: ppx(30 * $pc-to-tab-ratio);
-            }
-
-            @include desktop-up {
-                font-size: ppx(35);
-                letter-spacing: ppx(3.5);
-                gap: ppx(30);
-            }
-
-            &::before {
-                content: "";
-                display: block;
-                width: spx(153);
-                height: 1px;
-                margin-left: spx(4);
-
-                @include tablet-up {
-                    width: ppx(200 * $pc-to-tab-ratio);
-                    margin-left: ppx(11 * $pc-to-tab-ratio);
-                }
-
-                @include desktop-up {
-                    width: ppx(200);
-                    margin-left: ppx(11);
-                }
-            }
-        }
-
-        &--red {
-            .section-title-main {
-                color: $base_color_2;
-            }
-
-            .section-title-sub {
-                color: $base_color_2;
-
-                &::before {
-                    background-color: $base_color_2;
-                }
-            }
-        }
-
-        &--white {
-            .section-title-main {
-                color: $base_color_white;
-            }
-
-            .section-title-sub {
-                color: $base_color_white;
-
-                &::before {
-                    background-color: $base_color_white;
-                }
-            }
-        }
-    }
+    // 注意: .section-titleスタイルは_global.scssに移動済み
+    // HTMLで使用する際は <h2 class="section-title section-title--white"> のように記述
 
     // Primary Button Component (共通コンポーネント)
-    .primary-button {
-        &__icon {
-            svg {
-                path {
-                }
-            }
-        }
-
-        &--white {
-            &:hover {
-                svg {
-                    path {
-                    }
-                }
-            }
-        }
-
-        &--dark {
-            svg {
-                path {
-                }
-            }
-
-            &:hover {
-                svg {
-                    path {
-                    }
-                }
-            }
-        }
-    }
+    // 注意: .primary-buttonスタイルは_global.scssに移動済み
+    // HTMLで使用する際は <a class="primary-button primary-button--dark"> のように記述
 
     // News Section (メインセクション)
     .news-section {
-        padding: spx(140) 0;
+        padding-top: spx(130);
+        padding-bottom: spx(130);
 
         @include tablet-up {
-            padding: ppx(220 * $pc-to-tab-ratio) 0;
+            padding-top: ppx(187 * $pc-to-tab-ratio);
+            padding-bottom: ppx(140 * $pc-to-tab-ratio);
         }
 
         @include desktop-up {
-            padding: ppx(220) 0;
+            padding-top: ppx(187);
+            padding-bottom: ppx(140);
         }
 
         .news__inner {
             @include tablet-up {
                 display: flex;
-                gap: ppx(316 * $pc-to-tab-ratio);
+                gap: ppx(110 * $pc-to-tab-ratio);
             }
 
             @include desktop-up {
-                gap: ppx(316);
+                gap: ppx(110);
             }
 
             .news__header {
                 margin-left: spx(56);
+                width: max-content;
+                height: max-content;
 
                 @include tablet-up {
-                    margin-left: ppx(220 * $pc-to-tab-ratio);
+                    margin-left: 0;
+                    background-color: $base_color_2;
+                    padding: ppx(50 * $pc-to-tab-ratio) ppx(207 * $pc-to-tab-ratio) ppx(60 * $pc-to-tab-ratio)
+                        ppx(220 * $pc-to-tab-ratio);
                 }
 
                 @include desktop-up {
-                    margin-left: ppx(220);
+                    padding: ppx(50) ppx(207) ppx(60) ppx(220);
                 }
             }
 
@@ -189,34 +71,11 @@
                 @include tablet-up {
                     gap: ppx(40 * $pc-to-tab-ratio);
                     margin-inline: unset;
-                    margin-top: ppx(44 * $pc-to-tab-ratio);
+                    margin-top: 0;
                 }
 
                 @include desktop-up {
                     gap: ppx(40);
-                    margin-top: ppx(44);
-                }
-
-                &::before {
-                    @include tablet-up {
-                        content: "";
-                        display: block;
-                        width: ppx(15 * $pc-to-tab-ratio);
-                        height: ppx(651 * $pc-to-tab-ratio);
-                        background-color: $base_color_2;
-                        position: absolute;
-                        top: ppx(134 * $pc-to-tab-ratio);
-                        left: ppx(-154 * $pc-to-tab-ratio);
-                    }
-
-                    @include desktop-up {
-                        content: "";
-                        display: block;
-                        width: ppx(15);
-                        height: ppx(651);
-                        top: ppx(134);
-                        left: ppx(-154);
-                    }
                 }
             }
 
@@ -248,14 +107,6 @@
                     position: absolute;
                     bottom: 0;
                     left: 0;
-                }
-
-                &:last-child {
-                    @include tablet-up {
-                        &::after {
-                            display: none;
-                        }
-                    }
                 }
             }
 
@@ -372,6 +223,165 @@
                 @include desktop-up {
                     font-size: ppx(35);
                     line-height: 160%;
+                }
+            }
+        }
+
+        // ================================================
+        // PAGINATION COMPONENT
+        // ページネーションコンポーネント
+        // ================================================
+        .news__pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: spx(20);
+            width: max-content;
+            margin-inline: auto;
+            margin-top: spx(60);
+            min-width: spx(627);
+            justify-content: space-between;
+            @include tablet-up {
+                gap: ppx(40 * $pc-to-tab-ratio);
+                margin-top: ppx(100 * $pc-to-tab-ratio);
+                min-width: ppx(992 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                gap: ppx(40);
+                margin-top: ppx(100);
+                min-width: ppx(992);
+            }
+            .news__pagination-prev {
+                width: spx(30);
+                height: auto;
+                display: block;
+                transform: rotate(180deg);
+
+                @include tablet-up {
+                    width: ppx(31 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(31);
+                }
+                .news__pagination-arrow {
+                    path {
+                        transition: stroke 0.3s ease;
+                    }
+
+                    &--prev {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                @include hover {
+                    &:hover {
+                        .news__pagination-arrow path {
+                            stroke: $base_color_2;
+                        }
+                    }
+                }
+            }
+
+            .news__pagination-list {
+                display: flex;
+                gap: spx(12);
+                @include tablet-up {
+                    gap: ppx(25 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    gap: ppx(25);
+                }
+            }
+
+            .news__pagination-link {
+                width: spx(65);
+                height: spx(65);
+                display: grid;
+                place-items: center;
+                background-color: $base_color_white;
+                color: $base_color_1;
+                font-size: spx(26);
+                font-weight: 500;
+                line-height: spx(26);
+                transition:
+                    background-color 0.3s ease,
+                    color 0.3s ease;
+
+                @include tablet-up {
+                    width: ppx(65 * $pc-to-tab-ratio);
+                    height: ppx(65 * $pc-to-tab-ratio);
+                    font-size: ppx(40 * $pc-to-tab-ratio);
+                    line-height: ppx(40 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    width: ppx(100);
+                    height: ppx(100);
+                    font-size: ppx(40);
+                    line-height: ppx(40);
+                }
+                &--current {
+                    background-color: $base_color_2;
+                    color: $base_color_white;
+                }
+
+                @include hover {
+                    &:hover {
+                        background-color: $base_color_2;
+                        color: $base_color_white;
+                    }
+                }
+            }
+
+            .news__pagination-ellipsis {
+                width: spx(65);
+                height: spx(65);
+                display: grid;
+                place-items: center;
+                background-color: $base_color_white;
+                color: $base_color_1;
+                font-size: spx(26);
+                font-weight: 500;
+                line-height: spx(26);
+
+                @include tablet-up {
+                    width: ppx(65 * $pc-to-tab-ratio);
+                    height: ppx(65 * $pc-to-tab-ratio);
+                    font-size: ppx(40 * $pc-to-tab-ratio);
+                    line-height: ppx(40 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    width: ppx(100);
+                    height: ppx(100);
+                    font-size: ppx(40);
+                    line-height: ppx(40);
+                }
+            }
+
+            .news__pagination-next {
+                width: spx(30);
+                height: auto;
+                display: block;
+
+                @include tablet-up {
+                    width: ppx(31 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(31);
+                }
+                .news__pagination-arrow {
+                    path {
+                        transition: stroke 0.3s ease;
+                    }
+                }
+
+                @include hover {
+                    &:hover {
+                        .news__pagination-arrow path {
+                            stroke: $base_color_2;
+                        }
+                    }
                 }
             }
         }

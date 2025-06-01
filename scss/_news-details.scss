@@ -1,0 +1,23 @@
+/**
+ * News Page Styles - Structure Only
+ * ニュースページのHTMLに完全対応したネスト構造
+ * プロパティなし、セレクター構造のみ
+ */
+
+@use "variables" as *;
+@use "functions" as *;
+@use "mixins" as *;
+
+.news-details {
+    // Section Title Component (共通コンポーネント)
+    // 注意: .section-titleスタイルは_global.scssに移動済み
+    // HTMLで使用する際は <h2 class="section-title section-title--white"> のように記述
+
+    // Primary Button Component (共通コンポーネント)
+    // 注意: .primary-buttonスタイルは_global.scssに移動済み
+    // HTMLで使用する際は <a class="primary-button primary-button--dark"> のように記述
+
+    // News Details Section (メインセクション)
+    .news-details-section {
+    }
+}

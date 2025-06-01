@@ -239,4 +239,13 @@
             }
         }
     }
+    &.lower-level {
+        border-top: solid spx(5) $base_color_white;
+        @include tablet-up {
+            border-top: solid ppx(3 * $pc-to-tab-ratio) $base_color_white;
+        }
+        @include desktop-up {
+            border-top: solid ppx(3) $base_color_white;
+        }
+    }
 }
