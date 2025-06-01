@@ -2,7 +2,6 @@
  * Index Page JavaScript - 完全統合版
  * トップページ専用のすべての機能を1ファイルに統合
  * Dependencies: GSAP, Swiper.js
- * Settings: config/site-config.js
  */
 
 // ================================================
@@ -27,15 +26,14 @@ function wrapChars(element) {
 
 /**
  * GSAPを使用したテキストアニメーション実行
- * config/site-config.js の設定値を使用
  */
 function startGsapAnimation() {
-  // 設定値を取得（フォールバック値付き）
-  const config = window.SiteConfig?.hero?.textAnimation || {
-    line1Stagger: 0.12,
-    line2Stagger: 0.14,
-    lineDelay: 500,
-    duration: 1,
+  // テキストアニメーション設定（直接定義）
+  const config = {
+    line1Stagger: 0.12, // 1行目の文字間隔（秒）
+    line2Stagger: 0.14, // 2行目の文字間隔（秒）
+    lineDelay: 500, // 行間の遅延（ミリ秒）
+    duration: 1, // 1文字のアニメーション時間（秒）
   };
 
   const line1 = document.getElementById('line1');
@@ -67,14 +65,13 @@ function startGsapAnimation() {
 
 /**
  * ヒーローSwiperを初期化
- * config/site-config.js の設定値を使用
  */
 function initHeroSwiper() {
-  // 設定値を取得（フォールバック値付き）
-  const config = window.SiteConfig?.hero?.swiper || {
-    autoplayDelay: 5000,
-    fadeSpeed: 2500,
-    loop: true,
+  // Swiper設定（直接定義）
+  const config = {
+    autoplayDelay: 5000, // スライド表示時間（ミリ秒）
+    fadeSpeed: 2500, // フェード速度（ミリ秒）
+    loop: true, // ループ再生
   };
 
   const heroSwiper = new Swiper('.hero-swiper', {
@@ -100,24 +97,28 @@ function initHeroSwiper() {
 }
 
 // ================================================
-// INITIALIZATION
+// GLOBAL API EXPOSURE
 // ================================================
 
-// DOM読み込み完了後に自動実行
-document.addEventListener('DOMContentLoaded', function () {
-  initHeroSwiper();
-});
-
-// ================================================
-// GLOBAL API
-// ================================================
-
-// グローバルに関数を公開（フォント読み込み完了時に呼び出し）
+/**
+ * グローバルAPIとして公開
+ */
 window.TextAnimation = {
-  wrapChars,
   startGsapAnimation,
 };
 
 window.HeroSwiper = {
   init: initHeroSwiper,
 };
+
+// ================================================
+// INITIALIZATION
+// ================================================
+
+/**
+ * DOMContentLoaded時の初期化
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  // Swiperを初期化
+  initHeroSwiper();
+});
