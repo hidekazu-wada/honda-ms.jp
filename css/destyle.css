@@ -1,12 +1,24 @@
+@charset "UTF-8";
+/**
+ * Variables Only
+ * 変数定義のみ（独立したファイル）
+ */
+/**
+ * Functions Only
+ * 関数定義のみ（独立したファイル）
+ */
+/**
+ * Mixins Only
+ * ミックスイン定義のみ（独立したファイル）
+ */
 /*! destyle.css v4.0.1 | MIT License | https://github.com/nicolas-cusan/destyle.css */
-
 /* Reset box-model and set borders */
 /* ============================================ */
-
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-style: solid;
   border-width: 0;
   min-width: 0;
@@ -14,41 +26,77 @@
 
 /* Document */
 /* ============================================ */
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  * 3. Remove gray overlay on links for iOS.
  */
-
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   -webkit-tap-highlight-color: transparent; /* 3*/
+  scroll-behavior: smooth;
 }
 
 /* Sections */
 /* ============================================ */
-
 /**
  * Remove the margin in all browsers.
  */
-
 body {
   margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #f0f0f0;
+  background-image: var(--bg-mobile-fallback), var(--bg-mobile);
+  background-attachment: scroll;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  color: #231f20;
+}
+@media (min-width: 768px) {
+  body {
+    background-image: var(--bg-desktop-fallback), var(--bg-desktop);
+    background-attachment: fixed;
+  }
+}
+body.is-loading {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: none;
+  transition: none;
+}
+body.is-loaded {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
 }
 
 /**
  * Render the `main` element consistently in IE.
+ * Add padding-top to account for fixed header.
  */
-
 main {
   display: block;
+  padding-top: 16.667vw;
+}
+@media (min-width: 768px) {
+  main {
+    padding-top: 7vw;
+  }
+}
+@media (min-width: 1024px) {
+  main {
+    padding-top: 5.469vw;
+  }
 }
 
 /* Vertical rhythm */
 /* ============================================ */
-
 p,
 table,
 blockquote,
@@ -63,7 +111,6 @@ dl {
 
 /* Headings */
 /* ============================================ */
-
 h1,
 h2,
 h3,
@@ -77,7 +124,6 @@ h6 {
 
 /* Lists (enumeration) */
 /* ============================================ */
-
 ul,
 ol {
   margin: 0;
@@ -87,7 +133,6 @@ ol {
 
 /* Lists (definition) */
 /* ============================================ */
-
 dt {
   font-weight: bold;
 }
@@ -98,14 +143,13 @@ dd {
 
 /* Grouping content */
 /* ============================================ */
-
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-
 hr {
-  box-sizing: content-box; /* 1 */
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
   border-top-width: 1px;
@@ -118,7 +162,6 @@ hr {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-
 pre {
   font-family: monospace, monospace; /* 1 */
   font-size: inherit; /* 2 */
@@ -130,11 +173,9 @@ address {
 
 /* Text-level semantics */
 /* ============================================ */
-
 /**
  * Remove the gray background on active links in IE 10.
  */
-
 a {
   background-color: transparent;
   text-decoration: none;
@@ -145,15 +186,14 @@ a {
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-
 abbr[title] {
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-
 b,
 strong {
   font-weight: bolder;
@@ -163,7 +203,6 @@ strong {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-
 code,
 kbd,
 samp {
@@ -174,7 +213,6 @@ samp {
 /**
  * Add the correct font size in all browsers.
  */
-
 small {
   font-size: 80%;
 }
@@ -183,7 +221,6 @@ small {
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
-
 sub,
 sup {
   font-size: 75%;
@@ -202,11 +239,9 @@ sup {
 
 /* Replaced content */
 /* ============================================ */
-
 /**
  * Prevent vertical alignment issues.
  */
-
 svg,
 img,
 embed,
@@ -217,20 +252,19 @@ iframe {
 
 /* Forms */
 /* ============================================ */
-
 /**
  * Reset form fields to make them styleable.
  * 1. Make form elements stylable across systems iOS especially.
  * 2. Inherit text-transform from parent.
  */
-
 button,
 input,
 optgroup,
 select,
 textarea {
   -webkit-appearance: none; /* 1 */
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   vertical-align: middle;
   color: inherit;
   font: inherit;
@@ -245,25 +279,23 @@ textarea {
 /**
  * Correct cursors for clickable elements.
  */
-
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   cursor: pointer;
 }
 
 button:disabled,
-[type="button"]:disabled,
-[type="reset"]:disabled,
-[type="submit"]:disabled {
+[type=button]:disabled,
+[type=reset]:disabled,
+[type=submit]:disabled {
   cursor: default;
 }
 
 /**
  * Improve outlines for Firefox and unify style with input elements & buttons.
  */
-
 :-moz-focusring {
   outline: auto;
 }
@@ -275,7 +307,6 @@ select:disabled {
 /**
  * Remove padding
  */
-
 option {
   padding: 0;
 }
@@ -283,7 +314,6 @@ option {
 /**
  * Reset to invisible
  */
-
 fieldset {
   margin: 0;
   padding: 0;
@@ -297,7 +327,6 @@ legend {
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
-
 progress {
   vertical-align: baseline;
 }
@@ -305,7 +334,6 @@ progress {
 /**
  * Remove the default vertical scrollbar in IE 10+.
  */
-
 textarea {
   overflow: auto;
 }
@@ -313,25 +341,22 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
 /**
  * Correct the outline style in Safari.
  */
-
-[type="search"] {
+[type=search] {
   outline-offset: -2px; /* 1 */
 }
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -339,7 +364,6 @@ textarea {
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Fix font inheritance.
  */
-
 ::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
@@ -348,26 +372,24 @@ textarea {
 /**
  * Fix appearance for Firefox
  */
-[type="number"] {
+[type=number] {
   -moz-appearance: textfield;
-  appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
 }
 
 /**
  * Clickable labels
  */
-
 label[for] {
   cursor: pointer;
 }
 
 /* Interactive */
 /* ============================================ */
-
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
-
 details {
   display: block;
 }
@@ -375,7 +397,6 @@ details {
 /*
  * Add the correct display in all browsers.
  */
-
 summary {
   display: list-item;
 }
@@ -383,18 +404,15 @@ summary {
 /*
  * Remove outline for editable content.
  */
-
 [contenteditable]:focus {
   outline: auto;
 }
 
 /* Tables */
 /* ============================================ */
-
 /**
 1. Correct table border color inheritance in all Chrome and Safari.
 */
-
 table {
   border-color: inherit; /* 1 */
   border-collapse: collapse;
@@ -414,3 +432,14 @@ th {
   text-align: left;
   font-weight: bold;
 }
+
+/* ============================================ */
+/* INTEGRATED BASE STYLES */
+/* ============================================ */
+/**
+ * Layout Base Styles & Typography
+ * 基本レイアウト・フォント設定・ページ状態管理
+ */
+svg {
+  overflow: visible !important;
+}/*# sourceMappingURL=destyle.css.map */

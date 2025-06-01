@@ -24,6 +24,7 @@
     <!-- ================================================== -->
 
     <!-- 共通基盤CSS（背景コンポーネント含む）- 全ページ共通 -->
+    <link rel="stylesheet" href="../css/destyle.css" />
     <link rel="stylesheet" href="../css/style.css" />
 
     <!-- ニュースページ専用CSS -->
@@ -61,7 +62,7 @@
       rel="stylesheet"
     />
   </head>
-  <body class="is-loading">
+  <body class="is-loading news-page">
     <!-- ================================================== -->
     <!-- MAIN CONTENT -->
     <!-- ================================================== -->
@@ -744,6 +745,427 @@
       <!-- ================================================== -->
       <!-- /GLOBAL NAVIGATION SECTION -->
       <!-- ================================================== -->
+      <section class="news-section">
+        <div class="news__inner">
+          <header class="news__header">
+            <!-- SectionTitle Component (title="MISSION", subTitle="企業理念", variant="white") -->
+            <h2 class="section-title section-title--white">
+              <span class="section-title-main">NEWS</span>
+              <span class="section-title-sub">お知らせ</span>
+            </h2>
+          </header>
+
+          <div class="news__list">
+            <article class="news__item">
+              <figure class="news__image">
+                <a href="#" class="news__image-link">
+                  <!-- 画像: ニュース記事サムネイル01 -->
+                  <picture>
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(max-width: 1023px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/fallback/demo-image.png"
+                      media="(min-width: 1024px)"
+                      type="image/png"
+                    />
+                    <img
+                      src="../images/index/news/fallback/demo-image.png"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </a>
+              </figure>
+
+              <div class="news__item-content">
+                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
+                <h3 class="news__title">
+                  <a href="#" class="news__link"> 新サービス開始のお知らせ </a>
+                </h3>
+              </div>
+            </article>
+
+            <article class="news__item">
+              <figure class="news__image">
+                <a href="#" class="news__image-link">
+                  <!-- 画像: ニュース記事サムネイル02 -->
+                  <picture>
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(max-width: 1023px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/fallback/demo-image.png"
+                      media="(min-width: 1024px)"
+                      type="image/png"
+                    />
+                    <img
+                      src="../images/index/news/fallback/demo-image.png"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </a>
+              </figure>
+
+              <div class="news__item-content">
+                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
+                <h3 class="news__title">
+                  <a href="#" class="news__link">
+                    2024年度上半期営業時間変更および新店舗オープンのご案内について
+                  </a>
+                </h3>
+              </div>
+            </article>
+
+            <article class="news__item">
+              <figure class="news__image">
+                <a href="#" class="news__image-link">
+                  <!-- 画像: ニュース記事サムネイル03 -->
+                  <picture>
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(max-width: 1023px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/fallback/demo-image.png"
+                      media="(min-width: 1024px)"
+                      type="image/png"
+                    />
+                    <img
+                      src="../images/index/news/fallback/demo-image.png"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </a>
+              </figure>
+
+              <div class="news__item-content">
+                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
+                <h3 class="news__title">
+                  <a href="#" class="news__link">
+                    ホンダ自動車販売グループにおける2024年度第1四半期決算発表ならびに今後の事業展開戦略に関する重要なお知らせとステークホルダーの皆様への感謝の意を込めたメッセージについて
+                  </a>
+                </h3>
+              </div>
+            </article>
+
+            <article class="news__item">
+              <figure class="news__image">
+                <a href="#" class="news__image-link">
+                  <!-- 画像: ニュース記事サムネイル03 -->
+                  <picture>
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(max-width: 1023px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/fallback/demo-image.png"
+                      media="(min-width: 1024px)"
+                      type="image/png"
+                    />
+                    <img
+                      src="../images/index/news/fallback/demo-image.png"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </a>
+              </figure>
+
+              <div class="news__item-content">
+                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
+                <h3 class="news__title">
+                  <a href="#" class="news__link">
+                    ここに見出しが入ります。ここに見出しが入ります。ここに見出しが入ります。ここに見出しが入ります。
+                  </a>
+                </h3>
+              </div>
+            </article>
+
+            <article class="news__item">
+              <figure class="news__image">
+                <a href="#" class="news__image-link">
+                  <!-- 画像: ニュース記事サムネイル03 -->
+                  <picture>
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(max-width: 1023px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/fallback/demo-image.png"
+                      media="(min-width: 1024px)"
+                      type="image/png"
+                    />
+                    <img
+                      src="../images/index/news/fallback/demo-image.png"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </a>
+              </figure>
+
+              <div class="news__item-content">
+                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
+                <h3 class="news__title">
+                  <a href="#" class="news__link">
+                    ここに見出しが入ります。ここに見出しが入ります。ここに見出しが入ります。ここに見出しが入ります。
+                  </a>
+                </h3>
+              </div>
+            </article>
+
+            <article class="news__item">
+              <figure class="news__image">
+                <a href="#" class="news__image-link">
+                  <!-- 画像: ニュース記事サムネイル03 -->
+                  <picture>
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(max-width: 1023px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/fallback/demo-image.png"
+                      media="(min-width: 1024px)"
+                      type="image/png"
+                    />
+                    <img
+                      src="../images/index/news/fallback/demo-image.png"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </a>
+              </figure>
+
+              <div class="news__item-content">
+                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
+                <h3 class="news__title">
+                  <a href="#" class="news__link">
+                    ここに見出しが入ります。ここに見出しが入ります。ここに見出しが入ります。ここに見出しが入ります。
+                  </a>
+                </h3>
+              </div>
+            </article>
+
+            <article class="news__item">
+              <figure class="news__image">
+                <a href="#" class="news__image-link">
+                  <!-- 画像: ニュース記事サムネイル03 -->
+                  <picture>
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(max-width: 1023px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/fallback/demo-image.png"
+                      media="(min-width: 1024px)"
+                      type="image/png"
+                    />
+                    <img
+                      src="../images/index/news/fallback/demo-image.png"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </a>
+              </figure>
+
+              <div class="news__item-content">
+                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
+                <h3 class="news__title">
+                  <a href="#" class="news__link">
+                    ここに見出しが入ります。ここに見出しが入ります。ここに見出しが入ります。ここに見出しが入ります。
+                  </a>
+                </h3>
+              </div>
+            </article>
+
+            <article class="news__item">
+              <figure class="news__image">
+                <a href="#" class="news__image-link">
+                  <!-- 画像: ニュース記事サムネイル03 -->
+                  <picture>
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(max-width: 1023px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/fallback/demo-image.png"
+                      media="(min-width: 1024px)"
+                      type="image/png"
+                    />
+                    <img
+                      src="../images/index/news/fallback/demo-image.png"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </a>
+              </figure>
+
+              <div class="news__item-content">
+                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
+                <h3 class="news__title">
+                  <a href="#" class="news__link">
+                    ここに見出しが入ります。ここに見出しが入ります。ここに見出しが入ります。ここに見出しが入ります。
+                  </a>
+                </h3>
+              </div>
+            </article>
+
+            <article class="news__item">
+              <figure class="news__image">
+                <a href="#" class="news__image-link">
+                  <!-- 画像: ニュース記事サムネイル03 -->
+                  <picture>
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(max-width: 1023px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/fallback/demo-image.png"
+                      media="(min-width: 1024px)"
+                      type="image/png"
+                    />
+                    <img
+                      src="../images/index/news/fallback/demo-image.png"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </a>
+              </figure>
+
+              <div class="news__item-content">
+                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
+                <h3 class="news__title">
+                  <a href="#" class="news__link">
+                    ここに見出しが入ります。ここに見出しが入ります。ここに見出しが入ります。ここに見出しが入ります。
+                  </a>
+                </h3>
+              </div>
+            </article>
+
+            <article class="news__item">
+              <figure class="news__image">
+                <a href="#" class="news__image-link">
+                  <!-- 画像: ニュース記事サムネイル03 -->
+                  <picture>
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/demo-image.webp"
+                      media="(max-width: 1023px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="../images/index/news/fallback/demo-image.png"
+                      media="(min-width: 1024px)"
+                      type="image/png"
+                    />
+                    <img
+                      src="../images/index/news/fallback/demo-image.png"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </a>
+              </figure>
+
+              <div class="news__item-content">
+                <time class="news__date" datetime="2024-05-01">2024.05.01</time>
+                <h3 class="news__title">
+                  <a href="#" class="news__link">
+                    ここに見出しが入ります。ここに見出しが入ります。ここに見出しが入ります。ここに見出しが入ります。
+                  </a>
+                </h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- ================================================== -->

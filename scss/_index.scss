@@ -36,478 +36,496 @@
 // 使用箇所: Mission Section, Recruit Section
 // バリエーション: --red, --white
 // ================================================
-.section-title {
-    display: flex;
-    flex-direction: column;
-    gap: spx(15);
-
-    @include tablet-up {
-        gap: ppx(20 * $pc-to-tab-ratio);
-    }
-
-    @include desktop-up {
-        gap: ppx(20);
-    }
-
-    &-main {
-        font-family: $font-noto-serif-jp;
-        font-size: spx(111);
-        font-weight: 700;
-        line-height: spx(111);
+.top-page {
+    .section-title {
+        display: flex;
+        flex-direction: column;
+        gap: spx(15);
 
         @include tablet-up {
-            font-size: ppx(145 * $pc-to-tab-ratio);
-            line-height: ppx(145 * $pc-to-tab-ratio);
+            gap: ppx(20 * $pc-to-tab-ratio);
         }
 
         @include desktop-up {
-            font-size: ppx(145);
-            line-height: ppx(145);
+            gap: ppx(20);
+        }
+
+        &-main {
+            font-family: $font-noto-serif-jp;
+            font-size: spx(111);
+            font-weight: 700;
+            line-height: spx(111);
+
+            @include tablet-up {
+                font-size: ppx(145 * $pc-to-tab-ratio);
+                line-height: ppx(145 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(145);
+                line-height: ppx(145);
+            }
+        }
+
+        &-sub {
+            font-family: $font-noto-sans-jp;
+            font-size: spx(27);
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: spx(2.7);
+            display: flex;
+            align-items: center;
+            gap: spx(23);
+
+            @include tablet-up {
+                font-size: ppx(35 * $pc-to-tab-ratio);
+                letter-spacing: ppx(3.5 * $pc-to-tab-ratio);
+                gap: ppx(30 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(35);
+                letter-spacing: ppx(3.5);
+                gap: ppx(30);
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                width: spx(153);
+                height: 1px;
+                margin-left: spx(4);
+
+                @include tablet-up {
+                    width: ppx(200 * $pc-to-tab-ratio);
+                    margin-left: ppx(11 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    width: ppx(200);
+                    margin-left: ppx(11);
+                }
+            }
+        }
+
+        &--red {
+            .section-title-main {
+                color: $base_color_2;
+            }
+
+            .section-title-sub {
+                color: $base_color_2;
+
+                &::before {
+                    background-color: $base_color_2;
+                }
+            }
+        }
+
+        &--white {
+            .section-title-main {
+                color: $base_color_white;
+            }
+
+            .section-title-sub {
+                color: $base_color_white;
+
+                &::before {
+                    background-color: $base_color_white;
+                }
+            }
         }
     }
 
-    &-sub {
-        font-family: $font-noto-sans-jp;
-        font-size: spx(27);
+    // ================================================
+    // PRIMARY BUTTON COMPONENT
+    // プライマリボタン共通コンポーネント
+    // 使用箇所: Mission Section, Recruit Section
+    // バリエーション: --white, --dark
+    // ================================================
+    .primary-button {
+        font-size: spx(35);
         font-weight: 500;
         line-height: 100%;
-        letter-spacing: spx(2.7);
+        letter-spacing: spx(1.75);
         display: flex;
         align-items: center;
-        gap: spx(23);
+        gap: spx(40);
+        width: max-content;
+        height: spx(120);
+        padding-left: spx(80);
+        padding-right: spx(40);
+        border: 1px solid $base_color_white;
+        transition:
+            border-color 0.3s ease,
+            background-color 0.3s ease,
+            color 0.3s ease;
+        text-decoration: none;
 
         @include tablet-up {
             font-size: ppx(35 * $pc-to-tab-ratio);
-            letter-spacing: ppx(3.5 * $pc-to-tab-ratio);
-            gap: ppx(30 * $pc-to-tab-ratio);
+            letter-spacing: ppx(1.75 * $pc-to-tab-ratio);
+            height: ppx(120 * $pc-to-tab-ratio);
+            gap: ppx(40 * $pc-to-tab-ratio);
+            padding-left: ppx(80 * $pc-to-tab-ratio);
+            padding-right: ppx(40 * $pc-to-tab-ratio);
         }
 
         @include desktop-up {
             font-size: ppx(35);
-            letter-spacing: ppx(3.5);
-            gap: ppx(30);
+            letter-spacing: ppx(1.75);
+            height: ppx(120);
+            gap: ppx(40);
+            padding-left: ppx(80);
+            padding-right: ppx(40);
         }
 
-        &::before {
-            content: "";
-            display: block;
-            width: spx(153);
-            height: 1px;
-            margin-left: spx(4);
-
-            @include tablet-up {
-                width: ppx(200 * $pc-to-tab-ratio);
-                margin-left: ppx(11 * $pc-to-tab-ratio);
-            }
-
-            @include desktop-up {
-                width: ppx(200);
-                margin-left: ppx(11);
-            }
-        }
-    }
-
-    &--red {
-        .section-title-main {
-            color: $base_color_2;
-        }
-
-        .section-title-sub {
-            color: $base_color_2;
-
-            &::before {
-                background-color: $base_color_2;
-            }
-        }
-    }
-
-    &--white {
-        .section-title-main {
-            color: $base_color_white;
-        }
-
-        .section-title-sub {
-            color: $base_color_white;
-
-            &::before {
-                background-color: $base_color_white;
-            }
-        }
-    }
-}
-
-// ================================================
-// PRIMARY BUTTON COMPONENT
-// プライマリボタン共通コンポーネント
-// 使用箇所: Mission Section, Recruit Section
-// バリエーション: --white, --dark
-// ================================================
-.primary-button {
-    font-size: spx(35);
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: spx(1.75);
-    display: flex;
-    align-items: center;
-    gap: spx(40);
-    width: max-content;
-    height: spx(120);
-    padding-left: spx(80);
-    padding-right: spx(40);
-    border: 1px solid $base_color_white;
-    transition:
-        border-color 0.3s ease,
-        background-color 0.3s ease,
-        color 0.3s ease;
-    text-decoration: none;
-
-    @include tablet-up {
-        font-size: ppx(35 * $pc-to-tab-ratio);
-        letter-spacing: ppx(1.75 * $pc-to-tab-ratio);
-        height: ppx(120 * $pc-to-tab-ratio);
-        gap: ppx(40 * $pc-to-tab-ratio);
-        padding-left: ppx(80 * $pc-to-tab-ratio);
-        padding-right: ppx(40 * $pc-to-tab-ratio);
-    }
-
-    @include desktop-up {
-        font-size: ppx(35);
-        letter-spacing: ppx(1.75);
-        height: ppx(120);
-        gap: ppx(40);
-        padding-left: ppx(80);
-        padding-right: ppx(40);
-    }
-
-    &__icon {
-        svg {
-            display: block;
-            width: spx(31);
-            height: auto;
-
-            @include tablet-up {
-                width: ppx(31 * $pc-to-tab-ratio);
-            }
-
-            @include desktop-up {
-                width: ppx(31);
-            }
-
-            path {
-                stroke: white;
-                transition: stroke 0.3s ease;
-            }
-        }
-    }
-
-    &--white {
-        color: $base_color_white;
-        border-color: $base_color_white;
-
-        @include hover {
-            &:hover {
-                color: $base_color_white;
-                background-color: $base_color_2;
-                border-color: $base_color_2;
-
-                svg {
-                    path {
-                        stroke: $base_color_white;
-                    }
-                }
-            }
-        }
-    }
-
-    &--dark {
-        color: $base_color_1;
-        border-color: $base_color_1;
-
-        svg {
-            path {
-                stroke: $base_color_1;
-            }
-        }
-
-        @include hover {
-            &:hover {
-                color: $base_color_white;
-                background-color: $base_color_2;
-                border-color: $base_color_2;
-
-                svg {
-                    path {
-                        stroke: $base_color_white;
-                    }
-                }
-            }
-        }
-    }
-}
-
-// ================================================
-// PAGE SPECIFIC SECTIONS
-// セクション固有スタイル（このページ専用）
-// ================================================
-
-// ================================================
-// HERO SECTION
-// ヒーローセクションのスライダーとテキスト（このページ専用）
-// ================================================
-.hero-section {
-    position: relative;
-
-    .hero-swiper {
-        width: 100%;
-        height: 100dvh;
-        overflow: hidden;
-
-        .swiper-slide {
-            width: 100%;
-            height: 100%;
-
-            img {
+        &__icon {
+            svg {
                 display: block;
+                width: spx(31);
+                height: auto;
+
+                @include tablet-up {
+                    width: ppx(31 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    width: ppx(31);
+                }
+
+                path {
+                    stroke: white;
+                    transition: stroke 0.3s ease;
+                }
+            }
+        }
+
+        &--white {
+            color: $base_color_white;
+            border-color: $base_color_white;
+
+            @include hover {
+                &:hover {
+                    color: $base_color_white;
+                    background-color: $base_color_2;
+                    border-color: $base_color_2;
+
+                    svg {
+                        path {
+                            stroke: $base_color_white;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--dark {
+            color: $base_color_1;
+            border-color: $base_color_1;
+
+            svg {
+                path {
+                    stroke: $base_color_1;
+                }
+            }
+
+            @include hover {
+                &:hover {
+                    color: $base_color_white;
+                    background-color: $base_color_2;
+                    border-color: $base_color_2;
+
+                    svg {
+                        path {
+                            stroke: $base_color_white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // ================================================
+    // PAGE SPECIFIC SECTIONS
+    // セクション固有スタイル（このページ専用）
+    // ================================================
+
+    // ================================================
+    // HERO SECTION
+    // ヒーローセクションのスライダーとテキスト（このページ専用）
+    // ================================================
+    .hero-section {
+        position: relative;
+
+        .hero-swiper {
+            width: 100%;
+            height: 100dvh;
+            overflow: hidden;
+
+            .swiper-slide {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
-                transform: scale(1.2);
-                animation: hero-zoom-out 7.5s ease-in-out forwards; //delayとspeedの合計値にする
-                animation-play-state: paused;
-            }
 
-            &.swiper-slide-active {
                 img {
-                    animation-play-state: running;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transform: scale(1.2);
+                    animation: hero-zoom-out 7.5s ease-in-out forwards; //delayとspeedの合計値にする
+                    animation-play-state: paused;
+                }
+
+                &.swiper-slide-active {
+                    img {
+                        animation-play-state: running;
+                    }
+                }
+            }
+
+            // ページネーション
+            .swiper-pagination {
+                position: absolute;
+                left: spx(60) !important;
+                bottom: spx(48) !important;
+                display: flex;
+                gap: spx(14) !important;
+
+                @include tablet-up {
+                    gap: ppx(15 * $pc-to-tab-ratio) !important;
+                    left: ppx(157 * $pc-to-tab-ratio) !important;
+                    bottom: ppx(75 * $pc-to-tab-ratio) !important;
+                }
+
+                @include desktop-up {
+                    gap: ppx(15) !important;
+                    left: ppx(157) !important;
+                    bottom: ppx(75) !important;
+                }
+            }
+
+            // ページネーションボタン
+            .hero-bullet {
+                display: block;
+                width: spx(30);
+                aspect-ratio: 1 / 1;
+                border-radius: 0;
+                background: #fff;
+                opacity: 1;
+                transition: transform 0.3s;
+                cursor: pointer;
+
+                @include tablet-up {
+                    width: ppx(40 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    width: ppx(40);
+                }
+
+                &.is-active {
+                    background: $base_color_2;
+                }
+            }
+
+            // メインタイトル
+            #main-title {
+                position: absolute;
+                top: spx(257);
+                left: spx(60);
+                z-index: 1;
+
+                @include tablet-up {
+                    top: ppx(520 * $pc-to-tab-ratio);
+                    left: ppx(186 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    top: ppx(520);
+                    left: ppx(186);
+                }
+
+                #line1 {
+                    color: $base_color_2;
+                    font-size: spx(55);
+                    font-weight: 700;
+                    line-height: 155%;
+
+                    @include tablet-up {
+                        font-size: ppx(95 * $pc-to-tab-ratio);
+                    }
+
+                    @include desktop-up {
+                        font-size: ppx(95);
+                    }
+                }
+
+                #line2 {
+                    color: $base_color_2;
+                    font-size: spx(81);
+                    font-weight: 700;
+                    line-height: 155%;
+                    margin-top: spx(-12);
+
+                    @include tablet-up {
+                        font-size: ppx(145 * $pc-to-tab-ratio);
+                        margin-top: ppx(-20 * $pc-to-tab-ratio);
+                    }
+
+                    @include desktop-up {
+                        font-size: ppx(145);
+                        margin-top: ppx(-20);
+                    }
+                }
+
+                span {
+                    display: inline;
+                    transition: opacity 0.3s;
                 }
             }
         }
+    }
 
-        // ページネーション
-        .swiper-pagination {
-            position: absolute;
-            left: spx(60) !important;
-            bottom: spx(48) !important;
-            display: flex;
-            gap: spx(14) !important;
+    // ================================================
+    // MISSION SECTION
+    // ミッションセクション（このページ専用）
+    // ================================================
+    .mission-section {
+        position: relative;
+        padding: spx(130) 0;
 
-            @include tablet-up {
-                gap: ppx(15 * $pc-to-tab-ratio) !important;
-                left: ppx(157 * $pc-to-tab-ratio) !important;
-                bottom: ppx(75 * $pc-to-tab-ratio) !important;
-            }
-
-            @include desktop-up {
-                gap: ppx(15) !important;
-                left: ppx(157) !important;
-                bottom: ppx(75) !important;
-            }
+        @include tablet-up {
+            padding: ppx(271 * $pc-to-tab-ratio) 0 ppx(316 * $pc-to-tab-ratio);
         }
 
-        // ページネーションボタン
-        .hero-bullet {
+        @include desktop-up {
+            padding: ppx(271) 0 ppx(316);
+        }
+        &::after {
+            content: "";
             display: block;
-            width: spx(30);
-            aspect-ratio: 1 / 1;
-            border-radius: 0;
-            background: #fff;
-            opacity: 1;
-            transition: transform 0.3s;
-            cursor: pointer;
+            width: spx(15);
+            height: spx(480);
+            background-color: $base_color_2;
+            position: absolute;
+            top: spx(353);
+            right: 0;
+            @include tablet-up {
+                width: ppx(15 * $pc-to-tab-ratio);
+                height: ppx(650 * $pc-to-tab-ratio);
+                top: ppx(540 * $pc-to-tab-ratio);
+                right: 0;
+            }
+            @include desktop-up {
+                top: ppx(540);
+                right: 0;
+            }
+        }
+
+        .mission__header {
+            color: $base_color_2;
+            margin-left: spx(56);
 
             @include tablet-up {
-                width: ppx(40 * $pc-to-tab-ratio);
+                margin-left: ppx(1307 * $pc-to-tab-ratio);
             }
 
             @include desktop-up {
-                width: ppx(40);
-            }
-
-            &.is-active {
-                background: $base_color_2;
+                margin-left: ppx(1307);
             }
         }
 
-        // メインタイトル
-        #main-title {
-            position: absolute;
-            top: spx(257);
-            left: spx(60);
-            z-index: 1;
+        .mission__text {
+            margin-top: spx(50);
+            margin-left: spx(60);
 
             @include tablet-up {
-                top: ppx(520 * $pc-to-tab-ratio);
-                left: ppx(186 * $pc-to-tab-ratio);
+                margin-left: ppx(1307 * $pc-to-tab-ratio);
+                margin-top: ppx(83 * $pc-to-tab-ratio);
             }
 
             @include desktop-up {
-                top: ppx(520);
-                left: ppx(186);
+                margin-left: ppx(1307);
+                margin-top: ppx(83);
+            }
+        }
+
+        .mission__catch {
+            font-family: $font-noto-serif-jp;
+            color: $base_color_white;
+            font-size: spx(69);
+            font-weight: 700;
+            line-height: 130%;
+            letter-spacing: spx(6.21);
+
+            @include tablet-up {
+                font-size: ppx(95 * $pc-to-tab-ratio);
+                letter-spacing: ppx(9.5 * $pc-to-tab-ratio);
             }
 
-            #line1 {
-                color: $base_color_2;
-                font-size: spx(55);
-                font-weight: 700;
-                line-height: 155%;
+            @include desktop-up {
+                font-size: ppx(95);
+                letter-spacing: ppx(9.5);
+            }
+        }
+
+        .mission__desc {
+            color: $base_color_white;
+            font-size: spx(31);
+            font-weight: 500;
+            line-height: 180%;
+            margin-top: spx(50);
+            width: spx(600);
+
+            @include tablet-up {
+                font-size: ppx(35 * $pc-to-tab-ratio);
+                line-height: 200%;
+                margin-top: ppx(97 * $pc-to-tab-ratio);
+                width: ppx(874 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(35);
+                line-height: 200%;
+                margin-top: ppx(97);
+                width: ppx(874);
+            }
+        }
+
+        .mission__figure {
+            text-align: center;
+
+            @include tablet-up {
+                text-align: unset;
+                position: absolute;
+                top: ppx(200 * $pc-to-tab-ratio);
+                left: 0;
+            }
+
+            @include desktop-up {
+                top: ppx(200);
+                left: 0;
+            }
+
+            img {
+                width: spx(602);
+                height: auto;
+                margin-top: spx(70);
 
                 @include tablet-up {
-                    font-size: ppx(95 * $pc-to-tab-ratio);
+                    width: ppx(1000 * $pc-to-tab-ratio);
+                    margin-top: 0;
                 }
 
                 @include desktop-up {
-                    font-size: ppx(95);
+                    width: ppx(1000);
+                    margin-top: 0;
                 }
             }
-
-            #line2 {
-                color: $base_color_2;
-                font-size: spx(81);
-                font-weight: 700;
-                line-height: 155%;
-                margin-top: spx(-12);
-
-                @include tablet-up {
-                    font-size: ppx(145 * $pc-to-tab-ratio);
-                    margin-top: ppx(-20 * $pc-to-tab-ratio);
-                }
-
-                @include desktop-up {
-                    font-size: ppx(145);
-                    margin-top: ppx(-20);
-                }
-            }
-
-            span {
-                display: inline;
-                transition: opacity 0.3s;
-            }
-        }
-    }
-}
-
-// ================================================
-// MISSION SECTION
-// ミッションセクション（このページ専用）
-// ================================================
-.mission-section {
-    position: relative;
-    padding: spx(130) 0;
-
-    @include tablet-up {
-        padding: ppx(271 * $pc-to-tab-ratio) 0 ppx(316 * $pc-to-tab-ratio);
-    }
-
-    @include desktop-up {
-        padding: ppx(271) 0 ppx(316);
-    }
-    &::after {
-        content: "";
-        display: block;
-        width: spx(15);
-        height: spx(480);
-        background-color: $base_color_2;
-        position: absolute;
-        top: spx(353);
-        right: 0;
-        @include tablet-up {
-            width: ppx(15 * $pc-to-tab-ratio);
-            height: ppx(650 * $pc-to-tab-ratio);
-            top: ppx(540 * $pc-to-tab-ratio);
-            right: 0;
-        }
-        @include desktop-up {
-            top: ppx(540);
-            right: 0;
-        }
-    }
-
-    .mission__header {
-        color: $base_color_2;
-        margin-left: spx(56);
-
-        @include tablet-up {
-            margin-left: ppx(1307 * $pc-to-tab-ratio);
         }
 
-        @include desktop-up {
-            margin-left: ppx(1307);
-        }
-    }
-
-    .mission__text {
-        margin-top: spx(50);
-        margin-left: spx(60);
-
-        @include tablet-up {
-            margin-left: ppx(1307 * $pc-to-tab-ratio);
-            margin-top: ppx(83 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            margin-left: ppx(1307);
-            margin-top: ppx(83);
-        }
-    }
-
-    .mission__catch {
-        font-family: $font-noto-serif-jp;
-        color: $base_color_white;
-        font-size: spx(69);
-        font-weight: 700;
-        line-height: 130%;
-        letter-spacing: spx(6.21);
-
-        @include tablet-up {
-            font-size: ppx(95 * $pc-to-tab-ratio);
-            letter-spacing: ppx(9.5 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            font-size: ppx(95);
-            letter-spacing: ppx(9.5);
-        }
-    }
-
-    .mission__desc {
-        color: $base_color_white;
-        font-size: spx(31);
-        font-weight: 500;
-        line-height: 180%;
-        margin-top: spx(50);
-        width: spx(600);
-
-        @include tablet-up {
-            font-size: ppx(35 * $pc-to-tab-ratio);
-            line-height: 200%;
-            margin-top: ppx(97 * $pc-to-tab-ratio);
-            width: ppx(874 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            font-size: ppx(35);
-            line-height: 200%;
-            margin-top: ppx(97);
-            width: ppx(874);
-        }
-    }
-
-    .mission__figure {
-        text-align: center;
-
-        @include tablet-up {
-            text-align: unset;
-            position: absolute;
-            top: ppx(200 * $pc-to-tab-ratio);
-            left: 0;
-        }
-
-        @include desktop-up {
-            top: ppx(200);
-            left: 0;
-        }
-
-        img {
+        .mission__visual {
             width: spx(602);
             height: auto;
             margin-top: spx(70);
@@ -522,897 +540,883 @@
                 margin-top: 0;
             }
         }
-    }
 
-    .mission__visual {
-        width: spx(602);
-        height: auto;
-        margin-top: spx(70);
+        .mission__link-wrapper {
+            width: max-content;
+            margin-top: spx(70);
+            margin-inline: auto;
 
-        @include tablet-up {
-            width: ppx(1000 * $pc-to-tab-ratio);
-            margin-top: 0;
-        }
+            @include tablet-up {
+                margin-top: ppx(40 * $pc-to-tab-ratio);
+                margin-inline: unset;
+                margin-left: ppx(1307 * $pc-to-tab-ratio);
+            }
 
-        @include desktop-up {
-            width: ppx(1000);
-            margin-top: 0;
-        }
-    }
-
-    .mission__link-wrapper {
-        width: max-content;
-        margin-top: spx(70);
-        margin-inline: auto;
-
-        @include tablet-up {
-            margin-top: ppx(40 * $pc-to-tab-ratio);
-            margin-inline: unset;
-            margin-left: ppx(1307 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            margin-top: ppx(40);
-            margin-inline: unset;
-            margin-left: ppx(1307);
-        }
-    }
-}
-
-// ================================================
-// RECRUIT SECTION
-// 採用情報セクション（ギャラリーレイアウト・このページ専用）
-// ================================================
-.recruit-section {
-    background-color: #edf2f8;
-    padding: spx(140) 0;
-    position: relative;
-
-    @include tablet-up {
-        padding: ppx(220 * $pc-to-tab-ratio) 0 ppx(223 * $pc-to-tab-ratio);
-    }
-
-    @include desktop-up {
-        padding: ppx(220) 0 ppx(223);
-    }
-
-    .recruit__header {
-        margin-left: spx(56);
-
-        @include tablet-up {
-            margin-left: ppx(220 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            margin-left: ppx(220);
+            @include desktop-up {
+                margin-top: ppx(40);
+                margin-inline: unset;
+                margin-left: ppx(1307);
+            }
         }
     }
 
-    .recruit__text {
-        margin-top: spx(52);
-
-        @include tablet-up {
-            margin-top: ppx(90 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            margin-top: ppx(90);
-        }
-    }
-
-    .recruit__catch {
-        font-family: $font-noto-serif-jp;
-        color: $base_color_1;
-        font-size: spx(58);
-        font-weight: 700;
-        line-height: 150%;
-        letter-spacing: spx(2.9);
-        margin-left: spx(57);
-
-        @include tablet-up {
-            font-size: ppx(75 * $pc-to-tab-ratio);
-            letter-spacing: ppx(3.75 * $pc-to-tab-ratio);
-            margin-left: ppx(220 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            font-size: ppx(75);
-            letter-spacing: ppx(3.75);
-            margin-left: ppx(220);
-        }
-    }
-
-    .recruit__desc {
-        color: $base_color_1;
-        font-size: spx(33);
-        font-weight: 500;
-        line-height: 200%;
-        letter-spacing: spx(0.33);
-        margin-top: spx(65);
-        width: spx(600);
-        margin-inline: auto;
-
-        @include tablet-up {
-            font-size: ppx(35 * $pc-to-tab-ratio);
-            letter-spacing: ppx(0.35 * $pc-to-tab-ratio);
-            margin-top: ppx(468 * $pc-to-tab-ratio);
-            width: ppx(771 * $pc-to-tab-ratio);
-            margin-inline: unset;
-            margin-left: ppx(1449 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            font-size: ppx(35);
-            letter-spacing: ppx(0.35);
-            margin-top: ppx(468);
-            width: ppx(771);
-            margin-left: ppx(1449);
-        }
-    }
-
-    .recruit__gallery {
+    // ================================================
+    // RECRUIT SECTION
+    // 採用情報セクション（ギャラリーレイアウト・このページ専用）
+    // ================================================
+    .recruit-section {
+        background-color: #edf2f8;
+        padding: spx(140) 0;
         position: relative;
-        width: 100vw;
-        overflow-x: hidden;
-        height: spx(843);
 
         @include tablet-up {
-            position: unset;
+            padding: ppx(220 * $pc-to-tab-ratio) 0 ppx(223 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            padding: ppx(220) 0 ppx(223);
+        }
+
+        .recruit__header {
+            margin-left: spx(56);
+
+            @include tablet-up {
+                margin-left: ppx(220 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                margin-left: ppx(220);
+            }
+        }
+
+        .recruit__text {
+            margin-top: spx(52);
+
+            @include tablet-up {
+                margin-top: ppx(90 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                margin-top: ppx(90);
+            }
+        }
+
+        .recruit__catch {
+            font-family: $font-noto-serif-jp;
+            color: $base_color_1;
+            font-size: spx(58);
+            font-weight: 700;
+            line-height: 150%;
+            letter-spacing: spx(2.9);
+            margin-left: spx(57);
+
+            @include tablet-up {
+                font-size: ppx(75 * $pc-to-tab-ratio);
+                letter-spacing: ppx(3.75 * $pc-to-tab-ratio);
+                margin-left: ppx(220 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(75);
+                letter-spacing: ppx(3.75);
+                margin-left: ppx(220);
+            }
+        }
+
+        .recruit__desc {
+            color: $base_color_1;
+            font-size: spx(33);
+            font-weight: 500;
+            line-height: 200%;
+            letter-spacing: spx(0.33);
+            margin-top: spx(65);
+            width: spx(600);
+            margin-inline: auto;
+
+            @include tablet-up {
+                font-size: ppx(35 * $pc-to-tab-ratio);
+                letter-spacing: ppx(0.35 * $pc-to-tab-ratio);
+                margin-top: ppx(468 * $pc-to-tab-ratio);
+                width: ppx(771 * $pc-to-tab-ratio);
+                margin-inline: unset;
+                margin-left: ppx(1449 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(35);
+                letter-spacing: ppx(0.35);
+                margin-top: ppx(468);
+                width: ppx(771);
+                margin-left: ppx(1449);
+            }
+        }
+
+        .recruit__gallery {
+            position: relative;
+            width: 100vw;
+            overflow-x: hidden;
+            height: spx(843);
+
+            @include tablet-up {
+                position: unset;
+                height: auto;
+            }
+        }
+
+        .recruit__gallery-item {
+            position: absolute;
+            display: block;
+
+            // section-visual01（エンジニア）
+            &.section-visual01 {
+                width: spx(320);
+                top: spx(98);
+                left: 0;
+                opacity: 0.9;
+                z-index: 2;
+
+                @include tablet-up {
+                    width: ppx(760 * $pc-to-tab-ratio);
+                    top: ppx(922 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    width: ppx(760);
+                    top: ppx(922);
+                }
+            }
+
+            // section-visual02（電話対応）
+            &.section-visual02 {
+                width: spx(209);
+                top: spx(98);
+                left: spx(327);
+                opacity: 0.9;
+                z-index: 2;
+
+                @include tablet-up {
+                    width: ppx(453 * $pc-to-tab-ratio);
+                    top: ppx(266 * $pc-to-tab-ratio);
+                    left: unset;
+                    right: 0;
+                }
+
+                @include desktop-up {
+                    width: ppx(453);
+                    top: ppx(266);
+                }
+            }
+
+            // section-visual03（受付女性）
+            &.section-visual03 {
+                width: spx(559);
+                top: spx(375);
+                right: 0;
+                opacity: 0.9;
+                z-index: 2;
+
+                @include tablet-up {
+                    width: ppx(906 * $pc-to-tab-ratio);
+                    top: ppx(480 * $pc-to-tab-ratio);
+                    right: unset;
+                    left: ppx(1126 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    width: ppx(906);
+                    top: ppx(480);
+                    left: ppx(1126);
+                }
+            }
+
+            // section-visual04（電話対応・ブラー）
+            &.section-visual04 {
+                width: spx(244);
+                top: 8vw;
+                right: spx(-110);
+                opacity: 0.8;
+                filter: blur(14px);
+                z-index: 1;
+
+                @include tablet-up {
+                    width: ppx(463 * $pc-to-tab-ratio);
+                    top: ppx(969 * $pc-to-tab-ratio);
+                    right: unset;
+                    left: ppx(867 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    width: ppx(463);
+                    top: ppx(969);
+                    left: ppx(867);
+                }
+            }
+
+            // section-visual05（商談・ブラー）
+            &.section-visual05 {
+                width: spx(172);
+                top: spx(415);
+                left: spx(-84);
+                opacity: 0.8;
+                filter: blur(15px);
+                z-index: 1;
+
+                @include tablet-up {
+                    width: ppx(290 * $pc-to-tab-ratio);
+                    top: ppx(835 * $pc-to-tab-ratio);
+                    left: unset;
+                    right: 0;
+                }
+
+                @include desktop-up {
+                    width: ppx(290);
+                    top: ppx(835);
+                }
+            }
+        }
+
+        .recruit__gallery-image {
+            width: 100%;
             height: auto;
         }
-    }
 
-    .recruit__gallery-item {
-        position: absolute;
-        display: block;
-
-        // section-visual01（エンジニア）
-        &.section-visual01 {
-            width: spx(320);
-            top: spx(98);
-            left: 0;
-            opacity: 0.9;
-            z-index: 2;
+        .recruit__link-wrapper {
+            width: max-content;
+            margin-inline: auto;
 
             @include tablet-up {
-                width: ppx(760 * $pc-to-tab-ratio);
-                top: ppx(922 * $pc-to-tab-ratio);
+                margin-inline: unset;
+                margin-top: ppx(48 * $pc-to-tab-ratio);
+                margin-left: ppx(1449 * $pc-to-tab-ratio);
             }
 
             @include desktop-up {
-                width: ppx(760);
-                top: ppx(922);
-            }
-        }
-
-        // section-visual02（電話対応）
-        &.section-visual02 {
-            width: spx(209);
-            top: spx(98);
-            left: spx(327);
-            opacity: 0.9;
-            z-index: 2;
-
-            @include tablet-up {
-                width: ppx(453 * $pc-to-tab-ratio);
-                top: ppx(266 * $pc-to-tab-ratio);
-                left: unset;
-                right: 0;
-            }
-
-            @include desktop-up {
-                width: ppx(453);
-                top: ppx(266);
-            }
-        }
-
-        // section-visual03（受付女性）
-        &.section-visual03 {
-            width: spx(559);
-            top: spx(375);
-            right: 0;
-            opacity: 0.9;
-            z-index: 2;
-
-            @include tablet-up {
-                width: ppx(906 * $pc-to-tab-ratio);
-                top: ppx(480 * $pc-to-tab-ratio);
-                right: unset;
-                left: ppx(1126 * $pc-to-tab-ratio);
-            }
-
-            @include desktop-up {
-                width: ppx(906);
-                top: ppx(480);
-                left: ppx(1126);
-            }
-        }
-
-        // section-visual04（電話対応・ブラー）
-        &.section-visual04 {
-            width: spx(244);
-            top: 8vw;
-            right: spx(-110);
-            opacity: 0.8;
-            filter: blur(14px);
-            z-index: 1;
-
-            @include tablet-up {
-                width: ppx(463 * $pc-to-tab-ratio);
-                top: ppx(969 * $pc-to-tab-ratio);
-                right: unset;
-                left: ppx(867 * $pc-to-tab-ratio);
-            }
-
-            @include desktop-up {
-                width: ppx(463);
-                top: ppx(969);
-                left: ppx(867);
-            }
-        }
-
-        // section-visual05（商談・ブラー）
-        &.section-visual05 {
-            width: spx(172);
-            top: spx(415);
-            left: spx(-84);
-            opacity: 0.8;
-            filter: blur(15px);
-            z-index: 1;
-
-            @include tablet-up {
-                width: ppx(290 * $pc-to-tab-ratio);
-                top: ppx(835 * $pc-to-tab-ratio);
-                left: unset;
-                right: 0;
-            }
-
-            @include desktop-up {
-                width: ppx(290);
-                top: ppx(835);
+                margin-top: ppx(48);
+                margin-left: ppx(1449);
             }
         }
     }
 
-    .recruit__gallery-image {
-        width: 100%;
-        height: auto;
-    }
-
-    .recruit__link-wrapper {
-        width: max-content;
-        margin-inline: auto;
+    // ================================================
+    // NEWS SECTION
+    // ニュースセクション（このページ専用）
+    // ================================================
+    .news-section {
+        padding: spx(140) 0;
 
         @include tablet-up {
-            margin-inline: unset;
-            margin-top: ppx(48 * $pc-to-tab-ratio);
-            margin-left: ppx(1449 * $pc-to-tab-ratio);
+            padding: ppx(220 * $pc-to-tab-ratio) 0;
         }
 
         @include desktop-up {
-            margin-top: ppx(48);
-            margin-left: ppx(1449);
+            padding: ppx(220) 0;
         }
-    }
-}
 
-// ================================================
-// NEWS SECTION
-// ニュースセクション（このページ専用）
-// ================================================
-.news-section {
-    padding: spx(140) 0;
+        .news__inner {
+            @include tablet-up {
+                display: flex;
+                gap: ppx(316 * $pc-to-tab-ratio);
+            }
 
-    @include tablet-up {
-        padding: ppx(220 * $pc-to-tab-ratio) 0;
-    }
+            @include desktop-up {
+                gap: ppx(316);
+            }
+        }
 
-    @include desktop-up {
-        padding: ppx(220) 0;
-    }
+        .news__header {
+            margin-left: spx(56);
 
-    .news__inner {
-        @include tablet-up {
+            @include tablet-up {
+                margin-left: ppx(220 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                margin-left: ppx(220);
+            }
+        }
+
+        .news__content {
+            position: relative;
+            margin-top: spx(62);
+
+            @include tablet-up {
+                margin-top: ppx(44 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                margin-top: ppx(44);
+            }
+
+            &::before {
+                @include tablet-up {
+                    content: "";
+                    display: block;
+                    width: ppx(15 * $pc-to-tab-ratio);
+                    height: ppx(651 * $pc-to-tab-ratio);
+                    background-color: $base_color_2;
+                    position: absolute;
+                    top: ppx(134 * $pc-to-tab-ratio);
+                    left: ppx(-154 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    content: "";
+                    display: block;
+                    width: ppx(15);
+                    height: ppx(651);
+                    top: ppx(134);
+                    left: ppx(-154);
+                }
+            }
+        }
+
+        .news__list {
             display: flex;
-            gap: ppx(316 * $pc-to-tab-ratio);
-        }
+            flex-flow: column;
+            gap: spx(50);
+            width: max-content;
+            margin-inline: auto;
 
-        @include desktop-up {
-            gap: ppx(316);
-        }
-    }
-
-    .news__header {
-        margin-left: spx(56);
-
-        @include tablet-up {
-            margin-left: ppx(220 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            margin-left: ppx(220);
-        }
-    }
-
-    .news__content {
-        position: relative;
-        margin-top: spx(62);
-
-        @include tablet-up {
-            margin-top: ppx(44 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            margin-top: ppx(44);
-        }
-
-        &::before {
             @include tablet-up {
+                gap: ppx(40 * $pc-to-tab-ratio);
+                margin-inline: unset;
+            }
+
+            @include desktop-up {
+                gap: ppx(40);
+            }
+        }
+
+        .news__item {
+            position: relative;
+            width: max-content;
+            padding-bottom: spx(35);
+            padding-top: 26vw;
+
+            @include tablet-up {
+                padding-bottom: ppx(40 * $pc-to-tab-ratio);
+                padding-top: 0;
+                display: flex;
+                gap: ppx(90 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                padding-bottom: ppx(40);
+                padding-top: 0;
+                gap: ppx(90);
+            }
+
+            &::after {
                 content: "";
                 display: block;
-                width: ppx(15 * $pc-to-tab-ratio);
-                height: ppx(651 * $pc-to-tab-ratio);
-                background-color: $base_color_2;
+                width: 100%;
+                height: 1px;
+                background-color: $base_color_white;
                 position: absolute;
-                top: ppx(134 * $pc-to-tab-ratio);
-                left: ppx(-154 * $pc-to-tab-ratio);
+                bottom: 0;
+                left: 0;
+            }
+
+            &:last-child {
+                @include tablet-up {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .news__image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: spx(330);
+            height: spx(220);
+            overflow: hidden;
+
+            @include tablet-up {
+                position: static;
+                top: unset;
+                left: unset;
+                width: ppx(360 * $pc-to-tab-ratio);
+                height: ppx(240 * $pc-to-tab-ratio);
             }
 
             @include desktop-up {
-                content: "";
-                display: block;
-                width: ppx(15);
-                height: ppx(651);
-                top: ppx(134);
-                left: ppx(-154);
+                width: ppx(360);
+                height: ppx(240);
             }
         }
-    }
 
-    .news__list {
-        display: flex;
-        flex-flow: column;
-        gap: spx(50);
-        width: max-content;
-        margin-inline: auto;
-
-        @include tablet-up {
-            gap: ppx(40 * $pc-to-tab-ratio);
-            margin-inline: unset;
-        }
-
-        @include desktop-up {
-            gap: ppx(40);
-        }
-    }
-
-    .news__item {
-        position: relative;
-        width: max-content;
-        padding-bottom: spx(35);
-        padding-top: 26vw;
-
-        @include tablet-up {
-            padding-bottom: ppx(40 * $pc-to-tab-ratio);
-            padding-top: 0;
-            display: flex;
-            gap: ppx(90 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            padding-bottom: ppx(40);
-            padding-top: 0;
-            gap: ppx(90);
-        }
-
-        &::after {
-            content: "";
+        .news__image-link {
             display: block;
             width: 100%;
-            height: 1px;
-            background-color: $base_color_white;
-            position: absolute;
-            bottom: 0;
-            left: 0;
+            height: 100%;
+            text-decoration: none;
         }
 
-        &:last-child {
-            @include tablet-up {
-                &::after {
-                    display: none;
-                }
-            }
-        }
-    }
-
-    .news__image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: spx(330);
-        height: spx(220);
-        overflow: hidden;
-
-        @include tablet-up {
-            position: static;
-            top: unset;
-            left: unset;
-            width: ppx(360 * $pc-to-tab-ratio);
-            height: ppx(240 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            width: ppx(360);
-            height: ppx(240);
-        }
-    }
-
-    .news__image-link {
-        display: block;
-        width: 100%;
-        height: 100%;
-        text-decoration: none;
-    }
-
-    .news__item-image {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition:
-            transform 0.3s ease,
-            filter 0.3s ease;
-    }
-
-    // ホバー効果: 画像リンクと見出しリンクのみでエフェクト発動
-    @include hover {
-        .news__image-link:hover .news__item-image {
-            transform: scale(1.05);
-            filter: brightness(1.1);
-        }
-
-        // 見出しホバー時の画像エフェクト（JavaScript併用またはCSS workaround）
-        .news__item:has(.news__link:hover) .news__item-image {
-            transform: scale(1.05);
-            filter: brightness(1.1);
-        }
-    }
-
-    .news__item-content {
-        width: spx(600);
-
-        @include tablet-up {
-            width: 32vw;
-        }
-
-        @include desktop-up {
-            width: ppx(900);
-        }
-    }
-
-    .news__date {
-        color: $base_color_2;
-        font-size: spx(30);
-        font-weight: 700;
-        line-height: spx(26);
-        letter-spacing: spx(1.5);
-        margin-left: spx(360);
-
-        @include tablet-up {
-            font-size: ppx(30 * $pc-to-tab-ratio);
-            line-height: ppx(26 * $pc-to-tab-ratio);
-            letter-spacing: ppx(1.5 * $pc-to-tab-ratio);
-            margin-left: 0;
-        }
-
-        @include desktop-up {
-            font-size: ppx(30);
-            line-height: ppx(26);
-            letter-spacing: ppx(1.5);
-            margin-left: 0;
-        }
-    }
-
-    .news__title {
-        margin-top: spx(30);
-
-        @include tablet-up {
-            margin-top: ppx(18);
-        }
-
-        @include desktop-up {
-            margin-top: ppx(18);
-        }
-    }
-
-    .news__link {
-        color: $base_color_white;
-        font-size: spx(28);
-        font-weight: 500;
-        line-height: 150%;
-
-        @include tablet-up {
-            font-size: ppx(35 * $pc-to-tab-ratio);
-            line-height: 160%;
-        }
-
-        @include desktop-up {
-            font-size: ppx(35);
-            line-height: 160%;
-        }
-    }
-
-    .news__link-wrapper {
-        margin-top: spx(70);
-        width: max-content;
-        margin-inline: auto;
-
-        @include tablet-up {
-            margin-top: ppx(70 * $pc-to-tab-ratio);
-            margin-inline: unset;
-            margin-right: 0;
-            margin-left: auto;
-        }
-
-        @include desktop-up {
-            margin-top: ppx(70);
-        }
-    }
-}
-
-// ================================================
-// SERVICE SECTION
-// サービスセクション（このページ専用）
-// ================================================
-.service-section {
-    background-image: url(../images/index/service/section-bg-mobile.webp);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: spx(140) 0;
-
-    @include tablet-up {
-        background-image: url(../images/index/service/section-bg-desktop.webp);
-        padding: ppx(220 * $pc-to-tab-ratio) 0;
-    }
-
-    @include desktop-up {
-        padding: ppx(220) 0;
-    }
-
-    .service__header {
-        width: max-content;
-        margin-inline: auto;
-    }
-
-    .service__grid {
-        display: flex;
-        flex-flow: column;
-        gap: spx(30);
-        margin-top: spx(53);
-        align-items: center;
-
-        @include tablet-up {
-            flex-flow: row;
-            gap: ppx(17 * $pc-to-tab-ratio);
-            margin-top: ppx(90 * $pc-to-tab-ratio);
-            align-items: unset;
-            justify-content: center;
-        }
-
-        @include desktop-up {
-            gap: ppx(17);
-            margin-top: ppx(90);
-        }
-    }
-
-    .service__card {
-        position: relative;
-        width: spx(517);
-        height: auto;
-        background-color: $base_color_white;
-        padding-bottom: spx(128);
-        box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.25);
-
-        @include tablet-up {
-            width: ppx(517 * $pc-to-tab-ratio);
-            padding-bottom: ppx(124 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            width: ppx(517);
-            padding-bottom: ppx(124);
-        }
-
-        // ブランドカラー別バリエーション
-        &--honda {
-            padding-top: spx(49);
-
-            @include tablet-up {
-                padding-top: ppx(41 * $pc-to-tab-ratio);
-            }
-
-            @include desktop-up {
-                padding-top: ppx(41);
-            }
-
-            .service__logo {
-                width: spx(272);
-                height: auto;
-                margin-left: spx(122);
-
-                @include tablet-up {
-                    width: ppx(272 * $pc-to-tab-ratio);
-                    margin-left: ppx(123 * $pc-to-tab-ratio);
-                }
-
-                @include desktop-up {
-                    width: ppx(272);
-                    margin-left: ppx(123);
-                }
-            }
-
-            .service__item::before {
-                color: $base_color_2; // Honda用カラー
-            }
-
-            .service__link-icon {
-                background-color: $base_color_2;
-            }
-        }
-
-        &--kyne {
-            padding-top: spx(5);
-
-            @include tablet-up {
-                padding-top: ppx(35 * $pc-to-tab-ratio);
-            }
-
-            @include desktop-up {
-                padding-top: ppx(35);
-            }
-
-            .service__logo {
-                width: spx(311);
-                height: auto;
-                margin-left: spx(122);
-
-                @include tablet-up {
-                    width: ppx(311 * $pc-to-tab-ratio);
-                    margin-left: ppx(116 * $pc-to-tab-ratio);
-                }
-
-                @include desktop-up {
-                    width: ppx(311);
-                    margin-left: ppx(116);
-                }
-            }
-
-            .service__item::before {
-                color: $kyne_color; // Kyne用カラー
-            }
-
-            .service__link-icon {
-                background-color: $kyne_color;
-            }
-        }
-
-        &--fuji {
-            padding-top: spx(65);
-
-            @include tablet-up {
-                padding-top: ppx(74 * $pc-to-tab-ratio);
-            }
-
-            @include desktop-up {
-                padding-top: ppx(74);
-            }
-
-            .service__logo {
-                width: spx(151);
-                height: auto;
-                margin-left: spx(183);
-
-                @include tablet-up {
-                    width: ppx(151 * $pc-to-tab-ratio);
-                    margin-left: ppx(183 * $pc-to-tab-ratio);
-                }
-
-                @include desktop-up {
-                    width: ppx(151);
-                    margin-left: ppx(183);
-                }
-            }
-
-            .service__item::before {
-                color: $fuji_color; // Fuji用カラー
-            }
-
-            .service__link-icon {
-                background-color: $fuji_color;
-            }
-        }
-
-        &--fjkensetsu {
-            padding-top: spx(65);
-
-            @include tablet-up {
-                padding-top: ppx(76 * $pc-to-tab-ratio);
-            }
-
-            @include desktop-up {
-                padding-top: ppx(76);
-            }
-
-            .service__logo {
-                width: spx(187);
-                height: auto;
-                margin-left: spx(165);
-
-                @include tablet-up {
-                    width: ppx(187 * $pc-to-tab-ratio);
-                    margin-left: ppx(165 * $pc-to-tab-ratio);
-                }
-
-                @include desktop-up {
-                    width: ppx(187);
-                    margin-left: ppx(165);
-                }
-            }
-
-            .service__item::before {
-                color: $fjkensetsu_color; // FJ建設用カラー
-            }
-
-            .service__link-icon {
-                background-color: $fjkensetsu_color;
-            }
-        }
-
-        // ホバー効果
-        @include hover {
-            &:hover {
-                .service__link-icon {
-                    opacity: 0.7;
-                }
-            }
-        }
-    }
-
-    .service__logo-image {
-        width: 100%;
-        height: auto;
-    }
-
-    .service__line {
-        display: block;
-        width: spx(409);
-        height: 1px;
-        background-color: $gray_1;
-        margin-top: spx(25);
-        margin-bottom: spx(52);
-        margin-inline: auto;
-
-        @include tablet-up {
-            width: ppx(409 * $pc-to-tab-ratio);
-            margin-top: ppx(26 * $pc-to-tab-ratio);
-            margin-bottom: ppx(52 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            width: ppx(409);
-            margin-top: ppx(26);
-            margin-bottom: ppx(52);
-        }
-    }
-
-    .service__list {
-        width: spx(427);
-        margin-inline: auto;
-        display: flex;
-        flex-flow: column;
-        gap: spx(13);
-
-        @include tablet-up {
-            width: ppx(427 * $pc-to-tab-ratio);
-            gap: ppx(13 * $pc-to-tab-ratio);
-            min-height: ppx(247 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            width: ppx(427);
-            gap: ppx(13);
-            min-height: ppx(247);
-        }
-    }
-
-    .service__item {
-        color: $base_color_1;
-        font-size: spx(28);
-        font-weight: 500;
-        line-height: 140%;
-        display: grid;
-        grid-template-columns: max-content auto;
-        gap: spx(6);
-
-        @include tablet-up {
-            font-size: ppx(28 * $pc-to-tab-ratio);
-            gap: ppx(6 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            font-size: ppx(28);
-            gap: ppx(6);
-        }
-
-        &::before {
-            content: "－";
+        .news__item-image {
             display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition:
+                transform 0.3s ease,
+                filter 0.3s ease;
+        }
+
+        // ホバー効果: 画像リンクと見出しリンクのみでエフェクト発動
+        @include hover {
+            .news__image-link:hover .news__item-image {
+                transform: scale(1.05);
+                filter: brightness(1.1);
+            }
+
+            // 見出しホバー時の画像エフェクト（JavaScript併用またはCSS workaround）
+            .news__item:has(.news__link:hover) .news__item-image {
+                transform: scale(1.05);
+                filter: brightness(1.1);
+            }
+        }
+
+        .news__item-content {
+            width: spx(600);
+
+            @include tablet-up {
+                width: 32vw;
+                padding-top: ppx(24 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(900);
+                padding-top: ppx(24);
+            }
+        }
+
+        .news__date {
+            color: $base_color_2;
+            font-size: spx(30);
+            font-weight: 700;
+            line-height: spx(26);
+            letter-spacing: spx(1.5);
+            margin-left: spx(360);
+
+            @include tablet-up {
+                font-size: ppx(30 * $pc-to-tab-ratio);
+                line-height: ppx(26 * $pc-to-tab-ratio);
+                letter-spacing: ppx(1.5 * $pc-to-tab-ratio);
+                margin-left: 0;
+            }
+
+            @include desktop-up {
+                font-size: ppx(30);
+                line-height: ppx(26);
+                letter-spacing: ppx(1.5);
+                margin-left: 0;
+            }
+        }
+
+        .news__title {
+            margin-top: spx(30);
+
+            @include tablet-up {
+                margin-top: ppx(18);
+            }
+
+            @include desktop-up {
+                margin-top: ppx(18);
+            }
+        }
+
+        .news__link {
+            color: $base_color_white;
+            font-size: spx(28);
+            font-weight: 500;
+            line-height: 150%;
+
+            @include tablet-up {
+                font-size: ppx(35 * $pc-to-tab-ratio);
+                line-height: 160%;
+            }
+
+            @include desktop-up {
+                font-size: ppx(35);
+                line-height: 160%;
+            }
+        }
+
+        .news__link-wrapper {
+            margin-top: spx(70);
+            width: max-content;
+            margin-inline: auto;
+
+            @include tablet-up {
+                margin-top: ppx(70 * $pc-to-tab-ratio);
+                margin-inline: unset;
+                margin-right: 0;
+                margin-left: auto;
+            }
+
+            @include desktop-up {
+                margin-top: ppx(70);
+            }
         }
     }
 
-    .service__link-wrapper {
-        width: max-content;
-        position: absolute;
-        bottom: spx(25);
-        right: spx(25);
+    // ================================================
+    // SERVICE SECTION
+    // サービスセクション（このページ専用）
+    // ================================================
+    .service-section {
+        background-image: url(../images/index/service/section-bg-mobile.webp);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: spx(140) 0;
 
         @include tablet-up {
-            bottom: ppx(25 * $pc-to-tab-ratio);
-            right: ppx(25 * $pc-to-tab-ratio);
+            background-image: url(../images/index/service/section-bg-desktop.webp);
+            padding: ppx(220 * $pc-to-tab-ratio) 0;
         }
 
         @include desktop-up {
-            bottom: ppx(25);
-            right: ppx(25);
-        }
-    }
-
-    .service__link {
-        display: block;
-        width: max-content;
-    }
-
-    .service__link-icon {
-        width: spx(83);
-        height: spx(83);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: spx(28) spx(25);
-        transition: opacity 0.3s ease;
-
-        @include tablet-up {
-            width: ppx(83 * $pc-to-tab-ratio);
-            height: ppx(83 * $pc-to-tab-ratio);
-            padding: ppx(28 * $pc-to-tab-ratio) ppx(25 * $pc-to-tab-ratio);
+            padding: ppx(220) 0;
         }
 
-        @include desktop-up {
-            width: ppx(83);
-            height: ppx(83);
-            padding: ppx(28) ppx(25);
-        }
-    }
-
-    .service__bottom-link-wrapper {
-        margin-top: spx(70);
-        width: max-content;
-        margin-inline: auto;
-
-        @include tablet-up {
-            margin-top: ppx(100 * $pc-to-tab-ratio);
+        .service__header {
+            width: max-content;
+            margin-inline: auto;
         }
 
-        @include desktop-up {
-            margin-top: ppx(100);
-        }
-    }
+        .service__grid {
+            display: flex;
+            flex-flow: column;
+            gap: spx(30);
+            margin-top: spx(53);
+            align-items: center;
 
-    .service__card-content {
-        display: block;
-        width: 100%;
-        height: 100%;
-        color: inherit;
+            @include tablet-up {
+                flex-flow: row;
+                gap: ppx(17 * $pc-to-tab-ratio);
+                margin-top: ppx(90 * $pc-to-tab-ratio);
+                align-items: unset;
+                justify-content: center;
+            }
+
+            @include desktop-up {
+                gap: ppx(17);
+                margin-top: ppx(90);
+            }
+        }
+
+        .service__card {
+            position: relative;
+            width: spx(517);
+            height: auto;
+            background-color: $base_color_white;
+            padding-bottom: spx(128);
+            box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.25);
+
+            @include tablet-up {
+                width: ppx(517 * $pc-to-tab-ratio);
+                padding-bottom: ppx(124 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(517);
+                padding-bottom: ppx(124);
+            }
+
+            // ブランドカラー別バリエーション
+            &--honda {
+                padding-top: spx(49);
+
+                @include tablet-up {
+                    padding-top: ppx(41 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    padding-top: ppx(41);
+                }
+
+                .service__logo {
+                    width: spx(272);
+                    height: auto;
+                    margin-left: spx(122);
+
+                    @include tablet-up {
+                        width: ppx(272 * $pc-to-tab-ratio);
+                        margin-left: ppx(123 * $pc-to-tab-ratio);
+                    }
+
+                    @include desktop-up {
+                        width: ppx(272);
+                        margin-left: ppx(123);
+                    }
+                }
+
+                .service__item::before {
+                    color: $base_color_2; // Honda用カラー
+                }
+
+                .service__link-icon {
+                    background-color: $base_color_2;
+                }
+            }
+
+            &--kyne {
+                padding-top: spx(5);
+
+                @include tablet-up {
+                    padding-top: ppx(35 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    padding-top: ppx(35);
+                }
+
+                .service__logo {
+                    width: spx(311);
+                    height: auto;
+                    margin-left: spx(122);
+
+                    @include tablet-up {
+                        width: ppx(311 * $pc-to-tab-ratio);
+                        margin-left: ppx(116 * $pc-to-tab-ratio);
+                    }
+
+                    @include desktop-up {
+                        width: ppx(311);
+                        margin-left: ppx(116);
+                    }
+                }
+
+                .service__item::before {
+                    color: $kyne_color; // Kyne用カラー
+                }
+
+                .service__link-icon {
+                    background-color: $kyne_color;
+                }
+            }
+
+            &--fuji {
+                padding-top: spx(65);
+
+                @include tablet-up {
+                    padding-top: ppx(74 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    padding-top: ppx(74);
+                }
+
+                .service__logo {
+                    width: spx(151);
+                    height: auto;
+                    margin-left: spx(183);
+
+                    @include tablet-up {
+                        width: ppx(151 * $pc-to-tab-ratio);
+                        margin-left: ppx(183 * $pc-to-tab-ratio);
+                    }
+
+                    @include desktop-up {
+                        width: ppx(151);
+                        margin-left: ppx(183);
+                    }
+                }
+
+                .service__item::before {
+                    color: $fuji_color; // Fuji用カラー
+                }
+
+                .service__link-icon {
+                    background-color: $fuji_color;
+                }
+            }
+
+            &--fjkensetsu {
+                padding-top: spx(65);
+
+                @include tablet-up {
+                    padding-top: ppx(76 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    padding-top: ppx(76);
+                }
+
+                .service__logo {
+                    width: spx(187);
+                    height: auto;
+                    margin-left: spx(165);
+
+                    @include tablet-up {
+                        width: ppx(187 * $pc-to-tab-ratio);
+                        margin-left: ppx(165 * $pc-to-tab-ratio);
+                    }
+
+                    @include desktop-up {
+                        width: ppx(187);
+                        margin-left: ppx(165);
+                    }
+                }
+
+                .service__item::before {
+                    color: $fjkensetsu_color; // FJ建設用カラー
+                }
+
+                .service__link-icon {
+                    background-color: $fjkensetsu_color;
+                }
+            }
+
+            // ホバー効果
+            @include hover {
+                &:hover {
+                    .service__link-icon {
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+
+        .service__logo-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .service__line {
+            display: block;
+            width: spx(409);
+            height: 1px;
+            background-color: $gray_1;
+            margin-top: spx(25);
+            margin-bottom: spx(52);
+            margin-inline: auto;
+
+            @include tablet-up {
+                width: ppx(409 * $pc-to-tab-ratio);
+                margin-top: ppx(26 * $pc-to-tab-ratio);
+                margin-bottom: ppx(52 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(409);
+                margin-top: ppx(26);
+                margin-bottom: ppx(52);
+            }
+        }
+
+        .service__list {
+            width: spx(427);
+            margin-inline: auto;
+            display: flex;
+            flex-flow: column;
+            gap: spx(13);
+
+            @include tablet-up {
+                width: ppx(427 * $pc-to-tab-ratio);
+                gap: ppx(13 * $pc-to-tab-ratio);
+                min-height: ppx(247 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(427);
+                gap: ppx(13);
+                min-height: ppx(247);
+            }
+        }
+
+        .service__item {
+            color: $base_color_1;
+            font-size: spx(28);
+            font-weight: 500;
+            line-height: 140%;
+            display: grid;
+            grid-template-columns: max-content auto;
+            gap: spx(6);
+
+            @include tablet-up {
+                font-size: ppx(28 * $pc-to-tab-ratio);
+                gap: ppx(6 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(28);
+                gap: ppx(6);
+            }
+
+            &::before {
+                content: "－";
+                display: block;
+            }
+        }
+
+        .service__link-wrapper {
+            width: max-content;
+            position: absolute;
+            bottom: spx(25);
+            right: spx(25);
+
+            @include tablet-up {
+                bottom: ppx(25 * $pc-to-tab-ratio);
+                right: ppx(25 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                bottom: ppx(25);
+                right: ppx(25);
+            }
+        }
+
+        .service__link {
+            display: block;
+            width: max-content;
+        }
+
+        .service__link-icon {
+            width: spx(83);
+            height: spx(83);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: spx(28) spx(25);
+            transition: opacity 0.3s ease;
+
+            @include tablet-up {
+                width: ppx(83 * $pc-to-tab-ratio);
+                height: ppx(83 * $pc-to-tab-ratio);
+                padding: ppx(28 * $pc-to-tab-ratio) ppx(25 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(83);
+                height: ppx(83);
+                padding: ppx(28) ppx(25);
+            }
+        }
+
+        .service__bottom-link-wrapper {
+            margin-top: spx(70);
+            width: max-content;
+            margin-inline: auto;
+
+            @include tablet-up {
+                margin-top: ppx(100 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                margin-top: ppx(100);
+            }
+        }
+
+        .service__card-content {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: inherit;
+        }
     }
 }
