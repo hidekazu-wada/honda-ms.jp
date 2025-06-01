@@ -3589,6 +3589,240 @@ svg {
  * ニュースページのHTMLに完全対応したネスト構造
  * プロパティなし、セレクター構造のみ
  */
+.recruit-page .hero-section.recruit-section {
+  background-color: #edf2f8;
+  padding: 19.4444444444vw 0;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .recruit-page .hero-section.recruit-section {
+    padding: 9.453125vw 0 9.58203125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .recruit-page .hero-section.recruit-section {
+    padding: 8.59375vw 0 8.7109375vw;
+  }
+}
+.recruit-page .hero-section.recruit-section .recruit__header {
+  margin-left: 7.7777777778vw;
+}
+@media (min-width: 768px) {
+  .recruit-page .hero-section.recruit-section .recruit__header {
+    margin-left: 9.453125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .recruit-page .hero-section.recruit-section .recruit__header {
+    margin-left: 8.59375vw;
+  }
+}
+.recruit-page .hero-section.recruit-section .recruit__text {
+  margin-top: 7.2222222222vw;
+}
+@media (min-width: 768px) {
+  .recruit-page .hero-section.recruit-section .recruit__text {
+    margin-top: 3.8671875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .recruit-page .hero-section.recruit-section .recruit__text {
+    margin-top: 3.515625vw;
+  }
+}
+.recruit-page .hero-section.recruit-section .recruit__catch {
+  font-family: "Noto Serif JP", serif;
+  color: #231f20;
+  font-size: 8.0555555556vw;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.4027777778vw;
+  margin-left: 7.9166666667vw;
+}
+@media (min-width: 768px) {
+  .recruit-page .hero-section.recruit-section .recruit__catch {
+    font-size: 3.22265625vw;
+    letter-spacing: 0.1611328125vw;
+    margin-left: 9.453125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .recruit-page .hero-section.recruit-section .recruit__catch {
+    font-size: 2.9296875vw;
+    letter-spacing: 0.146484375vw;
+    margin-left: 8.59375vw;
+  }
+}
+.recruit-page .hero-section.recruit-section .recruit__desc {
+  color: #231f20;
+  font-size: 4.5833333333vw;
+  font-weight: 500;
+  line-height: 200%;
+  letter-spacing: 0.0458333333vw;
+  margin-top: 9.0277777778vw;
+  width: 83.3333333333vw;
+  margin-inline: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2em;
+}
+@media (min-width: 768px) {
+  .recruit-page .hero-section.recruit-section .recruit__desc {
+    font-size: 1.50390625vw;
+    letter-spacing: 0.0150390625vw;
+    margin-top: 30.765625vw;
+    width: 55.859375vw;
+    margin-inline: unset;
+    margin-left: 38.2421875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .recruit-page .hero-section.recruit-section .recruit__desc {
+    font-size: 1.3671875vw;
+    letter-spacing: 0.013671875vw;
+    margin-top: 27.96875vw;
+    width: 56.40625vw;
+    margin-left: 34.765625vw;
+  }
+}
+.recruit-page .hero-section.recruit-section .recruit__desc .recruit__desc-text {
+  display: block;
+}
+.recruit-page .hero-section.recruit-section .recruit__gallery {
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+  height: 104vw;
+}
+@media (min-width: 768px) {
+  .recruit-page .hero-section.recruit-section .recruit__gallery {
+    position: unset;
+    height: auto;
+  }
+}
+.recruit-page .hero-section.recruit-section .recruit__gallery-item {
+  position: absolute;
+  display: block;
+}
+.recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual01 {
+  width: 44.4444444444vw;
+  top: 13.6111111111vw;
+  left: 0;
+  opacity: 0.9;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual01 {
+    width: 32.65625vw;
+    top: 39.6171875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual01 {
+    width: 29.6875vw;
+    top: 36.015625vw;
+  }
+}
+.recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual02 {
+  width: 29.0277777778vw;
+  top: 13.6111111111vw;
+  left: 45.4166666667vw;
+  opacity: 0.9;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual02 {
+    width: 19.46484375vw;
+    top: 11.4296875vw;
+    left: unset;
+    right: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual02 {
+    width: 17.6953125vw;
+    top: 10.390625vw;
+  }
+}
+.recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual03 {
+  width: 77.6388888889vw;
+  top: 52.0833333333vw;
+  right: 0;
+  opacity: 0.9;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual03 {
+    width: 38.9296875vw;
+    top: 20.625vw;
+    right: unset;
+    left: 48.3828125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual03 {
+    width: 35.390625vw;
+    top: 18.75vw;
+    left: 43.984375vw;
+  }
+}
+.recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual04 {
+  width: 33.8888888889vw;
+  top: 8vw;
+  right: -15.2777777778vw;
+  opacity: 0.8;
+  -webkit-filter: blur(14px);
+          filter: blur(14px);
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual04 {
+    width: 19.89453125vw;
+    top: 41.63671875vw;
+    right: unset;
+    left: 37.25390625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual04 {
+    width: 18.0859375vw;
+    top: 37.8515625vw;
+    left: 33.8671875vw;
+  }
+}
+.recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual05 {
+  width: 23.8888888889vw;
+  top: 57.6388888889vw;
+  left: -11.6666666667vw;
+  opacity: 0.8;
+  -webkit-filter: blur(15px);
+          filter: blur(15px);
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual05 {
+    width: 12.4609375vw;
+    top: 35.87890625vw;
+    left: unset;
+    right: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .recruit-page .hero-section.recruit-section .recruit__gallery-item.section-visual05 {
+    width: 11.328125vw;
+    top: 32.6171875vw;
+  }
+}
+.recruit-page .hero-section.recruit-section .recruit__gallery-image {
+  width: 100%;
+  height: auto;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
