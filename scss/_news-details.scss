@@ -19,5 +19,326 @@
 
     // News Details Section (メインセクション)
     .news-details-section {
+        padding-top: spx(90);
+        @include tablet-up {
+            padding-top: ppx(160 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            padding-top: ppx(160);
+        }
+        .news-detail {
+            @include tablet-up {
+            }
+            @include desktop-up {
+            }
+
+            &__inner {
+                @include tablet-up {
+                }
+                @include desktop-up {
+                }
+            }
+
+            &__header {
+                @include tablet-up {
+                }
+                @include desktop-up {
+                }
+            }
+
+            &__title {
+                font-family: $font-noto-serif-jp;
+                color: $base_color_white;
+                font-size: spx(41);
+                font-weight: 700;
+                line-height: 160%;
+                letter-spacing: spx(1.64);
+                text-align: center;
+                width: spx(600);
+                margin-inline: auto;
+
+                @include tablet-up {
+                    font-size: ppx(57 * $pc-to-tab-ratio);
+                    letter-spacing: ppx(5.7 * $pc-to-tab-ratio);
+                    width: ppx(1650 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    font-size: ppx(57);
+                    letter-spacing: ppx(5.7);
+                    width: ppx(1650);
+                }
+            }
+
+            &__line {
+                display: block;
+                width: spx(640);
+                height: 1px;
+                background-color: $base_color_white;
+                margin-inline: auto;
+                margin-top: spx(30);
+                margin-bottom: spx(60);
+                @include tablet-up {
+                    width: ppx(1650 * $pc-to-tab-ratio);
+                    margin-top: ppx(60 * $pc-to-tab-ratio);
+                    margin-bottom: ppx(60 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(1650);
+                    margin-top: ppx(60);
+                    margin-bottom: ppx(60);
+                }
+            }
+
+            &__date {
+                color: $base_color_2;
+                font-size: spx(30);
+                font-weight: 700;
+                line-height: spx(26);
+                letter-spacing: spx(1.5);
+                display: block;
+                width: max-content;
+                margin-inline: auto;
+
+                @include tablet-up {
+                    font-size: ppx(35 * $pc-to-tab-ratio);
+                    line-height: ppx(26 * $pc-to-tab-ratio);
+                    letter-spacing: ppx(1.75 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    font-size: ppx(35);
+                    line-height: ppx(26);
+                    letter-spacing: ppx(1.75);
+                }
+            }
+
+            &__container {
+                width: spx(640);
+                margin-inline: auto;
+                padding: spx(60) spx(20) spx(80);
+                background-color: $base_color_white;
+                margin-top: spx(60);
+                display: flex;
+                flex-direction: column;
+                gap: spx(70);
+                margin-bottom: spx(130);
+
+                @include tablet-up {
+                    width: ppx(2000 * $pc-to-tab-ratio);
+                    padding: ppx(150 * $pc-to-tab-ratio) ppx(200 * $pc-to-tab-ratio) ppx(130 * $pc-to-tab-ratio);
+                    margin-top: ppx(60 * $pc-to-tab-ratio);
+                    gap: ppx(100 * $pc-to-tab-ratio);
+                    margin-bottom: ppx(140 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(2000);
+                    padding: ppx(150) ppx(200) ppx(130);
+                    margin-top: ppx(60);
+                    gap: ppx(100);
+                    margin-bottom: ppx(140);
+                }
+            }
+
+            &__content {
+                display: flex;
+                flex-direction: column;
+                gap: spx(50);
+                color: $base_color_1;
+                font-size: spx(30);
+                font-weight: 500;
+                line-height: 160%;
+                padding: 0 spx(28);
+
+                @include tablet-up {
+                    gap: ppx(110 * $pc-to-tab-ratio);
+                    font-size: ppx(35 * $pc-to-tab-ratio);
+                    padding: 0;
+                }
+
+                @include desktop-up {
+                    gap: ppx(110);
+                    font-size: ppx(35);
+                    line-height: 190%;
+                }
+            }
+
+            &__text {
+                @include tablet-up {
+                }
+                @include desktop-up {
+                }
+            }
+
+            &__paragraph {
+                @include tablet-up {
+                }
+                @include desktop-up {
+                }
+            }
+
+            &__figure {
+                @include tablet-up {
+                }
+                @include desktop-up {
+                }
+            }
+
+            &__image {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                display: block;
+                @include tablet-up {
+                }
+                @include desktop-up {
+                }
+            }
+
+            &__nav {
+                @include tablet-up {
+                }
+                @include desktop-up {
+                }
+            }
+
+            &__nav-buttons {
+                display: flex;
+                gap: spx(8);
+                justify-content: center;
+                align-items: center;
+                width: max-content;
+                margin-inline: auto;
+                @include tablet-up {
+                    gap: ppx(40 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    gap: ppx(40);
+                }
+            }
+
+            &__nav-link {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--base_color_2, #c11313);
+                font-size: spx(27);
+                font-weight: 500;
+                line-height: 1;
+                letter-spacing: spx(1.35);
+                border: 1px solid $base_color_2;
+                width: spx(195);
+                height: spx(70);
+                background-color: transparent;
+                text-decoration: none;
+                transition:
+                    background-color 0.3s ease,
+                    color 0.3s ease;
+
+                @include tablet-up {
+                    font-size: ppx(35 * $pc-to-tab-ratio);
+                    letter-spacing: ppx(1.75 * $pc-to-tab-ratio);
+                    width: ppx(484 * $pc-to-tab-ratio);
+                    height: ppx(120 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    font-size: ppx(35);
+                    letter-spacing: ppx(1.75);
+                }
+
+                // ホバー演出
+                @include hover {
+                    &:hover {
+                        background-color: $base_color_2;
+                        color: $base_color_white;
+
+                        .news-detail__nav-icon path {
+                            stroke: $base_color_white;
+                        }
+                    }
+                }
+
+                &--prev {
+                    @include tablet-up {
+                    }
+                    @include desktop-up {
+                    }
+                    .news-detail__nav-text {
+                        display: block;
+                        padding-left: 4vw;
+                        @include tablet-up {
+                            padding-left: 1vw * $pc-to-tab-ratio;
+                        }
+                        @include desktop-up {
+                            padding-left: 1vw;
+                        }
+                    }
+                }
+
+                &--index {
+                    @include tablet-up {
+                    }
+                    @include desktop-up {
+                    }
+                }
+
+                &--next {
+                    @include tablet-up {
+                    }
+                    @include desktop-up {
+                    }
+                    .news-detail__nav-text {
+                        display: block;
+                        padding-right: 4vw;
+                        @include tablet-up {
+                            padding-right: 1vw * $pc-to-tab-ratio;
+                        }
+                        @include desktop-up {
+                            padding-right: 1vw;
+                        }
+                    }
+                }
+            }
+
+            &__nav-icon {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: spx(23);
+                height: spx(21);
+                @include tablet-up {
+                    width: ppx(31 * $pc-to-tab-ratio);
+                    height: ppx(28 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(31);
+                    height: ppx(28);
+                }
+                &--prev {
+                    left: spx(22);
+                    @include tablet-up {
+                        left: ppx(40 * $pc-to-tab-ratio);
+                    }
+                    @include desktop-up {
+                        left: ppx(40);
+                    }
+                }
+                &--next {
+                    right: spx(22);
+                    @include tablet-up {
+                        right: ppx(40 * $pc-to-tab-ratio);
+                    }
+                    @include desktop-up {
+                        right: ppx(40);
+                    }
+                }
+                path {
+                    stroke: $base_color_2;
+                    transition: stroke 0.3s ease;
+                }
+            }
+        }
     }
 }

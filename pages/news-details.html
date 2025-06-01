@@ -732,7 +732,152 @@
       <!-- ================================================== -->
       <!-- /GLOBAL NAVIGATION SECTION -->
       <!-- ================================================== -->
-      <section class="news-details-section"></section>
+      <section class="news-details-section">
+        <article class="news-detail">
+          <div class="news-detail__inner">
+            <header class="news-detail__header">
+              <h1 class="news-detail__title">
+                接客を楽しんでいると<br />
+                その気持ちは自然にお客さまに伝わる。
+              </h1>
+              <span class="news-detail__line"></span>
+              <time class="news-detail__date" datetime="2024-05-01"
+                >2024.05.01</time
+              >
+            </header>
+
+            <div class="news-detail__container">
+              <div class="news-detail__content">
+                <div class="news-detail__text">
+                  <p class="news-detail__paragraph">
+                    人と接する仕事をしたいと思い、サービス業を志望。いくつかの会社の説明会に参加した中でも、ホンダ自動車販売は、やさしい雰囲気があふれていて家族のような温かい会社だと感じました。自分が使っていた携帯がauだったこともあり、auショップでの販売職を希望。入社後は、auショップエイスユーモール店に配属になり、新規の携帯の受付、プランの変更、故障のご相談、操作方法のご案内、イベントのご案内など様々なポップな作業などを行っています。今では私を指名してくださるお客さまも増えました。頼られていることがうれしいですね。
+                  </p>
+                </div>
+
+                <figure class="news-detail__figure">
+                  <!-- 画像: 制服を着た女性がコーヒーサーバーから飲み物を注いでいる様子 -->
+                  <picture>
+                    <!-- デスクトップ用 WebP -->
+                    <source
+                      srcset="../images/news-details/demo-desktop.webp"
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                    />
+                    <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
+                    <source
+                      srcset="../images/news-details/demo-mobile.webp"
+                      media="(min-width: 768px) and (max-width: 1023px)"
+                      type="image/webp"
+                    />
+                    <!-- モバイル用 WebP -->
+                    <source
+                      srcset="../images/news-details/demo-mobile.webp"
+                      media="(max-width: 767px)"
+                      type="image/webp"
+                    />
+                    <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
+                    <source
+                      srcset="../images/news-details/demo-desktop.png"
+                      media="(min-width: 1024px)"
+                      type="image/png"
+                    />
+                    <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
+                    <source
+                      srcset="../images/news-details/demo-mobile.png"
+                      media="(min-width: 768px) and (max-width: 1023px)"
+                      type="image/png"
+                    />
+                    <!-- フォールバック画像 -->
+                    <img
+                      src="../images/news-details/demo-mobile.png"
+                      class="news-detail__image"
+                      alt="制服を着た女性がコーヒーサーバーから飲み物を注いでいる様子"
+                      loading="eager"
+                      decoding="sync"
+                    />
+                  </picture>
+                </figure>
+
+                <div class="news-detail__text">
+                  <p class="news-detail__paragraph">
+                    携帯電話は新しい機種が次々に発売されるだけでなく、プラン変更も頻繁にあり、契約が複雑です。入社したての頃は、右も左も分からず、お客さまにお声がけするのもためらっていました。そんなとき、メンターの先輩から「お客さまのことを最優先に考えてあげて」とアドバイスがあり、今の私にできることは一番にお客さまのところに駆けつけることだと気づきました。そのうちに接客が楽しく思えるようになり、その想いがお客さまに伝わって、次回大会のCS部門で2年連続一位を獲得。接客の楽しさを教えてくれた先輩に感謝しています。
+                  </p>
+                </div>
+              </div>
+
+              <nav class="news-detail__nav" aria-label="記事ナビゲーション">
+                <div class="news-detail__nav-buttons">
+                  <a
+                    href="#"
+                    class="news-detail__nav-link news-detail__nav-link--prev"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="34"
+                      height="31"
+                      viewBox="0 0 34 31"
+                      fill="none"
+                      class="news-detail__nav-icon news-detail__nav-icon--prev"
+                    >
+                      <path
+                        d="M32 29L18.452 15.5L32 2"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M15.5479 29L1.99989 15.5L15.5479 2"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="news-detail__nav-text">前の記事</span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="news-detail__nav-link news-detail__nav-link--index"
+                  >
+                    <span class="news-detail__nav-text">一覧に戻る</span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="news-detail__nav-link news-detail__nav-link--next"
+                  >
+                    <span class="news-detail__nav-text">次の記事</span>
+                    <svg
+                      viewBox="0 0 35 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="news-detail__nav-icon news-detail__nav-icon--next"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 30L16 16L2 2"
+                        stroke="white"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M19 30L33 16L19 2"
+                        stroke="white"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </article>
+      </section>
     </main>
 
     <!-- ================================================== -->
@@ -747,6 +892,12 @@
           <li class="breadcrumbs__item">
             <span class="breadcrumbs__current" aria-current="page"
               >お知らせ</span
+            >
+            <span class="breadcrumbs__separator" aria-hidden="true">＞</span>
+          </li>
+          <li class="breadcrumbs__item">
+            <a href="../" class="breadcrumbs__link"
+              >接客を楽しんでいるとその気持ちは自然にお客さまに伝わる。</a
             >
           </li>
         </ol>

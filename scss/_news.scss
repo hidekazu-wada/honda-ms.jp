@@ -239,23 +239,22 @@
             width: max-content;
             margin-inline: auto;
             margin-top: spx(60);
-            min-width: spx(627);
+            width: spx(627);
             justify-content: space-between;
             @include tablet-up {
                 gap: ppx(40 * $pc-to-tab-ratio);
                 margin-top: ppx(100 * $pc-to-tab-ratio);
-                min-width: ppx(992 * $pc-to-tab-ratio);
+                width: ppx(992 * $pc-to-tab-ratio);
             }
             @include desktop-up {
                 gap: ppx(40);
                 margin-top: ppx(100);
-                min-width: ppx(992);
+                width: ppx(992);
             }
             .news__pagination-prev {
                 width: spx(30);
                 height: auto;
                 display: block;
-                transform: rotate(180deg);
 
                 @include tablet-up {
                     width: ppx(31 * $pc-to-tab-ratio);
@@ -266,10 +265,6 @@
                 .news__pagination-arrow {
                     path {
                         transition: stroke 0.3s ease;
-                    }
-
-                    &--prev {
-                        transform: rotate(180deg);
                     }
                 }
 
@@ -308,8 +303,8 @@
                     color 0.3s ease;
 
                 @include tablet-up {
-                    width: ppx(65 * $pc-to-tab-ratio);
-                    height: ppx(65 * $pc-to-tab-ratio);
+                    width: ppx(100 * $pc-to-tab-ratio);
+                    height: ppx(100 * $pc-to-tab-ratio);
                     font-size: ppx(40 * $pc-to-tab-ratio);
                     line-height: ppx(40 * $pc-to-tab-ratio);
                 }
@@ -345,8 +340,8 @@
                 line-height: spx(26);
 
                 @include tablet-up {
-                    width: ppx(65 * $pc-to-tab-ratio);
-                    height: ppx(65 * $pc-to-tab-ratio);
+                    width: ppx(100 * $pc-to-tab-ratio);
+                    height: ppx(100 * $pc-to-tab-ratio);
                     font-size: ppx(40 * $pc-to-tab-ratio);
                     line-height: ppx(40 * $pc-to-tab-ratio);
                 }

@@ -295,60 +295,55 @@ svg {
     }
 
     .breadcrumbs__list {
-        display: flex;
-        align-items: baseline;
-        gap: 0.5em;
-    }
-
-    .breadcrumbs__item {
-        display: flex;
-        align-items: center;
-        gap: 0.5em;
-    }
-
-    .breadcrumbs__link {
+        display: block;
         color: $base_color_white;
         font-size: spx(22);
         font-weight: 500;
         line-height: 160%;
         letter-spacing: spx(2.2);
-        transition: color 0.3s ease;
+        text-indent: hanging spx(65); // ぶら下がりインデント
 
         @include tablet-up {
             font-size: ppx(24 * $pc-to-tab-ratio);
             letter-spacing: ppx(2.4 * $pc-to-tab-ratio);
+            text-indent: hanging ppx(72 * $pc-to-tab-ratio);
         }
 
         @include desktop-up {
             font-size: ppx(24);
             letter-spacing: ppx(2.4);
+            text-indent: hanging ppx(72);
         }
+    }
 
-        &:hover {
-            color: $base_color_2;
+    .breadcrumbs__item {
+        display: inline;
+        color: $base_color_white;
+        transition: color 0.3s ease;
+    }
+
+    .breadcrumbs__link {
+        display: inline;
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        @include hover {
+            &:hover {
+                color: $base_color_2;
+            }
         }
     }
 
     .breadcrumbs__separator {
+        display: inline;
         color: $base_color_white;
-        font-size: spx(22);
-        font-weight: 500;
-        line-height: 160%;
-        letter-spacing: spx(2.2);
+        margin: 0 0.3em; // 左右に少し余白
         transition: color 0.3s ease;
-
-        @include tablet-up {
-            font-size: ppx(24 * $pc-to-tab-ratio);
-            letter-spacing: ppx(2.4 * $pc-to-tab-ratio);
-        }
-
-        @include desktop-up {
-            font-size: ppx(24);
-            letter-spacing: ppx(2.4);
-        }
     }
 
     .breadcrumbs__current {
+        display: inline;
         color: $base_color_white;
     }
 }
