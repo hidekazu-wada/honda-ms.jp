@@ -5444,6 +5444,411 @@ svg {
     gap: 0.7em;
   }
 }
+.about-page .history-section {
+  padding: 16.6666666667vw 0;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .about-page .history-section {
+    padding: 8.1640625vw 0 9.0234375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section {
+    padding: 7.421875vw 0 8.203125vw;
+  }
+}
+.about-page .history-section__title {
+  font-family: "Noto Serif JP", serif;
+  color: #fff;
+  font-size: 6.8055555556vw;
+  font-weight: 700;
+  line-height: 160%;
+  letter-spacing: 0.6805555556vw;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__title {
+    font-size: 2.44921875vw;
+    letter-spacing: 0.244921875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__title {
+    font-size: 2.2265625vw;
+    letter-spacing: 0.22265625vw;
+  }
+}
+.about-page .history-section__timeline {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-inline: auto;
+  position: relative;
+  padding-bottom: 18.75vw;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__timeline {
+    padding-bottom: 4.8984375vw;
+    margin-inline: unset;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__timeline {
+    padding-bottom: 4.453125vw;
+  }
+}
+.about-page .history-section__timeline::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 2.5vw;
+  left: 2.2222222222vw;
+  width: 1px;
+  height: calc(100% - 2.5vw);
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__timeline::before {
+    left: 0.7734375vw;
+    top: 0.7734375vw;
+    height: calc(100% - 0.7734375vw);
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__timeline::before {
+    left: 0.703125vw;
+    top: 0.703125vw;
+    height: calc(100% - 0.703125vw);
+  }
+}
+.about-page .history-section__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 13.75vw;
+  margin-top: 6.9444444444vw;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 10.95703125vw;
+    margin-top: 4.68359375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__content {
+    gap: 9.9609375vw;
+    margin-top: 4.2578125vw;
+  }
+}
+.about-page .history-section__content .history-legend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3.3333333333vw;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__content .history-legend {
+    gap: 2.36328125vw;
+    margin-inline: unset;
+    margin-left: 9.453125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__content .history-legend {
+    gap: 2.1484375vw;
+    margin-left: 8.59375vw;
+  }
+}
+.about-page .history-section__content .history-legend__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2.0833333333vw;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__content .history-legend__item {
+    gap: 0.73046875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__content .history-legend__item {
+    gap: 0.6640625vw;
+  }
+}
+.about-page .history-section__content .history-legend__icon {
+  width: 4.7222222222vw;
+  height: 4.7222222222vw;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__content .history-legend__icon {
+    width: 1.6328125vw;
+    height: 1.6328125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__content .history-legend__icon {
+    width: 1.484375vw;
+    height: 1.484375vw;
+  }
+}
+.about-page .history-section__content .history-legend__icon circle {
+  fill: currentColor;
+}
+.about-page .history-section__content .history-legend__icon--honda {
+  color: #c11313;
+}
+.about-page .history-section__content .history-legend__icon--kaines {
+  color: #67c072;
+}
+.about-page .history-section__content .history-legend__icon--fuji {
+  color: #5c1a86;
+}
+.about-page .history-section__content .history-legend__icon--fj {
+  color: #003968;
+}
+.about-page .history-section__content .history-legend__text {
+  color: #fff;
+  font-size: 4.1666666667vw;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.2083333333vw;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__content .history-legend__text {
+    font-size: 1.41796875vw;
+    letter-spacing: 0.0708984375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__content .history-legend__text {
+    font-size: 1.2890625vw;
+    letter-spacing: 0.064453125vw;
+  }
+}
+.about-page .history-section__content .history-timeline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4.8611111111vw;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__content .history-timeline {
+    gap: 2.578125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__content .history-timeline {
+    gap: 2.34375vw;
+  }
+}
+@media (min-width: 768px) {
+  .about-page .history-section__content .history-timeline__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 2.6640625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__content .history-timeline__item {
+    gap: 2.421875vw;
+  }
+}
+.about-page .history-section__content .history-timeline__year-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2.0833333333vw;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__content .history-timeline__year-group {
+    gap: 0.64453125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__content .history-timeline__year-group {
+    gap: 0.5859375vw;
+  }
+}
+.about-page .history-section__content .history-timeline__icon {
+  width: 4.7222222222vw;
+  height: 4.7222222222vw;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__content .history-timeline__icon {
+    width: 1.6328125vw;
+    height: 1.6328125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__content .history-timeline__icon {
+    width: 1.484375vw;
+    height: 1.484375vw;
+  }
+}
+.about-page .history-section__content .history-timeline__icon circle {
+  fill: currentColor;
+}
+.about-page .history-section__content .history-timeline__icon--honda {
+  color: #c11313;
+}
+.about-page .history-section__content .history-timeline__icon--kaines {
+  color: #67c072;
+}
+.about-page .history-section__content .history-timeline__icon--fuji {
+  color: #5c1a86;
+}
+.about-page .history-section__content .history-timeline__icon--fj {
+  color: #003968;
+}
+.about-page .history-section__content .history-timeline__year {
+  font-family: "Noto Serif JP", serif;
+  font-size: 6.9444444444vw;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0.3472222222vw;
+  width: 22.2222222222vw;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__content .history-timeline__year {
+    font-size: 2.1484375vw;
+    letter-spacing: 0.107421875vw;
+    width: 6.875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__content .history-timeline__year {
+    font-size: 1.953125vw;
+    letter-spacing: 0.09765625vw;
+    width: 6.25vw;
+  }
+}
+.about-page .history-section__content .history-timeline__content {
+  position: relative;
+  margin-left: 9.1666666667vw;
+  margin-top: -6vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.6666666667vw;
+  padding-bottom: 3.4722222222vw;
+  width: 77.9166666667vw;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__content .history-timeline__content {
+    margin-top: 0;
+    margin-left: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 1.16015625vw;
+    padding-bottom: 1.2890625vw;
+    width: 40vw;
+    padding-left: 1.1em;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__content .history-timeline__content {
+    gap: 1.0546875vw;
+    padding-bottom: 1.171875vw;
+    width: 43.75vw;
+    padding-left: 1em;
+  }
+}
+.about-page .history-section__content .history-timeline__content::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  display: block;
+  background: -webkit-gradient(linear, left top, right top, from(rgb(255, 255, 255)), color-stop(25%, rgb(255, 255, 255)), color-stop(25%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))) 0% 0%;
+  background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 100%) 0% 0%;
+  background-size: 4px 1px;
+  width: 100%;
+  height: 1px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-page .history-section__content .history-timeline__month {
+  font-size: 4.5833333333vw;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.2291666667vw;
+  margin-left: 19.8611111111vw;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__content .history-timeline__month {
+    font-size: 1.41796875vw;
+    letter-spacing: 0.0708984375vw;
+    margin-left: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__content .history-timeline__month {
+    text-align: right;
+    font-size: 1.2890625vw;
+    line-height: 150%;
+    letter-spacing: 0.064453125vw;
+  }
+}
+.about-page .history-section__content .history-timeline__description {
+  font-size: 3.8888888889vw;
+  font-weight: 500;
+  line-height: 140%;
+}
+@media (min-width: 768px) {
+  .about-page .history-section__content .history-timeline__description {
+    font-size: 1.41796875vw;
+    line-height: 2.126953125vw;
+    letter-spacing: 0.0708984375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .history-section__content .history-timeline__description {
+    font-size: 1.2890625vw;
+    line-height: 150%;
+    letter-spacing: 0.064453125vw;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
