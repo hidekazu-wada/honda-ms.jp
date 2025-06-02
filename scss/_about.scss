@@ -1,0 +1,755 @@
+/**
+ * About Page Styles - Structure Only
+ * AboutページのHTMLに完全対応したネスト構造
+ * プロパティなし、セレクター構造のみ
+ */
+
+@use "variables" as *;
+@use "functions" as *;
+@use "mixins" as *;
+
+.about-page {
+    // Section Title Component (共通コンポーネント)
+    // 注意: .section-titleスタイルは_global.scssに移動済み
+    // HTMLで使用する際は <h2 class="section-title section-title--white"> のように記述
+
+    // Primary Button Component (共通コンポーネント)
+    // 注意: .primary-buttonスタイルは_global.scssに移動済み
+    // HTMLで使用する際は <a class="primary-button primary-button--dark"> のように記述
+
+    // ================================================
+    // HERO SECTION (ABOUT SECTION)
+    // ヒーローセクション（Aboutセクション）
+    // ================================================
+    .about-section {
+        padding-top: spx(130);
+        padding-bottom: spx(120);
+        @include tablet-up {
+            padding-top: ppx(284 * $pc-to-tab-ratio);
+            padding-bottom: ppx(324 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            padding-top: ppx(284);
+            padding-bottom: ppx(324);
+        }
+        &__inner {
+        }
+
+        &__header {
+            width: max-content;
+            margin: 0 auto;
+        }
+
+        &__title {
+            font-family: $font-noto-serif-jp;
+            color: $base_color_white;
+            font-size: spx(111);
+            font-weight: 700;
+            line-height: spx(111);
+            text-align: center;
+
+            @include tablet-up {
+                font-size: ppx(145 * $pc-to-tab-ratio);
+                line-height: ppx(145 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(145);
+                line-height: ppx(145);
+            }
+        }
+
+        &__subtitle {
+            display: flex;
+            align-items: center;
+            gap: spx(23);
+            color: $base_color_white;
+            font-size: spx(27);
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: spx(2.7);
+            margin: spx(15);
+
+            @include tablet-up {
+                gap: ppx(30 * $pc-to-tab-ratio);
+                font-size: ppx(35 * $pc-to-tab-ratio);
+                letter-spacing: ppx(3.5 * $pc-to-tab-ratio);
+                margin: ppx(20 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                gap: ppx(30);
+                font-size: ppx(35);
+                letter-spacing: ppx(3.5);
+                margin: ppx(20);
+            }
+            &::before {
+                content: "";
+                display: block;
+                width: spx(90);
+                height: 1px;
+                background-color: $base_color_white;
+                @include tablet-up {
+                    width: ppx(130 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(130);
+                }
+            }
+            &::after {
+                content: "";
+                display: block;
+                width: spx(90);
+                height: 1px;
+                background-color: $base_color_white;
+                @include tablet-up {
+                    width: ppx(130 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(130);
+                }
+            }
+        }
+
+        &__intro {
+            margin-top: spx(82);
+            @include tablet-up {
+                margin-top: ppx(130 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                margin-top: ppx(130);
+            }
+        }
+
+        &__intro-text {
+            font-family: $font-noto-serif-jp;
+            color: $base_color_white;
+            font-size: spx(36);
+            font-weight: 700;
+            line-height: 150%;
+            text-align: center;
+
+            @include tablet-up {
+                font-size: ppx(57 * $pc-to-tab-ratio);
+                line-height: 160%;
+                letter-spacing: ppx(5.7 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(57);
+                line-height: 160%;
+                letter-spacing: ppx(5.7);
+            }
+        }
+
+        &__intro-line {
+            display: block;
+            width: spx(340);
+            height: spx(10);
+            background-color: $base_color_2;
+            margin-inline: auto;
+            margin-top: spx(30);
+            @include tablet-up {
+                width: ppx(460 * $pc-to-tab-ratio);
+                height: ppx(15 * $pc-to-tab-ratio);
+                margin-top: ppx(45 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                width: ppx(460);
+                height: ppx(15);
+                margin-top: ppx(45);
+            }
+        }
+
+        &__gallery {
+            display: grid;
+            grid-template-columns: spx(210) spx(210) spx(210);
+            gap: spx(5);
+            justify-content: center;
+            margin-top: spx(72);
+            @include tablet-up {
+                gap: unset;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                justify-content: space-between;
+                gap: ppx(8 * $pc-to-tab-ratio);
+                margin-top: ppx(118 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                gap: ppx(8);
+                margin-top: ppx(118);
+            }
+        }
+
+        &__gallery-image {
+            width: 100%;
+            height: auto;
+        }
+
+        &__content {
+        }
+
+        &__catchphrase {
+        }
+
+        &__catchphrase-text {
+            font-family: $font-noto-serif-jp;
+            color: $base_color_white;
+            font-size: spx(48);
+            font-weight: 700;
+            line-height: 150%;
+            letter-spacing: spx(0.96);
+            text-align: center;
+            margin-top: spx(110);
+
+            @include tablet-up {
+                font-size: ppx(95 * $pc-to-tab-ratio);
+                line-height: 160%;
+                letter-spacing: ppx(9.5 * $pc-to-tab-ratio);
+                margin-top: ppx(175 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(95);
+                line-height: 160%;
+                letter-spacing: ppx(9.5);
+                margin-top: ppx(175);
+            }
+        }
+
+        &__description {
+            color: $base_color_white;
+            font-size: spx(31);
+            font-weight: 500;
+            line-height: 180%;
+            width: spx(600);
+            margin-inline: auto;
+            margin-top: spx(80);
+
+            @include tablet-up {
+                font-size: ppx(35 * $pc-to-tab-ratio);
+                line-height: 200%;
+                width: ppx(1642 * $pc-to-tab-ratio);
+                margin-top: ppx(197 * $pc-to-tab-ratio);
+                text-align: center;
+            }
+
+            @include desktop-up {
+                font-size: ppx(35);
+                line-height: 200%;
+                width: ppx(1642);
+                margin-top: ppx(197);
+            }
+            .tablet-up {
+                display: none;
+                @include tablet-up {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    // ================================================
+    // GROUP COMPANIES SECTION
+    // グループ会社セクション
+    // ================================================
+    .group-companies {
+        margin-top: spx(120);
+        @include tablet-up {
+            margin-top: ppx(280 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            margin-top: ppx(280);
+        }
+        &__title {
+            color: $base_color_white;
+            font-size: spx(40);
+            font-weight: 700;
+            line-height: 160%;
+            letter-spacing: spx(4);
+            text-align: center;
+
+            @include tablet-up {
+                font-size: ppx(57 * $pc-to-tab-ratio);
+                letter-spacing: ppx(5.7 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(57);
+                letter-spacing: ppx(5.7);
+            }
+        }
+
+        &__list {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            gap: spx(16);
+            justify-content: center;
+            margin-top: spx(40);
+            @include tablet-up {
+                grid-template-columns: max-content max-content max-content max-content;
+                gap: ppx(16 * $pc-to-tab-ratio);
+                margin-top: ppx(85 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                gap: ppx(16);
+                margin-top: ppx(85);
+            }
+        }
+    }
+
+    // ================================================
+    // COMPANY CARD COMPONENT
+    // 会社カードコンポーネント
+    // ================================================
+    .company-card {
+        width: spx(312);
+        border-radius: spx(18);
+        border: 1px solid $base_color_white;
+        box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.8);
+        background: var(--gradation_1, linear-gradient(180deg, #fff 60%, #ddd 100%));
+        padding-bottom: spx(28);
+
+        @include tablet-up {
+            width: ppx(519 * $pc-to-tab-ratio);
+            border-radius: ppx(30 * $pc-to-tab-ratio);
+            padding-bottom: ppx(80 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            width: ppx(519);
+            border-radius: ppx(30);
+            padding-bottom: ppx(80);
+        }
+
+        &__logo {
+        }
+
+        &__logo-image {
+            width: 100%;
+            height: auto;
+        }
+
+        &__link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: spx(10);
+            background-color: $base_color_2;
+            width: spx(270);
+            height: spx(62);
+            border-radius: spx(31);
+            margin-inline: auto;
+            margin-top: spx(33);
+            transition: opacity 0.3s ease;
+
+            @include tablet-up {
+                width: ppx(445 * $pc-to-tab-ratio);
+                height: ppx(103 * $pc-to-tab-ratio);
+                border-radius: ppx(52 * $pc-to-tab-ratio);
+                gap: ppx(16 * $pc-to-tab-ratio);
+                margin-top: ppx(55 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                width: ppx(445);
+                height: ppx(103);
+                border-radius: ppx(52);
+                gap: ppx(16);
+                margin-top: ppx(55);
+            }
+        }
+
+        &__link-text {
+            color: $base_color_white;
+            font-size: spx(28);
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: spx(1.4);
+
+            @include tablet-up {
+                font-size: ppx(28 * $pc-to-tab-ratio);
+                letter-spacing: ppx(1.4 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(28);
+                letter-spacing: ppx(1.4);
+            }
+        }
+
+        &__link-icon {
+            display: none;
+            @include tablet-up {
+                display: block;
+                width: ppx(34 * $pc-to-tab-ratio);
+                height: auto;
+                color: $base_color_white;
+            }
+            @include desktop-up {
+                width: ppx(34);
+            }
+        }
+
+        // ================================================
+        // INDIVIDUAL COMPANY CARD VARIATIONS
+        // 各会社カードの個別調整用
+        // ================================================
+
+        // ホンダ自動車販売株式会社
+        &--honda {
+            .company-card__logo {
+                width: spx(234);
+                @include tablet-up {
+                    width: ppx(313 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(313);
+                }
+            }
+
+            .company-card__logo-image {
+                margin-top: spx(21);
+                margin-left: spx(39);
+                margin-bottom: spx(15);
+                @include tablet-up {
+                    margin-top: ppx(49 * $pc-to-tab-ratio);
+                    margin-left: ppx(103 * $pc-to-tab-ratio);
+                    margin-bottom: ppx(38 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    margin-top: ppx(49);
+                    margin-left: ppx(103);
+                    margin-bottom: ppx(38);
+                }
+            }
+
+            .company-card__link {
+                background-color: $base_color_2;
+            }
+
+            .company-card__link-text {
+            }
+
+            .company-card__link-icon {
+            }
+        }
+
+        // 株式会社ケインズ
+        &--kaines {
+            .company-card__logo {
+                width: spx(266);
+                @include tablet-up {
+                    width: ppx(355 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(355);
+                }
+            }
+
+            .company-card__logo-image {
+                margin-top: spx(17);
+                margin-left: spx(33);
+                margin-bottom: spx(16);
+                @include tablet-up {
+                    margin-top: ppx(44 * $pc-to-tab-ratio);
+                    margin-left: ppx(99 * $pc-to-tab-ratio);
+                    margin-bottom: ppx(42 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    margin-top: ppx(44);
+                    margin-left: ppx(99);
+                    margin-bottom: ppx(42);
+                }
+            }
+
+            .company-card__link {
+                background-color: $kyne_color;
+            }
+
+            .company-card__link-text {
+            }
+
+            .company-card__link-icon {
+            }
+        }
+
+        // 有限会社富士
+        &--fuji {
+            .company-card__logo {
+                width: spx(129);
+                @include tablet-up {
+                    width: ppx(172 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(172);
+                }
+            }
+
+            .company-card__logo-image {
+                margin-top: spx(48);
+                margin-left: spx(91);
+                margin-bottom: spx(30);
+                @include tablet-up {
+                    margin-top: ppx(87 * $pc-to-tab-ratio);
+                    margin-left: ppx(174 * $pc-to-tab-ratio);
+                    margin-bottom: ppx(58 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    margin-top: ppx(87);
+                    margin-left: ppx(174);
+                    margin-bottom: ppx(58);
+                }
+            }
+
+            .company-card__link {
+                background-color: $fuji_color;
+            }
+
+            .company-card__link-text {
+            }
+
+            .company-card__link-icon {
+            }
+        }
+
+        // FJ建設株式会社
+        &--fj {
+            .company-card__logo {
+                width: spx(161);
+                @include tablet-up {
+                    width: ppx(214 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(214);
+                }
+            }
+
+            .company-card__logo-image {
+                margin-top: spx(49);
+                margin-left: spx(76);
+                margin-bottom: spx(31);
+                @include tablet-up {
+                    margin-top: ppx(90 * $pc-to-tab-ratio);
+                    margin-left: ppx(153 * $pc-to-tab-ratio);
+                    margin-bottom: ppx(58 * $pc-to-tab-ratio);
+                }
+            }
+
+            .company-card__link {
+                background-color: $fjkensetsu_color;
+            }
+
+            .company-card__link-text {
+            }
+
+            .company-card__link-icon {
+            }
+        }
+
+        // ホバー演出
+        @include hover {
+            &:hover {
+                .company-card__link {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+
+    // ================================================
+    // MAP WRAPPER
+    // マップラッパー
+    // ================================================
+    .map-wrapper {
+        width: 100%;
+        border-top: spx(3) solid $base_color_white;
+        @include tablet-up {
+            border-top: ppx(5 * $pc-to-tab-ratio) solid $base_color_white;
+        }
+        @include desktop-up {
+            border-top: ppx(5) solid $base_color_white;
+        }
+        iframe {
+            width: 100%;
+            height: spx(847);
+            @include tablet-up {
+                height: ppx(847 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                height: ppx(847);
+            }
+        }
+    }
+
+    // ================================================
+    // COMPANY INFORMATION SECTION
+    // 会社情報セクション
+    // ================================================
+    .company-info {
+        background-color: $base_color_white;
+        padding-top: spx(120);
+        padding-bottom: spx(120);
+        @include tablet-up {
+            padding-top: ppx(185 * $pc-to-tab-ratio);
+            padding-bottom: ppx(250 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            padding-top: ppx(185);
+            padding-bottom: ppx(250);
+        }
+        &__inner {
+            display: flex;
+            flex-direction: column;
+            gap: spx(20);
+            width: spx(600);
+            margin-inline: auto;
+            @include tablet-up {
+                gap: ppx(40 * $pc-to-tab-ratio);
+                width: ppx(1650 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                gap: ppx(40);
+                width: ppx(1650);
+            }
+        }
+
+        &__section {
+            color: $gray_4;
+            font-size: spx(31);
+            font-weight: 500;
+            line-height: 180%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-bottom: spx(25);
+
+            @include tablet-up {
+                font-size: ppx(33 * $pc-to-tab-ratio);
+                flex-direction: row;
+                gap: ppx(30 * $pc-to-tab-ratio);
+                padding-bottom: ppx(44 * $pc-to-tab-ratio);
+                padding-inline: ppx(35 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(33);
+                letter-spacing: ppx(3.3);
+                gap: ppx(30);
+                padding-bottom: ppx(44);
+                padding-inline: ppx(35);
+            }
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: $base_color_2;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        &__section-title {
+            color: $base_color_2;
+            font-size: spx(35);
+            font-weight: 700;
+            line-height: 170%;
+            letter-spacing: spx(3.5);
+
+            @include tablet-up {
+                font-size: ppx(36 * $pc-to-tab-ratio);
+                letter-spacing: ppx(3.6 * $pc-to-tab-ratio);
+                width: ppx(250 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(36);
+                letter-spacing: ppx(3.6);
+                width: ppx(250);
+            }
+        }
+
+        // 役員情報
+        &__executives {
+        }
+
+        &__executive {
+            display: grid;
+            grid-template-columns: max-content auto;
+            gap: 1em;
+            @include tablet-up {
+                gap: 0.7em * $pc-to-tab-ratio;
+            }
+            @include desktop-up {
+                gap: 0.7em;
+            }
+        }
+
+        &__executive-role {
+            display: inline-block;
+            min-width: 30vw;
+            @include tablet-up {
+                min-width: 10vw * $pc-to-tab-ratio;
+            }
+            @include desktop-up {
+                min-width: 10vw;
+            }
+        }
+
+        &__executive-role-sub {
+            font-size: spx(24);
+            font-weight: 500;
+            line-height: 180%;
+
+            @include tablet-up {
+                font-size: ppx(26 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(26);
+                letter-spacing: ppx(2.6);
+            }
+        }
+
+        &__executive-name {
+            white-space: nowrap;
+        }
+
+        // 従業員数
+        &__employee-count {
+        }
+
+        // 売上高
+        &__sales-table {
+        }
+
+        &__sales-row {
+            display: grid;
+            grid-template-columns: max-content auto;
+            gap: 1em;
+            @include tablet-up {
+                gap: 0.7em * $pc-to-tab-ratio;
+            }
+            @include desktop-up {
+                gap: 0.7em;
+            }
+        }
+
+        &__sales-year {
+        }
+
+        &__sales-amount {
+        }
+
+        // 主要取引先
+        &__business-partners {
+        }
+
+        &__business-partner {
+        }
+
+        // 取引銀行
+        &__banks {
+        }
+    }
+}

@@ -288,6 +288,136 @@ svg {
 }
 
 // ================================================
+// BOTTOM NAVIGATION SECTION
+// ページ下部ナビゲーションセクション
+// ================================================
+.bottom-nav-section {
+    padding: spx(90) 0 spx(130);
+    @include tablet-up {
+        padding: ppx(150 * $pc-to-tab-ratio) 0 ppx(120 * $pc-to-tab-ratio);
+    }
+    @include desktop-up {
+        padding: ppx(150) 0 ppx(120);
+    }
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: spx(30);
+        align-items: center;
+        @include tablet-up {
+            flex-direction: row;
+            justify-content: center;
+            gap: ppx(40 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            gap: ppx(40);
+        }
+    }
+}
+
+// ================================================
+// BOTTOM NAVIGATION LINK COMPONENT
+// 下部ナビゲーションリンクコンポーネント
+// ================================================
+.bottom-nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: spx(600);
+    height: spx(150);
+    border: solid 1px $base_color_white;
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+
+    @include tablet-up {
+        width: ppx(950 * $pc-to-tab-ratio);
+        height: ppx(240 * $pc-to-tab-ratio);
+    }
+    @include desktop-up {
+        width: ppx(950);
+        height: ppx(240);
+    }
+
+    @include hover {
+        &:hover {
+            background-color: $base_color_2;
+            border-color: $base_color_2;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        @include tablet-up {
+            gap: ppx(4.5 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            gap: ppx(4.5);
+        }
+    }
+
+    &__title {
+        font-family: $font-noto-serif-jp;
+        color: $base_color_white;
+        font-size: spx(56);
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: spx(3.36);
+
+        @include tablet-up {
+            font-size: ppx(70 * $pc-to-tab-ratio);
+            letter-spacing: ppx(4.2 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            font-size: ppx(70);
+            letter-spacing: ppx(4.2);
+        }
+    }
+
+    &__subtitle {
+        color: $base_color_white;
+        font-size: spx(24);
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: spx(4.32);
+        margin-top: spx(-9);
+
+        @include tablet-up {
+            font-size: ppx(30 * $pc-to-tab-ratio);
+            letter-spacing: ppx(5.4 * $pc-to-tab-ratio);
+            margin-top: 0;
+        }
+
+        @include desktop-up {
+            font-size: ppx(30);
+            letter-spacing: ppx(5.4);
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: spx(35);
+        width: spx(31);
+        height: auto;
+        @include tablet-up {
+            width: ppx(46 * $pc-to-tab-ratio);
+            right: ppx(50 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            width: ppx(46);
+            right: ppx(50);
+        }
+    }
+}
+
+// ================================================
 // BREADCRUMBS COMPONENT
 // パンくずリストコンポーネント
 // ================================================
