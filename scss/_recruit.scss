@@ -244,4 +244,489 @@
             height: auto;
         }
     }
+
+    // ================================================
+    // RECRUITMENT INFORMATION SECTION
+    // 採用情報一覧セクション
+    // ================================================
+    .recruitment-info {
+        padding: spx(140) 0 spx(180);
+
+        @include tablet-up {
+            padding: ppx(220 * $pc-to-tab-ratio) 0;
+        }
+
+        @include desktop-up {
+            padding: ppx(220) 0;
+        }
+
+        &__inner {
+            @include tablet-up {
+            }
+            @include desktop-up {
+            }
+        }
+
+        // Company Tabs
+        &__tabs {
+            @include tablet-up {
+            }
+            @include desktop-up {
+            }
+        }
+
+        &__tab-list {
+            display: flex;
+            flex-direction: column;
+            gap: spx(15);
+            justify-content: center;
+            align-items: center;
+
+            @include tablet-up {
+                flex-direction: row;
+                gap: ppx(30 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                gap: ppx(30);
+            }
+        }
+
+        &__tab-item {
+            @include tablet-up {
+            }
+            @include desktop-up {
+            }
+        }
+
+        &__tab-button {
+            position: relative;
+            color: var(--white, #fff);
+            font-size: spx(35);
+            font-weight: 700;
+            line-height: 100%;
+            letter-spacing: spx(1.75);
+            width: spx(631);
+            height: spx(120);
+            border: 1px solid $base_color_white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-right: 1em;
+            background-color: transparent;
+            transition:
+                background-color 0.3s ease,
+                border-color 0.3s ease;
+
+            @include tablet-up {
+                font-size: ppx(35 * $pc-to-tab-ratio);
+                letter-spacing: ppx(1.75 * $pc-to-tab-ratio);
+                width: ppx(631 * $pc-to-tab-ratio);
+                height: ppx(120 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(35);
+                letter-spacing: ppx(1.75);
+                width: ppx(631);
+                height: ppx(120);
+            }
+
+            @include hover {
+                &:hover {
+                    background-color: $base_color_2;
+                    border-color: $base_color_2;
+                }
+            }
+
+            &--active {
+                @include tablet-up {
+                }
+                @include desktop-up {
+                }
+            }
+        }
+
+        &__tab-arrow {
+            width: spx(31);
+            height: auto;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: spx(40);
+
+            @include tablet-up {
+                width: ppx(31 * $pc-to-tab-ratio);
+                right: ppx(40 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                width: ppx(31);
+                right: ppx(40);
+            }
+        }
+    }
+
+    // ================================================
+    // RECRUITMENT COMPANY COMPONENT
+    // 採用会社コンポーネント
+    // ================================================
+    .recruitment-info__companies {
+        padding: spx(110) 0 spx(180);
+        display: flex;
+        flex-direction: column;
+        gap: spx(180);
+
+        @include tablet-up {
+            padding: ppx(110 * $pc-to-tab-ratio) 0 ppx(220 * $pc-to-tab-ratio);
+            gap: ppx(165 * $pc-to-tab-ratio);
+        }
+
+        @include desktop-up {
+            padding: ppx(165) 0 ppx(220);
+            gap: ppx(165);
+        }
+
+        .recruitment-company {
+            &__header {
+                @include tablet-up {
+                }
+                @include desktop-up {
+                }
+            }
+
+            &__title {
+                color: $base_color_white;
+                font-size: spx(40);
+                font-weight: 700;
+                line-height: 160%;
+                letter-spacing: spx(4);
+                text-align: center;
+
+                @include tablet-up {
+                    font-size: ppx(57 * $pc-to-tab-ratio);
+                    letter-spacing: ppx(5.7 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    font-size: ppx(57);
+                    letter-spacing: ppx(5.7);
+                }
+            }
+
+            &__jobs {
+                display: flex;
+                flex-direction: column;
+                gap: spx(20);
+                margin-top: spx(50);
+                width: max-content;
+                margin-inline: auto;
+
+                @include tablet-up {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    gap: ppx(48 * $pc-to-tab-ratio);
+                    margin-top: ppx(90 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    gap: ppx(48);
+                    margin-top: ppx(90);
+                }
+            }
+        }
+
+        // ================================================
+        // RECRUITMENT JOB COMPONENT
+        // 求人情報コンポーネント
+        // ================================================
+        .recruitment-job {
+            width: spx(675);
+            background-color: $base_color_white;
+            border-radius: spx(30);
+            padding: spx(47) 0 spx(56);
+            @include tablet-up {
+                width: ppx(675 * $pc-to-tab-ratio);
+                border-radius: ppx(30 * $pc-to-tab-ratio);
+                padding: ppx(47 * $pc-to-tab-ratio) 0 ppx(56 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                width: ppx(675);
+                border-radius: ppx(30);
+                padding: ppx(47) 0 ppx(56);
+            }
+
+            &__meta {
+                @include tablet-up {
+                }
+                @include desktop-up {
+                }
+            }
+
+            &__type {
+                color: $base_color_2;
+                font-size: spx(35);
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: spx(7);
+                display: block;
+                text-align: center;
+
+                @include tablet-up {
+                    font-size: ppx(35 * $pc-to-tab-ratio);
+                    letter-spacing: ppx(7 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    font-size: ppx(35);
+                    letter-spacing: ppx(7);
+                }
+            }
+
+            &__separator {
+                display: block;
+                width: spx(559);
+                height: 1px;
+                background-color: $base_color_2;
+                margin-inline: auto;
+                margin-top: spx(33);
+                margin-bottom: spx(55);
+                @include tablet-up {
+                    width: ppx(559 * $pc-to-tab-ratio);
+                    margin-top: ppx(33 * $pc-to-tab-ratio);
+                    margin-bottom: ppx(55 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(559);
+                    margin-top: ppx(33);
+                    margin-bottom: ppx(55);
+                }
+            }
+
+            &__title {
+                color: $gray_4;
+                font-size: spx(33);
+                font-weight: 500;
+                line-height: 150%;
+                letter-spacing: spx(1.65);
+                width: spx(595);
+                margin-inline: auto;
+                text-align: center;
+
+                @include tablet-up {
+                    font-size: ppx(33 * $pc-to-tab-ratio);
+                    letter-spacing: ppx(1.65 * $pc-to-tab-ratio);
+                    width: ppx(595 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    font-size: ppx(33);
+                    letter-spacing: ppx(1.65);
+                    width: ppx(595);
+                }
+            }
+
+            &__link {
+                position: relative;
+                color: $base_color_2;
+                width: spx(559);
+                height: spx(85);
+                background-color: $gray_1;
+                border-radius: spx(60);
+                border: spx(3) solid $gray_1;
+                background: $gray_1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-inline: auto;
+                margin-top: spx(57);
+                transition:
+                    background-color 0.3s ease,
+                    border-color 0.3s ease,
+                    color 0.3s ease;
+
+                @include tablet-up {
+                    width: ppx(559 * $pc-to-tab-ratio);
+                    height: ppx(85 * $pc-to-tab-ratio);
+                    border-radius: ppx(60 * $pc-to-tab-ratio);
+                    border: ppx(3 * $pc-to-tab-ratio) solid $gray_1;
+                    margin-top: ppx(57 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(559);
+                    height: ppx(85);
+                    border-radius: ppx(60);
+                    border: ppx(3) solid $gray_1;
+                    margin-top: ppx(57);
+                }
+
+                @include hover {
+                    &:hover {
+                        background-color: $base_color_2;
+                        border-color: $base_color_2;
+                        color: $base_color_white;
+
+                        .recruitment-job__link-icon {
+                            color: $base_color_white;
+                        }
+                    }
+                }
+            }
+
+            &__link-text {
+                font-size: spx(28);
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: spx(1.4);
+
+                @include tablet-up {
+                    font-size: ppx(28 * $pc-to-tab-ratio);
+                    letter-spacing: ppx(1.4 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    font-size: ppx(28);
+                    letter-spacing: ppx(1.4);
+                }
+            }
+
+            &__link-icon {
+                width: spx(30);
+                height: auto;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: spx(29);
+
+                @include tablet-up {
+                    width: ppx(30 * $pc-to-tab-ratio);
+                    right: ppx(29 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(30);
+                    right: ppx(29);
+                }
+            }
+        }
+
+        // ================================================
+        // RECRUITMENT NEW GRAD COMPONENT
+        // 新卒採用コンポーネント（特別カード）
+        // ================================================
+        .recruitment-new-grad {
+            width: spx(675);
+            background-color: $base_color_2;
+            border-radius: spx(30);
+            padding: spx(156) 0 spx(56);
+            height: spx(425);
+            @include tablet-up {
+                width: ppx(675 * $pc-to-tab-ratio);
+                border-radius: ppx(30 * $pc-to-tab-ratio);
+                padding: ppx(156 * $pc-to-tab-ratio) 0 ppx(56 * $pc-to-tab-ratio);
+                height: auto;
+            }
+            @include desktop-up {
+                width: ppx(675);
+                border-radius: ppx(30);
+                padding: ppx(156) 0 ppx(56);
+            }
+
+            &__title {
+                color: $base_color_white;
+                font-size: spx(40);
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: spx(8);
+                text-align: center;
+
+                @include tablet-up {
+                    font-size: ppx(40 * $pc-to-tab-ratio);
+                    letter-spacing: ppx(8 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    font-size: ppx(40);
+                    letter-spacing: ppx(8);
+                }
+            }
+
+            &__link {
+                position: relative;
+                color: $base_color_2;
+                width: spx(559);
+                height: spx(85);
+                background-color: $gray_1;
+                border-radius: spx(60);
+                border: spx(3) solid $gray_1;
+                background: $gray_1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-inline: auto;
+                margin-top: spx(70);
+                transition:
+                    background-color 0.3s ease,
+                    color 0.3s ease;
+
+                @include tablet-up {
+                    width: ppx(559 * $pc-to-tab-ratio);
+                    height: ppx(85 * $pc-to-tab-ratio);
+                    border-radius: ppx(60 * $pc-to-tab-ratio);
+                    border: ppx(3 * $pc-to-tab-ratio) solid $gray_1;
+                    margin-top: ppx(70 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(559);
+                    height: ppx(85);
+                    border-radius: ppx(60);
+                    border: ppx(3) solid $gray_1;
+                    margin-top: ppx(70);
+                }
+
+                @include hover {
+                    &:hover {
+                        background-color: $base_color_2;
+                        color: $base_color_white;
+
+                        .recruitment-new-grad__link-icon {
+                            color: $base_color_white;
+                        }
+                    }
+                }
+            }
+
+            &__link-text {
+                font-size: spx(28);
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: spx(1.4);
+
+                @include tablet-up {
+                    font-size: ppx(28 * $pc-to-tab-ratio);
+                    letter-spacing: ppx(1.4 * $pc-to-tab-ratio);
+                }
+
+                @include desktop-up {
+                    font-size: ppx(28);
+                    letter-spacing: ppx(1.4);
+                }
+            }
+
+            &__link-icon {
+                width: spx(30);
+                height: auto;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: spx(29);
+
+                @include tablet-up {
+                    width: ppx(30 * $pc-to-tab-ratio);
+                    right: ppx(29 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(30);
+                    right: ppx(29);
+                }
+            }
+        }
+    }
 }
