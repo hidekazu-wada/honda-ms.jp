@@ -58,12 +58,12 @@
 
         .hero-swiper {
             width: 100%;
-            height: calc(100svh - #{$header-height-mobile});
+            height: calc(100lvh - #{$header-height-mobile});
             @include tablet-up {
-                height: calc(100svh - #{$header-height-tablet});
+                height: calc(100lvh - #{$header-height-tablet});
             }
             @include desktop-up {
-                height: calc(100svh - #{$header-height-desktop});
+                height: calc(100lvh - #{$header-height-desktop});
             }
             overflow: hidden;
 
