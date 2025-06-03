@@ -2044,8 +2044,18 @@ svg {
 }
 .top-page .hero-section .hero-swiper {
   width: 100%;
-  height: 100dvh;
+  height: calc(100svh - 16.667vw);
   overflow: hidden;
+}
+@media (min-width: 768px) {
+  .top-page .hero-section .hero-swiper {
+    height: calc(100svh - 7vw);
+  }
+}
+@media (min-width: 1024px) {
+  .top-page .hero-section .hero-swiper {
+    height: calc(100svh - 5.469vw);
+  }
 }
 .top-page .hero-section .hero-swiper .swiper-slide {
   width: 100%;
