@@ -19,14 +19,13 @@
     width: 100%;
     height: 100dvh;
     background-color: $base_color_2;
-    z-index: 50;
+    z-index: 600;
     transform: translateX(100%);
     transition: transform 0.3s ease;
     overflow-y: auto;
 
     @include tablet-up {
         width: ppx(900 * $pc-to-tab-ratio);
-        z-index: 200;
         top: 0;
     }
 
