@@ -7312,6 +7312,119 @@ svg {
   }
 }
 
+/**
+ * Main SCSS Entry Point - 統合版
+ * 全てのpartialファイルを読み込んで統合CSSを生成
+ * 
+ * 読み込み順序:
+ * 1. Variables (変数定義)
+ * 2. Functions (関数定義)
+ * 3. Mixins (ミックスイン定義)
+ * 4. Global (グローバルスタイル)
+ * 5. Layout Components (レイアウトコンポーネント)
+ * 6. Page Specific (ページ固有スタイル)
+ * 
+ * 注意: Reset CSS (destyle) は HTML で直接読み込み
+ */
+/**
+ * About Page Styles - Structure Only
+ * AboutページのHTMLに完全対応したネスト構造
+ * プロパティなし、セレクター構造のみ
+ */
+.error-404-page .error-404-section {
+  color: #fff;
+  height: calc(100dvh - 34.7225555556vw);
+}
+@media (min-width: 768px) {
+  .error-404-page .error-404-section {
+    height: calc(100dvh - 7vw);
+  }
+}
+@media (min-width: 1024px) {
+  .error-404-page .error-404-section {
+    height: calc(100dvh - 5.469vw);
+  }
+}
+.error-404-page .error-404-section__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 4.1666666667vw;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  .error-404-page .error-404-section__inner {
+    gap: 2.197265625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .error-404-page .error-404-section__inner {
+    gap: 1.7578125vw;
+  }
+}
+.error-404-page .error-404-section__title {
+  font-family: "Noto Serif JP", serif;
+  color: #fff;
+  font-size: 9.4444444444vw;
+  font-weight: 700;
+  line-height: 15.4166666667vw;
+}
+@media (min-width: 768px) {
+  .error-404-page .error-404-section__title {
+    font-size: 4.638671875vw;
+    line-height: 7.080078125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .error-404-page .error-404-section__title {
+    font-size: 3.7109375vw;
+    line-height: 5.6640625vw;
+  }
+}
+.error-404-page .error-404-content__paragraph {
+  font-size: 4.0277777778vw;
+  font-weight: 500;
+  line-height: 180%;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .error-404-page .error-404-content__paragraph {
+    font-size: 1.708984375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .error-404-page .error-404-content__paragraph {
+    font-size: 1.3671875vw;
+    line-height: 200%;
+  }
+}
+.error-404-page .error-404-content__paragraph--small {
+  font-size: 3.4722222222vw;
+  font-weight: 500;
+  line-height: 180%;
+}
+@media (min-width: 768px) {
+  .error-404-page .error-404-content__paragraph--small {
+    font-size: 1.708984375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .error-404-page .error-404-content__paragraph--small {
+    font-size: 1.3671875vw;
+    line-height: 200%;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

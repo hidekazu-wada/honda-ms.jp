@@ -1,0 +1,110 @@
+/**
+ * About Page Styles - Structure Only
+ * AboutページのHTMLに完全対応したネスト構造
+ * プロパティなし、セレクター構造のみ
+ */
+
+@use "variables" as *;
+@use "functions" as *;
+@use "mixins" as *;
+
+.error-404-page {
+    // Section Title Component (共通コンポーネント)
+    // 注意: .section-titleスタイルは_global.scssに移動済み
+    // HTMLで使用する際は <h2 class="section-title section-title--white"> のように記述
+
+    // Primary Button Component (共通コンポーネント)
+    // 注意: .primary-buttonスタイルは_global.scssに移動済み
+    // HTMLで使用する際は <a class="primary-button primary-button--dark"> のように記述
+
+    // ================================================
+    // HERO SECTION (ABOUT SECTION)
+    // ヒーローセクション（Aboutセクション）
+    // ================================================
+    .error-404-section {
+        color: $base_color_white;
+        height: calc(100dvh - #{spx(130) + $header-height-mobile});
+        @include tablet-up {
+            height: calc(100dvh - #{$header-height-tablet});
+        }
+        @include desktop-up {
+            height: calc(100dvh - #{$header-height-desktop});
+        }
+
+        &__inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: spx(30);
+            height: 100%;
+            @include tablet-up {
+                gap: tpx(45);
+            }
+            @include desktop-up {
+                gap: ppx(45);
+            }
+        }
+
+        &__header {
+        }
+
+        &__title {
+            font-family: $font-noto-serif-jp;
+            color: $base_color_white;
+            font-size: spx(68);
+            font-weight: 700;
+            line-height: spx(111);
+
+            @include tablet-up {
+                font-size: tpx(95);
+                line-height: tpx(145);
+            }
+
+            @include desktop-up {
+                font-size: ppx(95);
+                line-height: ppx(145);
+            }
+        }
+
+        &__content {
+        }
+    }
+
+    // ================================================
+    // ERROR 404 CONTENT COMPONENT
+    // 404エラーコンテンツコンポーネント
+    // ================================================
+    .error-404-content {
+        &__paragraph {
+            // 基本のparagraphスタイル
+            font-size: spx(29);
+            font-weight: 500;
+            line-height: 180%;
+            text-align: center;
+            @include tablet-up {
+                font-size: tpx(35);
+            }
+
+            @include desktop-up {
+                font-size: ppx(35);
+                line-height: 200%;
+            }
+
+            &--small {
+                font-size: spx(25);
+                font-weight: 500;
+                line-height: 180%;
+
+                @include tablet-up {
+                    font-size: tpx(35);
+                }
+
+                @include desktop-up {
+                    font-size: ppx(35);
+                    line-height: 200%;
+                }
+            }
+        }
+    }
+}
