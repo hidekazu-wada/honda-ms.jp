@@ -6672,33 +6672,31 @@ svg {
   width: 100%;
   height: auto;
 }
+.mission-page .philosophy-section {
+  background-image: url(../images/mission/philosophy/bg-mobile.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 19.4444444444vw;
+}
 @media (min-width: 768px) {
   .mission-page .philosophy-section {
     background-image: url(../images/mission/philosophy/bg-desktop.webp);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     padding-top: 10.484375vw;
     padding-bottom: 13.01953125vw;
   }
 }
-@media (min-width: 768px) and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .mission-page .philosophy-section {
     padding-top: 9.53125vw;
     padding-bottom: 11.8359375vw;
   }
 }
 .mission-page .philosophy-section__content {
-  background-image: url(../images/mission/philosophy/bg-mobile.webp);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding-top: 19.4444444444vw;
-  padding-bottom: 46.6666666667vw;
+  padding-bottom: 5.5555555556vw;
 }
 @media (min-width: 768px) {
   .mission-page .philosophy-section__content {
-    background-image: unset;
     padding-top: 0;
     padding-bottom: 9.58203125vw;
   }
@@ -6729,81 +6727,137 @@ svg {
     width: 70.0390625vw;
   }
 }
-.mission-page .philosophy-slider {
+.mission-page .philosophy-wrapper {
+  background-image: url(../images/mission/philosophy/pyramid-bg-mobile.webp);
+  background-size: 100% 217.9166666667vw;
+  background-position: center top;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 217.9166666667vw;
   position: relative;
-  background-color: #fff;
-  padding-top: 45.8333333333vw;
-  padding-bottom: 5.5555555556vw;
 }
 @media (min-width: 768px) {
-  .mission-page .philosophy-slider {
-    padding-top: 3vw;
-    padding-left: 49.02734375vw;
-    margin-left: 7.9921875vw;
-    padding-bottom: 1.9765625vw;
-    background-color: unset;
-    background-image: url(../images/mission/philosophy/philosophy-slider-bg-desktop.webp);
-    background-size: cover;
-    background-position: left top;
+  .mission-page .philosophy-wrapper {
+    background-image: url(../images/mission/philosophy/pyramid-bg-desktop.webp);
+    background-size: 100% auto;
+    background-position: right top;
     background-repeat: no-repeat;
-    -webkit-filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.25));
-            filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.25));
+    height: 41.6796875vw;
+    position: relative;
+    width: 99vw;
+    margin-left: auto;
+    margin-right: 0;
   }
 }
 @media (min-width: 1024px) {
-  .mission-page .philosophy-slider {
-    padding-top: 4.609375vw;
-    padding-left: 44.5703125vw;
-    margin-left: 7.265625vw;
-    padding-bottom: 1.796875vw;
+  .mission-page .philosophy-wrapper {
+    height: 37.890625vw;
+    width: 93.59375vw;
   }
 }
-.mission-page .philosophy-slider__background {
-  width: 88.8888888889vw;
-  position: absolute;
-  z-index: 100;
-  top: -41.1111111111vw;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+.mission-page .philosophy-swiper {
+  padding-top: 86.9444444444vw;
+  padding-bottom: 5.5555555556vw;
+  width: 100vw;
 }
 @media (min-width: 768px) {
-  .mission-page .philosophy-slider__background {
-    width: 47.99609375vw;
-    top: -2vw;
-    left: -0.2vw;
-    -webkit-transform: unset;
-            transform: unset;
+  .mission-page .philosophy-swiper {
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 40.86328125vw;
+    margin-left: 0;
+    position: absolute;
+    top: 6vw;
+    left: 49.97265625vw;
   }
 }
 @media (min-width: 1024px) {
-  .mission-page .philosophy-slider__background {
-    top: -2.2vw;
-    left: -0.4vw;
-    width: 43.6328125vw;
+  .mission-page .philosophy-swiper {
+    width: 37.1484375vw;
+    top: 6.9140625vw;
+    left: 45.4296875vw;
   }
 }
-.mission-page .philosophy-slider__background-image {
-  width: 100%;
+.mission-page .philosophy-slider__navigation {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  bottom: 5.5555555556vw;
+  right: 8.3333333333vw;
+}
+@media (min-width: 768px) {
+  .mission-page .philosophy-slider__navigation {
+    bottom: 5vw;
+    right: 9.92578125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .mission-page .philosophy-slider__navigation {
+    bottom: 3.7890625vw;
+    right: 9.0234375vw;
+  }
+}
+.mission-page .philosophy-nav {
+  background-color: #c11313;
+  width: 11.5277777778vw;
+  height: 11.5277777778vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+@media (min-width: 768px) {
+  .mission-page .philosophy-nav {
+    width: 3.56640625vw;
+    height: 3.56640625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .mission-page .philosophy-nav {
+    width: 3.2421875vw;
+    height: 3.2421875vw;
+  }
+}
+.mission-page .philosophy-nav.swiper-button-disabled {
+  background-color: #cfcfcf;
+  cursor: not-allowed;
+}
+.mission-page .philosophy-nav__icon {
+  width: 4.3055555556vw;
   height: auto;
+}
+@media (min-width: 768px) {
+  .mission-page .philosophy-nav__icon {
+    width: 1.33203125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .mission-page .philosophy-nav__icon {
+    width: 1.2109375vw;
+  }
 }
 .mission-page .slide-content {
   position: relative;
   width: 83.3333333333vw;
   margin-inline: auto;
-  min-height: 109.7222222222vw;
 }
 @media (min-width: 768px) {
   .mission-page .slide-content {
     width: 40.86328125vw;
     margin-inline: unset;
-    min-height: 26.4vw;
   }
 }
 @media (min-width: 1024px) {
   .mission-page .slide-content {
     width: 37.1484375vw;
-    min-height: 23vw;
   }
 }
 .mission-page .slide-content__header {
@@ -6902,11 +6956,13 @@ svg {
   font-weight: 500;
   line-height: 180%;
   margin-top: 4.8611111111vw;
+  min-height: 77.7777777778vw;
 }
 @media (min-width: 768px) {
   .mission-page .slide-content__paragraph {
     font-size: 1.50390625vw;
     margin-top: 1.203125vw;
+    min-height: 18.046875vw;
   }
 }
 @media (min-width: 1024px) {
@@ -6914,15 +6970,10 @@ svg {
     font-size: 1.3671875vw;
     line-height: 170%;
     margin-top: 1.09375vw;
+    min-height: 16.40625vw;
   }
 }
 .mission-page .philosophy-slider__navigation {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  margin-left: auto;
-  margin-right: 8.3333333333vw;
-  margin-top: 4.1666666667vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6930,15 +6981,11 @@ svg {
 }
 @media (min-width: 768px) {
   .mission-page .philosophy-slider__navigation {
-    margin-right: 9.92578125vw;
-    margin-top: 3.5234375vw;
     gap: 0.6015625vw;
   }
 }
 @media (min-width: 1024px) {
   .mission-page .philosophy-slider__navigation {
-    margin-right: 9.0234375vw;
-    margin-top: 3.203125vw;
     gap: 0.546875vw;
   }
 }

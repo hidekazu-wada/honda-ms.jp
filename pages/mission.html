@@ -837,41 +837,8 @@
           </div>
         </article>
 
-        <!-- スライダーセクション -->
-        <div class="philosophy-slider">
-          <!-- 背景画像（重ねるレイヤー） -->
-          <figure class="philosophy-slider__background">
-            <picture>
-              <!-- デスクトップ用 WebP -->
-              <source
-                srcset="../images/mission/philosophy/pyramid.webp"
-                media="(min-width: 1024px)"
-                type="image/webp"
-              />
-              <!-- タブレット用 WebP -->
-              <source
-                srcset="../images/mission/philosophy/pyramid.webp"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/webp"
-              />
-              <!-- モバイル用 WebP -->
-              <source
-                srcset="../images/mission/philosophy/pyramid.webp"
-                media="(max-width: 767px)"
-                type="image/webp"
-              />
-              <!-- フォールバック画像 -->
-              <img
-                src="../images/mission/philosophy/pyramid.png"
-                alt="企業理念の三角形図"
-                class="philosophy-slider__background-image"
-                loading="eager"
-                decoding="sync"
-              />
-            </picture>
-          </figure>
-
-          <!-- Swiperコンテナ -->
+        <div class="philosophy-wrapper">
+          <!-- スライダーセクション -->
           <div class="swiper philosophy-swiper">
             <div class="swiper-wrapper">
               <!-- スライド1: 企業理念 -->
@@ -922,7 +889,6 @@
               </div>
             </div>
           </div>
-
           <!-- ナビゲーション -->
           <nav
             class="philosophy-slider__navigation"

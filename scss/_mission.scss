@@ -191,30 +191,32 @@
     // 企業理念セクション
     // ================================================
     .philosophy-section {
+        // モバイル時の背景画像設定
+        background-image: url(../images/mission/philosophy/bg-mobile.webp);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: spx(140);
+
         @include tablet-up {
+            // タブレット・デスクトップ時の背景画像設定
             background-image: url(../images/mission/philosophy/bg-desktop.webp);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             padding-top: ppx(244 * $pc-to-tab-ratio);
             padding-bottom: ppx(303 * $pc-to-tab-ratio);
-            @include desktop-up {
-                padding-top: ppx(244);
-                padding-bottom: ppx(303);
-            }
         }
+
+        @include desktop-up {
+            padding-top: ppx(244);
+            padding-bottom: ppx(303);
+        }
+
         &__header {
         }
 
         &__content {
-            background-image: url(../images/mission/philosophy/bg-mobile.webp);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding-top: spx(140);
-            padding-bottom: spx(336);
+            // contentは背景なし、paddingのみ調整
+            padding-bottom: spx(40);
             @include tablet-up {
-                background-image: unset;
                 padding-top: 0;
                 padding-bottom: ppx(223 * $pc-to-tab-ratio);
             }
@@ -246,76 +248,132 @@
         }
     }
 
-    .philosophy-slider {
+    .philosophy-wrapper {
+        background-image: url(../images/mission/philosophy/pyramid-bg-mobile.webp);
+        background-size: 100% spx(1569);
+        background-position: center top;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: spx(1569);
         position: relative;
-        background-color: $base_color_white;
-        padding-top: spx(330);
-        padding-bottom: spx(40);
+
         @include tablet-up {
-            padding-top: 3vw;
-            padding-left: ppx(1141 * $pc-to-tab-ratio);
-            margin-left: ppx(186 * $pc-to-tab-ratio);
-            padding-bottom: ppx(46 * $pc-to-tab-ratio);
-            background-color: unset;
-            background-image: url(../images/mission/philosophy/philosophy-slider-bg-desktop.webp);
-            background-size: cover;
-            background-position: left top;
+            background-image: url(../images/mission/philosophy/pyramid-bg-desktop.webp);
+            background-size: 100% auto;
+            background-position: right top;
             background-repeat: no-repeat;
-            filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.25));
+            height: ppx(970 * $pc-to-tab-ratio);
+            position: relative;
+            width: 99vw;
+            margin-left: auto;
+            margin-right: 0;
         }
         @include desktop-up {
-            padding-top: ppx(118);
-            padding-left: ppx(1141);
-            margin-left: ppx(186);
-            padding-bottom: ppx(46);
+            height: ppx(970);
+            width: ppx(2396);
         }
-        &__background {
-            width: spx(640);
+    }
+
+    // ================================================
+    // PHILOSOPHY SWIPER
+    // スライダー本体（独立したコンポーネント）
+    // ================================================
+    .philosophy-swiper {
+        padding-top: spx(626);
+        padding-bottom: spx(40);
+        width: 100vw;
+        @include tablet-up {
+            padding-top: 0;
+            padding-bottom: 0;
+            width: ppx(951 * $pc-to-tab-ratio);
+            margin-left: 0;
             position: absolute;
-            z-index: 100;
-            top: spx(-296);
-            left: 50%;
-            transform: translateX(-50%);
+            top: 6vw;
+            left: ppx(1163 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            width: ppx(951);
+            top: ppx(177);
+            left: ppx(1163);
+        }
+    }
+
+    // ================================================
+    // PHILOSOPHY SLIDER NAVIGATION
+    // ナビゲーション（独立したコンポーネント）
+    // ================================================
+    .philosophy-slider__navigation {
+        width: max-content;
+        position: absolute;
+        bottom: spx(40);
+        right: spx(60);
+        @include tablet-up {
+            bottom: 5vw;
+            right: ppx(231 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            bottom: ppx(97);
+            right: ppx(231);
+        }
+    }
+
+    .philosophy-nav {
+        background-color: $base_color_2;
+        width: spx(83);
+        height: spx(83);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+        @include tablet-up {
+            width: ppx(83 * $pc-to-tab-ratio);
+            height: ppx(83 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            width: ppx(83);
+            height: ppx(83);
+        }
+
+        // 無効状態のスタイル
+        &.swiper-button-disabled {
+            background-color: $gray_2;
+            cursor: not-allowed;
+        }
+
+        &--prev {
+        }
+
+        &--next {
+        }
+
+        &__icon {
+            width: spx(31);
+            height: auto;
             @include tablet-up {
-                width: ppx(1117 * $pc-to-tab-ratio);
-                top: -2vw;
-                left: -0.2vw;
-                transform: unset;
+                width: ppx(31 * $pc-to-tab-ratio);
             }
             @include desktop-up {
-                top: -2.2vw;
-                left: -0.4vw;
-                width: ppx(1117);
+                width: ppx(31);
             }
         }
-
-        &__background-image {
-            width: 100%;
-            height: auto;
-        }
-
-        &__navigation {
-        }
     }
 
-    .philosophy-swiper {
-        // Swiperコンテナ
-    }
-
+    // ================================================
+    // SLIDE CONTENT
+    // スライドコンテンツ（Swiper内で使用）
+    // ================================================
     .slide-content {
         position: relative;
         width: spx(600);
         margin-inline: auto;
-        min-height: spx(790);
         @include tablet-up {
             width: ppx(951 * $pc-to-tab-ratio);
             margin-inline: unset;
-            min-height: 24vw * $pc-to-tab-ratio;
         }
         @include desktop-up {
             width: ppx(951);
-            min-height: 23vw;
         }
+
         &--philosophy {
         }
 
@@ -408,34 +466,29 @@
             font-weight: 500;
             line-height: 180%;
             margin-top: spx(35);
+            min-height: spx(560);
             @include tablet-up {
                 font-size: ppx(35 * $pc-to-tab-ratio);
                 margin-top: ppx(28 * $pc-to-tab-ratio);
+                min-height: ppx(420 * $pc-to-tab-ratio);
             }
 
             @include desktop-up {
                 font-size: ppx(35);
                 line-height: 170%;
                 margin-top: ppx(28);
+                min-height: ppx(420);
             }
         }
     }
 
     .philosophy-slider__navigation {
-        width: max-content;
-        margin-left: auto;
-        margin-right: spx(60);
-        margin-top: spx(30);
         display: flex;
         gap: spx(14);
         @include tablet-up {
-            margin-right: ppx(231 * $pc-to-tab-ratio);
-            margin-top: ppx(82 * $pc-to-tab-ratio);
             gap: ppx(14 * $pc-to-tab-ratio);
         }
         @include desktop-up {
-            margin-right: ppx(231);
-            margin-top: ppx(82);
             gap: ppx(14);
         }
     }
