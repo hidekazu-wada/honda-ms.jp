@@ -1,0 +1,537 @@
+/**
+ * About Page Styles - Structure Only
+ * AboutページのHTMLに完全対応したネスト構造
+ * プロパティなし、セレクター構造のみ
+ */
+
+@use "variables" as *;
+@use "functions" as *;
+@use "mixins" as *;
+
+.service-page {
+    // Section Title Component (共通コンポーネント)
+    // 注意: .section-titleスタイルは_global.scssに移動済み
+    // HTMLで使用する際は <h2 class="section-title section-title--white"> のように記述
+
+    // Primary Button Component (共通コンポーネント)
+    // 注意: .primary-buttonスタイルは_global.scssに移動済み
+    // HTMLで使用する際は <a class="primary-button primary-button--dark"> のように記述
+
+    // ================================================
+    // HERO SECTION (ABOUT SECTION)
+    // ヒーローセクション（Aboutセクション）
+    // ================================================
+    .service-section {
+        position: relative;
+        padding-top: spx(130);
+        padding-bottom: spx(159);
+        @include tablet-up {
+            padding-top: ppx(284 * $pc-to-tab-ratio);
+            padding-bottom: ppx(196 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            padding-top: ppx(284);
+            padding-bottom: ppx(196);
+        }
+        &::before {
+            display: none;
+            @include tablet-up {
+                content: "";
+                display: block;
+                position: absolute;
+                top: ppx(419 * $pc-to-tab-ratio);
+                left: 0;
+                width: ppx(15 * $pc-to-tab-ratio);
+                height: ppx(650 * $pc-to-tab-ratio);
+                background-color: $base_color_2;
+            }
+            @include desktop-up {
+                top: ppx(419);
+                width: ppx(15);
+                height: ppx(650);
+            }
+        }
+        &__inner {
+        }
+
+        &__header {
+            width: max-content;
+            margin: 0 auto;
+        }
+
+        &__title {
+            font-family: $font-noto-serif-jp;
+            color: $base_color_white;
+            font-size: spx(111);
+            font-weight: 700;
+            line-height: spx(111);
+            text-align: center;
+
+            @include tablet-up {
+                font-size: ppx(145 * $pc-to-tab-ratio);
+                line-height: ppx(145 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(145);
+                line-height: ppx(145);
+            }
+        }
+
+        &__subtitle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: spx(23);
+            color: $base_color_white;
+            font-size: spx(27);
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: spx(2.7);
+            margin: spx(15);
+
+            @include tablet-up {
+                gap: ppx(30 * $pc-to-tab-ratio);
+                font-size: ppx(35 * $pc-to-tab-ratio);
+                letter-spacing: ppx(3.5 * $pc-to-tab-ratio);
+                margin: ppx(20 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                gap: ppx(30);
+                font-size: ppx(35);
+                letter-spacing: ppx(3.5);
+                margin: ppx(20);
+            }
+            &::before {
+                content: "";
+                display: block;
+                width: spx(90);
+                height: 1px;
+                background-color: $base_color_white;
+                @include tablet-up {
+                    width: ppx(130 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(130);
+                }
+            }
+            &::after {
+                content: "";
+                display: block;
+                width: spx(90);
+                height: 1px;
+                background-color: $base_color_white;
+                @include tablet-up {
+                    width: ppx(130 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(130);
+                }
+            }
+        }
+    }
+
+    // ================================================
+    // SERVICE CONTENT COMPONENT
+    // サービスコンテンツコンポーネント
+    // ================================================
+    .service-section__content {
+    }
+
+    .service-content {
+        width: spx(600);
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        margin-inline: auto;
+        margin-top: spx(90);
+        @include tablet-up {
+            margin-top: ppx(150 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            margin-top: ppx(150);
+        }
+
+        @include tablet-up {
+            width: ppx(1646 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            width: ppx(1646);
+        }
+        &__paragraph {
+            color: $base_color_white;
+            font-size: spx(31);
+            font-weight: 500;
+            line-height: 180%;
+
+            @include tablet-up {
+                font-size: ppx(35 * $pc-to-tab-ratio);
+                line-height: 200%;
+            }
+
+            @include desktop-up {
+                font-size: ppx(35);
+                line-height: 200%;
+            }
+        }
+    }
+
+    // ================================================
+    // COMPANY SECTION
+    // 会社情報セクション
+    // ================================================
+    .company-section {
+        &__inner {
+        }
+    }
+
+    // ================================================
+    // COMPANY CARD COMPONENT
+    // 会社カードコンポーネント
+    // ================================================
+    .company-card {
+        background-image: url(../images/service/company/bg-mobile.webp);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: spx(90);
+        @include tablet-up {
+            flex-direction: row;
+            padding-bottom: ppx(190 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            background-image: url(../images/service/company/bg-desktop.webp);
+            padding-bottom: ppx(190);
+        }
+        // 各会社ごとの調整用modifier
+        &--honda {
+            padding-top: spx(90);
+            @include tablet-up {
+                padding-top: ppx(191 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                padding-top: ppx(191);
+            }
+        }
+
+        &--kaines {
+            padding-top: spx(21);
+            @include tablet-up {
+                padding-top: ppx(113 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                padding-top: ppx(113);
+            }
+        }
+
+        &--fuji {
+            padding-top: spx(115);
+            @include tablet-up {
+                padding-top: ppx(220 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                padding-top: ppx(220);
+            }
+        }
+
+        &--fj {
+            padding-top: spx(118);
+            @include tablet-up {
+                padding-top: ppx(220 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                padding-top: ppx(220);
+            }
+        }
+
+        &__logo {
+            // 各会社ごとのロゴサイズ調整
+            &--honda {
+                width: spx(391);
+                height: spx(309);
+                margin-left: spx(164);
+                @include tablet-up {
+                    width: ppx(472 * $pc-to-tab-ratio);
+                    height: ppx(373 * $pc-to-tab-ratio);
+                    margin-left: ppx(416 * $pc-to-tab-ratio);
+                    margin-right: ppx(216 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(472);
+                    height: ppx(373);
+                    margin-left: ppx(416);
+                    margin-right: ppx(216);
+                }
+            }
+
+            &--kaines {
+                width: spx(444);
+                height: spx(311);
+                margin-left: spx(178);
+                @include tablet-up {
+                    width: ppx(533 * $pc-to-tab-ratio);
+                    height: ppx(373 * $pc-to-tab-ratio);
+                    margin-left: ppx(415 * $pc-to-tab-ratio);
+                    margin-right: ppx(156 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(533);
+                    height: ppx(373);
+                    margin-left: ppx(415);
+                    margin-right: ppx(156);
+                }
+            }
+
+            &--fuji {
+                width: spx(215);
+                height: spx(237);
+                margin-left: spx(253);
+                @include tablet-up {
+                    width: ppx(258 * $pc-to-tab-ratio);
+                    height: ppx(285 * $pc-to-tab-ratio);
+                    margin-left: ppx(523 * $pc-to-tab-ratio);
+                    margin-right: ppx(323 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(258);
+                    height: ppx(285);
+                    margin-left: ppx(523);
+                    margin-right: ppx(323);
+                }
+            }
+
+            &--fj {
+                width: spx(268);
+                height: spx(234);
+                margin-left: spx(226);
+                @include tablet-up {
+                    width: ppx(321 * $pc-to-tab-ratio);
+                    height: ppx(281 * $pc-to-tab-ratio);
+                    margin-left: ppx(491 * $pc-to-tab-ratio);
+                    margin-right: ppx(292 * $pc-to-tab-ratio);
+                }
+                @include desktop-up {
+                    width: ppx(321);
+                    height: ppx(281);
+                    margin-left: ppx(491);
+                    margin-right: ppx(292);
+                }
+            }
+        }
+
+        &__logo-image {
+            width: 100%;
+            height: auto;
+
+            // ホンダのロゴのみ白い背景を透過
+            .company-card--honda & {
+                mix-blend-mode: darken;
+            }
+        }
+
+        &__content {
+        }
+
+        &__info {
+        }
+
+        &__services {
+        }
+    }
+
+    // ================================================
+    // COMPANY INFO COMPONENT
+    // 会社情報コンポーネント
+    // ================================================
+    .company-info {
+        display: flex;
+        flex-direction: column;
+        gap: spx(20);
+        width: max-content;
+        margin-inline: auto;
+        margin-top: spx(80);
+        @include tablet-up {
+            gap: ppx(30 * $pc-to-tab-ratio);
+            margin-inline: unset;
+            margin-top: 0;
+        }
+        @include desktop-up {
+            gap: ppx(30);
+        }
+        &__item {
+            position: relative;
+            display: grid;
+            grid-template-columns: spx(125) auto;
+            padding-bottom: spx(20);
+            width: spx(640);
+            padding-left: spx(10);
+            @include tablet-up {
+                grid-template-columns: ppx(210 * $pc-to-tab-ratio) auto;
+                gap: ppx(20 * $pc-to-tab-ratio);
+                padding-bottom: ppx(30 * $pc-to-tab-ratio);
+                width: ppx(1110 * $pc-to-tab-ratio);
+                padding-left: 0;
+            }
+            @include desktop-up {
+                grid-template-columns: ppx(210) auto;
+                gap: ppx(20);
+                padding-bottom: ppx(30);
+                width: ppx(1110);
+            }
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: #7f7f7f;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        &__label {
+            font-size: spx(31);
+            font-weight: 500;
+            line-height: 140%;
+            letter-spacing: spx(3.1);
+
+            @include tablet-up {
+                font-size: ppx(35 * $pc-to-tab-ratio);
+                line-height: 150%;
+                letter-spacing: ppx(1.75 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(35);
+                line-height: 150%;
+                letter-spacing: ppx(1.75);
+            }
+        }
+
+        &__value {
+            font-size: spx(31);
+            font-weight: 500;
+            line-height: 140%;
+
+            @include tablet-up {
+                font-size: ppx(35 * $pc-to-tab-ratio);
+                line-height: 150%;
+                letter-spacing: ppx(1.75 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(35);
+                line-height: 150%;
+                letter-spacing: ppx(1.75);
+            }
+            .sp-only {
+                display: block;
+                @include tablet-up {
+                    display: none;
+                }
+            }
+        }
+
+        &__tel-link {
+        }
+
+        &__website-link {
+            transition: color 0.3s ease;
+
+            @include hover {
+                &:hover {
+                    color: $base_color_2;
+                }
+            }
+        }
+    }
+
+    // ================================================
+    // COMPANY SERVICES COMPONENT
+    // 会社サービスコンポーネント
+    // ================================================
+    .company-services {
+        display: flex;
+        flex-direction: column;
+        gap: spx(30);
+        margin-top: spx(80);
+        @include tablet-up {
+            flex-direction: row;
+            gap: ppx(84 * $pc-to-tab-ratio);
+            margin-top: ppx(98 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            gap: ppx(84);
+            margin-top: ppx(98);
+        }
+        &__title {
+            font-size: spx(31);
+            font-weight: 500;
+            line-height: 140%;
+            letter-spacing: spx(3.1);
+            margin-inline: auto;
+            text-align: center;
+            @include tablet-up {
+                font-size: ppx(35 * $pc-to-tab-ratio);
+                line-height: 150%;
+                letter-spacing: ppx(1.75 * $pc-to-tab-ratio);
+                margin-inline: unset;
+                margin-top: ppx(24 * $pc-to-tab-ratio);
+                text-align: left;
+            }
+
+            @include desktop-up {
+                font-size: ppx(35);
+                line-height: 150%;
+                letter-spacing: ppx(1.75);
+                margin-top: ppx(24);
+            }
+        }
+
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: spx(8);
+            width: max-content;
+            margin-inline: auto;
+            @include tablet-up {
+                gap: ppx(20 * $pc-to-tab-ratio);
+                width: ppx(865 * $pc-to-tab-ratio);
+                margin-inline: unset;
+            }
+            @include desktop-up {
+                gap: ppx(20);
+                width: ppx(865);
+            }
+        }
+
+        &__item {
+            color: $base_color_1;
+            font-size: spx(27);
+            font-weight: 500;
+            line-height: 140%;
+            width: spx(315);
+            height: spx(111);
+            border: solid 1px #7f7f7f;
+            display: grid;
+            place-items: center;
+            @include tablet-up {
+                font-size: ppx(33 * $pc-to-tab-ratio);
+                line-height: 120%;
+                width: ppx(420 * $pc-to-tab-ratio);
+                height: ppx(90 * $pc-to-tab-ratio);
+            }
+
+            @include desktop-up {
+                font-size: ppx(33);
+                line-height: 120%;
+                width: ppx(420);
+                height: ppx(90);
+            }
+        }
+    }
+}

@@ -953,6 +953,10 @@
                     }
                 }
 
+                .service__logo-image {
+                    mix-blend-mode: darken;
+                }
+
                 .service__item::before {
                     color: $base_color_2; // Honda用カラー
                 }

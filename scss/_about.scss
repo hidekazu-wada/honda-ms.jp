@@ -410,6 +410,7 @@
                 margin-top: spx(21);
                 margin-left: spx(39);
                 margin-bottom: spx(15);
+                mix-blend-mode: darken;
                 @include tablet-up {
                     margin-top: ppx(49 * $pc-to-tab-ratio);
                     margin-left: ppx(103 * $pc-to-tab-ratio);
