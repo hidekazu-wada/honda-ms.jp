@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="../css/destyle.css" />
     <link rel="stylesheet" href="../css/style.css" />
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" />
+
     <!-- ================================================== -->
     <!-- CORE SCRIPTS: Font Loading (Critical - Inline) -->
     <!-- Note: フォント読み込み部分は性能のためインライン維持 -->
@@ -811,52 +814,133 @@
         </div>
       </section>
 
-      <section class="philosophy-section">
-        <p>
-          私たちホンダ自動車販売グループは、「人」の成長と共に、企業として成長を遂げてきました。<br />
-          自動車販売から始まり、携帯電話を中心とした通信事業、建設や飲食なども展開し、人々の生活に関連するさまざまなサービスを提供しています。これらはいずれも「人のくらしを幸せにするもの」と私たちは考えています。<br />
-          社員一人ひとりが個性を生かし、それぞれの分野のプロフェッショナルとして、お客さまの幸せづくりのお手伝いに真剣に取り組み、「みんなに愛される会社づくり」を志しています。ホンダ自動車販売で働く「人」こそが、当社の最大にして最高の財産なのです。
-        </p>
+      <!-- ================================================== -->
+      <!-- PHILOSOPHY SECTION -->
+      <!-- 企業理念セクション -->
+      <!-- ================================================== -->
+      <section
+        class="philosophy-section"
+        aria-labelledby="philosophy-section-title"
+      >
+        <header class="philosophy-section__header">
+          <h2 id="philosophy-section-title" class="sr-only">企業理念</h2>
+        </header>
 
-        <div>
-          <div>
-            <img src="" alt="" />
-            <div class="slide-content">
-              <div>
-                <p>企業理念</p>
-                <p>みんなに愛される会社づくり</p>
+        <!-- 企業理念説明文 -->
+        <article class="philosophy-section__content">
+          <div class="philosophy-content">
+            <p class="philosophy-content__paragraph">
+              私たちホンダ自動車販売グループは、「人」の成長と共に、企業として成長を遂げてきました。<br />
+              自動車販売から始まり、携帯電話を中心とした通信事業、建設や飲食なども展開し、人々の生活に関連するさまざまなサービスを提供しています。これらはいずれも「人のくらしを幸せにするもの」と私たちは考えています。<br />
+              社員一人ひとりが個性を生かし、それぞれの分野のプロフェッショナルとして、お客さまの幸せづくりのお手伝いに真剣に取り組み、「みんなに愛される会社づくり」を志しています。ホンダ自動車販売で働く「人」こそが、当社の最大にして最高の財産なのです。
+            </p>
+          </div>
+        </article>
+
+        <!-- スライダーセクション -->
+        <div class="philosophy-slider">
+          <!-- 背景画像（重ねるレイヤー） -->
+          <figure class="philosophy-slider__background">
+            <picture>
+              <!-- デスクトップ用 WebP -->
+              <source
+                srcset="../images/mission/philosophy/pyramid.webp"
+                media="(min-width: 1024px)"
+                type="image/webp"
+              />
+              <!-- タブレット用 WebP -->
+              <source
+                srcset="../images/mission/philosophy/pyramid.webp"
+                media="(min-width: 768px) and (max-width: 1023px)"
+                type="image/webp"
+              />
+              <!-- モバイル用 WebP -->
+              <source
+                srcset="../images/mission/philosophy/pyramid.webp"
+                media="(max-width: 767px)"
+                type="image/webp"
+              />
+              <!-- フォールバック画像 -->
+              <img
+                src="../images/mission/philosophy/pyramid.png"
+                alt="企業理念の三角形図"
+                class="philosophy-slider__background-image"
+                loading="eager"
+                decoding="sync"
+              />
+            </picture>
+          </figure>
+
+          <!-- Swiperコンテナ -->
+          <div class="swiper philosophy-swiper">
+            <div class="swiper-wrapper">
+              <!-- スライド1: 企業理念 -->
+              <div class="swiper-slide slide-content">
+                <article class="slide-content slide-content--philosophy">
+                  <header class="slide-content__header">
+                    <span class="slide-content__category">企業理念</span>
+                    <h3 class="slide-content__title">
+                      みんなに愛される会社づくり
+                    </h3>
+                  </header>
+                  <div class="slide-content__text">
+                    <p class="slide-content__paragraph">
+                      ホンダ自動車販売グループは「人」を大切にする経営を行っています。そこで、「みんなに愛される会社づくり」というキャッチフレーズをつくりました。社員一人ひとりが、「みんなに愛される会社づくり」のために何ができるかを考え行動すれば、お客さまのくらしを幸せにすることができ、それが私たち自身の幸せにもつながります。
+                    </p>
+                  </div>
+                </article>
               </div>
-              <p>
-                ホンダ自動車販売グループは「人」を大切にする経営を行っています。そこで、「みんなに愛される会社づくり」というキャッチフレーズをつくりました。社員一人ひとりが、「みんなに愛される会社づくり」のために何ができるかを考え行動すれば、お客さまのくらしを幸せにすることができ、それが私たち自身の幸せにもつながります。
-              </p>
-            </div>
-            <div class="slide-content">
-              <div>
-                <p>経営方針</p>
-                <p>人ありき</p>
+
+              <!-- スライド2: 経営方針 -->
+              <div class="swiper-slide slide-content">
+                <article class="slide-content slide-content--management">
+                  <header class="slide-content__header">
+                    <span class="slide-content__category">経営方針</span>
+                    <h3 class="slide-content__title">人ありき</h3>
+                  </header>
+                  <div class="slide-content__text">
+                    <p class="slide-content__paragraph">
+                      ホンダ自動車販売グループは「人ありき」の経営方針のもと、「人」を大切にする経営を行っています。「人のくらしを幸せにする」ためには、お客さまにサービスを提供する私たち自身が幸せでなければなりません。社員を大切にすることで、社員はお客さまを大切にする。お客さまに感謝され、社員はさらにやる気になる。そんな幸せの連鎖を実現するために、「人ありき」の経営を実践しています。
+                    </p>
+                  </div>
+                </article>
               </div>
-              <p>
-                ホンダ自動車販売グループは「人ありき」の経営方針のもと、「人」を大切にする経営を行っています。「人のくらしを幸せにする」ためには、お客さまにサービスを提供する私たち自身が幸せでなければなりません。社員を大切にすることで、社員はお客さまを大切にする。お客さまに感謝され、社員はさらにやる気になる。そんな幸せの連鎖を実現するために、「人ありき」の経営を実践しています。
-              </p>
-            </div>
-            <div class="slide-content">
-              <div>
-                <p>行動指針</p>
-                <p>５つの心</p>
+
+              <!-- スライド3: 行動指針 -->
+              <div class="swiper-slide slide-content">
+                <article class="slide-content slide-content--action">
+                  <header class="slide-content__header">
+                    <span class="slide-content__category">行動指針</span>
+                    <h3 class="slide-content__title">５つの心</h3>
+                  </header>
+                  <div class="slide-content__text">
+                    <p class="slide-content__paragraph">
+                      私たちの使命は「人のくらしを幸せにする」こと。その価値を提供し続けるためには、社員自身が常に学び、成長し続けなければなりません。仕事をしていく上で私たちが最も大切にしているのは「素直」「謙虚」「感謝」「向上」「反省」の「５つの心」。成長のキーワードであり、さまざまなシーンにおいて判断基準になるもの。この５つの心を社員全員で意識し、成長し続けていきます。
+                    </p>
+                  </div>
+                </article>
               </div>
-              <p>
-                私たちの使命は「人のくらしを幸せにする」こと。その価値を提供し続けるためには、社員自身が常に学び、成長し続けなければなりません。仕事をしていく上で私たちが最も大切にしているのは「素直」「謙虚」「感謝」「向上」「反省」の「５つの心」。成長のキーワードであり、さまざまなシーンにおいて判断基準になるもの。この５つの心を社員全員で意識し、成長し続けていきます。
-              </p>
             </div>
           </div>
-          <div class="slide-nav">
-            <div>
+
+          <!-- ナビゲーション -->
+          <nav
+            class="philosophy-slider__navigation"
+            aria-label="スライダーナビゲーション"
+          >
+            <button
+              type="button"
+              class="philosophy-nav philosophy-nav--prev"
+              aria-label="前のスライドへ"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"
                 height="32"
                 viewBox="0 0 35 32"
                 fill="none"
+                class="philosophy-nav__icon"
+                aria-hidden="true"
               >
                 <path
                   d="M33 30L19 16L33 2"
@@ -873,15 +957,21 @@
                   stroke-linejoin="round"
                 />
               </svg>
-            </div>
+            </button>
 
-            <div>
+            <button
+              type="button"
+              class="philosophy-nav philosophy-nav--next"
+              aria-label="次のスライドへ"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"
                 height="32"
                 viewBox="0 0 35 32"
                 fill="none"
+                class="philosophy-nav__icon"
+                aria-hidden="true"
               >
                 <path
                   d="M2 30L16 16L2 2"
@@ -898,8 +988,8 @@
                   stroke-linejoin="round"
                 />
               </svg>
-            </div>
-          </div>
+            </button>
+          </nav>
         </div>
       </section>
 
@@ -1071,6 +1161,12 @@
     <!-- ================================================== -->
     <!-- COMMON SCRIPTS -->
     <!-- ================================================== -->
+    <!-- Swiper Bundle Script -->
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+
+    <!-- Philosophy Slider Script -->
+    <script src="../js/philosophy-swiper.js"></script>
+
     <!-- Menu Control Script - 全ページ共通 -->
     <script src="../js/menu-control.js"></script>
   </body>
