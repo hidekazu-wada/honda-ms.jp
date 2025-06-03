@@ -542,6 +542,282 @@ svg {
   color: #fff;
 }
 
+.sp-only-sns {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 18.0555555556vw;
+  height: 18.0555555556vw;
+  background-color: #c11313;
+  z-index: 500;
+  border-top: solid 1px #fff;
+  border-right: solid 1px #fff;
+}
+@media (min-width: 768px) {
+  .sp-only-sns {
+    display: none;
+  }
+}
+.sp-only-sns__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.sp-only-sns__icon {
+  width: 6.9444444444vw;
+  height: auto;
+}
+
+.sp-only-button-btn {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 63.8888888889vw;
+  height: 18.0555555556vw;
+  background-color: #c11313;
+  z-index: 400;
+  border-top: solid 1px #fff;
+}
+@media (min-width: 768px) {
+  .sp-only-button-btn {
+    display: none;
+  }
+}
+.sp-only-button-btn__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.sp-only-button-btn__text {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.3888888889vw;
+  width: 100%;
+  padding-top: 2.7777777778vw;
+}
+.sp-only-button-btn__text-primary {
+  font-family: "Noto Serif JP", serif;
+  font-size: 6.9444444444vw;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.4166666667vw;
+}
+.sp-only-button-btn__text-secondary {
+  font-size: 3.1944444444vw;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.575vw;
+}
+
+.recruit-page-sp-only-button-btn {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 63.8888888889vw;
+  height: 18.0555555556vw;
+  background-color: #c4a439;
+  z-index: 400;
+  border-top: solid 1px #fff;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+@media (min-width: 768px) {
+  .recruit-page-sp-only-button-btn {
+    left: unset;
+    right: 5.5859375vw;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    width: 19.765625vw;
+    height: 5.5859375vw;
+    border-top: none;
+    background-color: #e3a113;
+  }
+}
+@media (min-width: 1024px) {
+  .recruit-page-sp-only-button-btn {
+    right: 5.078125vw;
+    width: 17.96875vw;
+    height: 5.078125vw;
+  }
+}
+.recruit-page-sp-only-button-btn__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  .recruit-page-sp-only-button-btn__link {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+.recruit-page-sp-only-button-btn__text {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.recruit-page-sp-only-button-btn__text-primary {
+  font-family: "Noto Serif JP", serif;
+  color: #fff;
+  font-size: 6.9444444444vw;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.4166666667vw;
+}
+@media (min-width: 768px) {
+  .recruit-page-sp-only-button-btn__text-primary {
+    font-size: 2.1484375vw;
+    letter-spacing: 0.12890625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .recruit-page-sp-only-button-btn__text-primary {
+    font-size: 1.953125vw;
+    letter-spacing: 0.1171875vw;
+    margin-left: 1.5625vw;
+  }
+}
+.recruit-page-sp-only-button-btn__text-secondary {
+  color: #fff;
+  font-size: 3.1944444444vw;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.575vw;
+  margin-left: 1.3888888889vw;
+}
+@media (min-width: 768px) {
+  .recruit-page-sp-only-button-btn__text-secondary {
+    font-size: 0.98828125vw;
+    letter-spacing: 0.177890625vw;
+    margin-left: 0.64453125vw;
+    margin-right: 1.33203125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .recruit-page-sp-only-button-btn__text-secondary {
+    font-size: 0.8984375vw;
+    letter-spacing: 0.16171875vw;
+    margin-left: 0.5859375vw;
+    margin-right: 1.2109375vw;
+  }
+}
+.recruit-page-sp-only-button-btn__icon {
+  display: none;
+}
+@media (min-width: 768px) {
+  .recruit-page-sp-only-button-btn__icon {
+    display: block;
+    width: 1.33203125vw;
+    height: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .recruit-page-sp-only-button-btn__icon {
+    width: 1.2109375vw;
+  }
+}
+@media (hover: hover) {
+  .recruit-page-sp-only-button-btn:hover {
+    background-color: #c11313;
+  }
+}
+
+.go-to-top {
+  position: fixed;
+  z-index: 500;
+  bottom: 0;
+  right: 0;
+  width: 18.0555555556vw;
+  height: 18.0555555556vw;
+  background-color: #c11313;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  border-top: solid 1px #fff;
+  border-left: solid 1px #fff;
+}
+@media (min-width: 768px) {
+  .go-to-top {
+    width: 5.5859375vw;
+    height: 5.5859375vw;
+    border-top: none;
+    border-left: none;
+  }
+}
+@media (min-width: 1024px) {
+  .go-to-top {
+    width: 5.078125vw;
+    height: 5.078125vw;
+  }
+}
+@media (hover: hover) {
+  .go-to-top:hover {
+    background-color: #e3a113;
+  }
+}
+.go-to-top__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.go-to-top__icon {
+  width: 6.3888888889vw;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .go-to-top__icon {
+    width: 1.71875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .go-to-top__icon {
+    width: 1.5625vw;
+  }
+}
+
 /**
  * Main SCSS Entry Point - 統合版
  * 全てのpartialファイルを読み込んで統合CSSを生成
@@ -567,13 +843,14 @@ svg {
   width: 100%;
   height: 16.667vw;
   background-color: #fff;
-  z-index: 100;
+  z-index: 3000;
   -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
 }
 @media (min-width: 768px) {
   .header {
     height: 7vw;
+    z-index: 500;
   }
 }
 @media (min-width: 1024px) {
@@ -989,7 +1266,7 @@ svg {
   width: 100%;
   height: 100dvh;
   background-color: #c11313;
-  z-index: 50;
+  z-index: 600;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   -webkit-transition: -webkit-transform 0.3s ease;
@@ -1015,7 +1292,6 @@ svg {
 @media (min-width: 768px) {
   .global-nav {
     width: 38.671875vw;
-    z-index: 200;
     top: 0;
   }
 }
