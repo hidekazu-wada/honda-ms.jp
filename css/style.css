@@ -94,12 +94,22 @@ svg {
 
 .bg-wrapper {
   width: 100vw;
-  height: 100%;
+  height: calc(100svh - 16.667vw);
   position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
   background-color: #231f20;
+}
+@media (min-width: 768px) {
+  .bg-wrapper {
+    height: calc(100svh - 7vw);
+  }
+}
+@media (min-width: 1024px) {
+  .bg-wrapper {
+    height: calc(100svh - 5.469vw);
+  }
 }
 .bg-wrapper img {
   width: 100%;
