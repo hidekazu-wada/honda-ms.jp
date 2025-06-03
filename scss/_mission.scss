@@ -1,0 +1,188 @@
+/**
+ * About Page Styles - Structure Only
+ * AboutページのHTMLに完全対応したネスト構造
+ * プロパティなし、セレクター構造のみ
+ */
+
+@use "variables" as *;
+@use "functions" as *;
+@use "mixins" as *;
+
+.mission-page {
+    // Section Title Component (共通コンポーネント)
+    // 注意: .section-titleスタイルは_global.scssに移動済み
+    // HTMLで使用する際は <h2 class="section-title section-title--white"> のように記述
+
+    // Primary Button Component (共通コンポーネント)
+    // 注意: .primary-buttonスタイルは_global.scssに移動済み
+    // HTMLで使用する際は <a class="primary-button primary-button--dark"> のように記述
+
+    // ================================================
+    // HERO SECTION (ABOUT SECTION)
+    // ヒーローセクション（Aboutセクション）
+    // ================================================
+
+    .mission-section {
+        padding-top: spx(130);
+        padding-bottom: spx(140);
+        @include tablet-up {
+            padding-top: ppx(187 * $pc-to-tab-ratio);
+            padding-bottom: ppx(262 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            padding-top: ppx(187);
+            padding-bottom: ppx(262);
+        }
+        .mission-section__inner {
+            display: flex;
+            flex-direction: column;
+            gap: spx(120);
+            @include tablet-up {
+                flex-direction: row;
+                gap: ppx(126 * $pc-to-tab-ratio);
+            }
+            @include desktop-up {
+                gap: ppx(126);
+            }
+            .mission__header {
+                margin-left: spx(56);
+                width: max-content;
+                @include tablet-up {
+                    margin-left: 0;
+                    background-color: $base_color_2;
+                    padding-top: ppx(50 * $pc-to-tab-ratio);
+                    padding-right: ppx(34 * $pc-to-tab-ratio);
+                    padding-bottom: ppx(60 * $pc-to-tab-ratio);
+                    padding-left: ppx(220 * $pc-to-tab-ratio);
+                    height: max-content;
+                }
+                @include desktop-up {
+                    padding-top: ppx(50);
+                    padding-right: ppx(34);
+                    padding-bottom: ppx(60);
+                    padding-left: ppx(220);
+                }
+            }
+            // ================================================
+            // CEO MESSAGE SECTION
+            // 代表挨拶セクション
+            // ================================================
+            .ceo-message {
+                color: $base_color_white;
+                width: spx(600);
+                margin-inline: auto;
+                @include tablet-up {
+                    width: ppx(1100 * $pc-to-tab-ratio);
+                    margin-top: ppx(155 * $pc-to-tab-ratio);
+                    margin-inline: unset;
+                }
+                @include desktop-up {
+                    width: ppx(1100);
+                    margin-top: ppx(155);
+                }
+                &__header {
+                }
+
+                &__title {
+                    font-family: $font-noto-serif-jp;
+                    font-size: spx(50);
+                    font-weight: 500;
+                    line-height: spx(50);
+                    letter-spacing: spx(5);
+                    text-align: center;
+
+                    @include tablet-up {
+                        font-size: ppx(50 * $pc-to-tab-ratio);
+                        line-height: ppx(50 * $pc-to-tab-ratio);
+                        letter-spacing: ppx(5 * $pc-to-tab-ratio);
+                        text-align: left;
+                    }
+
+                    @include desktop-up {
+                        font-size: ppx(50);
+                        line-height: ppx(50);
+                        letter-spacing: ppx(5);
+                    }
+                }
+
+                &__content {
+                    margin-top: spx(100);
+                    @include tablet-up {
+                        margin-top: ppx(160 * $pc-to-tab-ratio);
+                    }
+                    @include desktop-up {
+                        margin-top: ppx(160);
+                    }
+                }
+
+                &__text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2em;
+                }
+
+                &__paragraph {
+                    font-size: spx(31);
+                    font-weight: 500;
+                    line-height: 180%;
+
+                    @include tablet-up {
+                        font-size: ppx(35 * $pc-to-tab-ratio);
+                    }
+
+                    @include desktop-up {
+                        font-size: ppx(35);
+                    }
+                }
+
+                &__signature {
+                    display: flex;
+                    align-items: center;
+                    gap: spx(43);
+                    margin-top: spx(109);
+                    @include tablet-up {
+                        gap: ppx(59 * $pc-to-tab-ratio);
+                        margin-top: ppx(86 * $pc-to-tab-ratio);
+                    }
+                    @include desktop-up {
+                        gap: ppx(59);
+                        margin-top: ppx(86);
+                    }
+                }
+
+                &__position {
+                    font-size: spx(31);
+                    font-weight: 500;
+                    line-height: spx(40);
+
+                    @include tablet-up {
+                        font-size: ppx(35 * $pc-to-tab-ratio);
+                        line-height: ppx(40 * $pc-to-tab-ratio);
+                    }
+
+                    @include desktop-up {
+                        font-size: ppx(35);
+                        line-height: ppx(40);
+                        letter-spacing: ppx(3.5);
+                    }
+                }
+
+                &__photo {
+                    width: spx(238);
+                    height: auto;
+                    @include tablet-up {
+                        width: ppx(238 * $pc-to-tab-ratio);
+                    }
+                    @include desktop-up {
+                        width: ppx(238);
+                    }
+                }
+
+                &__photo-image {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

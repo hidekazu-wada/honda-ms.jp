@@ -6449,6 +6449,230 @@ svg {
   }
 }
 
+/**
+ * Main SCSS Entry Point - 統合版
+ * 全てのpartialファイルを読み込んで統合CSSを生成
+ * 
+ * 読み込み順序:
+ * 1. Variables (変数定義)
+ * 2. Functions (関数定義)
+ * 3. Mixins (ミックスイン定義)
+ * 4. Global (グローバルスタイル)
+ * 5. Layout Components (レイアウトコンポーネント)
+ * 6. Page Specific (ページ固有スタイル)
+ * 
+ * 注意: Reset CSS (destyle) は HTML で直接読み込み
+ */
+/**
+ * About Page Styles - Structure Only
+ * AboutページのHTMLに完全対応したネスト構造
+ * プロパティなし、セレクター構造のみ
+ */
+.mission-page .mission-section {
+  padding-top: 18.0555555556vw;
+  padding-bottom: 19.4444444444vw;
+}
+@media (min-width: 768px) {
+  .mission-page .mission-section {
+    padding-top: 8.03515625vw;
+    padding-bottom: 11.2578125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .mission-page .mission-section {
+    padding-top: 7.3046875vw;
+    padding-bottom: 10.234375vw;
+  }
+}
+.mission-page .mission-section .mission-section__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16.6666666667vw;
+}
+@media (min-width: 768px) {
+  .mission-page .mission-section .mission-section__inner {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 5.4140625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .mission-page .mission-section .mission-section__inner {
+    gap: 4.921875vw;
+  }
+}
+.mission-page .mission-section .mission-section__inner .mission__header {
+  margin-left: 7.7777777778vw;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+@media (min-width: 768px) {
+  .mission-page .mission-section .mission-section__inner .mission__header {
+    margin-left: 0;
+    background-color: #c11313;
+    padding-top: 2.1484375vw;
+    padding-right: 1.4609375vw;
+    padding-bottom: 2.578125vw;
+    padding-left: 9.453125vw;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+}
+@media (min-width: 1024px) {
+  .mission-page .mission-section .mission-section__inner .mission__header {
+    padding-top: 1.953125vw;
+    padding-right: 1.328125vw;
+    padding-bottom: 2.34375vw;
+    padding-left: 8.59375vw;
+  }
+}
+.mission-page .mission-section .mission-section__inner .ceo-message {
+  color: #fff;
+  width: 83.3333333333vw;
+  margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .mission-page .mission-section .mission-section__inner .ceo-message {
+    width: 47.265625vw;
+    margin-top: 6.66015625vw;
+    margin-inline: unset;
+  }
+}
+@media (min-width: 1024px) {
+  .mission-page .mission-section .mission-section__inner .ceo-message {
+    width: 42.96875vw;
+    margin-top: 6.0546875vw;
+  }
+}
+.mission-page .mission-section .mission-section__inner .ceo-message__title {
+  font-family: "Noto Serif JP", serif;
+  font-size: 6.9444444444vw;
+  font-weight: 500;
+  line-height: 6.9444444444vw;
+  letter-spacing: 0.6944444444vw;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .mission-page .mission-section .mission-section__inner .ceo-message__title {
+    font-size: 2.1484375vw;
+    line-height: 2.1484375vw;
+    letter-spacing: 0.21484375vw;
+    text-align: left;
+  }
+}
+@media (min-width: 1024px) {
+  .mission-page .mission-section .mission-section__inner .ceo-message__title {
+    font-size: 1.953125vw;
+    line-height: 1.953125vw;
+    letter-spacing: 0.1953125vw;
+  }
+}
+.mission-page .mission-section .mission-section__inner .ceo-message__content {
+  margin-top: 13.8888888889vw;
+}
+@media (min-width: 768px) {
+  .mission-page .mission-section .mission-section__inner .ceo-message__content {
+    margin-top: 6.875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .mission-page .mission-section .mission-section__inner .ceo-message__content {
+    margin-top: 6.25vw;
+  }
+}
+.mission-page .mission-section .mission-section__inner .ceo-message__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2em;
+}
+.mission-page .mission-section .mission-section__inner .ceo-message__paragraph {
+  font-size: 4.3055555556vw;
+  font-weight: 500;
+  line-height: 180%;
+}
+@media (min-width: 768px) {
+  .mission-page .mission-section .mission-section__inner .ceo-message__paragraph {
+    font-size: 1.50390625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .mission-page .mission-section .mission-section__inner .ceo-message__paragraph {
+    font-size: 1.3671875vw;
+  }
+}
+.mission-page .mission-section .mission-section__inner .ceo-message__signature {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5.9722222222vw;
+  margin-top: 15.1388888889vw;
+}
+@media (min-width: 768px) {
+  .mission-page .mission-section .mission-section__inner .ceo-message__signature {
+    gap: 2.53515625vw;
+    margin-top: 3.6953125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .mission-page .mission-section .mission-section__inner .ceo-message__signature {
+    gap: 2.3046875vw;
+    margin-top: 3.359375vw;
+  }
+}
+.mission-page .mission-section .mission-section__inner .ceo-message__position {
+  font-size: 4.3055555556vw;
+  font-weight: 500;
+  line-height: 5.5555555556vw;
+}
+@media (min-width: 768px) {
+  .mission-page .mission-section .mission-section__inner .ceo-message__position {
+    font-size: 1.50390625vw;
+    line-height: 1.71875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .mission-page .mission-section .mission-section__inner .ceo-message__position {
+    font-size: 1.3671875vw;
+    line-height: 1.5625vw;
+    letter-spacing: 0.13671875vw;
+  }
+}
+.mission-page .mission-section .mission-section__inner .ceo-message__photo {
+  width: 33.0555555556vw;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .mission-page .mission-section .mission-section__inner .ceo-message__photo {
+    width: 10.2265625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .mission-page .mission-section .mission-section__inner .ceo-message__photo {
+    width: 9.296875vw;
+  }
+}
+.mission-page .mission-section .mission-section__inner .ceo-message__photo-image {
+  width: 100%;
+  height: auto;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
