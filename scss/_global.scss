@@ -54,12 +54,12 @@ svg {
 
 .bg-wrapper {
     width: 100vw;
-    height: calc(100svh - #{$header-height-mobile});
+    height: 100lvh;
     @include tablet-up {
-        height: calc(100svh - #{$header-height-tablet});
+        height: 100lvh;
     }
     @include desktop-up {
-        height: calc(100svh - #{$header-height-desktop});
+        height: 100lvh;
     }
     position: fixed;
     top: 0;

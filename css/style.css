@@ -94,7 +94,7 @@ svg {
 
 .bg-wrapper {
   width: 100vw;
-  height: calc(100svh - 16.667vw);
+  height: 100lvh;
   position: fixed;
   top: 0;
   left: 0;
@@ -103,12 +103,12 @@ svg {
 }
 @media (min-width: 768px) {
   .bg-wrapper {
-    height: calc(100svh - 7vw);
+    height: 100lvh;
   }
 }
 @media (min-width: 1024px) {
   .bg-wrapper {
-    height: calc(100svh - 5.469vw);
+    height: 100lvh;
   }
 }
 .bg-wrapper img {
