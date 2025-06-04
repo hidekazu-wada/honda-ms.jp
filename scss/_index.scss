@@ -58,14 +58,38 @@
 
         .hero-swiper {
             width: 100%;
-            height: calc(100lvh - #{$header-height-mobile});
-            @include tablet-up {
-                height: calc(100lvh - #{$header-height-tablet});
-            }
-            @include desktop-up {
-                height: calc(100lvh - #{$header-height-desktop});
-            }
             overflow: hidden;
+
+            /* ─────────────── ① lvh が使える環境 ─────────────── */
+            @supports (height: 100svh) {
+                height: calc(100svh - #{$header-height-mobile});
+
+                @include tablet-up {
+                    height: calc(100svh - #{$header-height-tablet});
+                }
+
+                @include desktop-up {
+                    height: calc(100svh - #{$header-height-desktop});
+                }
+            }
+
+            /* ─────────────── ② lvh が使えない環境（iOS Chrome など） ─────────────── */
+            @supports not (height: 100svh) {
+                /* 基本フォールバック */
+                height: calc(100vh - #{$header-height-mobile});
+
+                /* notch／Dynamic Island 対策を追加する場合は ↓ を併用
+       height: calc(-webkit-fill-available - #{$header-height-mobile});
+    */
+
+                @include tablet-up {
+                    height: calc(100vh - #{$header-height-tablet});
+                }
+
+                @include desktop-up {
+                    height: calc(100vh - #{$header-height-desktop});
+                }
+            }
 
             .swiper-slide {
                 width: 100%;
