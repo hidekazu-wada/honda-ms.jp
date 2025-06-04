@@ -2154,6 +2154,8 @@ svg {
   top: 35.6944444444vw;
   left: 8.3333333333vw;
   z-index: 1;
+  opacity: 0;
+  visibility: hidden;
 }
 @media (min-width: 768px) {
   .top-page .hero-section .hero-swiper #main-title {
@@ -2166,6 +2168,10 @@ svg {
     top: 20.3125vw;
     left: 7.265625vw;
   }
+}
+.top-page .hero-section .hero-swiper #main-title.text-ready {
+  opacity: 1;
+  visibility: visible;
 }
 .top-page .hero-section .hero-swiper #main-title #line1 {
   color: #c11313;

@@ -139,6 +139,8 @@
                 top: spx(257);
                 left: spx(60);
                 z-index: 1;
+                opacity: 0; // 初期状態は非表示
+                visibility: hidden; // レイアウトを維持しつつ完全に非表示
 
                 @include tablet-up {
                     top: ppx(520 * $pc-to-tab-ratio);
@@ -148,6 +150,12 @@
                 @include desktop-up {
                     top: ppx(520);
                     left: ppx(186);
+                }
+
+                // アニメーション準備完了時に表示
+                &.text-ready {
+                    opacity: 1;
+                    visibility: visible;
                 }
 
                 #line1 {
