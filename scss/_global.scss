@@ -488,9 +488,21 @@ svg {
         text-decoration: none;
         transition: color 0.3s ease;
 
+        span {
+            transition: color 0.3s ease;
+        }
+
         @include hover {
             &:hover {
                 color: $base_color_2;
+
+                span {
+                    color: $base_color_2;
+                }
+
+                .breadcrumbs__current {
+                    color: $base_color_2;
+                }
             }
         }
     }
@@ -505,6 +517,7 @@ svg {
     .breadcrumbs__current {
         display: inline;
         color: $base_color_white;
+        transition: color 0.3s ease;
     }
 }
 
