@@ -48,6 +48,134 @@
 // 5. UTILITIES & COMPONENTS
 // ================================================
 
+// ローディング画面コンポーネント
+// 初回訪問時のみ表示（フラッシュ防止のため初期表示、return-visitで非表示）
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: grid;
+    place-content: center;
+
+    // リピート訪問者には非表示
+    .return-visit & {
+        display: none;
+    }
+
+    // デバッグ用（初回訪問確認）
+    // .first-visit & {
+    //     background-color: #ffeeee; // 薄赤背景で確認可能
+    // }
+
+    // ネストしたセレクター構造
+    &__container {
+        display: flex;
+        align-items: center;
+        gap: spx(20);
+        width: max-content;
+        height: max-content;
+        @include tablet-up {
+            gap: tpx(37);
+        }
+        @include desktop-up {
+            gap: ppx(31);
+        }
+    }
+
+    &__logo {
+    }
+
+    &__logo-image {
+        display: block;
+        width: spx(154);
+        height: auto;
+        @include tablet-up {
+            width: tpx(272);
+        }
+        @include desktop-up {
+            width: ppx(229);
+        }
+    }
+
+    &__content {
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        gap: spx(14);
+        @include tablet-up {
+            gap: tpx(24);
+        }
+        @include desktop-up {
+            gap: ppx(21);
+        }
+    }
+
+    // 1行目のタイトル画像
+    &__title-first-row {
+        width: auto;
+        height: spx(28);
+        @include tablet-up {
+            height: tpx(50);
+        }
+        @include desktop-up {
+            height: ppx(42);
+        }
+    }
+
+    // 2行目のコンテナ
+    &__title-second-row {
+    }
+
+    // 2行目の1番目の画像（Oの前の部分）
+    &__title-second-row1 {
+        width: auto;
+        height: spx(28);
+        @include tablet-up {
+            height: tpx(50);
+        }
+        @include desktop-up {
+            height: ppx(42);
+        }
+    }
+
+    // 2行目のアニメーション用SVG（Oの部分）
+    &__title-animation-svg {
+        width: auto;
+        height: spx(28);
+        animation: rotate 1s infinite linear;
+        transform: rotate(0);
+        @include tablet-up {
+            height: tpx(50);
+        }
+        @include desktop-up {
+            height: ppx(42);
+        }
+    }
+    @keyframes rotate {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    // 2行目の2番目の画像（Oの後の部分）
+    &__title-second-row2 {
+        width: auto;
+        height: spx(28);
+        @include tablet-up {
+            height: tpx(50);
+        }
+        @include desktop-up {
+            height: ppx(42);
+        }
+    }
+}
+
 // アクセシビリティ補助クラス
 .sr-only {
     position: absolute;
