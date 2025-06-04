@@ -39,18 +39,6 @@
  * 
  * 注意: Reset CSS (destyle) は HTML で直接読み込み
  */
-/* dvh が使える環境ではレイアウトを visual viewport 高さに合わせる */
-@supports (height: 100dvh) {
-  .footer-wrap {
-    min-height: 100dvh; /* ← gap が出ない */
-  }
-}
-/* フォールバック */
-@supports not (height: 100dvh) {
-  .footer-wrap {
-    min-height: 100vh;
-  }
-}
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 16.667vw;
