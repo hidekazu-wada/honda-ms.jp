@@ -579,6 +579,7 @@ svg {
 .sp-only-sns {
   position: fixed;
   bottom: 0;
+  bottom: env(safe-area-inset-bottom, 0);
   left: 0;
   width: 18.0555555556vw;
   height: 18.0555555556vw;
@@ -586,7 +587,6 @@ svg {
   z-index: 500;
   border-top: solid 1px #fff;
   border-right: solid 1px #fff;
-  bottom: env(safe-area-inset-bottom, 0);
 }
 @media (min-width: 768px) {
   .sp-only-sns {
@@ -614,6 +614,7 @@ svg {
 .sp-only-button-btn {
   position: fixed;
   bottom: 0;
+  bottom: env(safe-area-inset-bottom, 0);
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -671,6 +672,7 @@ svg {
 .recruit-page-sp-only-button-btn {
   position: fixed;
   bottom: 0;
+  bottom: env(safe-area-inset-bottom, 0);
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -692,6 +694,7 @@ svg {
     height: 5.5859375vw;
     border-top: none;
     background-color: #e3a113;
+    bottom: 0;
   }
 }
 @media (min-width: 1024px) {
@@ -699,6 +702,7 @@ svg {
     right: 5.078125vw;
     width: 17.96875vw;
     height: 5.078125vw;
+    bottom: 0;
   }
 }
 .recruit-page-sp-only-button-btn__link {
@@ -797,6 +801,7 @@ svg {
   position: fixed;
   z-index: 500;
   bottom: 0;
+  bottom: env(safe-area-inset-bottom, 0);
   right: 0;
   width: 18.0555555556vw;
   height: 18.0555555556vw;
@@ -812,12 +817,14 @@ svg {
     height: 5.5859375vw;
     border-top: none;
     border-left: none;
+    bottom: 0;
   }
 }
 @media (min-width: 1024px) {
   .go-to-top {
     width: 5.078125vw;
     height: 5.078125vw;
+    bottom: 0;
   }
 }
 @media (hover: hover) {
