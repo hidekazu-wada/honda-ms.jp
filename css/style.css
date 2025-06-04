@@ -67,6 +67,8 @@ html {
 }
 html body {
   width: 100vw;
+  height: 100vh;
+  height: 100dvh;
   overflow-x: hidden;
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 400;
@@ -106,7 +108,8 @@ svg {
 
 .bg-wrapper {
   width: 100vw;
-  height: 100lvh;
+  height: 100vh;
+  height: 100dvh;
   position: fixed;
   top: 0;
   left: 0;
@@ -115,12 +118,14 @@ svg {
 }
 @media (min-width: 768px) {
   .bg-wrapper {
-    height: 100lvh;
+    height: 100vh;
+    height: 100dvh;
   }
 }
 @media (min-width: 1024px) {
   .bg-wrapper {
-    height: 100lvh;
+    height: 100vh;
+    height: 100dvh;
   }
 }
 .bg-wrapper img {
@@ -579,7 +584,7 @@ svg {
 .sp-only-sns {
   position: fixed;
   bottom: 0;
-  bottom: env(safe-area-inset-bottom, 0);
+  bottom: max(0px, env(safe-area-inset-bottom, 0));
   left: 0;
   width: 18.0555555556vw;
   height: 18.0555555556vw;
@@ -614,7 +619,7 @@ svg {
 .sp-only-button-btn {
   position: fixed;
   bottom: 0;
-  bottom: env(safe-area-inset-bottom, 0);
+  bottom: max(0px, env(safe-area-inset-bottom, 0));
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -672,7 +677,7 @@ svg {
 .recruit-page-sp-only-button-btn {
   position: fixed;
   bottom: 0;
-  bottom: env(safe-area-inset-bottom, 0);
+  bottom: max(0px, env(safe-area-inset-bottom, 0));
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -801,7 +806,7 @@ svg {
   position: fixed;
   z-index: 500;
   bottom: 0;
-  bottom: env(safe-area-inset-bottom, 0);
+  bottom: max(0px, env(safe-area-inset-bottom, 0));
   right: 0;
   width: 18.0555555556vw;
   height: 18.0555555556vw;
