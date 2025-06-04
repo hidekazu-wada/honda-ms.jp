@@ -586,6 +586,7 @@ svg {
   z-index: 500;
   border-top: solid 1px #fff;
   border-right: solid 1px #fff;
+  bottom: env(safe-area-inset-bottom, 0);
 }
 @media (min-width: 768px) {
   .sp-only-sns {

@@ -535,6 +535,7 @@ svg {
     z-index: 500;
     border-top: solid 1px $base_color_white;
     border-right: solid 1px $base_color_white;
+    bottom: env(safe-area-inset-bottom, 0);
     @include tablet-up {
         display: none;
     }
