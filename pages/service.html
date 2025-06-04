@@ -32,7 +32,23 @@
     <script src="../js/font-loader.js"></script>
     <script>
       // フォント読み込み処理（共通化版）
-      initFontLoader();
+      initFontLoader({
+        timeout: 3000, // フォント読み込みタイムアウト（ミリ秒）
+        onReady: () => {
+          // フォント読み込み完了後にローディング制御を通知
+          if (window.LoadingScreenController) {
+            window.LoadingScreenController.handleFontLoaded();
+          } else {
+          }
+        },
+        onTimeout: () => {
+          // フォールバック時もローディング制御を通知
+          if (window.LoadingScreenController) {
+            window.LoadingScreenController.handleFontLoaded();
+          } else {
+          }
+        },
+      });
     </script>
 
     <!-- Google Fonts -->
@@ -51,6 +67,63 @@
     <script src="../js/first-visit-detector.js"></script>
   </head>
   <body class="is-loading service-page">
+    <!-- ================================================== -->
+    <!-- LOADING SCREEN - 初回訪問時のみ表示 -->
+    <!-- ================================================== -->
+    <section
+      class="loading-screen"
+      id="loading-screen"
+      aria-label="ローディング画面"
+    >
+      <div class="loading-screen__container">
+        <figure class="loading-screen__logo">
+          <img
+            src="../images/global/loading-logo.webp"
+            alt="Honda Motor Sales Group ロゴ"
+            class="loading-screen__logo-image"
+          />
+        </figure>
+        <div class="loading-screen__content">
+          <h1 class="loading-screen__title">
+            <img
+              src="../images/global/loading-first-row.svg"
+              alt="Honda Motor Sales Group ロゴ"
+              class="loading-screen__title-first-row"
+            />
+            <div class="loading-screen__title-second-row">
+              <img
+                src="../images/global/loading-second-row1.svg"
+                alt="Honda Motor Sales Group ロゴ"
+                class="loading-screen__title-second-row1"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                class="loading-screen__title-animation-svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12.3838 6.06189C8.59125 6.73795 5.71094 10.0507 5.71094 14.0375C5.71131 18.5122 9.33967 22.1398 13.8145 22.14C18.2893 22.1398 21.9166 18.5122 21.917 14.0375C21.917 10.3916 19.5095 7.30815 16.1973 6.29041V0.418335C22.6959 1.54746 27.6367 7.21583 27.6367 14.0375L27.6328 14.3939C27.4434 21.8629 21.329 27.8595 13.8145 27.8597L13.457 27.8558C6.10674 27.6693 0.1825 21.7442 -0.00390625 14.3939L-0.00878906 14.0375C-0.00878906 6.88654 5.42202 1.00359 12.3838 0.287476V6.06189Z"
+                  fill="#C11313"
+                />
+              </svg>
+              <img
+                src="../images/global/loading-second-row2.svg"
+                alt="Honda Motor Sales Group ロゴ"
+                class="loading-screen__title-second-row2"
+              />
+            </div>
+          </h1>
+        </div>
+      </div>
+    </section>
+    <!-- ================================================== -->
+    <!-- /LOADING SCREEN -->
+    <!-- ================================================== -->
+
     <!-- ================================================== -->
     <!-- MAIN CONTENT -->
     <!-- ================================================== -->
@@ -1234,6 +1307,30 @@
         </div>
       </div>
     </footer>
+
+    <!-- ================================================== -->
+    <!-- EXTERNAL LIBRARIES -->
+    <!-- ================================================== -->
+    <!-- Swiper JS -->
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="../assets/js/gsap.min.js"></script>
+
+    <!-- ================================================== -->
+    <!-- PAGE SCRIPTS -->
+    <!-- ================================================== -->
+    <!-- Loading Screen Controller - ローディング画面制御（シンプル版） -->
+    <script src="../js/loading-screen-controller.js"></script>
+
+    <!-- Text Animation - GSAPテキストアニメーション機能 -->
+    <script src="../js/text-animation.js"></script>
+
+    <!-- Hero Swiper - ヒーローセクション用スライダー機能 -->
+    <script src="../js/hero-swiper.js"></script>
+
+    <!-- Index Page - トップページ固有の初期化処理 -->
+    <script src="../js/index-page.js"></script>
 
     <!-- ================================================== -->
     <!-- COMMON SCRIPTS -->
