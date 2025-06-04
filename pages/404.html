@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="../css/destyle.css" />
     <link rel="stylesheet" href="../css/style.css" />
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" />
+
     <!-- ================================================== -->
     <!-- CORE SCRIPTS: Font Loading (Critical - Inline) -->
     <!-- Note: フォント読み込み部分は性能のためインライン維持 -->
@@ -65,6 +68,7 @@
 
     <!-- First Visit Detector -->
     <script src="../js/first-visit-detector.js"></script>
+    <script src="../js/error-404-redirect.js"></script>
   </head>
   <body class="is-loading error-404-page">
     <!-- ================================================== -->
@@ -187,9 +191,9 @@
           <div class="header__left">
             <!-- ロゴ（メインヘッダー） -->
             <h1 class="header__logo">
-              <a href="../" class="header__logo-link">
+              <a href="/" class="header__logo-link">
                 <img
-                  src="../images/global/header-logo.png"
+                  src="images/global/header-logo.png"
                   alt="HONDA MOTOR SALES GROUP"
                   class="header__logo-image"
                 />
@@ -199,7 +203,7 @@
             <!-- 会社名（サブテキスト） -->
             <div class="header__company-name">
               <span class="header__company-name-text"
-                ><a href="../">HONDA MOTOR SALES<br />GROUP</a></span
+                ><a href="/">HONDA MOTOR SALES<br />GROUP</a></span
               >
             </div>
           </div>
@@ -211,7 +215,12 @@
             aria-label="メインナビゲーション"
           >
             <!-- Instagramリンク -->
-            <a href="#" class="header__social-link" aria-label="Instagram">
+            <a
+              href="https://www.instagram.com/hondamotersales/"
+              class="header__social-link"
+              aria-label="Instagram"
+              target="_blank"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="70"
@@ -238,7 +247,7 @@
 
             <!-- RECRUITボタン（デスクトップ・タブレットのみ表示） -->
             <a
-              href="#recruit"
+              href="pages/recruit.html"
               class="header__recruit-btn"
               aria-label="採用情報ページへ"
             >
@@ -422,7 +431,7 @@
               <ul class="global-nav__list" role="list">
                 <li class="global-nav__item">
                   <a
-                    href="#"
+                    href="/"
                     class="global-nav__link"
                     aria-label="トップページへ"
                   >
@@ -455,7 +464,7 @@
                 </li>
                 <li class="global-nav__item">
                   <a
-                    href="#"
+                    href="pages/mission.html"
                     class="global-nav__link"
                     aria-label="企業理念ページへ"
                   >
@@ -488,7 +497,7 @@
                 </li>
                 <li class="global-nav__item">
                   <a
-                    href="#"
+                    href="pages/service.html"
                     class="global-nav__link"
                     aria-label="事業内容ページへ"
                   >
@@ -521,7 +530,7 @@
                 </li>
                 <li class="global-nav__item">
                   <a
-                    href="#"
+                    href="pages/about.html"
                     class="global-nav__link"
                     aria-label="グループについてページへ"
                   >
@@ -554,7 +563,7 @@
                 </li>
                 <li class="global-nav__item">
                   <a
-                    href="#"
+                    href="pages/recruit.html"
                     class="global-nav__link"
                     aria-label="採用情報ページへ"
                   >
@@ -587,7 +596,7 @@
                 </li>
                 <li class="global-nav__item">
                   <a
-                    href="#"
+                    href="pages/news.html"
                     class="global-nav__link"
                     aria-label="お知らせページへ"
                   >
@@ -632,7 +641,8 @@
               <ul class="global-nav__company-list" role="list">
                 <li class="global-nav__company-item">
                   <a
-                    href="#"
+                    href="https://www.biz.honda-ms.jp/"
+                    target="_blank"
                     class="global-nav__company-link"
                     aria-label="ホンダ自動車販売株式会社のページへ"
                   >
@@ -674,7 +684,8 @@
                 </li>
                 <li class="global-nav__company-item">
                   <a
-                    href="#"
+                    href="https://www.kynes.jp/"
+                    target="_blank"
                     class="global-nav__company-link"
                     aria-label="株式会社ケインズのページへ"
                   >
@@ -716,7 +727,8 @@
                 </li>
                 <li class="global-nav__company-item">
                   <a
-                    href="#"
+                    href="https://yugenfuji.jp/"
+                    target="_blank"
                     class="global-nav__company-link"
                     aria-label="有限会社富士のページへ"
                   >
@@ -758,7 +770,8 @@
                 </li>
                 <li class="global-nav__company-item">
                   <a
-                    href="#"
+                    href="https://fjkensetsu.jp/"
+                    target="_blank"
                     class="global-nav__company-link"
                     aria-label="FJ建設株式会社のページへ"
                   >
@@ -952,7 +965,12 @@
           </address>
 
           <div class="footer__social">
-            <a href="#" class="footer__social-link" aria-label="Instagram">
+            <a
+              href="https://www.instagram.com/hondamotersales/"
+              target="_blank"
+              class="footer__social-link"
+              aria-label="Instagram"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="70"
