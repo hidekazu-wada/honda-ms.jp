@@ -70,6 +70,8 @@ html body {
   height: 100vh;
   height: 100dvh;
   overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -133,6 +135,20 @@ svg {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  overflow-x: hidden;
+}
+@media (max-width: 767px) {
+  main {
+    padding-bottom: 18.0555555556vw;
+  }
 }
 
 .section-title {
