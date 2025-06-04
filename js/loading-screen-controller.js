@@ -12,7 +12,7 @@ class SimpleLoadingController {
     this.loadingElement = document.querySelector('#loading-screen');
     this.isFirstVisit = document.body.classList.contains('first-visit');
     this.fadeOutDuration = 0.8; // フェードアウト時間（秒）
-    this.minLoadingTime = 1000; // 最低表示時間（ミリ秒）
+    this.minLoadingTime = 3000; // 最低表示時間（ミリ秒）
     this.debugMode = true;
     this.textPrepared = false; // テキスト準備完了フラグ
     this.fontLoaded = false; // フォント読み込み完了フラグ
