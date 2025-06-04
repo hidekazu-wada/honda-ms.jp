@@ -38,15 +38,25 @@
       initFontLoader({
         timeout: 3000, // フォント読み込みタイムアウト（ミリ秒）
         onReady: () => {
-          // フォント読み込み完了後にアニメーション開始
-          if (window.TextAnimation) {
-            window.TextAnimation.startGsapAnimation();
+          console.log('🔤 Font loader onReady called');
+          // フォント読み込み完了後にローディング制御を通知
+          if (window.LoadingScreenController) {
+            console.log('🔤 Calling LoadingScreenController.handleFontLoaded');
+            window.LoadingScreenController.handleFontLoaded();
+          } else {
+            console.warn('🔤 LoadingScreenController not found');
           }
         },
         onTimeout: () => {
-          // フォールバック時もアニメーション開始
-          if (window.TextAnimation) {
-            window.TextAnimation.startGsapAnimation();
+          console.log('🔤 Font loader onTimeout called');
+          // フォールバック時もローディング制御を通知
+          if (window.LoadingScreenController) {
+            console.log(
+              '🔤 Calling LoadingScreenController.handleFontLoaded (timeout)'
+            );
+            window.LoadingScreenController.handleFontLoaded();
+          } else {
+            console.warn('🔤 LoadingScreenController not found (timeout)');
           }
         },
       });
@@ -2019,6 +2029,9 @@
     <!-- ================================================== -->
     <!-- PAGE SCRIPTS -->
     <!-- ================================================== -->
+    <!-- Loading Screen Controller - ローディング画面制御（シンプル版） -->
+    <script src="js/loading-screen-controller.js"></script>
+
     <!-- Text Animation - GSAPテキストアニメーション機能 -->
     <script src="js/text-animation.js"></script>
 
