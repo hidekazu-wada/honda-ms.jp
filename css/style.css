@@ -6546,8 +6546,6 @@ svg {
 .service-page .company-card__logo-image {
   width: 100%;
   height: auto;
-}
-.company-card--honda .service-page .company-card__logo-image {
   mix-blend-mode: darken;
 }
 .service-page .company-info {
@@ -7107,6 +7105,7 @@ svg {
   position: absolute;
   bottom: 5.5555555556vw;
   right: 8.3333333333vw;
+  z-index: 10;
 }
 @media (min-width: 768px) {
   .mission-page .philosophy-slider__navigation {
