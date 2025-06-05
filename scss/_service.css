@@ -1,0 +1,558 @@
+@charset "UTF-8";
+/**
+ * About Page Styles - Structure Only
+ * AboutページのHTMLに完全対応したネスト構造
+ * プロパティなし、セレクター構造のみ
+ */
+/**
+ * Variables Only
+ * 変数定義のみ（独立したファイル）
+ */
+/**
+ * Functions Only
+ * 関数定義のみ（独立したファイル）
+ */
+/**
+ * Mixins Only
+ * ミックスイン定義のみ（独立したファイル）
+ */
+.service-page .service-section {
+  position: relative;
+  padding-top: 18.0555555556vw;
+  padding-bottom: 22.0833333333vw;
+}
+@media (min-width: 768px) {
+  .service-page .service-section {
+    padding-top: 12.203125vw;
+    padding-bottom: 8.421875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .service-section {
+    padding-top: 11.09375vw;
+    padding-bottom: 7.65625vw;
+  }
+}
+.service-page .service-section::before {
+  display: none;
+}
+@media (min-width: 768px) {
+  .service-page .service-section::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 18.00390625vw;
+    left: 0;
+    width: 0.64453125vw;
+    height: 27.9296875vw;
+    background-color: #c11313;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .service-section::before {
+    top: 16.3671875vw;
+    width: 0.5859375vw;
+    height: 25.390625vw;
+  }
+}
+.service-page .service-section__header {
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+}
+.service-page .service-section__title {
+  font-family: "Noto Serif JP", serif;
+  color: #fff;
+  font-size: 15.4166666667vw;
+  font-weight: 700;
+  line-height: 15.4166666667vw;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .service-page .service-section__title {
+    font-size: 6.23046875vw;
+    line-height: 6.23046875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .service-section__title {
+    font-size: 5.6640625vw;
+    line-height: 5.6640625vw;
+  }
+}
+.service-page .service-section__subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.1944444444vw;
+  color: #fff;
+  font-size: 3.75vw;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.375vw;
+  margin: 2.0833333333vw;
+}
+@media (min-width: 768px) {
+  .service-page .service-section__subtitle {
+    gap: 1.2890625vw;
+    font-size: 1.50390625vw;
+    letter-spacing: 0.150390625vw;
+    margin: 0.859375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .service-section__subtitle {
+    gap: 1.171875vw;
+    font-size: 1.3671875vw;
+    letter-spacing: 0.13671875vw;
+    margin: 0.78125vw;
+  }
+}
+.service-page .service-section__subtitle::before {
+  content: "";
+  display: block;
+  width: 12.5vw;
+  height: 1px;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .service-page .service-section__subtitle::before {
+    width: 5.5859375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .service-section__subtitle::before {
+    width: 5.078125vw;
+  }
+}
+.service-page .service-section__subtitle::after {
+  content: "";
+  display: block;
+  width: 12.5vw;
+  height: 1px;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .service-page .service-section__subtitle::after {
+    width: 5.5859375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .service-section__subtitle::after {
+    width: 5.078125vw;
+  }
+}
+.service-page .service-content {
+  width: 83.3333333333vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-inline: auto;
+  margin-top: 12.5vw;
+}
+@media (min-width: 768px) {
+  .service-page .service-content {
+    margin-top: 6.4453125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .service-content {
+    margin-top: 5.859375vw;
+  }
+}
+@media (min-width: 768px) {
+  .service-page .service-content {
+    width: 70.7265625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .service-content {
+    width: 64.296875vw;
+  }
+}
+.service-page .service-content__paragraph {
+  color: #fff;
+  font-size: 4.3055555556vw;
+  font-weight: 500;
+  line-height: 180%;
+}
+@media (min-width: 768px) {
+  .service-page .service-content__paragraph {
+    font-size: 1.50390625vw;
+    line-height: 200%;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .service-content__paragraph {
+    font-size: 1.3671875vw;
+    line-height: 200%;
+  }
+}
+.service-page .company-card {
+  background-image: url(../images/service/company/bg-mobile.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 12.5vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-card {
+    flex-direction: row;
+    padding-bottom: 8.1640625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-card {
+    background-image: url(../images/service/company/bg-desktop.webp);
+    padding-bottom: 7.421875vw;
+  }
+}
+.service-page .company-card--honda {
+  padding-top: 12.5vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-card--honda {
+    padding-top: 8.20703125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-card--honda {
+    padding-top: 7.4609375vw;
+  }
+}
+.service-page .company-card--kaines {
+  padding-top: 2.9166666667vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-card--kaines {
+    padding-top: 4.85546875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-card--kaines {
+    padding-top: 4.4140625vw;
+  }
+}
+.service-page .company-card--fuji {
+  padding-top: 15.9722222222vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-card--fuji {
+    padding-top: 9.453125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-card--fuji {
+    padding-top: 8.59375vw;
+  }
+}
+.service-page .company-card--fj {
+  padding-top: 16.3888888889vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-card--fj {
+    padding-top: 9.453125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-card--fj {
+    padding-top: 8.59375vw;
+  }
+}
+.service-page .company-card__logo--honda {
+  width: 54.3055555556vw;
+  height: 42.9166666667vw;
+  margin-left: 22.7777777778vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-card__logo--honda {
+    width: 20.28125vw;
+    height: 16.02734375vw;
+    margin-left: 17.875vw;
+    margin-right: 9.28125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-card__logo--honda {
+    width: 18.4375vw;
+    height: 14.5703125vw;
+    margin-left: 16.25vw;
+    margin-right: 8.4375vw;
+  }
+}
+.service-page .company-card__logo--kaines {
+  width: 61.6666666667vw;
+  height: 43.1944444444vw;
+  margin-left: 24.7222222222vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-card__logo--kaines {
+    width: 22.90234375vw;
+    height: 16.02734375vw;
+    margin-left: 17.83203125vw;
+    margin-right: 6.703125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-card__logo--kaines {
+    width: 20.8203125vw;
+    height: 14.5703125vw;
+    margin-left: 16.2109375vw;
+    margin-right: 6.09375vw;
+  }
+}
+.service-page .company-card__logo--fuji {
+  width: 29.8611111111vw;
+  height: 32.9166666667vw;
+  margin-left: 35.1388888889vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-card__logo--fuji {
+    width: 11.0859375vw;
+    height: 12.24609375vw;
+    margin-left: 22.47265625vw;
+    margin-right: 13.87890625vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-card__logo--fuji {
+    width: 10.078125vw;
+    height: 11.1328125vw;
+    margin-left: 20.4296875vw;
+    margin-right: 12.6171875vw;
+  }
+}
+.service-page .company-card__logo--fj {
+  width: 37.2222222222vw;
+  height: 32.5vw;
+  margin-left: 31.3888888889vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-card__logo--fj {
+    width: 13.79296875vw;
+    height: 12.07421875vw;
+    margin-left: 21.09765625vw;
+    margin-right: 12.546875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-card__logo--fj {
+    width: 12.5390625vw;
+    height: 10.9765625vw;
+    margin-left: 19.1796875vw;
+    margin-right: 11.40625vw;
+  }
+}
+.service-page .company-card__logo-image {
+  width: 100%;
+  height: auto;
+}
+.service-page .company-card__logo-image .company-card--honda .company-card__logo-image {
+  mix-blend-mode: darken;
+}
+.service-page .company-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2.7777777778vw;
+  width: -moz-max-content;
+  width: max-content;
+  margin-inline: auto;
+  margin-top: 11.1111111111vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-info {
+    gap: 1.2890625vw;
+    margin-inline: unset;
+    margin-top: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-info {
+    gap: 1.171875vw;
+  }
+}
+.service-page .company-info__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 17.3611111111vw auto;
+  padding-bottom: 2.7777777778vw;
+  width: 88.8888888889vw;
+  padding-left: 1.3888888889vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-info__item {
+    grid-template-columns: 9.0234375vw auto;
+    gap: 0.859375vw;
+    padding-bottom: 1.2890625vw;
+    width: 47.6953125vw;
+    padding-left: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-info__item {
+    grid-template-columns: 8.203125vw auto;
+    gap: 0.78125vw;
+    padding-bottom: 1.171875vw;
+    width: 43.359375vw;
+  }
+}
+.service-page .company-info__item::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #7f7f7f;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.service-page .company-info__label {
+  font-size: 4.3055555556vw;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.4305555556vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-info__label {
+    font-size: 1.50390625vw;
+    line-height: 150%;
+    letter-spacing: 0.0751953125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-info__label {
+    font-size: 1.3671875vw;
+    line-height: 150%;
+    letter-spacing: 0.068359375vw;
+  }
+}
+.service-page .company-info__value {
+  font-size: 4.3055555556vw;
+  font-weight: 500;
+  line-height: 140%;
+}
+@media (min-width: 768px) {
+  .service-page .company-info__value {
+    font-size: 1.50390625vw;
+    line-height: 150%;
+    letter-spacing: 0.0751953125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-info__value {
+    font-size: 1.3671875vw;
+    line-height: 150%;
+    letter-spacing: 0.068359375vw;
+  }
+}
+.service-page .company-info__value .sp-only {
+  display: block;
+}
+@media (min-width: 768px) {
+  .service-page .company-info__value .sp-only {
+    display: none;
+  }
+}
+.service-page .company-info__website-link {
+  transition: color 0.3s ease;
+}
+@media (hover: hover) {
+  .service-page .company-info__website-link:hover {
+    color: #c11313;
+  }
+}
+.service-page .company-services {
+  display: flex;
+  flex-direction: column;
+  gap: 4.1666666667vw;
+  margin-top: 11.1111111111vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-services {
+    flex-direction: row;
+    gap: 3.609375vw;
+    margin-top: 4.2109375vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-services {
+    gap: 3.28125vw;
+    margin-top: 3.828125vw;
+  }
+}
+.service-page .company-services__title {
+  font-size: 4.3055555556vw;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.4305555556vw;
+  margin-inline: auto;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .service-page .company-services__title {
+    font-size: 1.50390625vw;
+    line-height: 150%;
+    letter-spacing: 0.0751953125vw;
+    margin-inline: unset;
+    margin-top: 1.03125vw;
+    text-align: left;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-services__title {
+    font-size: 1.3671875vw;
+    line-height: 150%;
+    letter-spacing: 0.068359375vw;
+    margin-top: 0.9375vw;
+  }
+}
+.service-page .company-services__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1111111111vw;
+  width: -moz-max-content;
+  width: max-content;
+  margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .service-page .company-services__list {
+    gap: 0.859375vw;
+    width: 37.16796875vw;
+    margin-inline: unset;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-services__list {
+    gap: 0.78125vw;
+    width: 33.7890625vw;
+  }
+}
+.service-page .company-services__item {
+  color: #231f20;
+  font-size: 3.75vw;
+  font-weight: 500;
+  line-height: 140%;
+  width: 43.75vw;
+  height: 15.4166666667vw;
+  border: solid 1px #7f7f7f;
+  display: grid;
+  place-items: center;
+}
+@media (min-width: 768px) {
+  .service-page .company-services__item {
+    font-size: 1.41796875vw;
+    line-height: 120%;
+    width: 18.046875vw;
+    height: 3.8671875vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-services__item {
+    font-size: 1.2890625vw;
+    line-height: 120%;
+    width: 16.40625vw;
+    height: 3.515625vw;
+  }
+}/*# sourceMappingURL=_service.css.map */

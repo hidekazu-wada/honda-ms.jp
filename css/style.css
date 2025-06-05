@@ -2074,17 +2074,17 @@ svg {
 }
 .top-page .hero-section .hero-swiper {
   width: 100%;
-  height: calc(100lvh - 16.667vw);
   overflow: hidden;
+  height: 140vw;
 }
 @media (min-width: 768px) {
   .top-page .hero-section .hero-swiper {
-    height: calc(100lvh - 7vw);
+    height: calc(100svh - 7vw);
   }
 }
 @media (min-width: 1024px) {
   .top-page .hero-section .hero-swiper {
-    height: calc(100lvh - 5.469vw);
+    height: calc(100svh - 5.469vw);
   }
 }
 .top-page .hero-section .hero-swiper .swiper-slide {
@@ -2136,7 +2136,7 @@ svg {
   width: 4.1666666667vw;
   aspect-ratio: 1/1;
   border-radius: 0;
-  background: #fff;
+  background: #ffffff;
   opacity: 1;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
@@ -6546,8 +6546,6 @@ svg {
 .service-page .company-card__logo-image {
   width: 100%;
   height: auto;
-}
-.company-card--honda .service-page .company-card__logo-image {
   mix-blend-mode: darken;
 }
 .service-page .company-info {
@@ -7107,6 +7105,7 @@ svg {
   position: absolute;
   bottom: 5.5555555556vw;
   right: 8.3333333333vw;
+  z-index: 10;
 }
 @media (min-width: 768px) {
   .mission-page .philosophy-slider__navigation {
@@ -7628,20 +7627,4 @@ svg {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-.bg-wrapper {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background-color: #231f20;
-}
-.bg-wrapper img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }/*# sourceMappingURL=style.css.map */

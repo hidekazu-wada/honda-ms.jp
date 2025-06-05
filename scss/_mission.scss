@@ -307,6 +307,7 @@
         position: absolute;
         bottom: spx(40);
         right: spx(60);
+        z-index: 10;
         @include tablet-up {
             bottom: 5vw;
             right: ppx(231 * $pc-to-tab-ratio);

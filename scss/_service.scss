@@ -325,11 +325,7 @@
         &__logo-image {
             width: 100%;
             height: auto;
-
-            // ホンダのロゴのみ白い背景を透過
-            .company-card--honda & {
-                mix-blend-mode: darken;
-            }
+            mix-blend-mode: darken;
         }
 
         &__content {

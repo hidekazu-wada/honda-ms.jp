@@ -58,14 +58,14 @@
 
         .hero-swiper {
             width: 100%;
-            height: calc(100lvh - #{$header-height-mobile});
+            overflow: hidden;
+            height: 140vw;
             @include tablet-up {
-                height: calc(100lvh - #{$header-height-tablet});
+                height: calc(100svh - #{$header-height-tablet});
             }
             @include desktop-up {
-                height: calc(100lvh - #{$header-height-desktop});
+                height: calc(100svh - #{$header-height-desktop});
             }
-            overflow: hidden;
 
             .swiper-slide {
                 width: 100%;
@@ -77,7 +77,7 @@
                     height: 100%;
                     object-fit: cover;
                     transform: scale(1.2);
-                    animation: hero-zoom-out 7.5s ease-in-out forwards; //delayとspeedの合計値にする
+                    animation: hero-zoom-out 7.5s ease-in-out forwards; //delayとspeedの合計値にすること
                     animation-play-state: paused;
                 }
 
@@ -115,7 +115,7 @@
                 width: spx(30);
                 aspect-ratio: 1 / 1;
                 border-radius: 0;
-                background: #fff;
+                background: #ffffff;
                 opacity: 1;
                 transition: transform 0.3s;
                 cursor: pointer;
