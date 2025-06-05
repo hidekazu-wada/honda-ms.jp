@@ -2075,41 +2075,16 @@ svg {
 .top-page .hero-section .hero-swiper {
   width: 100%;
   overflow: hidden;
-  /* ─────────────── ① lvh が使える環境 ─────────────── */
-  /* ─────────────── ② lvh が使えない環境（iOS Chrome など） ─────────────── */
+  height: 184vw;
 }
-@supports (height: 100svh) {
+@media (min-width: 768px) {
   .top-page .hero-section .hero-swiper {
-    height: calc(100svh - 16.667vw);
-  }
-  @media (min-width: 768px) {
-    .top-page .hero-section .hero-swiper {
-      height: calc(100svh - 7vw);
-    }
-  }
-  @media (min-width: 1024px) {
-    .top-page .hero-section .hero-swiper {
-      height: calc(100svh - 5.469vw);
-    }
+    height: calc(100svh - 7vw);
   }
 }
-@supports not (height: 100svh) {
+@media (min-width: 1024px) {
   .top-page .hero-section .hero-swiper {
-    /* 基本フォールバック */
-    height: calc(100vh - 16.667vw);
-    /* notch／Dynamic Island 対策を追加する場合は ↓ を併用
-       height: calc(-webkit-fill-available - 16.667vw);
-    */
-  }
-  @media (min-width: 768px) {
-    .top-page .hero-section .hero-swiper {
-      height: calc(100vh - 7vw);
-    }
-  }
-  @media (min-width: 1024px) {
-    .top-page .hero-section .hero-swiper {
-      height: calc(100vh - 5.469vw);
-    }
+    height: calc(100vh - 5.469vw);
   }
 }
 .top-page .hero-section .hero-swiper .swiper-slide {
@@ -7652,20 +7627,4 @@ svg {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-.bg-wrapper {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background-color: #231f20;
-}
-.bg-wrapper img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }/*# sourceMappingURL=style.css.map */

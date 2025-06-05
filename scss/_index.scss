@@ -59,36 +59,12 @@
         .hero-swiper {
             width: 100%;
             overflow: hidden;
-
-            /* ─────────────── ① lvh が使える環境 ─────────────── */
-            @supports (height: 100svh) {
-                height: calc(100svh - #{$header-height-mobile});
-
-                @include tablet-up {
-                    height: calc(100svh - #{$header-height-tablet});
-                }
-
-                @include desktop-up {
-                    height: calc(100svh - #{$header-height-desktop});
-                }
+            height: 184vw;
+            @include tablet-up {
+                height: calc(100svh - #{$header-height-tablet});
             }
-
-            /* ─────────────── ② lvh が使えない環境（iOS Chrome など） ─────────────── */
-            @supports not (height: 100svh) {
-                /* 基本フォールバック */
-                height: calc(100vh - #{$header-height-mobile});
-
-                /* notch／Dynamic Island 対策を追加する場合は ↓ を併用
-       height: calc(-webkit-fill-available - #{$header-height-mobile});
-    */
-
-                @include tablet-up {
-                    height: calc(100vh - #{$header-height-tablet});
-                }
-
-                @include desktop-up {
-                    height: calc(100vh - #{$header-height-desktop});
-                }
+            @include desktop-up {
+                height: calc(100vh - #{$header-height-desktop});
             }
 
             .swiper-slide {
@@ -101,7 +77,7 @@
                     height: 100%;
                     object-fit: cover;
                     transform: scale(1.2);
-                    animation: hero-zoom-out 7.5s ease-in-out forwards; //delayとspeedの合計値にする
+                    animation: hero-zoom-out 7.5s ease-in-out forwards; //delayとspeedの合計値にすること
                     animation-play-state: paused;
                 }
 
