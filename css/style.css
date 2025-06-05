@@ -2075,7 +2075,7 @@ svg {
 .top-page .hero-section .hero-swiper {
   width: 100%;
   overflow: hidden;
-  height: calc(100svh - 18.0555555556vw - 16.667vw);
+  height: 140vw;
 }
 @media (min-width: 768px) {
   .top-page .hero-section .hero-swiper {
@@ -3320,22 +3320,6 @@ svg {
   width: 100%;
   height: 100%;
   color: inherit;
-}
-
-.ua-crios .top-page .hero-section .hero-swiper {
-  width: 100%;
-  overflow: hidden;
-  height: 140vw;
-}
-@media (min-width: 768px) {
-  .ua-crios .top-page .hero-section .hero-swiper {
-    height: calc(100svh - 7vw);
-  }
-}
-@media (min-width: 1024px) {
-  .ua-crios .top-page .hero-section .hero-swiper {
-    height: calc(100svh - 5.469vw);
-  }
 }
 
 /**
