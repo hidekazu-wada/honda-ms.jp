@@ -1337,7 +1337,7 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav {
-    width: 38.671875vw;
+    width: 52.734375vw;
     top: 0;
   }
 }
@@ -1383,11 +1383,11 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__close {
-    gap: 0.4296875vw;
-    width: 3.91015625vw;
-    height: 3.65234375vw;
-    top: 1.93359375vw;
-    right: 1.50390625vw;
+    gap: 0.5859375vw;
+    width: 5.33203125vw;
+    height: 4.98046875vw;
+    top: 2.63671875vw;
+    right: 2.05078125vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1431,7 +1431,7 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__close-icon svg {
-    width: 2.75vw;
+    width: 3.75vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1465,8 +1465,8 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__close-text {
-    font-size: 1.1171875vw;
-    letter-spacing: -0.033515625vw;
+    font-size: 1.5234375vw;
+    letter-spacing: -0.045703125vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1486,7 +1486,7 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__content {
-    padding-top: 8.9375vw;
+    padding-top: 12.1875vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1511,8 +1511,8 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__list {
-    gap: 1.93359375vw;
-    margin-left: 9.41015625vw;
+    gap: 2.63671875vw;
+    margin-left: 12.83203125vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1539,7 +1539,7 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__link {
-    gap: 1.07421875vw;
+    gap: 1.46484375vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1558,7 +1558,7 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__link-arrow {
-    width: 0.9453125vw;
+    width: 1.2890625vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1575,8 +1575,8 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__link-text {
-    font-size: 1.546875vw;
-    letter-spacing: 0.4640625vw;
+    font-size: 2.109375vw;
+    letter-spacing: 0.6328125vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1591,7 +1591,7 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__company {
-    margin-top: 5.15625vw;
+    margin-top: 7.03125vw;
     padding-bottom: 0;
   }
 }
@@ -1611,9 +1611,9 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__company-title {
-    font-size: 1.546875vw;
-    letter-spacing: 0.07734375vw;
-    margin-left: 11.515625vw;
+    font-size: 2.109375vw;
+    letter-spacing: 0.10546875vw;
+    margin-left: 15.703125vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1641,8 +1641,8 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__company-list {
-    gap: 0.64453125vw;
-    margin-top: 1.03125vw;
+    gap: 0.87890625vw;
+    margin-top: 1.40625vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1673,9 +1673,9 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__company-link {
-    width: 21.2265625vw;
-    height: 3.30859375vw;
-    border-radius: 2.578125vw;
+    width: 28.9453125vw;
+    height: 4.51171875vw;
+    border-radius: 3.515625vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1701,8 +1701,8 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__company-link-text {
-    font-size: 1.1171875vw;
-    width: 16.0703125vw;
+    font-size: 1.5234375vw;
+    width: 21.9140625vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1722,8 +1722,8 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__company-link-arrow {
-    width: 1.07421875vw;
-    right: 1.1171875vw;
+    width: 1.46484375vw;
+    right: 1.5234375vw;
   }
 }
 @media (min-width: 1024px) {
