@@ -16,7 +16,7 @@
     position: relative;
     background: linear-gradient(0deg, #231f20 0%, #332e2f 100%);
     color: $base_color_white;
-    padding: spx(59) 0 spx(208);
+    padding: spx(59) 0 spx(250);
     border-top: solid spx(5) $base_color_white;
     @include tablet-up {
         padding: ppx(145 * $pc-to-tab-ratio) 0 ppx(149 * $pc-to-tab-ratio);
