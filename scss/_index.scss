@@ -148,7 +148,8 @@
                 }
 
                 @include desktop-up {
-                    top: ppx(520);
+                    top: 50%;
+                    transform: translateY(-50%);
                     left: ppx(186);
                 }
 
@@ -187,7 +188,7 @@
 
                     @include desktop-up {
                         font-size: ppx(145);
-                        margin-top: ppx(-20);
+                        margin-top: -1.718vw;
                     }
                 }
 
@@ -789,6 +790,16 @@
                 transform: scale(1.05);
                 filter: brightness(1.1);
             }
+
+            // 見出し色の変化効果
+            .news__link:hover {
+                color: $base_color_2;
+            }
+
+            // 画像ホバー時の見出し色変化
+            .news__item:has(.news__image-link:hover) .news__link {
+                color: $base_color_2;
+            }
         }
 
         .news__item-content {
@@ -845,6 +856,7 @@
             font-size: spx(28);
             font-weight: 500;
             line-height: 150%;
+            transition: color 0.3s ease;
 
             @include tablet-up {
                 font-size: ppx(35 * $pc-to-tab-ratio);
