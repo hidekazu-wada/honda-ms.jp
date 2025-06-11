@@ -372,7 +372,6 @@
         line-height: 100%;
         letter-spacing: spx(-0.78);
         transition: color 0.3s ease;
-
         @include tablet-up {
             font-size: ppx(26 * $pc-to-tab-ratio);
             letter-spacing: ppx(-0.78 * $pc-to-tab-ratio);
