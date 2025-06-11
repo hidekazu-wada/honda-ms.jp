@@ -3529,12 +3529,6 @@ svg {
   height: 100%;
   text-decoration: none;
 }
-.news-page .news-section .news__inner .news__image-link:hover .news__item-image {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  -webkit-filter: brightness(1.1);
-          filter: brightness(1.1);
-}
 .news-page .news-section .news__inner .news__item-image {
   display: block;
   width: 100%;
@@ -3545,12 +3539,6 @@ svg {
   transition: -webkit-transform 0.3s ease, -webkit-filter 0.3s ease;
   transition: transform 0.3s ease, filter 0.3s ease;
   transition: transform 0.3s ease, filter 0.3s ease, -webkit-transform 0.3s ease, -webkit-filter 0.3s ease;
-}
-.news-page .news-section .news__inner .news__item:has(.news__link:hover) .news__item-image {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  -webkit-filter: brightness(1.1);
-          filter: brightness(1.1);
 }
 .news-page .news-section .news__inner .news__item-content {
   width: 83.3333333333vw;
@@ -3609,6 +3597,8 @@ svg {
   font-size: 3.8888888889vw;
   font-weight: 500;
   line-height: 150%;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 @media (min-width: 768px) {
   .news-page .news-section .news__inner .news__link {
@@ -3620,6 +3610,26 @@ svg {
   .news-page .news-section .news__inner .news__link {
     font-size: 1.3671875vw;
     line-height: 160%;
+  }
+}
+@media (hover: hover) {
+  .news-page .news-section .news__inner .news__image-link:hover .news__item-image {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-filter: brightness(1.1);
+            filter: brightness(1.1);
+  }
+  .news-page .news-section .news__inner .news__item:has(.news__link:hover) .news__item-image {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-filter: brightness(1.1);
+            filter: brightness(1.1);
+  }
+  .news-page .news-section .news__inner .news__link:hover {
+    color: #c11313;
+  }
+  .news-page .news-section .news__inner .news__item:has(.news__image-link:hover) .news__link {
+    color: #c11313;
   }
 }
 .news-page .news-section .news__pagination {
