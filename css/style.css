@@ -848,6 +848,22 @@ svg {
   }
 }
 
+.fade-in-up {
+  opacity: 0;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
+  transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+
+.fade-in-up.is-inview {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 /**
  * Main SCSS Entry Point - 統合版
  * 全てのpartialファイルを読み込んで統合CSSを生成
@@ -1741,15 +1757,18 @@ svg {
   background: linear-gradient(0deg, #231f20 0%, #332e2f 100%);
   color: #fff;
   padding: 8.1944444444vw 0 28.8888888889vw;
+  border-top: solid 0.6944444444vw #fff;
 }
 @media (min-width: 768px) {
   .footer {
     padding: 6.23046875vw 0 6.40234375vw;
+    border-top: solid 0.12890625vw #fff;
   }
 }
 @media (min-width: 1024px) {
   .footer {
     padding: 5.6640625vw 0 5.8203125vw;
+    border-top: solid 0.1171875vw #fff;
   }
 }
 .footer__inner {
@@ -1783,6 +1802,12 @@ svg {
   .footer__inner {
     margin: 0 8.59375vw;
   }
+}
+.footer__brand-link {
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 .footer__brand {
   display: -webkit-box;
@@ -1939,6 +1964,9 @@ svg {
     font-size: 1.171875vw;
     letter-spacing: 0.1171875vw;
   }
+}
+.footer__contact-item--fax {
+  pointer-events: none;
 }
 .footer__social {
   position: absolute;

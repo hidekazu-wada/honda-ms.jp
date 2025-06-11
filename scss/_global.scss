@@ -739,3 +739,19 @@ svg {
         }
     }
 }
+
+// ================================================
+// FADE IN UP COMPONENT
+// フェードインアップコンポーネント
+// ================================================
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+.fade-in-up.is-inview {
+    opacity: 1;
+    transform: translateY(0);
+}

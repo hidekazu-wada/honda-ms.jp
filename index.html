@@ -1129,16 +1129,16 @@
 
           <div class="mission__content">
             <div class="mission__text">
-              <h3 class="mission__catch">
+              <h3 class="mission__catch fade-in-up">
                 みんなに愛される<br />
                 会社づくり
               </h3>
-              <p class="mission__desc">
+              <p class="mission__desc fade-in-up">
                 ホンダ自動車販売グループは「人ありき、そして躍進」というスローガンのもと、人と企業の永続的な成長を目指しています。お客さまはもちろんのこと、社員や社員のご家族、そして地域から必要とされ愛される会社づくりをするべく、その礎となる「人」をとても大切にしています。
               </p>
             </div>
 
-            <figure class="mission__figure">
+            <figure class="mission__figure fade-in-up">
               <picture>
                 <source
                   srcset="images/index/mission/section-visual.webp"
@@ -1172,7 +1172,7 @@
               <!-- PrimaryButton Component (text="企業理念はこちら", link="#", color="white") -->
               <a
                 href="pages/mission.html"
-                class="primary-button primary-button--white"
+                class="primary-button primary-button--white fade-in-up"
               >
                 企業理念はこちら
                 <span class="primary-button__icon" aria-hidden="true">
@@ -1225,11 +1225,11 @@
 
           <div class="recruit__content">
             <div class="recruit__text">
-              <h3 class="recruit__catch">
+              <h3 class="recruit__catch fade-in-up">
                 安心できる環境で輝く<br />
                 それぞれの「人間力」
               </h3>
-              <p class="recruit__desc">
+              <p class="recruit__desc fade-in-up">
                 「人のくらしを幸せにするもの」をキーワードに事業展開するホンダ自動車販売グループは、社員も、その家族も安心できる環境。ぜひあなたの「人間力」を発揮してください。
               </p>
             </div>
@@ -1390,7 +1390,7 @@
               <!-- PrimaryButton Component (text="採用情報はこちら", link="#", color="dark") -->
               <a
                 href="pages/recruit.html"
-                class="primary-button primary-button--dark"
+                class="primary-button primary-button--dark fade-in-up"
               >
                 採用情報はこちら
                 <span class="primary-button__icon" aria-hidden="true">
@@ -1443,7 +1443,7 @@
 
           <div class="news__content">
             <div class="news__list">
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル01 -->
@@ -1486,7 +1486,7 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル02 -->
@@ -1529,7 +1529,7 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
@@ -1577,7 +1577,7 @@
               <!-- PrimaryButton Component (text="お知らせ一覧へ", link="#", color="white") -->
               <a
                 href="pages/news.html"
-                class="primary-button primary-button--white"
+                class="primary-button primary-button--white fade-in-up"
               >
                 お知らせ一覧へ
                 <span class="primary-button__icon" aria-hidden="true">
@@ -1632,7 +1632,7 @@
             <div class="service__grid">
               <a
                 href="pages/service.html#honda"
-                class="service__card service__card--honda"
+                class="service__card service__card--honda fade-in-up"
               >
                 <article class="service__card-content">
                   <div class="service__card-inner">
@@ -1691,7 +1691,7 @@
 
               <a
                 href="pages/service.html#kaines"
-                class="service__card service__card--kyne"
+                class="service__card service__card--kyne fade-in-up"
               >
                 <article class="service__card-content">
                   <div class="service__card-inner">
@@ -1746,7 +1746,7 @@
 
               <a
                 href="pages/service.html#"
-                class="service__card service__card--fuji"
+                class="service__card service__card--fuji fade-in-up"
               >
                 <article class="service__card-content">
                   <div class="service__card-inner">
@@ -1803,7 +1803,7 @@
 
               <a
                 href="/pages/service.html#fj"
-                class="service__card service__card--fjkensetsu"
+                class="service__card service__card--fjkensetsu fade-in-up"
               >
                 <article class="service__card-content">
                   <div class="service__card-inner">
@@ -1861,7 +1861,7 @@
               <!-- PrimaryButton Component (text="事業内容はこちら", link="#", color="dark") -->
               <a
                 href="pages/service.html"
-                class="primary-button primary-button--dark"
+                class="primary-button primary-button--dark fade-in-up"
               >
                 事業内容はこちら
                 <span class="primary-button__icon" aria-hidden="true">
@@ -1977,20 +1977,22 @@
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__content">
-          <div class="footer__brand">
-            <div class="footer__logo">
-              <img
-                src="images/global/footer-logo.png"
-                alt="HONDA MOTOR SALES GROUP"
-                class="footer__logo-image"
-                loading="lazy"
-                decoding="async"
-              />
+          <a class="footer__brand-link" href="/">
+            <div class="footer__brand">
+              <div class="footer__logo">
+                <img
+                  src="images/global/footer-logo.png"
+                  alt="HONDA MOTOR SALES GROUP"
+                  class="footer__logo-image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <p class="footer__company-name">
+                HONDA MOTOR SALES <br class="sp" />GROUP
+              </p>
             </div>
-            <p class="footer__company-name">
-              HONDA MOTOR SALES <br class="sp" />GROUP
-            </p>
-          </div>
+          </a>
 
           <div class="footer__divider"></div>
 
@@ -2083,5 +2085,8 @@
     <!-- ================================================== -->
     <!-- Menu Control Script - 全ページ共通 -->
     <script src="js/menu-control.js"></script>
+
+    <!-- Scroll Fade - スクロールフェード機能 -->
+    <script src="js/scroll-fade.js"></script>
   </body>
 </html>

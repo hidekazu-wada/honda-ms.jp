@@ -832,7 +832,7 @@
 
           <div class="news-list-wrapper">
             <div class="news__list">
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル01 -->
@@ -875,7 +875,7 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル02 -->
@@ -918,7 +918,7 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
@@ -961,7 +961,7 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
@@ -1004,7 +1004,7 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
@@ -1047,7 +1047,7 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
@@ -1090,7 +1090,7 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
@@ -1133,7 +1133,7 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
@@ -1176,7 +1176,7 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
@@ -1425,20 +1425,22 @@
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__content">
-          <div class="footer__brand">
-            <div class="footer__logo">
-              <img
-                src="../images/global/footer-logo.png"
-                alt="HONDA MOTOR SALES GROUP"
-                class="footer__logo-image"
-                loading="lazy"
-                decoding="async"
-              />
+          <a class="footer__brand-link" href="/">
+            <div class="footer__brand">
+              <div class="footer__logo">
+                <img
+                  src="../images/global/footer-logo.png"
+                  alt="HONDA MOTOR SALES GROUP"
+                  class="footer__logo-image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <p class="footer__company-name">
+                HONDA MOTOR SALES <br class="sp" />GROUP
+              </p>
             </div>
-            <p class="footer__company-name">
-              HONDA MOTOR SALES <br class="sp" />GROUP
-            </p>
-          </div>
+          </a>
 
           <div class="footer__divider"></div>
 
@@ -1531,5 +1533,8 @@
     <!-- ================================================== -->
     <!-- Menu Control Script - 全ページ共通 -->
     <script src="../js/menu-control.js"></script>
+
+    <!-- Scroll Fade - スクロールフェード機能 -->
+    <script src="../js/scroll-fade.js"></script>
   </body>
 </html>

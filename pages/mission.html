@@ -840,28 +840,28 @@
           <!-- 代表挨拶セクション -->
           <section class="ceo-message" aria-labelledby="ceo-message-title">
             <header class="ceo-message__header">
-              <h2 id="ceo-message-title" class="ceo-message__title">
+              <h2 id="ceo-message-title" class="ceo-message__title fade-in-up">
                 代表挨拶
               </h2>
             </header>
 
             <article class="ceo-message__content">
               <div class="ceo-message__text">
-                <p class="ceo-message__paragraph">
+                <p class="ceo-message__paragraph fade-in-up">
                   当社は1967年に創業し、現在は4社からなるグループとして、自動車販売事業のほか、携帯電話のショップ運営を中心とする通信事業などを展開しています。
                 </p>
-                <p class="ceo-message__paragraph">
+                <p class="ceo-message__paragraph fade-in-up">
                   事業を通して「人のくらしを幸せにするもの」を提供する当社に重要なのは、「人そのもの」。研鑽を続けて「人間力」を高めた社員が、お客さまに喜んでいただける提案ができることが最大の強みです。
                 </p>
-                <p class="ceo-message__paragraph">
+                <p class="ceo-message__paragraph fade-in-up">
                   そして企業は、社員とその家族に愛される存在でなくてはなりません。「ES＝従業員満足度」の高い職場で社員に幸せになってもらうことで、「CS＝顧客満足度」を高めていきたいと考えています。
                 </p>
-                <p class="ceo-message__paragraph">
+                <p class="ceo-message__paragraph fade-in-up">
                   当社はこれからも、「人」を礎にした「みんなに愛される会社づくり」を行い、さらなる躍進を目指してまいります。
                 </p>
               </div>
 
-              <footer class="ceo-message__signature">
+              <footer class="ceo-message__signature fade-in-up">
                 <p class="ceo-message__position">代表取締役社長</p>
                 <figure class="ceo-message__photo">
                   <picture>
@@ -914,7 +914,7 @@
         <!-- 企業理念説明文 -->
         <article class="philosophy-section__content">
           <div class="philosophy-content">
-            <p class="philosophy-content__paragraph">
+            <p class="philosophy-content__paragraph fade-in-up">
               私たちホンダ自動車販売グループは、「人」の成長と共に、企業として成長を遂げてきました。<br />
               自動車販売から始まり、携帯電話を中心とした通信事業、建設や飲食なども展開し、人々の生活に関連するさまざまなサービスを提供しています。これらはいずれも「人のくらしを幸せにするもの」と私たちは考えています。<br />
               社員一人ひとりが個性を生かし、それぞれの分野のプロフェッショナルとして、お客さまの幸せづくりのお手伝いに真剣に取り組み、「みんなに愛される会社づくり」を志しています。ホンダ自動車販売で働く「人」こそが、当社の最大にして最高の財産なのです。
@@ -1051,7 +1051,7 @@
         <div class="bottom-nav-section__inner">
           <a
             href="../pages/recruit.html"
-            class="bottom-nav-link"
+            class="bottom-nav-link fade-in-up"
             aria-label="企業理念ページへ"
           >
             <div class="bottom-nav-link__content">
@@ -1085,7 +1085,7 @@
           </a>
           <a
             href="../pages/about.html"
-            class="bottom-nav-link"
+            class="bottom-nav-link fade-in-up"
             aria-label="グループについてページへ"
           >
             <div class="bottom-nav-link__content">
@@ -1219,20 +1219,22 @@
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__content">
-          <div class="footer__brand">
-            <div class="footer__logo">
-              <img
-                src="../images/global/footer-logo.png"
-                alt="HONDA MOTOR SALES GROUP"
-                class="footer__logo-image"
-                loading="lazy"
-                decoding="async"
-              />
+          <a class="footer__brand-link" href="/">
+            <div class="footer__brand">
+              <div class="footer__logo">
+                <img
+                  src="../images/global/footer-logo.png"
+                  alt="HONDA MOTOR SALES GROUP"
+                  class="footer__logo-image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <p class="footer__company-name">
+                HONDA MOTOR SALES <br class="sp" />GROUP
+              </p>
             </div>
-            <p class="footer__company-name">
-              HONDA MOTOR SALES <br class="sp" />GROUP
-            </p>
-          </div>
+          </a>
 
           <div class="footer__divider"></div>
 
@@ -1325,5 +1327,8 @@
     <!-- ================================================== -->
     <!-- Menu Control Script - 全ページ共通 -->
     <script src="../js/menu-control.js"></script>
+
+    <!-- Scroll Fade - スクロールフェード機能 -->
+    <script src="../js/scroll-fade.js"></script>
   </body>
 </html>

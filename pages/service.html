@@ -839,10 +839,10 @@
           <!-- 事業内容説明 -->
           <article class="service-section__content">
             <div class="service-content">
-              <p class="service-content__paragraph">
+              <p class="service-content__paragraph fade-in-up">
                 ホンダ自動車販売グループの歴史は、1967年までさかのぼります。同年、「富士ホンダ販売」として、山梨県富士吉田市で創業。自動車販売事業で業容を拡大し、1985年に現社名となりました。その一方で、黎明期だった移動体通信にいち早くアプローチ。自動車電話などの取扱いを経て、1995年には「ドコモショップ富士吉田店」をオープンさせ、携帯電話を軸とする通信事業に本格参入しました。
               </p>
-              <p class="service-content__paragraph">
+              <p class="service-content__paragraph fade-in-up">
                 以来、グループ企業化を進め、「人のくらしを幸せにするもの」をキーワードに事業領域を拡大。従来の事業とかかわりの深い、レンタカーやau・ソフトバンクショップ運営はもちろん、フィットネスジムやワインセラー、建設、人材事業など、新たな領域への挑戦も進めています。
               </p>
             </div>
@@ -861,7 +861,10 @@
           </header>
 
           <!-- ホンダ自動車販売株式会社 -->
-          <article id="honda" class="company-card company-card--honda">
+          <article
+            id="honda"
+            class="company-card company-card--honda fade-in-up"
+          >
             <figure class="company-card__logo company-card__logo--honda">
               <img
                 src="../images/service/company/logo01.webp"
@@ -918,7 +921,10 @@
           </article>
 
           <!-- 株式会社ケインズ -->
-          <article id="kaines" class="company-card company-card--kaines">
+          <article
+            id="kaines"
+            class="company-card company-card--kaines fade-in-up"
+          >
             <figure class="company-card__logo company-card__logo--kaines">
               <img
                 src="../images/service/company/logo02.webp"
@@ -973,7 +979,7 @@
           </article>
 
           <!-- 有限会社富士 -->
-          <article id="fuji" class="company-card company-card--fuji">
+          <article id="fuji" class="company-card company-card--fuji fade-in-up">
             <figure class="company-card__logo company-card__logo--fuji">
               <img
                 src="../images/service/company/logo03.webp"
@@ -1029,7 +1035,7 @@
           </article>
 
           <!-- FJ建設株式会社 -->
-          <article id="fj" class="company-card company-card--fj">
+          <article id="fj" class="company-card company-card--fj fade-in-up">
             <figure class="company-card__logo company-card__logo--fj">
               <img
                 src="../images/service/company/logo04.webp"
@@ -1091,7 +1097,7 @@
         <div class="bottom-nav-section__inner">
           <a
             href="../pages/recruit.html"
-            class="bottom-nav-link"
+            class="bottom-nav-link fade-in-up"
             aria-label="企業理念ページへ"
           >
             <div class="bottom-nav-link__content">
@@ -1125,7 +1131,7 @@
           </a>
           <a
             href="../pages/mission.html"
-            class="bottom-nav-link"
+            class="bottom-nav-link fade-in-up"
             aria-label="グループについてページへ"
           >
             <div class="bottom-nav-link__content">
@@ -1259,20 +1265,22 @@
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__content">
-          <div class="footer__brand">
-            <div class="footer__logo">
-              <img
-                src="../images/global/footer-logo.png"
-                alt="HONDA MOTOR SALES GROUP"
-                class="footer__logo-image"
-                loading="lazy"
-                decoding="async"
-              />
+          <a class="footer__brand-link" href="/">
+            <div class="footer__brand">
+              <div class="footer__logo">
+                <img
+                  src="../images/global/footer-logo.png"
+                  alt="HONDA MOTOR SALES GROUP"
+                  class="footer__logo-image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <p class="footer__company-name">
+                HONDA MOTOR SALES <br class="sp" />GROUP
+              </p>
             </div>
-            <p class="footer__company-name">
-              HONDA MOTOR SALES <br class="sp" />GROUP
-            </p>
-          </div>
+          </a>
 
           <div class="footer__divider"></div>
 
@@ -1365,5 +1373,8 @@
     <!-- ================================================== -->
     <!-- Menu Control Script - 全ページ共通 -->
     <script src="../js/menu-control.js"></script>
+
+    <!-- Scroll Fade - スクロールフェード機能 -->
+    <script src="../js/scroll-fade.js"></script>
   </body>
 </html>
