@@ -1808,6 +1808,12 @@ svg {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .footer__brand-link {
+    margin-inline: unset;
+  }
 }
 .footer__brand {
   display: -webkit-box;
@@ -1860,11 +1866,13 @@ svg {
   font-weight: 700;
   line-height: 110%;
   text-align: center;
+  white-space: nowrap;
 }
 @media (min-width: 768px) {
   .footer__company-name {
     font-size: 1.93359375vw;
     text-align: left;
+    white-space: unset;
   }
 }
 @media (min-width: 1024px) {

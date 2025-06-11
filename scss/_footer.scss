@@ -47,6 +47,10 @@
     &__brand-link {
         display: block;
         width: max-content;
+        margin-inline: auto;
+        @include tablet-up {
+            margin-inline: unset;
+        }
     }
 
     &__brand {
@@ -85,10 +89,12 @@
         font-weight: 700;
         line-height: 110%;
         text-align: center;
+        white-space: nowrap;
 
         @include tablet-up {
             font-size: ppx(45 * $pc-to-tab-ratio);
             text-align: left;
+            white-space: unset;
         }
 
         @include desktop-up {
