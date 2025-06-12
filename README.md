@@ -21,19 +21,22 @@ GitHub Pages: [https://YOUR_GITHUB_USERNAME.github.io/honda-ms.jp/](https://YOUR
 honda-ms.jp/
 ├── index.html              # メインHTML
 ├── css/
+│   ├── destyle.css        # リセットスタイル
+│   ├── destyle.css.map
 │   ├── style.css          # 共通スタイル
-│   └── index.css          # ページ専用スタイル
-├── scss/                   # SCSS ソースファイル
-├── js/
-│   └── index.js           # ページ専用JavaScript
+│   └── style.css.map
+├── scss/                   # 開発用SCSS
+├── js/                     # サイト共通JavaScript
+│   ├── index-page.js
+│   ├── menu-control.js
+│   ├── hero-swiper.js
+│   └── ...                # その他スクリプト
 ├── assets/
 │   ├── css/               # 外部ライブラリCSS
 │   └── js/                # 外部ライブラリJS
 ├── images/                 # 画像ファイル
-├── config/
-│   └── site-config.js     # サイト設定
-└── docs/
-    └── menu-system-algorithm.md  # 実装ガイド
+└── docs/                   # 開発ドキュメント
+    └── menu-system-algorithm.md  # メニュー実装ガイド
 ```
 
 ## 🛠️ Development
