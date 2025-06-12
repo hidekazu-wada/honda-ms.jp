@@ -148,15 +148,10 @@
         margin-top: spx(90);
         @include tablet-up {
             margin-top: ppx(150 * $pc-to-tab-ratio);
-        }
-        @include desktop-up {
-            margin-top: ppx(150);
-        }
-
-        @include tablet-up {
             width: ppx(1646 * $pc-to-tab-ratio);
         }
         @include desktop-up {
+            margin-top: ppx(150);
             width: ppx(1646);
         }
         &__paragraph {
@@ -174,6 +169,12 @@
                 font-size: ppx(35);
                 line-height: 200%;
             }
+            .only-tablet-up {
+                display: none;
+                @include tablet-up {
+                    display: block;
+                }
+            }
         }
     }
 
@@ -190,6 +191,17 @@
     // COMPANY CARD COMPONENT
     // 会社カードコンポーネント
     // ================================================
+    .company-card__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: spx(20);
+        @include tablet-up {
+            gap: ppx(15 * $pc-to-tab-ratio);
+        }
+        @include desktop-up {
+            gap: ppx(15);
+        }
+    }
     .company-card {
         background-image: url(../images/service/company/bg-mobile.webp);
         background-size: cover;
@@ -201,10 +213,14 @@
         @include tablet-up {
             flex-direction: row;
             padding-bottom: ppx(190 * $pc-to-tab-ratio);
+            justify-content: flex-end;
+            padding-right: 11vw;
         }
         @include desktop-up {
             background-image: url(../images/service/company/bg-desktop.webp);
             padding-bottom: ppx(190);
+            justify-content: unset;
+            padding-right: 0;
         }
         // 各会社ごとの調整用modifier
         &--honda {
@@ -256,7 +272,7 @@
                 @include tablet-up {
                     width: ppx(472 * $pc-to-tab-ratio);
                     height: ppx(373 * $pc-to-tab-ratio);
-                    margin-left: ppx(416 * $pc-to-tab-ratio);
+                    margin-left: 0;
                     margin-right: ppx(216 * $pc-to-tab-ratio);
                 }
                 @include desktop-up {
@@ -274,7 +290,7 @@
                 @include tablet-up {
                     width: ppx(533 * $pc-to-tab-ratio);
                     height: ppx(373 * $pc-to-tab-ratio);
-                    margin-left: ppx(415 * $pc-to-tab-ratio);
+                    margin-left: 0;
                     margin-right: ppx(156 * $pc-to-tab-ratio);
                 }
                 @include desktop-up {
@@ -292,7 +308,7 @@
                 @include tablet-up {
                     width: ppx(258 * $pc-to-tab-ratio);
                     height: ppx(285 * $pc-to-tab-ratio);
-                    margin-left: ppx(523 * $pc-to-tab-ratio);
+                    margin-left: 0;
                     margin-right: ppx(323 * $pc-to-tab-ratio);
                 }
                 @include desktop-up {
@@ -310,7 +326,7 @@
                 @include tablet-up {
                     width: ppx(321 * $pc-to-tab-ratio);
                     height: ppx(281 * $pc-to-tab-ratio);
-                    margin-left: ppx(491 * $pc-to-tab-ratio);
+                    margin-left: 0;
                     margin-right: ppx(292 * $pc-to-tab-ratio);
                 }
                 @include desktop-up {

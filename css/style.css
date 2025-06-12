@@ -4502,7 +4502,7 @@ svg {
   }
 }
 .recruit-page .recruitment-info__companies {
-  padding: 15.2777777778vw 0 25vw;
+  padding-top: 15.2777777778vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4514,13 +4514,13 @@ svg {
 }
 @media (min-width: 768px) {
   .recruit-page .recruitment-info__companies {
-    padding: 4.7265625vw 0 9.453125vw;
+    padding-top: 4.7265625vw;
     gap: 7.08984375vw;
   }
 }
 @media (min-width: 1024px) {
   .recruit-page .recruitment-info__companies {
-    padding: 6.4453125vw 0 8.59375vw;
+    padding-top: 6.4453125vw;
     gap: 6.4453125vw;
   }
 }
@@ -5629,6 +5629,13 @@ svg {
     margin-bottom: 2.4921875vw;
   }
 }
+@media (min-width: 1024px) {
+  .about-page .company-card--fj .company-card__logo-image {
+    margin-top: 3.515625vw;
+    margin-left: 5.9765625vw;
+    margin-bottom: 2.265625vw;
+  }
+}
 .about-page .company-card--fj .company-card__link {
   background-color: #003968;
 }
@@ -5792,6 +5799,7 @@ svg {
 .about-page .company-info__executive-role {
   display: inline-block;
   min-width: 30vw;
+  font-weight: 500;
 }
 @media (min-width: 768px) {
   .about-page .company-info__executive-role {
@@ -6411,20 +6419,12 @@ svg {
 @media (min-width: 768px) {
   .service-page .service-content {
     margin-top: 6.4453125vw;
-  }
-}
-@media (min-width: 1024px) {
-  .service-page .service-content {
-    margin-top: 5.859375vw;
-  }
-}
-@media (min-width: 768px) {
-  .service-page .service-content {
     width: 70.7265625vw;
   }
 }
 @media (min-width: 1024px) {
   .service-page .service-content {
+    margin-top: 5.859375vw;
     width: 64.296875vw;
   }
 }
@@ -6444,6 +6444,34 @@ svg {
   .service-page .service-content__paragraph {
     font-size: 1.3671875vw;
     line-height: 200%;
+  }
+}
+.service-page .service-content__paragraph .only-tablet-up {
+  display: none;
+}
+@media (min-width: 768px) {
+  .service-page .service-content__paragraph .only-tablet-up {
+    display: block;
+  }
+}
+.service-page .company-card__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2.7777777778vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-card__wrapper {
+    gap: 0.64453125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-card__wrapper {
+    gap: 0.5859375vw;
   }
 }
 .service-page .company-card {
@@ -6467,12 +6495,20 @@ svg {
         -ms-flex-direction: row;
             flex-direction: row;
     padding-bottom: 8.1640625vw;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding-right: 11vw;
   }
 }
 @media (min-width: 1024px) {
   .service-page .company-card {
     background-image: url(../images/service/company/bg-desktop.webp);
     padding-bottom: 7.421875vw;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+    padding-right: 0;
   }
 }
 .service-page .company-card--honda {
@@ -6536,7 +6572,7 @@ svg {
   .service-page .company-card__logo--honda {
     width: 20.28125vw;
     height: 16.02734375vw;
-    margin-left: 17.875vw;
+    margin-left: 0;
     margin-right: 9.28125vw;
   }
 }
@@ -6557,7 +6593,7 @@ svg {
   .service-page .company-card__logo--kaines {
     width: 22.90234375vw;
     height: 16.02734375vw;
-    margin-left: 17.83203125vw;
+    margin-left: 0;
     margin-right: 6.703125vw;
   }
 }
@@ -6578,7 +6614,7 @@ svg {
   .service-page .company-card__logo--fuji {
     width: 11.0859375vw;
     height: 12.24609375vw;
-    margin-left: 22.47265625vw;
+    margin-left: 0;
     margin-right: 13.87890625vw;
   }
 }
@@ -6599,7 +6635,7 @@ svg {
   .service-page .company-card__logo--fj {
     width: 13.79296875vw;
     height: 12.07421875vw;
-    margin-left: 21.09765625vw;
+    margin-left: 0;
     margin-right: 12.546875vw;
   }
 }
@@ -7116,7 +7152,7 @@ svg {
   }
 }
 .mission-page .philosophy-wrapper {
-  background-image: url(../images/mission/philosophy/pyramid-bg-mobile.webp);
+  background-image: url(../images/mission/philosophy/pyramid-bg-mobile.svg);
   background-size: 100% 217.9166666667vw;
   background-position: center top;
   background-repeat: no-repeat;
@@ -7126,7 +7162,7 @@ svg {
 }
 @media (min-width: 768px) {
   .mission-page .philosophy-wrapper {
-    background-image: url(../images/mission/philosophy/pyramid-bg-desktop.webp);
+    background-image: url(../images/mission/philosophy/pyramid-bg-desktop.svg);
     background-size: 100% auto;
     background-position: right top;
     background-repeat: no-repeat;
@@ -7338,6 +7374,14 @@ svg {
   .mission-page .slide-content__title {
     font-size: 2.34375vw;
     letter-spacing: 0.234375vw;
+  }
+}
+.mission-page .slide-content__title .only-sp {
+  display: block;
+}
+@media (min-width: 768px) {
+  .mission-page .slide-content__title .only-sp {
+    display: none;
   }
 }
 .mission-page .slide-content__paragraph {

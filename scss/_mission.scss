@@ -249,7 +249,7 @@
     }
 
     .philosophy-wrapper {
-        background-image: url(../images/mission/philosophy/pyramid-bg-mobile.webp);
+        background-image: url(../images/mission/philosophy/pyramid-bg-mobile.svg);
         background-size: 100% spx(1569);
         background-position: center top;
         background-repeat: no-repeat;
@@ -258,7 +258,7 @@
         position: relative;
 
         @include tablet-up {
-            background-image: url(../images/mission/philosophy/pyramid-bg-desktop.webp);
+            background-image: url(../images/mission/philosophy/pyramid-bg-desktop.svg);
             background-size: 100% auto;
             background-position: right top;
             background-repeat: no-repeat;
@@ -456,6 +456,12 @@
             @include desktop-up {
                 font-size: ppx(60);
                 letter-spacing: ppx(6);
+            }
+            .only-sp {
+                display: block;
+                @include tablet-up {
+                    display: none;
+                }
             }
         }
 

@@ -31,7 +31,7 @@ function initPhilosophySwiper(
     autoHeight: config.autoHeight,
 
     // スライド間のスペース
-    spaceBetween: 0,
+    spaceBetween: 100,
 
     // 一度に表示するスライド数
     slidesPerView: 1,
