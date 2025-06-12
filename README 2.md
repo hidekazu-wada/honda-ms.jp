@@ -14,19 +14,20 @@
 
 ```
 honda-ms.jp/
-├── index.html              # トップページ（ルート配置）
-├── pages/                  # その他ページ別HTML管理
-│   └── about.html          # 会社概要ページ
-├── config/
-│   ├── site-config.js      # サイト設定（CMS移植時重要）
-│   └── pages/              # ページ別設定
-│       ├── index.js        # トップページ設定
-│       └── about.js        # 会社概要設定
-├── css/
-│   ├── style.css           # 共通スタイル（コンパイル済み）
-│   └── pages/              # ページ別CSS（コンパイル済み）
-│       ├── index.css       # トップページ専用
-│       └── about.css       # 会社概要専用
+├── index.html              # トップページ
+├── pages/                  # その他ページ
+│   ├── about.html
+│   ├── mission.html
+│   ├── news.html
+│   ├── news-details.html
+│   ├── recruit.html
+│   ├── service.html
+│   └── 404.html
+├── css/                    # コンパイル済みCSS
+│   ├── destyle.css
+│   ├── destyle.css.map
+│   ├── style.css
+│   └── style.css.map
 ├── scss/                   # SCSS ソースファイル（極限統合型）
 │   ├── style.scss          # 共通基盤（背景コンポーネント含む）
 │   ├── abstracts/          # 統合レイヤー
@@ -36,9 +37,12 @@ honda-ms.jp/
 │   └── pages/              # ページ別完全自己完結型
 │       ├── index.scss      # トップページ（全セクション・アニメーション統合）
 │       └── about.scss      # 会社概要（全セクション統合）
-├── js/
-│   ├── index.js            # トップページ専用（完全統合版 - アニメーション・Swiper統合）
-│   └── about.js            # 会社概要専用（完全自己完結版）
+├── js/                     # サイト共通JavaScript
+│   ├── index-page.js
+│   ├── hero-swiper.js
+│   ├── philosophy-swiper.js
+│   ├── menu-control.js
+│   └── ...
 ├── images/                 # 画像ファイル
 │   ├── common/             # 共通画像
 │   ├── index/              # トップページ画像
@@ -138,9 +142,9 @@ scss/style.scss
 - `index.html` ↔ `scss/pages/index.scss` ↔ `css/pages/index.css`
 - `pages/about.html` ↔ `scss/pages/about.scss` ↔ `css/pages/about.css`
 
-### 3. 設定外部化済み
+### 3. 設定管理
 
-主要な設定値は `config/site-config.js` に集約されています。
+主要な設定値は各 JavaScript ファイル内に記述されています。
 
 ### 4. JavaScript 統合済み
 
@@ -151,25 +155,20 @@ Page-Centric 型で JavaScript ファイルが統合されています。
 ### アニメーション速度変更
 
 ```javascript
-// config/site-config.js
-hero: {
-  textAnimation: {
-    line1Stagger: 0.12,  // この値を変更
-    line2Stagger: 0.14   // この値を変更
-  }
-}
+// js/text-animation.js の設定例
+const config = {
+  line1Stagger: 0.12,
+  line2Stagger: 0.14,
+};
 ```
 
 ### スライダー設定変更
 
 ```javascript
-// config/site-config.js
-hero: {
-  swiper: {
-    autoplayDelay: 5000, // この値を変更
-    fadeSpeed: 2500      // この値を変更
-  }
-}
+HeroSwiper.init('.hero-swiper', {
+  autoplayDelay: 5000,
+  fadeSpeed: 2500,
+});
 ```
 
 ### スタイル変更
@@ -182,7 +181,7 @@ hero: {
 
 ## 白鷺 CMS 移植時のポイント
 
-1. **設定の動的化**: `config/site-config.js` の値を管理画面から変更可能に
+1. **設定の動的化**: JavaScript 内の設定値を管理画面から変更可能に
 2. **画像パスの動的化**: ハードコードされた画像パスを CMS の画像管理機能と連携
 3. **テキスト内容の動的化**: ハードコードされたテキストを CMS のフィールドと連携
 4. **JavaScript の読み込み順序維持**: 設定 → ライブラリ → コンポーネント の順序を保持

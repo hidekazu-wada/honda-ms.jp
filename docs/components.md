@@ -7,11 +7,6 @@ honda-ms.jp/
 ├── index.html             # トップページ（ルート配置）
 ├── pages/                 # その他ページ別HTML管理
 │   └── about.html         # 会社概要
-├── config/
-│   ├── site-config.js     # サイト全体設定
-│   └── pages/             # ページ別設定
-│       ├── index.js       # トップページ設定
-│       └── about.js       # 会社概要設定
 ├── css/                   # コンパイル済みCSS
 │   ├── style.css          # 共通基盤（背景コンポーネント含む）
 │   └── pages/             # ページ別CSS（自動生成）
@@ -78,7 +73,7 @@ about.html ↔ scss/pages/about.scss ↔ css/pages/about.css ↔ js/about.js
 
 - **テキストアニメーション**: 1 文字ずつ表示・GSAP 統合
 - **Swiper スライダー**: フェード効果・自動再生・ページネーション
-- **設定値連携**: config/site-config.js と完全連携
+- **設定値管理**: 各 JavaScript ファイル内に記載
 
 #### about.scss（50 行）+ about.js（24 行）の統合構成
 
@@ -158,7 +153,6 @@ pages/services.html
 scss/pages/services.scss
 
 # 3. 必要に応じてページ設定作成
-config/pages/services.js
 
 # 4. コンパイル実行
 npx sass scss/pages/services.scss css/pages/services.css
