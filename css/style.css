@@ -2195,7 +2195,7 @@ svg {
 }
 .top-page .hero-section .hero-swiper #main-title {
   position: absolute;
-  top: 35.6944444444vw;
+  top: 20vw;
   left: 8.3333333333vw;
   z-index: 1;
   opacity: 0;
@@ -2203,8 +2203,8 @@ svg {
 }
 @media (min-width: 768px) {
   .top-page .hero-section .hero-swiper #main-title {
-    top: 22.34375vw;
-    left: 7.9921875vw;
+    top: 16vw;
+    left: 11.23046875vw;
   }
 }
 @media (min-width: 1024px) {
@@ -2227,12 +2227,15 @@ svg {
 }
 @media (min-width: 768px) {
   .top-page .hero-section .hero-swiper #main-title #line1 {
-    font-size: 4.08203125vw;
+    font-size: 6.494140625vw;
+    line-height: 10.05859375vw;
+    margin-left: 0.78125vw;
   }
 }
 @media (min-width: 1024px) {
   .top-page .hero-section .hero-swiper #main-title #line1 {
     font-size: 3.7109375vw;
+    margin-left: 0.4296875vw;
   }
 }
 .top-page .hero-section .hero-swiper #main-title #line2 {
@@ -2240,12 +2243,12 @@ svg {
   font-size: 11.25vw;
   font-weight: 700;
   line-height: 155%;
-  margin-top: -1.6666666667vw;
+  margin-top: -5.6vw;
 }
 @media (min-width: 768px) {
   .top-page .hero-section .hero-swiper #main-title #line2 {
-    font-size: 6.23046875vw;
-    margin-top: -0.859375vw;
+    font-size: 9.912109375vw;
+    margin-top: -1.416015625vw;
   }
 }
 @media (min-width: 1024px) {
@@ -2303,7 +2306,7 @@ svg {
 }
 @media (min-width: 768px) {
   .top-page .mission-section .mission__header {
-    margin-left: 56.16015625vw;
+    margin-left: 53vw;
   }
 }
 @media (min-width: 1024px) {
@@ -2317,7 +2320,7 @@ svg {
 }
 @media (min-width: 768px) {
   .top-page .mission-section .mission__text {
-    margin-left: 56.16015625vw;
+    margin-left: 53vw;
     margin-top: 3.56640625vw;
   }
 }
@@ -2368,7 +2371,7 @@ svg {
     font-size: 1.3671875vw;
     line-height: 200%;
     margin-top: 3.7890625vw;
-    width: 34.140625vw;
+    width: 35vw;
   }
 }
 .top-page .mission-section .mission__figure {
@@ -2433,7 +2436,7 @@ svg {
   .top-page .mission-section .mission__link-wrapper {
     margin-top: 1.71875vw;
     margin-inline: unset;
-    margin-left: 56.16015625vw;
+    margin-left: 53vw;
   }
 }
 @media (min-width: 1024px) {
@@ -2524,7 +2527,7 @@ svg {
     margin-top: 20.109375vw;
     width: 33.12890625vw;
     margin-inline: unset;
-    margin-left: 62.26171875vw;
+    margin-left: 59vw;
   }
 }
 @media (min-width: 1024px) {
@@ -2532,7 +2535,7 @@ svg {
     font-size: 1.3671875vw;
     letter-spacing: 0.013671875vw;
     margin-top: 18.28125vw;
-    width: 30.1171875vw;
+    width: 31vw;
     margin-left: 56.6015625vw;
   }
 }
@@ -2675,7 +2678,7 @@ svg {
   .top-page .recruit-section .recruit__link-wrapper {
     margin-inline: unset;
     margin-top: 2.0625vw;
-    margin-left: 62.26171875vw;
+    margin-left: 59vw;
   }
 }
 @media (min-width: 1024px) {
@@ -3074,17 +3077,20 @@ svg {
   width: 37.7777777778vw;
   height: auto;
   margin-left: 16.9444444444vw;
+  margin-bottom: 3.4722222222vw;
 }
 @media (min-width: 768px) {
   .top-page .service-section .service__card--honda .service__logo {
     width: 11.6875vw;
     margin-left: 5.28515625vw;
+    margin-bottom: 1.1171875vw;
   }
 }
 @media (min-width: 1024px) {
   .top-page .service-section .service__card--honda .service__logo {
     width: 10.625vw;
     margin-left: 4.8046875vw;
+    margin-bottom: 1.015625vw;
   }
 }
 .top-page .service-section .service__card--honda .service__logo-image {
@@ -3113,17 +3119,20 @@ svg {
   width: 43.1944444444vw;
   height: auto;
   margin-left: 16.9444444444vw;
+  margin-bottom: 3.4722222222vw;
 }
 @media (min-width: 768px) {
   .top-page .service-section .service__card--kyne .service__logo {
     width: 13.36328125vw;
     margin-left: 4.984375vw;
+    margin-bottom: 1.24609375vw;
   }
 }
 @media (min-width: 1024px) {
   .top-page .service-section .service__card--kyne .service__logo {
     width: 12.1484375vw;
     margin-left: 4.53125vw;
+    margin-bottom: 1.1328125vw;
   }
 }
 .top-page .service-section .service__card--kyne .service__item::before {
@@ -3149,17 +3158,20 @@ svg {
   width: 20.9722222222vw;
   height: auto;
   margin-left: 25.4166666667vw;
+  margin-bottom: 4.8611111111vw;
 }
 @media (min-width: 768px) {
   .top-page .service-section .service__card--fuji .service__logo {
     width: 6.48828125vw;
     margin-left: 7.86328125vw;
+    margin-bottom: 1.8046875vw;
   }
 }
 @media (min-width: 1024px) {
   .top-page .service-section .service__card--fuji .service__logo {
     width: 5.8984375vw;
     margin-left: 7.1484375vw;
+    margin-bottom: 1.640625vw;
   }
 }
 .top-page .service-section .service__card--fuji .service__item::before {
@@ -3185,17 +3197,20 @@ svg {
   width: 25.9722222222vw;
   height: auto;
   margin-left: 22.9166666667vw;
+  margin-bottom: 4.8611111111vw;
 }
 @media (min-width: 768px) {
   .top-page .service-section .service__card--fjkensetsu .service__logo {
     width: 8.03515625vw;
     margin-left: 7.08984375vw;
+    margin-bottom: 1.8046875vw;
   }
 }
 @media (min-width: 1024px) {
   .top-page .service-section .service__card--fjkensetsu .service__logo {
     width: 7.3046875vw;
     margin-left: 6.4453125vw;
+    margin-bottom: 1.640625vw;
   }
 }
 .top-page .service-section .service__card--fjkensetsu .service__item::before {
@@ -3218,21 +3233,18 @@ svg {
   width: 56.8055555556vw;
   height: 1px;
   background-color: #ececec;
-  margin-top: 3.4722222222vw;
   margin-bottom: 7.2222222222vw;
   margin-inline: auto;
 }
 @media (min-width: 768px) {
   .top-page .service-section .service__line {
     width: 17.57421875vw;
-    margin-top: 1.1171875vw;
     margin-bottom: 2.234375vw;
   }
 }
 @media (min-width: 1024px) {
   .top-page .service-section .service__line {
     width: 15.9765625vw;
-    margin-top: 1.015625vw;
     margin-bottom: 2.03125vw;
   }
 }
