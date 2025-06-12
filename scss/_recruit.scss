@@ -371,18 +371,18 @@
     // 採用会社コンポーネント
     // ================================================
     .recruitment-info__companies {
-        padding: spx(110) 0 spx(180);
+        padding-top: spx(110);
         display: flex;
         flex-direction: column;
         gap: spx(180);
 
         @include tablet-up {
-            padding: ppx(110 * $pc-to-tab-ratio) 0 ppx(220 * $pc-to-tab-ratio);
+            padding-top: ppx(110 * $pc-to-tab-ratio);
             gap: ppx(165 * $pc-to-tab-ratio);
         }
 
         @include desktop-up {
-            padding: ppx(165) 0 ppx(220);
+            padding-top: ppx(165);
             gap: ppx(165);
         }
 

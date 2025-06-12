@@ -137,11 +137,6 @@
                 width: 100%;
                 height: 100%;
                 text-decoration: none;
-
-                &:hover .news__item-image {
-                    transform: scale(1.05);
-                    filter: brightness(1.1);
-                }
             }
 
             .news__item-image {
@@ -152,12 +147,6 @@
                 transition:
                     transform 0.3s ease,
                     filter 0.3s ease;
-            }
-
-            // :has()セレクター対応のホバー効果
-            .news__item:has(.news__link:hover) .news__item-image {
-                transform: scale(1.05);
-                filter: brightness(1.1);
             }
 
             .news__item-content {
@@ -214,6 +203,7 @@
                 font-size: spx(28);
                 font-weight: 500;
                 line-height: 150%;
+                transition: color 0.3s ease;
 
                 @include tablet-up {
                     font-size: ppx(35 * $pc-to-tab-ratio);
@@ -223,6 +213,30 @@
                 @include desktop-up {
                     font-size: ppx(35);
                     line-height: 160%;
+                }
+            }
+
+            // ホバー効果: 画像リンクと見出しリンクのみでエフェクト発動
+            @include hover {
+                .news__image-link:hover .news__item-image {
+                    transform: scale(1.05);
+                    filter: brightness(1.1);
+                }
+
+                // 見出しホバー時の画像エフェクト（JavaScript併用またはCSS workaround）
+                .news__item:has(.news__link:hover) .news__item-image {
+                    transform: scale(1.05);
+                    filter: brightness(1.1);
+                }
+
+                // 見出し色の変化効果
+                .news__link:hover {
+                    color: $base_color_2;
+                }
+
+                // 画像ホバー時の見出し色変化
+                .news__item:has(.news__image-link:hover) .news__link {
+                    color: $base_color_2;
                 }
             }
         }

@@ -136,19 +136,20 @@
             // メインタイトル
             #main-title {
                 position: absolute;
-                top: spx(257);
+                top: 20vw;
                 left: spx(60);
                 z-index: 1;
                 opacity: 0; // 初期状態は非表示
                 visibility: hidden; // レイアウトを維持しつつ完全に非表示
 
                 @include tablet-up {
-                    top: ppx(520 * $pc-to-tab-ratio);
-                    left: ppx(186 * $pc-to-tab-ratio);
+                    top: 16vw;
+                    left: tpx(230);
                 }
 
                 @include desktop-up {
-                    top: ppx(520);
+                    top: 50%;
+                    transform: translateY(-50%);
                     left: ppx(186);
                 }
 
@@ -165,11 +166,14 @@
                     line-height: 155%;
 
                     @include tablet-up {
-                        font-size: ppx(95 * $pc-to-tab-ratio);
+                        font-size: tpx(133);
+                        line-height: tpx(206);
+                        margin-left: tpx(16);
                     }
 
                     @include desktop-up {
                         font-size: ppx(95);
+                        margin-left: ppx(11);
                     }
                 }
 
@@ -178,16 +182,16 @@
                     font-size: spx(81);
                     font-weight: 700;
                     line-height: 155%;
-                    margin-top: spx(-12);
+                    margin-top: -5.6vw;
 
                     @include tablet-up {
-                        font-size: ppx(145 * $pc-to-tab-ratio);
-                        margin-top: ppx(-20 * $pc-to-tab-ratio);
+                        font-size: tpx(203);
+                        margin-top: tpx(-29);
                     }
 
                     @include desktop-up {
                         font-size: ppx(145);
-                        margin-top: ppx(-20);
+                        margin-top: -1.718vw;
                     }
                 }
 
@@ -240,7 +244,7 @@
             margin-left: spx(56);
 
             @include tablet-up {
-                margin-left: ppx(1307 * $pc-to-tab-ratio);
+                margin-left: 53vw;
             }
 
             @include desktop-up {
@@ -253,7 +257,7 @@
             margin-left: spx(60);
 
             @include tablet-up {
-                margin-left: ppx(1307 * $pc-to-tab-ratio);
+                margin-left: 53vw;
                 margin-top: ppx(83 * $pc-to-tab-ratio);
             }
 
@@ -301,7 +305,7 @@
                 font-size: ppx(35);
                 line-height: 200%;
                 margin-top: ppx(97);
-                width: ppx(874);
+                width: 35vw;
             }
         }
 
@@ -361,7 +365,7 @@
             @include tablet-up {
                 margin-top: ppx(40 * $pc-to-tab-ratio);
                 margin-inline: unset;
-                margin-left: ppx(1307 * $pc-to-tab-ratio);
+                margin-left: 53vw;
             }
 
             @include desktop-up {
@@ -451,14 +455,14 @@
                 margin-top: ppx(468 * $pc-to-tab-ratio);
                 width: ppx(771 * $pc-to-tab-ratio);
                 margin-inline: unset;
-                margin-left: ppx(1449 * $pc-to-tab-ratio);
+                margin-left: 59vw;
             }
 
             @include desktop-up {
                 font-size: ppx(35);
                 letter-spacing: ppx(0.35);
                 margin-top: ppx(468);
-                width: ppx(771);
+                width: 31vw;
                 margin-left: ppx(1449);
             }
         }
@@ -599,7 +603,7 @@
             @include tablet-up {
                 margin-inline: unset;
                 margin-top: ppx(48 * $pc-to-tab-ratio);
-                margin-left: ppx(1449 * $pc-to-tab-ratio);
+                margin-left: 59vw;
             }
 
             @include desktop-up {
@@ -789,6 +793,16 @@
                 transform: scale(1.05);
                 filter: brightness(1.1);
             }
+
+            // 見出し色の変化効果
+            .news__link:hover {
+                color: $base_color_2;
+            }
+
+            // 画像ホバー時の見出し色変化
+            .news__item:has(.news__image-link:hover) .news__link {
+                color: $base_color_2;
+            }
         }
 
         .news__item-content {
@@ -845,6 +859,7 @@
             font-size: spx(28);
             font-weight: 500;
             line-height: 150%;
+            transition: color 0.3s ease;
 
             @include tablet-up {
                 font-size: ppx(35 * $pc-to-tab-ratio);
@@ -955,15 +970,17 @@
                     width: spx(272);
                     height: auto;
                     margin-left: spx(122);
-
+                    margin-bottom: spx(25);
                     @include tablet-up {
                         width: ppx(272 * $pc-to-tab-ratio);
                         margin-left: ppx(123 * $pc-to-tab-ratio);
+                        margin-bottom: ppx(26 * $pc-to-tab-ratio);
                     }
 
                     @include desktop-up {
                         width: ppx(272);
                         margin-left: ppx(123);
+                        margin-bottom: ppx(26);
                     }
                 }
 
@@ -995,15 +1012,18 @@
                     width: spx(311);
                     height: auto;
                     margin-left: spx(122);
+                    margin-bottom: spx(25);
 
                     @include tablet-up {
                         width: ppx(311 * $pc-to-tab-ratio);
                         margin-left: ppx(116 * $pc-to-tab-ratio);
+                        margin-bottom: ppx(29 * $pc-to-tab-ratio);
                     }
 
                     @include desktop-up {
                         width: ppx(311);
                         margin-left: ppx(116);
+                        margin-bottom: ppx(29);
                     }
                 }
 
@@ -1031,15 +1051,18 @@
                     width: spx(151);
                     height: auto;
                     margin-left: spx(183);
+                    margin-bottom: spx(35);
 
                     @include tablet-up {
                         width: ppx(151 * $pc-to-tab-ratio);
                         margin-left: ppx(183 * $pc-to-tab-ratio);
+                        margin-bottom: ppx(42 * $pc-to-tab-ratio);
                     }
 
                     @include desktop-up {
                         width: ppx(151);
                         margin-left: ppx(183);
+                        margin-bottom: ppx(42);
                     }
                 }
 
@@ -1067,15 +1090,18 @@
                     width: spx(187);
                     height: auto;
                     margin-left: spx(165);
+                    margin-bottom: spx(35);
 
                     @include tablet-up {
                         width: ppx(187 * $pc-to-tab-ratio);
                         margin-left: ppx(165 * $pc-to-tab-ratio);
+                        margin-bottom: ppx(42 * $pc-to-tab-ratio);
                     }
 
                     @include desktop-up {
                         width: ppx(187);
                         margin-left: ppx(165);
+                        margin-bottom: ppx(42);
                     }
                 }
 
@@ -1097,7 +1123,6 @@
                 }
             }
         }
-
         .service__logo-image {
             width: 100%;
             height: auto;
@@ -1108,19 +1133,16 @@
             width: spx(409);
             height: 1px;
             background-color: $gray_1;
-            margin-top: spx(25);
             margin-bottom: spx(52);
             margin-inline: auto;
 
             @include tablet-up {
                 width: ppx(409 * $pc-to-tab-ratio);
-                margin-top: ppx(26 * $pc-to-tab-ratio);
                 margin-bottom: ppx(52 * $pc-to-tab-ratio);
             }
 
             @include desktop-up {
                 width: ppx(409);
-                margin-top: ppx(26);
                 margin-bottom: ppx(52);
             }
         }

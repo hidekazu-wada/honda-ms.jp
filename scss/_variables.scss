@@ -16,6 +16,7 @@ $viewport_pc: 1024;
 // tpx()関数用 PC基準からタブレット用に変換
 //$pc-to-tab-ratio: $design_view_tab / $design_view_pc;
 $pc-to-tab-ratio: 1.1;
+$pc-to-tab-ratio-global-nav: 1.5;
 
 //ブレイクポイント
 $breakpoint-tablet-up: 768px;

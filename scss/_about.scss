@@ -533,6 +533,11 @@
                     margin-left: ppx(153 * $pc-to-tab-ratio);
                     margin-bottom: ppx(58 * $pc-to-tab-ratio);
                 }
+                @include desktop-up {
+                    margin-top: ppx(90);
+                    margin-left: ppx(153);
+                    margin-bottom: ppx(58);
+                }
             }
 
             .company-card__link {
@@ -689,6 +694,7 @@
         &__executive-role {
             display: inline-block;
             min-width: 30vw;
+            font-weight: 500;
             @include tablet-up {
                 min-width: 10vw * $pc-to-tab-ratio;
             }

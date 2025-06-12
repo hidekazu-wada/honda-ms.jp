@@ -848,6 +848,22 @@ svg {
   }
 }
 
+.fade-in-up {
+  opacity: 0;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
+  transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+
+.fade-in-up.is-inview {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 /**
  * Main SCSS Entry Point - 統合版
  * 全てのpartialファイルを読み込んで統合CSSを生成
@@ -1239,7 +1255,7 @@ svg {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   color: #c11313;
-  font-size: 3.6111111111vw;
+  font-size: 3vw;
   font-weight: 700;
   line-height: 100%;
   letter-spacing: -0.1083333333vw;
@@ -1321,7 +1337,7 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav {
-    width: 38.671875vw;
+    width: 52.734375vw;
     top: 0;
   }
 }
@@ -1367,11 +1383,11 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__close {
-    gap: 0.4296875vw;
-    width: 3.91015625vw;
-    height: 3.65234375vw;
-    top: 1.93359375vw;
-    right: 1.50390625vw;
+    gap: 0.5859375vw;
+    width: 5.33203125vw;
+    height: 4.98046875vw;
+    top: 2.63671875vw;
+    right: 2.05078125vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1415,7 +1431,7 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__close-icon svg {
-    width: 2.75vw;
+    width: 3.75vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1449,8 +1465,8 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__close-text {
-    font-size: 1.1171875vw;
-    letter-spacing: -0.033515625vw;
+    font-size: 1.5234375vw;
+    letter-spacing: -0.045703125vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1470,7 +1486,7 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__content {
-    padding-top: 8.9375vw;
+    padding-top: 12.1875vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1495,8 +1511,8 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__list {
-    gap: 1.93359375vw;
-    margin-left: 9.41015625vw;
+    gap: 2.63671875vw;
+    margin-left: 12.83203125vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1523,7 +1539,7 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__link {
-    gap: 1.07421875vw;
+    gap: 1.46484375vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1542,7 +1558,7 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__link-arrow {
-    width: 0.9453125vw;
+    width: 1.2890625vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1559,8 +1575,8 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__link-text {
-    font-size: 1.546875vw;
-    letter-spacing: 0.4640625vw;
+    font-size: 2.109375vw;
+    letter-spacing: 0.6328125vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1575,7 +1591,7 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__company {
-    margin-top: 5.15625vw;
+    margin-top: 7.03125vw;
     padding-bottom: 0;
   }
 }
@@ -1595,9 +1611,9 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__company-title {
-    font-size: 1.546875vw;
-    letter-spacing: 0.07734375vw;
-    margin-left: 11.515625vw;
+    font-size: 2.109375vw;
+    letter-spacing: 0.10546875vw;
+    margin-left: 15.703125vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1625,8 +1641,8 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__company-list {
-    gap: 0.64453125vw;
-    margin-top: 1.03125vw;
+    gap: 0.87890625vw;
+    margin-top: 1.40625vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1657,9 +1673,9 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__company-link {
-    width: 21.2265625vw;
-    height: 3.30859375vw;
-    border-radius: 2.578125vw;
+    width: 28.9453125vw;
+    height: 4.51171875vw;
+    border-radius: 3.515625vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1685,8 +1701,8 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__company-link-text {
-    font-size: 1.1171875vw;
-    width: 16.0703125vw;
+    font-size: 1.5234375vw;
+    width: 21.9140625vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1706,8 +1722,8 @@ svg {
 }
 @media (min-width: 768px) {
   .global-nav__company-link-arrow {
-    width: 1.07421875vw;
-    right: 1.1171875vw;
+    width: 1.46484375vw;
+    right: 1.5234375vw;
   }
 }
 @media (min-width: 1024px) {
@@ -1740,16 +1756,19 @@ svg {
   background: -webkit-gradient(linear, left bottom, left top, from(#231f20), to(#332e2f));
   background: linear-gradient(0deg, #231f20 0%, #332e2f 100%);
   color: #fff;
-  padding: 8.1944444444vw 0 28.8888888889vw;
+  padding: 8.1944444444vw 0 34.7222222222vw;
+  border-top: solid 0.6944444444vw #fff;
 }
 @media (min-width: 768px) {
   .footer {
     padding: 6.23046875vw 0 6.40234375vw;
+    border-top: solid 0.12890625vw #fff;
   }
 }
 @media (min-width: 1024px) {
   .footer {
     padding: 5.6640625vw 0 5.8203125vw;
+    border-top: solid 0.1171875vw #fff;
   }
 }
 .footer__inner {
@@ -1782,6 +1801,18 @@ svg {
 @media (min-width: 1024px) {
   .footer__inner {
     margin: 0 8.59375vw;
+  }
+}
+.footer__brand-link {
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .footer__brand-link {
+    margin-inline: unset;
   }
 }
 .footer__brand {
@@ -1835,11 +1866,13 @@ svg {
   font-weight: 700;
   line-height: 110%;
   text-align: center;
+  white-space: nowrap;
 }
 @media (min-width: 768px) {
   .footer__company-name {
     font-size: 1.93359375vw;
     text-align: left;
+    white-space: unset;
   }
 }
 @media (min-width: 1024px) {
@@ -1939,6 +1972,9 @@ svg {
     font-size: 1.171875vw;
     letter-spacing: 0.1171875vw;
   }
+}
+.footer__contact-item--fax {
+  pointer-events: none;
 }
 .footer__social {
   position: absolute;
@@ -2159,7 +2195,7 @@ svg {
 }
 .top-page .hero-section .hero-swiper #main-title {
   position: absolute;
-  top: 35.6944444444vw;
+  top: 20vw;
   left: 8.3333333333vw;
   z-index: 1;
   opacity: 0;
@@ -2167,13 +2203,15 @@ svg {
 }
 @media (min-width: 768px) {
   .top-page .hero-section .hero-swiper #main-title {
-    top: 22.34375vw;
-    left: 7.9921875vw;
+    top: 16vw;
+    left: 11.23046875vw;
   }
 }
 @media (min-width: 1024px) {
   .top-page .hero-section .hero-swiper #main-title {
-    top: 20.3125vw;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     left: 7.265625vw;
   }
 }
@@ -2189,12 +2227,15 @@ svg {
 }
 @media (min-width: 768px) {
   .top-page .hero-section .hero-swiper #main-title #line1 {
-    font-size: 4.08203125vw;
+    font-size: 6.494140625vw;
+    line-height: 10.05859375vw;
+    margin-left: 0.78125vw;
   }
 }
 @media (min-width: 1024px) {
   .top-page .hero-section .hero-swiper #main-title #line1 {
     font-size: 3.7109375vw;
+    margin-left: 0.4296875vw;
   }
 }
 .top-page .hero-section .hero-swiper #main-title #line2 {
@@ -2202,18 +2243,18 @@ svg {
   font-size: 11.25vw;
   font-weight: 700;
   line-height: 155%;
-  margin-top: -1.6666666667vw;
+  margin-top: -5.6vw;
 }
 @media (min-width: 768px) {
   .top-page .hero-section .hero-swiper #main-title #line2 {
-    font-size: 6.23046875vw;
-    margin-top: -0.859375vw;
+    font-size: 9.912109375vw;
+    margin-top: -1.416015625vw;
   }
 }
 @media (min-width: 1024px) {
   .top-page .hero-section .hero-swiper #main-title #line2 {
     font-size: 5.6640625vw;
-    margin-top: -0.78125vw;
+    margin-top: -1.718vw;
   }
 }
 .top-page .hero-section .hero-swiper #main-title span {
@@ -2265,7 +2306,7 @@ svg {
 }
 @media (min-width: 768px) {
   .top-page .mission-section .mission__header {
-    margin-left: 56.16015625vw;
+    margin-left: 53vw;
   }
 }
 @media (min-width: 1024px) {
@@ -2279,7 +2320,7 @@ svg {
 }
 @media (min-width: 768px) {
   .top-page .mission-section .mission__text {
-    margin-left: 56.16015625vw;
+    margin-left: 53vw;
     margin-top: 3.56640625vw;
   }
 }
@@ -2330,7 +2371,7 @@ svg {
     font-size: 1.3671875vw;
     line-height: 200%;
     margin-top: 3.7890625vw;
-    width: 34.140625vw;
+    width: 35vw;
   }
 }
 .top-page .mission-section .mission__figure {
@@ -2395,7 +2436,7 @@ svg {
   .top-page .mission-section .mission__link-wrapper {
     margin-top: 1.71875vw;
     margin-inline: unset;
-    margin-left: 56.16015625vw;
+    margin-left: 53vw;
   }
 }
 @media (min-width: 1024px) {
@@ -2486,7 +2527,7 @@ svg {
     margin-top: 20.109375vw;
     width: 33.12890625vw;
     margin-inline: unset;
-    margin-left: 62.26171875vw;
+    margin-left: 59vw;
   }
 }
 @media (min-width: 1024px) {
@@ -2494,7 +2535,7 @@ svg {
     font-size: 1.3671875vw;
     letter-spacing: 0.013671875vw;
     margin-top: 18.28125vw;
-    width: 30.1171875vw;
+    width: 31vw;
     margin-left: 56.6015625vw;
   }
 }
@@ -2637,7 +2678,7 @@ svg {
   .top-page .recruit-section .recruit__link-wrapper {
     margin-inline: unset;
     margin-top: 2.0625vw;
-    margin-left: 62.26171875vw;
+    margin-left: 59vw;
   }
 }
 @media (min-width: 1024px) {
@@ -2839,6 +2880,12 @@ svg {
     -webkit-filter: brightness(1.1);
             filter: brightness(1.1);
   }
+  .top-page .news-section .news__link:hover {
+    color: #c11313;
+  }
+  .top-page .news-section .news__item:has(.news__image-link:hover) .news__link {
+    color: #c11313;
+  }
 }
 .top-page .news-section .news__item-content {
   width: 83.3333333333vw;
@@ -2897,6 +2944,8 @@ svg {
   font-size: 3.8888888889vw;
   font-weight: 500;
   line-height: 150%;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 @media (min-width: 768px) {
   .top-page .news-section .news__link {
@@ -3028,17 +3077,20 @@ svg {
   width: 37.7777777778vw;
   height: auto;
   margin-left: 16.9444444444vw;
+  margin-bottom: 3.4722222222vw;
 }
 @media (min-width: 768px) {
   .top-page .service-section .service__card--honda .service__logo {
     width: 11.6875vw;
     margin-left: 5.28515625vw;
+    margin-bottom: 1.1171875vw;
   }
 }
 @media (min-width: 1024px) {
   .top-page .service-section .service__card--honda .service__logo {
     width: 10.625vw;
     margin-left: 4.8046875vw;
+    margin-bottom: 1.015625vw;
   }
 }
 .top-page .service-section .service__card--honda .service__logo-image {
@@ -3067,17 +3119,20 @@ svg {
   width: 43.1944444444vw;
   height: auto;
   margin-left: 16.9444444444vw;
+  margin-bottom: 3.4722222222vw;
 }
 @media (min-width: 768px) {
   .top-page .service-section .service__card--kyne .service__logo {
     width: 13.36328125vw;
     margin-left: 4.984375vw;
+    margin-bottom: 1.24609375vw;
   }
 }
 @media (min-width: 1024px) {
   .top-page .service-section .service__card--kyne .service__logo {
     width: 12.1484375vw;
     margin-left: 4.53125vw;
+    margin-bottom: 1.1328125vw;
   }
 }
 .top-page .service-section .service__card--kyne .service__item::before {
@@ -3103,17 +3158,20 @@ svg {
   width: 20.9722222222vw;
   height: auto;
   margin-left: 25.4166666667vw;
+  margin-bottom: 4.8611111111vw;
 }
 @media (min-width: 768px) {
   .top-page .service-section .service__card--fuji .service__logo {
     width: 6.48828125vw;
     margin-left: 7.86328125vw;
+    margin-bottom: 1.8046875vw;
   }
 }
 @media (min-width: 1024px) {
   .top-page .service-section .service__card--fuji .service__logo {
     width: 5.8984375vw;
     margin-left: 7.1484375vw;
+    margin-bottom: 1.640625vw;
   }
 }
 .top-page .service-section .service__card--fuji .service__item::before {
@@ -3139,17 +3197,20 @@ svg {
   width: 25.9722222222vw;
   height: auto;
   margin-left: 22.9166666667vw;
+  margin-bottom: 4.8611111111vw;
 }
 @media (min-width: 768px) {
   .top-page .service-section .service__card--fjkensetsu .service__logo {
     width: 8.03515625vw;
     margin-left: 7.08984375vw;
+    margin-bottom: 1.8046875vw;
   }
 }
 @media (min-width: 1024px) {
   .top-page .service-section .service__card--fjkensetsu .service__logo {
     width: 7.3046875vw;
     margin-left: 6.4453125vw;
+    margin-bottom: 1.640625vw;
   }
 }
 .top-page .service-section .service__card--fjkensetsu .service__item::before {
@@ -3172,21 +3233,18 @@ svg {
   width: 56.8055555556vw;
   height: 1px;
   background-color: #ececec;
-  margin-top: 3.4722222222vw;
   margin-bottom: 7.2222222222vw;
   margin-inline: auto;
 }
 @media (min-width: 768px) {
   .top-page .service-section .service__line {
     width: 17.57421875vw;
-    margin-top: 1.1171875vw;
     margin-bottom: 2.234375vw;
   }
 }
 @media (min-width: 1024px) {
   .top-page .service-section .service__line {
     width: 15.9765625vw;
-    margin-top: 1.015625vw;
     margin-bottom: 2.03125vw;
   }
 }
@@ -3483,12 +3541,6 @@ svg {
   height: 100%;
   text-decoration: none;
 }
-.news-page .news-section .news__inner .news__image-link:hover .news__item-image {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  -webkit-filter: brightness(1.1);
-          filter: brightness(1.1);
-}
 .news-page .news-section .news__inner .news__item-image {
   display: block;
   width: 100%;
@@ -3499,12 +3551,6 @@ svg {
   transition: -webkit-transform 0.3s ease, -webkit-filter 0.3s ease;
   transition: transform 0.3s ease, filter 0.3s ease;
   transition: transform 0.3s ease, filter 0.3s ease, -webkit-transform 0.3s ease, -webkit-filter 0.3s ease;
-}
-.news-page .news-section .news__inner .news__item:has(.news__link:hover) .news__item-image {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  -webkit-filter: brightness(1.1);
-          filter: brightness(1.1);
 }
 .news-page .news-section .news__inner .news__item-content {
   width: 83.3333333333vw;
@@ -3563,6 +3609,8 @@ svg {
   font-size: 3.8888888889vw;
   font-weight: 500;
   line-height: 150%;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 @media (min-width: 768px) {
   .news-page .news-section .news__inner .news__link {
@@ -3574,6 +3622,26 @@ svg {
   .news-page .news-section .news__inner .news__link {
     font-size: 1.3671875vw;
     line-height: 160%;
+  }
+}
+@media (hover: hover) {
+  .news-page .news-section .news__inner .news__image-link:hover .news__item-image {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-filter: brightness(1.1);
+            filter: brightness(1.1);
+  }
+  .news-page .news-section .news__inner .news__item:has(.news__link:hover) .news__item-image {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-filter: brightness(1.1);
+            filter: brightness(1.1);
+  }
+  .news-page .news-section .news__inner .news__link:hover {
+    color: #c11313;
+  }
+  .news-page .news-section .news__inner .news__item:has(.news__image-link:hover) .news__link {
+    color: #c11313;
   }
 }
 .news-page .news-section .news__pagination {
@@ -4434,7 +4502,7 @@ svg {
   }
 }
 .recruit-page .recruitment-info__companies {
-  padding: 15.2777777778vw 0 25vw;
+  padding-top: 15.2777777778vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4446,13 +4514,13 @@ svg {
 }
 @media (min-width: 768px) {
   .recruit-page .recruitment-info__companies {
-    padding: 4.7265625vw 0 9.453125vw;
+    padding-top: 4.7265625vw;
     gap: 7.08984375vw;
   }
 }
 @media (min-width: 1024px) {
   .recruit-page .recruitment-info__companies {
-    padding: 6.4453125vw 0 8.59375vw;
+    padding-top: 6.4453125vw;
     gap: 6.4453125vw;
   }
 }
@@ -5561,6 +5629,13 @@ svg {
     margin-bottom: 2.4921875vw;
   }
 }
+@media (min-width: 1024px) {
+  .about-page .company-card--fj .company-card__logo-image {
+    margin-top: 3.515625vw;
+    margin-left: 5.9765625vw;
+    margin-bottom: 2.265625vw;
+  }
+}
 .about-page .company-card--fj .company-card__link {
   background-color: #003968;
 }
@@ -5724,6 +5799,7 @@ svg {
 .about-page .company-info__executive-role {
   display: inline-block;
   min-width: 30vw;
+  font-weight: 500;
 }
 @media (min-width: 768px) {
   .about-page .company-info__executive-role {
@@ -6343,20 +6419,12 @@ svg {
 @media (min-width: 768px) {
   .service-page .service-content {
     margin-top: 6.4453125vw;
-  }
-}
-@media (min-width: 1024px) {
-  .service-page .service-content {
-    margin-top: 5.859375vw;
-  }
-}
-@media (min-width: 768px) {
-  .service-page .service-content {
     width: 70.7265625vw;
   }
 }
 @media (min-width: 1024px) {
   .service-page .service-content {
+    margin-top: 5.859375vw;
     width: 64.296875vw;
   }
 }
@@ -6376,6 +6444,34 @@ svg {
   .service-page .service-content__paragraph {
     font-size: 1.3671875vw;
     line-height: 200%;
+  }
+}
+.service-page .service-content__paragraph .only-tablet-up {
+  display: none;
+}
+@media (min-width: 768px) {
+  .service-page .service-content__paragraph .only-tablet-up {
+    display: block;
+  }
+}
+.service-page .company-card__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2.7777777778vw;
+}
+@media (min-width: 768px) {
+  .service-page .company-card__wrapper {
+    gap: 0.64453125vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-page .company-card__wrapper {
+    gap: 0.5859375vw;
   }
 }
 .service-page .company-card {
@@ -6399,12 +6495,20 @@ svg {
         -ms-flex-direction: row;
             flex-direction: row;
     padding-bottom: 8.1640625vw;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding-right: 11vw;
   }
 }
 @media (min-width: 1024px) {
   .service-page .company-card {
     background-image: url(../images/service/company/bg-desktop.webp);
     padding-bottom: 7.421875vw;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+    padding-right: 0;
   }
 }
 .service-page .company-card--honda {
@@ -6468,7 +6572,7 @@ svg {
   .service-page .company-card__logo--honda {
     width: 20.28125vw;
     height: 16.02734375vw;
-    margin-left: 17.875vw;
+    margin-left: 0;
     margin-right: 9.28125vw;
   }
 }
@@ -6489,7 +6593,7 @@ svg {
   .service-page .company-card__logo--kaines {
     width: 22.90234375vw;
     height: 16.02734375vw;
-    margin-left: 17.83203125vw;
+    margin-left: 0;
     margin-right: 6.703125vw;
   }
 }
@@ -6510,7 +6614,7 @@ svg {
   .service-page .company-card__logo--fuji {
     width: 11.0859375vw;
     height: 12.24609375vw;
-    margin-left: 22.47265625vw;
+    margin-left: 0;
     margin-right: 13.87890625vw;
   }
 }
@@ -6531,7 +6635,7 @@ svg {
   .service-page .company-card__logo--fj {
     width: 13.79296875vw;
     height: 12.07421875vw;
-    margin-left: 21.09765625vw;
+    margin-left: 0;
     margin-right: 12.546875vw;
   }
 }
@@ -7048,7 +7152,7 @@ svg {
   }
 }
 .mission-page .philosophy-wrapper {
-  background-image: url(../images/mission/philosophy/pyramid-bg-mobile.webp);
+  background-image: url(../images/mission/philosophy/pyramid-bg-mobile.svg);
   background-size: 100% 217.9166666667vw;
   background-position: center top;
   background-repeat: no-repeat;
@@ -7058,7 +7162,7 @@ svg {
 }
 @media (min-width: 768px) {
   .mission-page .philosophy-wrapper {
-    background-image: url(../images/mission/philosophy/pyramid-bg-desktop.webp);
+    background-image: url(../images/mission/philosophy/pyramid-bg-desktop.svg);
     background-size: 100% auto;
     background-position: right top;
     background-repeat: no-repeat;
@@ -7270,6 +7374,14 @@ svg {
   .mission-page .slide-content__title {
     font-size: 2.34375vw;
     letter-spacing: 0.234375vw;
+  }
+}
+.mission-page .slide-content__title .only-sp {
+  display: block;
+}
+@media (min-width: 768px) {
+  .mission-page .slide-content__title .only-sp {
+    display: none;
   }
 }
 .mission-page .slide-content__paragraph {

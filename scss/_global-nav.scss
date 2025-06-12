@@ -25,7 +25,7 @@
     overflow-y: auto;
 
     @include tablet-up {
-        width: ppx(900 * $pc-to-tab-ratio);
+        width: ppx(900 * $pc-to-tab-ratio-global-nav);
         top: 0;
     }
 
@@ -66,11 +66,11 @@
         transition: opacity 0.4s ease;
 
         @include tablet-up {
-            gap: ppx(10 * $pc-to-tab-ratio);
-            width: ppx(91 * $pc-to-tab-ratio);
-            height: ppx(85 * $pc-to-tab-ratio);
-            top: ppx(45 * $pc-to-tab-ratio);
-            right: ppx(35 * $pc-to-tab-ratio);
+            gap: ppx(10 * $pc-to-tab-ratio-global-nav);
+            width: ppx(91 * $pc-to-tab-ratio-global-nav);
+            height: ppx(85 * $pc-to-tab-ratio-global-nav);
+            top: ppx(45 * $pc-to-tab-ratio-global-nav);
+            right: ppx(35 * $pc-to-tab-ratio-global-nav);
         }
 
         @include desktop-up {
@@ -116,7 +116,7 @@
             transition: opacity 0.3s ease;
 
             @include tablet-up {
-                width: ppx(64 * $pc-to-tab-ratio);
+                width: ppx(64 * $pc-to-tab-ratio-global-nav);
             }
 
             @include desktop-up {
@@ -150,8 +150,8 @@
         transition: color 0.3s ease;
 
         @include tablet-up {
-            font-size: ppx(26 * $pc-to-tab-ratio);
-            letter-spacing: ppx(-0.78 * $pc-to-tab-ratio);
+            font-size: ppx(26 * $pc-to-tab-ratio-global-nav);
+            letter-spacing: ppx(-0.78 * $pc-to-tab-ratio-global-nav);
         }
 
         @include desktop-up {
@@ -173,7 +173,7 @@
         transition: opacity 0.4s ease;
 
         @include tablet-up {
-            padding-top: ppx(208 * $pc-to-tab-ratio);
+            padding-top: ppx(208 * $pc-to-tab-ratio-global-nav);
         }
 
         @include desktop-up {
@@ -197,8 +197,8 @@
         margin-left: spx(129);
 
         @include tablet-up {
-            gap: ppx(45 * $pc-to-tab-ratio);
-            margin-left: ppx(219 * $pc-to-tab-ratio);
+            gap: ppx(45 * $pc-to-tab-ratio-global-nav);
+            margin-left: ppx(219 * $pc-to-tab-ratio-global-nav);
         }
 
         @include desktop-up {
@@ -217,7 +217,7 @@
         color: $base_color_white;
 
         @include tablet-up {
-            gap: ppx(25 * $pc-to-tab-ratio);
+            gap: ppx(25 * $pc-to-tab-ratio-global-nav);
         }
 
         @include desktop-up {
@@ -236,7 +236,7 @@
         height: auto;
 
         @include tablet-up {
-            width: ppx(22 * $pc-to-tab-ratio);
+            width: ppx(22 * $pc-to-tab-ratio-global-nav);
         }
 
         @include desktop-up {
@@ -252,8 +252,8 @@
         letter-spacing: spx(10.8);
 
         @include tablet-up {
-            font-size: ppx(36 * $pc-to-tab-ratio);
-            letter-spacing: ppx(10.8 * $pc-to-tab-ratio);
+            font-size: ppx(36 * $pc-to-tab-ratio-global-nav);
+            letter-spacing: ppx(10.8 * $pc-to-tab-ratio-global-nav);
         }
 
         @include desktop-up {
@@ -270,7 +270,7 @@
         padding-bottom: spx(210);
 
         @include tablet-up {
-            margin-top: ppx(120 * $pc-to-tab-ratio);
+            margin-top: ppx(120 * $pc-to-tab-ratio-global-nav);
             padding-bottom: 0;
         }
 
@@ -288,9 +288,9 @@
             color: $base_color_white;
 
             @include tablet-up {
-                font-size: ppx(36 * $pc-to-tab-ratio);
-                letter-spacing: ppx(1.8 * $pc-to-tab-ratio);
-                margin-left: ppx(268 * $pc-to-tab-ratio);
+                font-size: ppx(36 * $pc-to-tab-ratio-global-nav);
+                letter-spacing: ppx(1.8 * $pc-to-tab-ratio-global-nav);
+                margin-left: ppx(268 * $pc-to-tab-ratio-global-nav);
             }
 
             @include desktop-up {
@@ -311,8 +311,8 @@
         width: max-content;
 
         @include tablet-up {
-            gap: ppx(15 * $pc-to-tab-ratio);
-            margin-top: ppx(24 * $pc-to-tab-ratio);
+            gap: ppx(15 * $pc-to-tab-ratio-global-nav);
+            margin-top: ppx(24 * $pc-to-tab-ratio-global-nav);
         }
 
         @include desktop-up {
@@ -335,9 +335,9 @@
         text-decoration: none;
 
         @include tablet-up {
-            width: ppx(494 * $pc-to-tab-ratio);
-            height: ppx(77 * $pc-to-tab-ratio);
-            border-radius: ppx(60 * $pc-to-tab-ratio);
+            width: ppx(494 * $pc-to-tab-ratio-global-nav);
+            height: ppx(77 * $pc-to-tab-ratio-global-nav);
+            border-radius: ppx(60 * $pc-to-tab-ratio-global-nav);
         }
 
         @include desktop-up {
@@ -363,8 +363,8 @@
         text-align: center;
 
         @include tablet-up {
-            font-size: ppx(26 * $pc-to-tab-ratio);
-            width: ppx(374 * $pc-to-tab-ratio);
+            font-size: ppx(26 * $pc-to-tab-ratio-global-nav);
+            width: ppx(374 * $pc-to-tab-ratio-global-nav);
         }
 
         @include desktop-up {
@@ -382,8 +382,8 @@
         transform: translateY(-50%);
 
         @include tablet-up {
-            width: ppx(25 * $pc-to-tab-ratio);
-            right: ppx(26 * $pc-to-tab-ratio);
+            width: ppx(25 * $pc-to-tab-ratio-global-nav);
+            right: ppx(26 * $pc-to-tab-ratio-global-nav);
         }
 
         @include desktop-up {

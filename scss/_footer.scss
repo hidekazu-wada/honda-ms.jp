@@ -16,12 +16,15 @@
     position: relative;
     background: linear-gradient(0deg, #231f20 0%, #332e2f 100%);
     color: $base_color_white;
-    padding: spx(59) 0 spx(208);
+    padding: spx(59) 0 spx(250);
+    border-top: solid spx(5) $base_color_white;
     @include tablet-up {
         padding: ppx(145 * $pc-to-tab-ratio) 0 ppx(149 * $pc-to-tab-ratio);
+        border-top: solid ppx(3 * $pc-to-tab-ratio) $base_color_white;
     }
     @include desktop-up {
         padding: ppx(145) 0 ppx(149);
+        border-top: solid ppx(3) $base_color_white;
     }
 
     &__inner {
@@ -38,6 +41,15 @@
         }
         @include desktop-up {
             margin: 0 ppx(220);
+        }
+    }
+
+    &__brand-link {
+        display: block;
+        width: max-content;
+        margin-inline: auto;
+        @include tablet-up {
+            margin-inline: unset;
         }
     }
 
@@ -77,10 +89,12 @@
         font-weight: 700;
         line-height: 110%;
         text-align: center;
+        white-space: nowrap;
 
         @include tablet-up {
             font-size: ppx(45 * $pc-to-tab-ratio);
             text-align: left;
+            white-space: unset;
         }
 
         @include desktop-up {
@@ -163,6 +177,9 @@
                 font-size: ppx(30);
                 letter-spacing: ppx(3);
             }
+        }
+        &--fax {
+            pointer-events: none;
         }
     }
 

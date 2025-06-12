@@ -367,12 +367,11 @@
         left: 50%;
         transform: translateX(-50%);
         color: $base_color_2;
-        font-size: spx(26);
+        font-size: 3vw;
         font-weight: 700;
         line-height: 100%;
         letter-spacing: spx(-0.78);
         transition: color 0.3s ease;
-
         @include tablet-up {
             font-size: ppx(26 * $pc-to-tab-ratio);
             letter-spacing: ppx(-0.78 * $pc-to-tab-ratio);

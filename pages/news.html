@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="format-detection"
+      content="telephone=no, address=no, email=no, date=no"
+    />
     <meta name="robots" content="noindex, nofollow" />
     <meta
       name="description"
@@ -12,6 +16,22 @@
       name="keywords"
       content="ホンダ自動車販売グループ,通信事業,フィットネス,建設,飲食,求人,リクルート,山梨県,埼玉県,千葉県,神奈川県,東京都"
     />
+    <!-- Favicon -->
+    <link rel="icon" href="../images/global/favicon.svg" />
+    <link rel="apple-touch-icon" href="../images/global/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/global/favicon.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/global/favicon.svg"
+    />
+    <link rel="manifest" href="../site.webmanifest" />
     <title>
       お知らせ一覧｜ホンダ自動車販売グループ｜HONDA MOTOR SALES GROUP
     </title>
@@ -61,11 +81,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?
-        family=Inter:wght@500;700
-        &family=Noto+Sans+JP:wght@500;700
-        &family=Noto+Serif+JP:wght@700
-        &display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Noto+Sans+JP:wght@500;700&family=Noto+Serif+JP:wght@700&display=swap"
       rel="stylesheet"
     />
 
@@ -150,7 +166,7 @@
           />
           <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
           <source
-            srcset="../images/global/mobile-bg.webp"
+            srcset="../images/global/tablet-bg.webp"
             media="(min-width: 768px) and (max-width: 1023px)"
             type="image/webp"
           />
@@ -160,21 +176,8 @@
             media="(max-width: 767px)"
             type="image/webp"
           />
-          <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-          <source
-            srcset="../images/global/desktop-bg.png"
-            media="(min-width: 1024px)"
-            type="image/png"
-          />
-          <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-          <source
-            srcset="../images/global/mobile-bg.png"
-            media="(min-width: 768px) and (max-width: 1023px)"
-            type="image/png"
-          />
-          <!-- フォールバック画像 -->
           <img
-            src="../images/global/mobile-bg.png"
+            src="../images/global/mobile-bg.webp"
             alt="ヒーローイメージ"
             loading="eager"
             decoding="sync"
@@ -224,25 +227,24 @@
               target="_blank"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="70"
-                height="70"
-                viewBox="0 0 70 70"
-                fill="none"
                 class="header__social-icon"
-                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="60"
+                height="60"
+                viewBox="0 0 60 60"
+                fill="none"
               >
                 <path
-                  d="M35 6.30592C44.3456 6.30592 45.4515 6.34204 49.1428 6.51014C52.5549 6.66574 54.4082 7.23534 55.6418 7.71464C57.2756 8.34954 58.4412 9.10809 59.6666 10.332C60.8919 11.5574 61.6505 12.723 62.284 14.3568C62.7633 15.5904 63.3329 17.4437 63.4885 20.8558C63.6566 24.5457 63.6927 25.653 63.6927 34.9986C63.6927 44.3443 63.6566 45.4501 63.4885 49.1414C63.3329 52.5535 62.7633 54.4068 62.284 55.6405C61.6491 57.2742 60.8905 58.4398 59.6666 59.6652C58.4412 60.8905 57.2756 61.6491 55.6418 62.2826C54.4082 62.7619 52.5549 63.3315 49.1428 63.4871C45.4529 63.6552 44.3456 63.6913 35 63.6913C25.6543 63.6913 24.5471 63.6552 20.8572 63.4871C17.4451 63.3315 15.5918 62.7619 14.3582 62.2826C12.7244 61.6477 11.5588 60.8891 10.3334 59.6652C9.10809 58.4398 8.34954 57.2742 7.71603 55.6405C7.23673 54.4068 6.66713 52.5535 6.51153 49.1414C6.34343 45.4515 6.30731 44.3443 6.30731 34.9986C6.30731 25.653 6.34343 24.5471 6.51153 20.8558C6.66713 17.4437 7.23673 15.5904 7.71603 14.3568C8.35093 12.723 9.10948 11.5574 10.3334 10.332C11.5574 9.1067 12.7244 8.34815 14.3582 7.71464C15.5918 7.23534 17.4451 6.66574 20.8572 6.51014C24.5471 6.34204 25.6543 6.30592 35 6.30592ZM35 0C25.4946 0 24.3026 0.040289 20.5696 0.21117C16.845 0.380661 14.2998 0.972492 12.0742 1.83801C9.77216 2.7327 7.82023 3.92887 5.87524 5.87524C3.92887 7.82162 2.7327 9.77216 1.83801 12.0742C0.972492 14.2998 0.380661 16.845 0.21117 20.5696C0.040289 24.3026 0 25.4946 0 35C0 44.5054 0.040289 45.6974 0.21117 49.4304C0.380661 53.155 0.972492 55.7002 1.83801 57.9258C2.7327 60.2278 3.92887 62.1798 5.87524 64.1248C7.82162 66.0711 9.77216 67.2673 12.0742 68.162C14.2998 69.0275 16.845 69.6193 20.5696 69.7888C24.3026 69.9597 25.4946 70 35 70C44.5054 70 45.6974 69.9597 49.4304 69.7888C53.155 69.6193 55.7002 69.0275 57.9258 68.162C60.2278 67.2673 62.1798 66.0711 64.1248 64.1248C66.0711 62.1784 67.2673 60.2278 68.162 57.9258C69.0275 55.7002 69.6193 53.155 69.7888 49.4304C69.9597 45.6974 70 44.5054 70 35C70 25.4946 69.9597 24.3026 69.7888 20.5696C69.6193 16.845 69.0275 14.2998 68.162 12.0742C67.2673 9.77216 66.0711 7.82023 64.1248 5.87524C62.1784 3.92887 60.2278 2.7327 57.9258 1.83801C55.7002 0.972492 53.155 0.380661 49.4304 0.21117C45.6974 0.040289 44.5054 0 35 0Z"
-                  fill="red"
+                  d="M30 5.40507C38.0106 5.40507 38.9584 5.43603 42.1224 5.58012C45.047 5.71349 46.6356 6.20172 47.693 6.61255C49.0934 7.15675 50.0925 7.80693 51.1428 8.85603C52.1931 9.90632 52.8433 10.9054 53.3863 12.3058C53.7971 13.3632 54.2853 14.9518 54.4187 17.8764C54.5628 21.0392 54.5937 21.9882 54.5937 29.9988C54.5937 38.0094 54.5628 38.9572 54.4187 42.1212C54.2853 45.0458 53.7971 46.6344 53.3863 47.6918C52.8421 49.0922 52.1919 50.0913 51.1428 51.1416C50.0925 52.1919 49.0934 52.8421 47.693 53.3851C46.6356 53.7959 45.047 54.2841 42.1224 54.4175C38.9596 54.5616 38.0106 54.5925 30 54.5925C21.9894 54.5925 21.0404 54.5616 17.8776 54.4175C14.953 54.2841 13.3644 53.7959 12.307 53.3851C10.9066 52.8409 9.90751 52.1907 8.85722 51.1416C7.80693 50.0913 7.15675 49.0922 6.61374 47.6918C6.20291 46.6344 5.71468 45.0458 5.58131 42.1212C5.43722 38.9584 5.40626 38.0094 5.40626 29.9988C5.40626 21.9882 5.43722 21.0404 5.58131 17.8764C5.71468 14.9518 6.20291 13.3632 6.61374 12.3058C7.15794 10.9054 7.80812 9.90632 8.85722 8.85603C9.90632 7.80574 10.9066 7.15556 12.307 6.61255C13.3644 6.20172 14.953 5.71349 17.8776 5.58012C21.0404 5.43603 21.9894 5.40507 30 5.40507ZM30 0C21.8525 0 20.8308 0.0345334 17.6311 0.181003C14.4385 0.326281 12.257 0.833565 10.3493 1.57544C8.37614 2.34232 6.70305 3.3676 5.03592 5.03592C3.3676 6.70424 2.34232 8.37614 1.57544 10.3493C0.833565 12.257 0.326281 14.4385 0.181003 17.6311C0.0345334 20.8308 0 21.8525 0 30C0 38.1475 0.0345334 39.1692 0.181003 42.3689C0.326281 45.5615 0.833565 47.743 1.57544 49.6507C2.34232 51.6239 3.3676 53.2969 5.03592 54.9641C6.70424 56.6324 8.37614 57.6577 10.3493 58.4246C12.257 59.1664 14.4385 59.6737 17.6311 59.819C20.8308 59.9655 21.8525 60 30 60C38.1475 60 39.1692 59.9655 42.3689 59.819C45.5615 59.6737 47.743 59.1664 49.6507 58.4246C51.6239 57.6577 53.2969 56.6324 54.9641 54.9641C56.6324 53.2958 57.6577 51.6239 58.4246 49.6507C59.1664 47.743 59.6737 45.5615 59.819 42.3689C59.9655 39.1692 60 38.1475 60 30C60 21.8525 59.9655 20.8308 59.819 17.6311C59.6737 14.4385 59.1664 12.257 58.4246 10.3493C57.6577 8.37614 56.6324 6.70305 54.9641 5.03592C53.2958 3.3676 51.6239 2.34232 49.6507 1.57544C47.743 0.833565 45.5615 0.326281 42.3689 0.181003C39.1692 0.0345334 38.1475 0 30 0Z"
+                  fill="#C11313"
                 />
                 <path
-                  d="M35 17.0273C25.0736 17.0273 17.0283 25.074 17.0283 34.999C17.0283 44.924 25.075 52.9707 35 52.9707C44.925 52.9707 52.9716 44.924 52.9716 34.999C52.9716 25.074 44.925 17.0273 35 17.0273ZM35 46.6661C28.5565 46.6661 23.3342 41.4425 23.3342 35.0004C23.3342 28.5583 28.5579 23.3347 35 23.3347C41.442 23.3347 46.6657 28.5583 46.6657 35.0004C46.6657 41.4425 41.442 46.6661 35 46.6661Z"
-                  fill="red"
+                  d="M30.001 14.5952C21.4926 14.5952 14.5967 21.4924 14.5967 29.9995C14.5967 38.5066 21.4938 45.4038 30.001 45.4038C38.5081 45.4038 45.4052 38.5066 45.4052 29.9995C45.4052 21.4924 38.5081 14.5952 30.001 14.5952ZM30.001 39.9999C24.478 39.9999 20.0018 35.5224 20.0018 30.0007C20.0018 24.4789 24.4792 20.0015 30.001 20.0015C35.5227 20.0015 40.0002 24.4789 40.0002 30.0007C40.0002 35.5224 35.5227 39.9999 30.001 39.9999Z"
+                  fill="#C11313"
                 />
                 <path
-                  d="53.6832 20.5148C56.0026 20.5148 57.883 18.6345 57.883 16.315C57.883 13.9955 56.0026 12.1152 53.6832 12.1152C51.3637 12.1152 49.4834 13.9955 49.4834 16.315C49.4834 18.6345 51.3637 20.5148 53.6832 20.5148Z"
-                  fill="red"
+                  d="M46.0131 17.5854C48.0013 17.5854 49.6129 15.9737 49.6129 13.9856C49.6129 11.9974 48.0013 10.3857 46.0131 10.3857C44.025 10.3857 42.4133 11.9974 42.4133 13.9856C42.4133 15.9737 44.025 17.5854 46.0131 17.5854Z"
+                  fill="#C11313"
                 />
               </svg>
             </a>
@@ -643,7 +645,7 @@
               <ul class="global-nav__company-list" role="list">
                 <li class="global-nav__company-item">
                   <a
-                    href="https://www.biz.honda-ms.jp/"
+                    href="https://biz-honda-ms.wadahide.com/"
                     target="_blank"
                     class="global-nav__company-link"
                     aria-label="ホンダ自動車販売株式会社のページへ"
@@ -775,10 +777,10 @@
                     href="https://fjkensetsu.jp/"
                     target="_blank"
                     class="global-nav__company-link"
-                    aria-label="FJ建設株式会社のページへ"
+                    aria-label="FJ.建設株式会社のページへ"
                   >
                     <span class="global-nav__company-link-text"
-                      >FJ建設株式会社</span
+                      >FJ.建設株式会社</span
                     >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -833,34 +835,17 @@
 
           <div class="news-list-wrapper">
             <div class="news__list">
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル01 -->
-                    <picture>
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(min-width: 1024px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(max-width: 1023px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/fallback/demo-image.png"
-                        media="(min-width: 1024px)"
-                        type="image/png"
-                      />
-                      <img
-                        src="../images/index/news/fallback/demo-image.png"
-                        alt="ニュース記事のサムネイル画像"
-                        class="news__item-image"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
+                    <img
+                      src="../images/index/news/demo-image.webp"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </a>
                 </figure>
 
@@ -876,34 +861,17 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル02 -->
-                    <picture>
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(min-width: 1024px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(max-width: 1023px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/fallback/demo-image.png"
-                        media="(min-width: 1024px)"
-                        type="image/png"
-                      />
-                      <img
-                        src="../images/index/news/fallback/demo-image.png"
-                        alt="ニュース記事のサムネイル画像"
-                        class="news__item-image"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
+                    <img
+                      src="../images/index/news/demo-image.webp"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </a>
                 </figure>
 
@@ -919,34 +887,17 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
-                    <picture>
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(min-width: 1024px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(max-width: 1023px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/fallback/demo-image.png"
-                        media="(min-width: 1024px)"
-                        type="image/png"
-                      />
-                      <img
-                        src="../images/index/news/fallback/demo-image.png"
-                        alt="ニュース記事のサムネイル画像"
-                        class="news__item-image"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
+                    <img
+                      src="../images/index/news/demo-image.webp"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </a>
                 </figure>
 
@@ -962,34 +913,17 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
-                    <picture>
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(min-width: 1024px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(max-width: 1023px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/fallback/demo-image.png"
-                        media="(min-width: 1024px)"
-                        type="image/png"
-                      />
-                      <img
-                        src="../images/index/news/fallback/demo-image.png"
-                        alt="ニュース記事のサムネイル画像"
-                        class="news__item-image"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
+                    <img
+                      src="../images/index/news/demo-image.webp"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </a>
                 </figure>
 
@@ -1005,34 +939,17 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
-                    <picture>
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(min-width: 1024px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(max-width: 1023px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/fallback/demo-image.png"
-                        media="(min-width: 1024px)"
-                        type="image/png"
-                      />
-                      <img
-                        src="../images/index/news/fallback/demo-image.png"
-                        alt="ニュース記事のサムネイル画像"
-                        class="news__item-image"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
+                    <img
+                      src="../images/index/news/demo-image.webp"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </a>
                 </figure>
 
@@ -1048,34 +965,17 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
-                    <picture>
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(min-width: 1024px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(max-width: 1023px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/fallback/demo-image.png"
-                        media="(min-width: 1024px)"
-                        type="image/png"
-                      />
-                      <img
-                        src="../images/index/news/fallback/demo-image.png"
-                        alt="ニュース記事のサムネイル画像"
-                        class="news__item-image"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
+                    <img
+                      src="../images/index/news/demo-image.webp"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </a>
                 </figure>
 
@@ -1091,34 +991,17 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
-                    <picture>
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(min-width: 1024px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(max-width: 1023px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/fallback/demo-image.png"
-                        media="(min-width: 1024px)"
-                        type="image/png"
-                      />
-                      <img
-                        src="../images/index/news/fallback/demo-image.png"
-                        alt="ニュース記事のサムネイル画像"
-                        class="news__item-image"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
+                    <img
+                      src="../images/index/news/demo-image.webp"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </a>
                 </figure>
 
@@ -1134,34 +1017,17 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
-                    <picture>
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(min-width: 1024px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(max-width: 1023px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/fallback/demo-image.png"
-                        media="(min-width: 1024px)"
-                        type="image/png"
-                      />
-                      <img
-                        src="../images/index/news/fallback/demo-image.png"
-                        alt="ニュース記事のサムネイル画像"
-                        class="news__item-image"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
+                    <img
+                      src="../images/index/news/demo-image.webp"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </a>
                 </figure>
 
@@ -1177,34 +1043,17 @@
                 </div>
               </article>
 
-              <article class="news__item">
+              <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="../pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル03 -->
-                    <picture>
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(min-width: 1024px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/demo-image.webp"
-                        media="(max-width: 1023px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="../images/index/news/fallback/demo-image.png"
-                        media="(min-width: 1024px)"
-                        type="image/png"
-                      />
-                      <img
-                        src="../images/index/news/fallback/demo-image.png"
-                        alt="ニュース記事のサムネイル画像"
-                        class="news__item-image"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
+                    <img
+                      src="../images/index/news/demo-image.webp"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </a>
                 </figure>
 
@@ -1426,20 +1275,20 @@
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__content">
-          <div class="footer__brand">
-            <div class="footer__logo">
-              <img
-                src="../images/global/footer-logo.png"
-                alt="HONDA MOTOR SALES GROUP"
-                class="footer__logo-image"
-                loading="lazy"
-                decoding="async"
-              />
+          <a class="footer__brand-link" href="/">
+            <div class="footer__brand">
+              <div class="footer__logo">
+                <img
+                  src="../images/global/footer-logo.png"
+                  alt="HONDA MOTOR SALES GROUP"
+                  class="footer__logo-image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <p class="footer__company-name">HONDA MOTOR SALES <br />GROUP</p>
             </div>
-            <p class="footer__company-name">
-              HONDA MOTOR SALES <br class="sp" />GROUP
-            </p>
-          </div>
+          </a>
 
           <div class="footer__divider"></div>
 
@@ -1532,5 +1381,8 @@
     <!-- ================================================== -->
     <!-- Menu Control Script - 全ページ共通 -->
     <script src="../js/menu-control.js"></script>
+
+    <!-- Scroll Fade - スクロールフェード機能 -->
+    <script src="../js/scroll-fade.js"></script>
   </body>
 </html>
