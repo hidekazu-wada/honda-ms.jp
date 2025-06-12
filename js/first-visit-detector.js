@@ -1,7 +1,6 @@
 /**
- * First Visit Detection Script
- * 初回訪問判定機能 - サイトへの訪問履歴を管理
- * LocalStorageを使用してシンプルに実装
+ * LocalStorage を利用して初回訪問かどうかを判定し、結果を body クラスや
+ * カスタムイベントとして公開するユーティリティ。履歴リセットも可能。
  */
 
 /**

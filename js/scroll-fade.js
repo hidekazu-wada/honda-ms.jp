@@ -1,4 +1,7 @@
-// JS（observer で一度表示したら unobserve）
+/**
+ * IntersectionObserver で `.fade-in-up` 要素を監視し、表示されたら
+ * フェードインさせて監視を解除するシンプルなスクロールアニメーション。
+ */
 document.addEventListener('DOMContentLoaded', () => {
   const options = {
     root: null, // ビューポート
