@@ -1,7 +1,5 @@
 /**
- * Index Page - トップページ固有の初期化処理
- * 各機能コンポーネントを組み合わせて初期化
- * Dependencies: text-animation.js, hero-swiper.js
+ * トップページの初期化スクリプト。現在はヒーロースライダーの起動のみを行う。
  */
 
 /**
