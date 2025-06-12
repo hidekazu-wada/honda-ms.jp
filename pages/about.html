@@ -16,7 +16,6 @@
       name="keywords"
       content="ホンダ自動車販売グループ,通信事業,フィットネス,建設,飲食,求人,リクルート,山梨県,埼玉県,千葉県,神奈川県,東京都"
     />
-    <!-- Favicon -->
     <link rel="icon" href="../images/global/favicon.svg" />
     <link rel="apple-touch-icon" href="../images/global/favicon.svg" />
     <link
@@ -36,25 +35,12 @@
       グループについて｜ホンダ自動車販売グループ｜HONDA MOTOR SALES GROUP
     </title>
 
-    <!-- ================================================== -->
-    <!-- EXTERNAL DEPENDENCIES -->
-    <!-- CSS Framework: destyle (via SCSS compilation) -->
-    <!-- Slider: Swiper.js -->
-    <!-- Animation: GSAP -->
-    <!-- Fonts: Google Fonts (Inter, Noto Sans JP, Noto Serif JP) -->
-    <!-- ================================================== -->
 
-    <!-- 共通基盤CSS（背景コンポーネント含む）- 全ページ共通 -->
     <link rel="stylesheet" href="../css/destyle.css" />
     <link rel="stylesheet" href="../css/style.css" />
 
-    <!-- Swiper CSS -->
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" />
 
-    <!-- ================================================== -->
-    <!-- CORE SCRIPTS: Font Loading (Critical - Inline) -->
-    <!-- Note: フォント読み込み部分は性能のためインライン維持 -->
-    <!-- ================================================== -->
     <script src="../js/font-loader.js"></script>
     <script>
       // フォント読み込み処理（共通化版）
@@ -77,7 +63,6 @@
       });
     </script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -85,13 +70,10 @@
       rel="stylesheet"
     />
 
-    <!-- First Visit Detector -->
     <script src="../js/first-visit-detector.js"></script>
   </head>
   <body class="is-loading about-page">
-    <!-- ================================================== -->
-    <!-- LOADING SCREEN - 初回訪問時のみ表示 -->
-    <!-- ================================================== -->
+    <!-- SECTION: Loading Screen -->
     <section
       class="loading-screen"
       id="loading-screen"
@@ -142,35 +124,23 @@
         </div>
       </div>
     </section>
-    <!-- ================================================== -->
-    <!-- /LOADING SCREEN -->
-    <!-- ================================================== -->
+    <!-- END SECTION: Loading Screen -->
 
-    <!-- ================================================== -->
     <!-- MAIN CONTENT -->
-    <!-- ================================================== -->
     <main>
-      <!-- ================================================== -->
-      <!-- COMPONENT: Background Wrapper -->
-      <!-- Purpose: Main content background image -->
-      <!-- Dependencies: Responsive images (WebP/PNG fallback) -->
-      <!-- CMS Note: 背景画像のパスを動的化 -->
-      <!-- ================================================== -->
+      <!-- SECTION: Background Wrapper -->
       <div class="bg-wrapper">
         <picture>
-          <!-- デスクトップ用 WebP -->
           <source
             srcset="../images/global/desktop-bg.webp"
             media="(min-width: 1024px)"
             type="image/webp"
           />
-          <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
           <source
             srcset="../images/global/tablet-bg.webp"
             media="(min-width: 768px) and (max-width: 1023px)"
             type="image/webp"
           />
-          <!-- モバイル用 WebP -->
           <source
             srcset="../images/global/mobile-bg.webp"
             media="(max-width: 767px)"
@@ -184,17 +154,12 @@
           />
         </picture>
       </div>
-      <!-- ================================================== -->
-      <!-- /COMPONENT: Background Wrapper -->
-      <!-- ================================================== -->
+      <!-- END SECTION: Background Wrapper -->
 
-      <!-- ================================================== -->
-      <!-- HEADER SECTION -->
-      <!-- ================================================== -->
+      <!-- SECTION: Header -->
       <header class="header">
         <div class="header__inner">
           <div class="header__left">
-            <!-- ロゴ（メインヘッダー） -->
             <h1 class="header__logo">
               <a href="/" class="header__logo-link">
                 <img
@@ -205,7 +170,6 @@
               </a>
             </h1>
 
-            <!-- 会社名（サブテキスト） -->
             <div class="header__company-name">
               <span class="header__company-name-text"
                 ><a href="/">HONDA MOTOR SALES<br />GROUP</a></span
@@ -213,13 +177,11 @@
             </div>
           </div>
 
-          <!-- ナビゲーションエリア -->
           <nav
             class="header__right"
             role="navigation"
             aria-label="メインナビゲーション"
           >
-            <!-- Instagramリンク -->
             <a
               href="#https://www.instagram.com/hondamotersales/"
               class="header__social-link"
@@ -249,7 +211,6 @@
               </svg>
             </a>
 
-            <!-- RECRUITボタン（デスクトップ・タブレットのみ表示） -->
             <a
               href="../pages/recruit.html"
               class="header__recruit-btn"
@@ -285,7 +246,6 @@
               </div>
             </a>
 
-            <!-- ハンバーガーメニュー -->
             <button
               class="header__menu-trigger"
               type="button"
@@ -350,20 +310,15 @@
           </nav>
         </div>
       </header>
-      <!-- ================================================== -->
-      <!-- /HEADER SECTION -->
-      <!-- ================================================== -->
+      <!-- END SECTION: Header -->
 
-      <!-- ================================================== -->
-      <!-- GLOBAL NAVIGATION SECTION -->
-      <!-- ================================================== -->
+      <!-- SECTION: Global Navigation -->
       <nav
         class="global-nav"
         id="global-nav"
         aria-label="グローバルナビゲーション"
       >
         <div class="global-nav__inner">
-          <!-- クローズボタン -->
           <button
             class="global-nav__close"
             type="button"
@@ -424,9 +379,7 @@
             <span class="global-nav__close-text"></span>
           </button>
 
-          <!-- ナビゲーションコンテンツ -->
           <div class="global-nav__content">
-            <!-- メインナビゲーション -->
             <section
               class="global-nav__main-nav"
               aria-labelledby="main-nav-heading"
@@ -634,7 +587,6 @@
               </ul>
             </section>
 
-            <!-- グループ会社セクション -->
             <section
               class="global-nav__company"
               aria-labelledby="company-nav-heading"
@@ -820,22 +772,16 @@
           </div>
         </div>
       </nav>
-      <!-- ================================================== -->
-      <!-- /GLOBAL NAVIGATION SECTION -->
-      <!-- ================================================== -->
+      <!-- END SECTION: Global Navigation -->
 
-      <!-- ================================================== -->
-      <!-- HERO SECTION -->
-      <!-- ================================================== -->
+      <!-- SECTION: Hero -->
       <section class="hero-section about-section">
         <div class="about-section__inner">
-          <!-- セクションヘッダー -->
           <header class="about-section__header">
             <h1 class="about-section__title">ABOUT</h1>
             <p class="about-section__subtitle">グループについて</p>
           </header>
 
-          <!-- 会社紹介文 -->
           <div class="about-section__intro">
             <p class="about-section__intro-text fade-in-up">
               ホンダ自動車販売株式会社グループは
@@ -843,7 +789,6 @@
             <span class="about-section__intro-line"></span>
           </div>
 
-          <!-- 画像ギャラリー -->
           <figure
             class="about-section__gallery fade-in-up"
             aria-label="事業内容を表す画像"
@@ -944,7 +889,6 @@
             />
           </figure>
 
-          <!-- メインコンテンツ -->
           <div class="about-section__content">
             <hgroup class="about-section__catchphrase fade-in-up">
               <h2 class="about-section__catchphrase-text">
@@ -961,7 +905,6 @@
             </p>
           </div>
 
-          <!-- グループ会社セクション -->
           <section
             class="group-companies"
             aria-labelledby="group-companies-title"
@@ -1181,13 +1124,9 @@
         ></iframe>
       </div>
 
-      <!-- ================================================== -->
-      <!-- COMPANY INFORMATION SECTION -->
-      <!-- 会社情報セクション -->
-      <!-- ================================================== -->
+      <!-- SECTION: Company Information -->
       <section class="company-info" aria-labelledby="company-info-title">
         <div class="company-info__inner">
-          <!-- 役員情報 -->
           <article class="company-info__section">
             <h3 class="company-info__section-title">役員</h3>
             <dl class="company-info__executives fade-in-up">
@@ -1218,15 +1157,11 @@
             </dl>
           </article>
 
-          <!-- 従業員数 -->
           <article class="company-info__section">
-            <h3 class="company-info__section-title">従業員数</h3>
             <p class="company-info__employee-count fade-in-up">351名</p>
           </article>
 
-          <!-- 売上高 -->
           <article class="company-info__section">
-            <h3 class="company-info__section-title">売上高</h3>
             <div class="company-info__sales-table fade-in-up">
               <div class="company-info__sales-row">
                 <span class="company-info__sales-year">2017年</span>
@@ -1259,9 +1194,7 @@
             </div>
           </article>
 
-          <!-- 主要取引先 -->
           <article class="company-info__section">
-            <h3 class="company-info__section-title">主要取引先</h3>
             <ul class="company-info__business-partners fade-in-up">
               <li class="company-info__business-partner">
                 本田技研工業株式会社
@@ -1287,9 +1220,7 @@
             </ul>
           </article>
 
-          <!-- 取引銀行 -->
           <article class="company-info__section">
-            <h3 class="company-info__section-title">取引銀行</h3>
             <p class="company-info__banks fade-in-up">
               みずほ銀行、山梨中央銀行、三井住友銀行、商工中金、都留信用組合、山梨信用金庫
             </p>
@@ -1297,10 +1228,7 @@
         </div>
       </section>
 
-      <!-- ================================================== -->
-      <!-- HISTORY SECTION -->
-      <!-- 沿革セクション -->
-      <!-- ================================================== -->
+      <!-- SECTION: History -->
       <section class="history-section" aria-labelledby="history-section-title">
         <div class="history-section__inner">
           <header class="history-section__header">
@@ -1310,7 +1238,6 @@
           </header>
 
           <div class="history-section__content">
-            <!-- 凡例 -->
             <div class="history-section__legend">
               <div class="history-legend">
                 <div class="history-legend__item">
@@ -1401,7 +1328,6 @@
               </div>
             </div>
 
-            <!-- タイムライン -->
             <div class="history-section__timeline">
               <div class="history-timeline">
                 <article class="history-timeline__item fade-in-up">
@@ -1901,9 +1827,7 @@
         </div>
       </section>
 
-      <!-- ================================================== -->
-      <!-- BOTTOM NAVIGATION SECTION -->
-      <!-- ================================================== -->
+      <!-- SECTION: Bottom Navigation -->
       <section class="bottom-nav-section" aria-label="関連ページナビゲーション">
         <div class="bottom-nav-section__inner fade-in-up">
           <a
@@ -1978,8 +1902,7 @@
       </section>
     </main>
 
-    <!-- ================================================== -->
-    <!-- breadcrumbs -->
+    <!-- SECTION: Breadcrumbs -->
     <nav class="breadcrumbs" aria-label="パンくずリスト">
       <div class="breadcrumbs__inner">
         <ol class="breadcrumbs__list">
@@ -1996,8 +1919,7 @@
       </div>
     </nav>
 
-    <!-- ================================================== -->
-    <!-- sp only sns -->
+    <!-- SECTION: Mobile SNS -->
     <div class="sp-only-sns">
       <a
         href="https://www.instagram.com/hondamotersales/"
@@ -2028,8 +1950,7 @@
       </a>
     </div>
 
-    <!-- ================================================== -->
-    <!-- sp only link -->
+    <!-- SECTION: Mobile Links -->
     <div class="sp-only-button-btn">
       <a href="/pages/recruit.html" class="sp-only-button-btn__link">
         <span class="sp-only-button-btn__text">
@@ -2041,8 +1962,7 @@
       </a>
     </div>
 
-    <!-- ================================================== -->
-    <!-- go to top -->
+    <!-- SECTION: Go To Top -->
     <div class="go-to-top">
       <a href="#" class="go-to-top__link">
         <svg
@@ -2071,8 +1991,7 @@
       </a>
     </div>
 
-    <!-- ================================================== -->
-    <!-- FOOTER -->
+    <!-- SECTION: Footer -->
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__content">
@@ -2150,41 +2069,25 @@
       </div>
     </footer>
 
-    <!-- ================================================== -->
-    <!-- EXTERNAL LIBRARIES -->
-    <!-- ================================================== -->
+    <!-- SECTION: External Libraries -->
 
-    <!-- cssua -->
-    <script src="../assets/js/cssua.js"></script>
 
-    <!-- Swiper JS -->
     <script src="../assets/js/swiper-bundle.min.js"></script>
 
-    <!-- GSAP -->
     <script src="../assets/js/gsap.min.js"></script>
 
-    <!-- ================================================== -->
-    <!-- PAGE SCRIPTS -->
-    <!-- ================================================== -->
-    <!-- Loading Screen Controller - ローディング画面制御（シンプル版） -->
+    <!-- SECTION: Page Scripts -->
     <script src="../js/loading-screen-controller.js"></script>
 
-    <!-- Text Animation - GSAPテキストアニメーション機能 -->
     <script src="../js/text-animation.js"></script>
 
-    <!-- Hero Swiper - ヒーローセクション用スライダー機能 -->
     <script src="../js/hero-swiper.js"></script>
 
-    <!-- Index Page - トップページ固有の初期化処理 -->
     <script src="../js/index-page.js"></script>
 
-    <!-- ================================================== -->
-    <!-- COMMON SCRIPTS -->
-    <!-- ================================================== -->
-    <!-- Menu Control Script - 全ページ共通 -->
+    <!-- SECTION: Common Scripts -->
     <script src="../js/menu-control.js"></script>
 
-    <!-- Scroll Fade - スクロールフェード機能 -->
     <script src="../js/scroll-fade.js"></script>
   </body>
 </html>

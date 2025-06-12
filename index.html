@@ -16,7 +16,6 @@
       name="keywords"
       content="ホンダ自動車販売グループ,通信事業,フィットネス,建設,飲食,求人,リクルート,山梨県,埼玉県,千葉県,神奈川県,東京都"
     />
-    <!-- Favicon -->
     <link rel="icon" href="../images/global/favicon.svg" />
     <link rel="apple-touch-icon" href="../images/global/favicon.svg" />
     <link
@@ -34,11 +33,9 @@
     <link rel="manifest" href="../site.webmanifest" />
     <title>ホンダ自動車販売グループ｜HONDA MOTOR SALES GROUP</title>
 
-    <!-- 共通基盤CSS（背景コンポーネント含む）- 全ページ共通 -->
     <link rel="stylesheet" href="css/destyle.css" />
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Swiper CSS -->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
 
     <script src="js/font-loader.js"></script>
@@ -63,7 +60,6 @@
       });
     </script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -71,13 +67,10 @@
       rel="stylesheet"
     />
 
-    <!-- First Visit Detector -->
     <script src="js/first-visit-detector.js"></script>
   </head>
   <body class="is-loading top-page">
-    <!-- ================================================== -->
-    <!-- LOADING SCREEN - 初回訪問時のみ表示 -->
-    <!-- ================================================== -->
+    <!-- SECTION: Loading Screen -->
     <section
       class="loading-screen"
       id="loading-screen"
@@ -130,7 +123,7 @@
     </section>
 
     <main>
-      <!-- COMPONENT: Background Wrapper -->
+      <!-- SECTION: Background Wrapper -->
       <div class="bg-wrapper">
         <picture>
           <source
@@ -156,17 +149,12 @@
           />
         </picture>
       </div>
-      <!-- ================================================== -->
-      <!-- /COMPONENT: Background Wrapper -->
-      <!-- ================================================== -->
+      <!-- END SECTION: Background Wrapper -->
 
-      <!-- ================================================== -->
-      <!-- HEADER SECTION -->
-      <!-- ================================================== -->
+      <!-- SECTION: Header -->
       <header class="header">
         <div class="header__inner">
           <div class="header__left">
-            <!-- ロゴ（メインヘッダー） -->
             <h1 class="header__logo">
               <a href="/" class="header__logo-link">
                 <img
@@ -177,7 +165,6 @@
               </a>
             </h1>
 
-            <!-- 会社名（サブテキスト） -->
             <div class="header__company-name">
               <span class="header__company-name-text"
                 ><a href="/">HONDA MOTOR SALES<br />GROUP</a></span
@@ -185,13 +172,11 @@
             </div>
           </div>
 
-          <!-- ナビゲーションエリア -->
           <nav
             class="header__right"
             role="navigation"
             aria-label="メインナビゲーション"
           >
-            <!-- Instagramリンク -->
             <a
               href="https://www.instagram.com/hondamotersales/"
               class="header__social-link"
@@ -221,7 +206,6 @@
               </svg>
             </a>
 
-            <!-- RECRUITボタン（デスクトップ・タブレットのみ表示） -->
             <a
               href="pages/recruit.html"
               class="header__recruit-btn"
@@ -257,7 +241,6 @@
               </div>
             </a>
 
-            <!-- ハンバーガーメニュー -->
             <button
               class="header__menu-trigger"
               type="button"
@@ -322,20 +305,15 @@
           </nav>
         </div>
       </header>
-      <!-- ================================================== -->
-      <!-- /HEADER SECTION -->
-      <!-- ================================================== -->
+      <!-- END SECTION: Header -->
 
-      <!-- ================================================== -->
-      <!-- GLOBAL NAVIGATION SECTION -->
-      <!-- ================================================== -->
+      <!-- SECTION: Global Navigation -->
       <nav
         class="global-nav"
         id="global-nav"
         aria-label="グローバルナビゲーション"
       >
         <div class="global-nav__inner">
-          <!-- クローズボタン -->
           <button
             class="global-nav__close"
             type="button"
@@ -396,9 +374,7 @@
             <span class="global-nav__close-text"></span>
           </button>
 
-          <!-- ナビゲーションコンテンツ -->
           <div class="global-nav__content">
-            <!-- メインナビゲーション -->
             <section
               class="global-nav__main-nav"
               aria-labelledby="main-nav-heading"
@@ -606,7 +582,6 @@
               </ul>
             </section>
 
-            <!-- グループ会社セクション -->
             <section
               class="global-nav__company"
               aria-labelledby="company-nav-heading"
@@ -792,36 +767,24 @@
           </div>
         </div>
       </nav>
-      <!-- ================================================== -->
-      <!-- /GLOBAL NAVIGATION SECTION -->
-      <!-- ================================================== -->
+      <!-- END SECTION: Global Navigation -->
 
-      <!-- ================================================== -->
-      <!-- COMPONENT: Hero Section -->
-      <!-- Dependencies: Swiper.js, GSAP, Google Fonts -->
-      <!-- Features: Auto-slide carousel, Text animation, Pagination -->
-      <!-- Settings: 5s autoplay, 2.5s fade, 6 slides -->
-      <!-- CMS Note: スライド枚数とテキスト内容を動的化 -->
-      <!-- ================================================== -->
+      <!-- SECTION: Hero Section -->
       <section class="hero-section">
         <div class="swiper hero-swiper">
-          <!-- ========================================== -->
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <picture>
-                <!-- デスクトップ用 WebP -->
                 <source
                   srcset="images/index/hero/slide01-desktop.webp"
                   media="(min-width: 1024px)"
                   type="image/webp"
                 />
-                <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
                 <source
                   srcset="images/index/hero/slide01-tablet.webp"
                   media="(min-width: 768px) and (max-width: 1023px)"
                   type="image/webp"
                 />
-                <!-- モバイル用 WebP -->
                 <source
                   srcset="images/index/hero/slide01-mobile.webp"
                   media="(max-width: 767px)"
@@ -837,19 +800,16 @@
             </div>
             <div class="swiper-slide">
               <picture>
-                <!-- デスクトップ用 WebP -->
                 <source
                   srcset="images/index/hero/slide02-desktop.webp"
                   media="(min-width: 1024px)"
                   type="image/webp"
                 />
-                <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
                 <source
                   srcset="images/index/hero/slide02-tablet.webp"
                   media="(min-width: 768px) and (max-width: 1023px)"
                   type="image/webp"
                 />
-                <!-- モバイル用 WebP -->
                 <source
                   srcset="images/index/hero/slide02-mobile.webp"
                   media="(max-width: 767px)"
@@ -866,19 +826,16 @@
             </div>
             <div class="swiper-slide">
               <picture>
-                <!-- デスクトップ用 WebP -->
                 <source
                   srcset="images/index/hero/slide03-desktop.webp"
                   media="(min-width: 1024px)"
                   type="image/webp"
                 />
-                <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
                 <source
                   srcset="images/index/hero/slide03-tablet.webp"
                   media="(min-width: 768px) and (max-width: 1023px)"
                   type="image/webp"
                 />
-                <!-- モバイル用 WebP -->
                 <source
                   srcset="images/index/hero/slide03-mobile.webp"
                   media="(max-width: 767px)"
@@ -895,19 +852,16 @@
             </div>
             <div class="swiper-slide">
               <picture>
-                <!-- デスクトップ用 WebP -->
                 <source
                   srcset="images/index/hero/slide04-desktop.webp"
                   media="(min-width: 1024px)"
                   type="image/webp"
                 />
-                <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
                 <source
                   srcset="images/index/hero/slide04-tablet.webp"
                   media="(min-width: 768px) and (max-width: 1023px)"
                   type="image/webp"
                 />
-                <!-- モバイル用 WebP -->
                 <source
                   srcset="images/index/hero/slide04-mobile.webp"
                   media="(max-width: 767px)"
@@ -923,19 +877,16 @@
             </div>
             <div class="swiper-slide">
               <picture>
-                <!-- デスクトップ用 WebP -->
                 <source
                   srcset="images/index/hero/slide05-desktop.webp"
                   media="(min-width: 1024px)"
                   type="image/webp"
                 />
-                <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
                 <source
                   srcset="images/index/hero/slide05-tablet.webp"
                   media="(min-width: 768px) and (max-width: 1023px)"
                   type="image/webp"
                 />
-                <!-- モバイル用 WebP -->
                 <source
                   srcset="images/index/hero/slide05-mobile.webp"
                   media="(max-width: 767px)"
@@ -952,19 +903,16 @@
             </div>
             <div class="swiper-slide">
               <picture>
-                <!-- デスクトップ用 WebP -->
                 <source
                   srcset="images/index/hero/slide06-desktop.webp"
                   media="(min-width: 1024px)"
                   type="image/webp"
                 />
-                <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
                 <source
                   srcset="images/index/hero/slide06-tablet.webp"
                   media="(min-width: 768px) and (max-width: 1023px)"
                   type="image/webp"
                 />
-                <!-- モバイル用 WebP -->
                 <source
                   srcset="images/index/hero/slide06-mobile.webp"
                   media="(max-width: 767px)"
@@ -986,17 +934,12 @@
           </h1>
         </div>
       </section>
-      <!-- ================================================== -->
-      <!-- /COMPONENT: Hero Section -->
-      <!-- ================================================== -->
+      <!-- END SECTION: Hero Section -->
 
-      <!-- ================================================== -->
-      <!-- COMPONENT: Mission Section -->
-      <!-- ================================================== -->
+      <!-- SECTION: Mission Section -->
       <section class="mission-section">
         <div class="mission__inner">
           <header class="mission__header">
-            <!-- SectionTitle Component (title="MISSION", subTitle="企業理念", variant="red") -->
             <h2 class="section-title section-title--red">
               <span class="section-title-main">MISSION</span>
               <span class="section-title-sub">企業理念</span>
@@ -1031,7 +974,6 @@
             </figure>
 
             <div class="mission__link-wrapper fade-in-up">
-              <!-- PrimaryButton Component (text="企業理念はこちら", link="#", color="white") -->
               <a
                 href="pages/mission.html"
                 class="primary-button primary-button--white"
@@ -1065,20 +1007,12 @@
           </div>
         </div>
       </section>
-      <!-- ================================================== -->
-      <!-- /COMPONENT: Mission Section -->
-      <!-- ================================================== -->
+      <!-- END SECTION: Mission Section -->
 
-      <!-- ================================================== -->
-      <!-- COMPONENT: Recruit Section -->
-      <!-- Dependencies: レスポンシブ画像、複雑な絶対配置レイアウト -->
-      <!-- Features: 5画像ギャラリー、ブラー効果、重なり配置 -->
-      <!-- CMS Note: 画像配列とテキスト内容を動的化 -->
-      <!-- ================================================== -->
+      <!-- SECTION: Recruit Section -->
       <section class="recruit-section">
         <div class="recruit__inner">
           <header class="recruit__header">
-            <!-- SectionTitle Component (title="RECRUIT", subTitle="採用情報", variant="red") -->
             <h2 class="section-title section-title--red">
               <span class="section-title-main">RECRUIT</span>
               <span class="section-title-sub">採用情報</span>
@@ -1179,7 +1113,6 @@
             </div>
 
             <div class="recruit__link-wrapper fade-in-up">
-              <!-- PrimaryButton Component (text="採用情報はこちら", link="#", color="dark") -->
               <a
                 href="pages/recruit.html"
                 class="primary-button primary-button--dark"
@@ -1213,20 +1146,12 @@
           </div>
         </div>
       </section>
-      <!-- ================================================== -->
-      <!-- /COMPONENT: Recruit Section -->
-      <!-- ================================================== -->
+      <!-- END SECTION: Recruit Section -->
 
-      <!-- ================================================== -->
-      <!-- COMPONENT: News Section -->
-      <!-- Dependencies: レスポンシブ画像、ニュースリスト -->
-      <!-- Features: 3記事表示、日付表示、一覧リンク -->
-      <!-- CMS Note: ニュース記事配列とページネーションを動的化 -->
-      <!-- ================================================== -->
+      <!-- SECTION: News Section -->
       <section class="news-section">
         <div class="news__inner">
           <header class="news__header">
-            <!-- SectionTitle Component (title="NEWS", subTitle="お知らせ", variant="white") -->
             <h2 class="section-title section-title--white">
               <span class="section-title-main">NEWS</span>
               <span class="section-title-sub">お知らせ</span>
@@ -1238,7 +1163,6 @@
               <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="pages/news-details.html" class="news__image-link">
-                    <!-- 画像: ニュース記事サムネイル01 -->
                     <img
                       src="images/index/news/demo-image.webp"
                       alt="ニュース記事のサムネイル画像"
@@ -1264,7 +1188,6 @@
               <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="pages/news-details.html" class="news__image-link">
-                    <!-- 画像: ニュース記事サムネイル02 -->
                     <picture>
                       <source
                         srcset="images/index/news/demo-image.webp"
@@ -1307,7 +1230,6 @@
               <article class="news__item fade-in-up">
                 <figure class="news__image">
                   <a href="pages/news-details.html" class="news__image-link">
-                    <!-- 画像: ニュース記事サムネイル03 -->
                     <picture>
                       <source
                         srcset="images/index/news/demo-image.webp"
@@ -1349,7 +1271,6 @@
             </div>
 
             <div class="news__link-wrapper fade-in-up">
-              <!-- PrimaryButton Component (text="お知らせ一覧へ", link="#", color="white") -->
               <a
                 href="pages/news.html"
                 class="primary-button primary-button--white"
@@ -1383,20 +1304,12 @@
           </div>
         </div>
       </section>
-      <!-- ================================================== -->
-      <!-- /COMPONENT: News Section -->
-      <!-- ================================================== -->
+      <!-- END SECTION: News Section -->
 
-      <!-- ================================================== -->
-      <!-- COMPONENT: Service Section -->
-      <!-- Dependencies: レスポンシブ画像、グリッドレイアウト -->
-      <!-- Features: 4社カード表示、各社ブランドカラー、詳細リンク -->
-      <!-- CMS Note: サービス会社配列とリンク先を動的化 -->
-      <!-- ================================================== -->
+      <!-- SECTION: Service Section -->
       <section class="service-section">
         <div class="service__inner">
           <header class="service__header">
-            <!-- SectionTitle Component (title="SERVICE", subTitle="事業領域", variant="red") -->
             <h2 class="section-title section-title--red">
               <span class="section-title-main">SERVICE</span>
               <span class="section-title-sub">事業領域</span>
@@ -1412,7 +1325,6 @@
                 <article class="service__card-content">
                   <div class="service__card-inner">
                     <div class="service__logo">
-                      <!-- 画像: HONDAロゴ -->
                       <img
                         src="images/index/service/logo01.png"
                         alt="ホンダ自動車販売株式会社ロゴ"
@@ -1471,7 +1383,6 @@
                 <article class="service__card-content">
                   <div class="service__card-inner">
                     <div class="service__logo">
-                      <!-- 画像: Kyneロゴ -->
                       <img
                         src="images/index/service/logo02.png"
                         alt="株式会社ケインズロゴ"
@@ -1526,7 +1437,6 @@
                 <article class="service__card-content">
                   <div class="service__card-inner">
                     <div class="service__logo">
-                      <!-- 画像: FJロゴ（紫） -->
                       <img
                         src="images/index/service/logo03.png"
                         alt="有限会社富士ロゴ"
@@ -1583,7 +1493,6 @@
                 <article class="service__card-content">
                   <div class="service__card-inner">
                     <div class="service__logo">
-                      <!-- 画像: FJ建設ロゴ -->
                       <img
                         src="images/index/service/logo04.png"
                         alt="FJ.建設株式会社ロゴ"
@@ -1633,7 +1542,6 @@
             </div>
 
             <div class="service__bottom-link-wrapper fade-in-up">
-              <!-- PrimaryButton Component (text="事業内容はこちら", link="#", color="dark") -->
               <a
                 href="pages/service.html"
                 class="primary-button primary-button--dark"
@@ -1667,13 +1575,10 @@
           </div>
         </div>
       </section>
-      <!-- ================================================== -->
-      <!-- /COMPONENT: Service Section -->
-      <!-- ================================================== -->
+      <!-- END SECTION: Service Section -->
     </main>
 
-    <!-- ================================================== -->
-    <!-- sp only sns -->
+    <!-- SECTION: Mobile SNS -->
     <div class="sp-only-sns">
       <a
         href="https://www.instagram.com/hondamotersales/"
@@ -1704,8 +1609,7 @@
       </a>
     </div>
 
-    <!-- ================================================== -->
-    <!-- sp only link -->
+    <!-- SECTION: Mobile Links -->
     <div class="sp-only-button-btn">
       <a href="pages/recruit.html" class="sp-only-button-btn__link">
         <span class="sp-only-button-btn__text">
@@ -1717,8 +1621,7 @@
       </a>
     </div>
 
-    <!-- ================================================== -->
-    <!-- go to top -->
+    <!-- SECTION: Go To Top -->
     <div class="go-to-top">
       <a href="#" class="go-to-top__link">
         <svg
@@ -1747,8 +1650,7 @@
       </a>
     </div>
 
-    <!-- ================================================== -->
-    <!-- FOOTER -->
+    <!-- SECTION: Footer -->
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__content">
@@ -1826,40 +1728,24 @@
       </div>
     </footer>
 
-    <!-- ================================================== -->
-    <!-- EXTERNAL LIBRARIES -->
-    <!-- ================================================== -->
-    <!-- cssua -->
-    <script src="assets/js/cssua.js"></script>
+    <!-- SECTION: External Libraries -->
 
-    <!-- Swiper JS -->
     <script src="assets/js/swiper-bundle.min.js"></script>
 
-    <!-- GSAP -->
     <script src="assets/js/gsap.min.js"></script>
 
-    <!-- ================================================== -->
-    <!-- PAGE SCRIPTS -->
-    <!-- ================================================== -->
-    <!-- Loading Screen Controller - ローディング画面制御（シンプル版） -->
+    <!-- SECTION: Page Scripts -->
     <script src="js/loading-screen-controller.js"></script>
 
-    <!-- Text Animation - GSAPテキストアニメーション機能 -->
     <script src="js/text-animation.js"></script>
 
-    <!-- Hero Swiper - ヒーローセクション用スライダー機能 -->
     <script src="js/hero-swiper.js"></script>
 
-    <!-- Index Page - トップページ固有の初期化処理 -->
     <script src="js/index-page.js"></script>
 
-    <!-- ================================================== -->
-    <!-- COMMON SCRIPTS -->
-    <!-- ================================================== -->
-    <!-- Menu Control Script - 全ページ共通 -->
+    <!-- SECTION: Common Scripts -->
     <script src="js/menu-control.js"></script>
 
-    <!-- Scroll Fade - スクロールフェード機能 -->
     <script src="js/scroll-fade.js"></script>
   </body>
 </html>

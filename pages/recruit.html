@@ -16,7 +16,6 @@
       name="keywords"
       content="ホンダ自動車販売グループ,通信事業,フィットネス,建設,飲食,求人,リクルート,山梨県,埼玉県,千葉県,神奈川県,東京都"
     />
-    <!-- Favicon -->
     <link rel="icon" href="../images/global/favicon.svg" />
     <link rel="apple-touch-icon" href="../images/global/favicon.svg" />
     <link
@@ -34,25 +33,12 @@
     <link rel="manifest" href="../site.webmanifest" />
     <title>お知らせ｜ホンダ自動車販売グループ｜HONDA MOTOR SALES GROUP</title>
 
-    <!-- ================================================== -->
-    <!-- EXTERNAL DEPENDENCIES -->
-    <!-- CSS Framework: destyle (via SCSS compilation) -->
-    <!-- Slider: Swiper.js -->
-    <!-- Animation: GSAP -->
-    <!-- Fonts: Google Fonts (Inter, Noto Sans JP, Noto Serif JP) -->
-    <!-- ================================================== -->
 
-    <!-- 共通基盤CSS（背景コンポーネント含む）- 全ページ共通 -->
     <link rel="stylesheet" href="../css/destyle.css" />
     <link rel="stylesheet" href="../css/style.css" />
 
-    <!-- Swiper CSS -->
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" />
 
-    <!-- ================================================== -->
-    <!-- CORE SCRIPTS: Font Loading (Critical - Inline) -->
-    <!-- Note: フォント読み込み部分は性能のためインライン維持 -->
-    <!-- ================================================== -->
     <script src="../js/font-loader.js"></script>
     <script>
       // フォント読み込み処理（共通化版）
@@ -75,7 +61,6 @@
       });
     </script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -83,13 +68,10 @@
       rel="stylesheet"
     />
 
-    <!-- First Visit Detector -->
     <script src="../js/first-visit-detector.js"></script>
   </head>
   <body class="is-loading recruit-page">
-    <!-- ================================================== -->
-    <!-- LOADING SCREEN - 初回訪問時のみ表示 -->
-    <!-- ================================================== -->
+    <!-- SECTION: Loading Screen -->
     <section
       class="loading-screen"
       id="loading-screen"
@@ -140,35 +122,23 @@
         </div>
       </div>
     </section>
-    <!-- ================================================== -->
-    <!-- /LOADING SCREEN -->
-    <!-- ================================================== -->
+    <!-- END SECTION: Loading Screen -->
 
-    <!-- ================================================== -->
     <!-- MAIN CONTENT -->
-    <!-- ================================================== -->
     <main>
-      <!-- ================================================== -->
-      <!-- COMPONENT: Background Wrapper -->
-      <!-- Purpose: Main content background image -->
-      <!-- Dependencies: Responsive images (WebP/PNG fallback) -->
-      <!-- CMS Note: 背景画像のパスを動的化 -->
-      <!-- ================================================== -->
+      <!-- SECTION: Background Wrapper -->
       <div class="bg-wrapper">
         <picture>
-          <!-- デスクトップ用 WebP -->
           <source
             srcset="../images/global/desktop-bg.webp"
             media="(min-width: 1024px)"
             type="image/webp"
           />
-          <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
           <source
             srcset="../images/global/tablet-bg.webp"
             media="(min-width: 768px) and (max-width: 1023px)"
             type="image/webp"
           />
-          <!-- モバイル用 WebP -->
           <source
             srcset="../images/global/mobile-bg.webp"
             media="(max-width: 767px)"
@@ -182,17 +152,12 @@
           />
         </picture>
       </div>
-      <!-- ================================================== -->
-      <!-- /COMPONENT: Background Wrapper -->
-      <!-- ================================================== -->
+      <!-- END SECTION: Background Wrapper -->
 
-      <!-- ================================================== -->
-      <!-- HEADER SECTION -->
-      <!-- ================================================== -->
+      <!-- SECTION: Header -->
       <header class="header">
         <div class="header__inner">
           <div class="header__left">
-            <!-- ロゴ（メインヘッダー） -->
             <h1 class="header__logo">
               <a href="/" class="header__logo-link">
                 <img
@@ -203,7 +168,6 @@
               </a>
             </h1>
 
-            <!-- 会社名（サブテキスト） -->
             <div class="header__company-name">
               <span class="header__company-name-text"
                 ><a href="/">HONDA MOTOR SALES<br />GROUP</a></span
@@ -211,13 +175,11 @@
             </div>
           </div>
 
-          <!-- ナビゲーションエリア -->
           <nav
             class="header__right"
             role="navigation"
             aria-label="メインナビゲーション"
           >
-            <!-- Instagramリンク -->
             <a
               href="#https://www.instagram.com/hondamotersales/"
               class="header__social-link"
@@ -247,7 +209,6 @@
               </svg>
             </a>
 
-            <!-- RECRUITボタン（デスクトップ・タブレットのみ表示） -->
             <a
               href="../pages/recruit.html"
               class="header__recruit-btn"
@@ -283,7 +244,6 @@
               </div>
             </a>
 
-            <!-- ハンバーガーメニュー -->
             <button
               class="header__menu-trigger"
               type="button"
@@ -348,20 +308,15 @@
           </nav>
         </div>
       </header>
-      <!-- ================================================== -->
-      <!-- /HEADER SECTION -->
-      <!-- ================================================== -->
+      <!-- END SECTION: Header -->
 
-      <!-- ================================================== -->
-      <!-- GLOBAL NAVIGATION SECTION -->
-      <!-- ================================================== -->
+      <!-- SECTION: Global Navigation -->
       <nav
         class="global-nav"
         id="global-nav"
         aria-label="グローバルナビゲーション"
       >
         <div class="global-nav__inner">
-          <!-- クローズボタン -->
           <button
             class="global-nav__close"
             type="button"
@@ -422,9 +377,7 @@
             <span class="global-nav__close-text"></span>
           </button>
 
-          <!-- ナビゲーションコンテンツ -->
           <div class="global-nav__content">
-            <!-- メインナビゲーション -->
             <section
               class="global-nav__main-nav"
               aria-labelledby="main-nav-heading"
@@ -632,7 +585,6 @@
               </ul>
             </section>
 
-            <!-- グループ会社セクション -->
             <section
               class="global-nav__company"
               aria-labelledby="company-nav-heading"
@@ -646,10 +598,8 @@
                     href="https://biz-honda-ms.wadahide.com/"
                     target="_blank"
                     class="global-nav__company-link"
-                    aria-label="ホンダ自動車販売株式会社のページへ"
                   >
                     <span class="global-nav__company-link-text"
-                      >ホンダ自動車販売株式会社</span
                     >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -689,10 +639,8 @@
                     href="https://www.kynes.jp/"
                     target="_blank"
                     class="global-nav__company-link"
-                    aria-label="株式会社ケインズのページへ"
                   >
                     <span class="global-nav__company-link-text"
-                      >株式会社ケインズ</span
                     >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -732,10 +680,8 @@
                     href="https://yugenfuji.jp/"
                     target="_blank"
                     class="global-nav__company-link"
-                    aria-label="有限会社富士のページへ"
                   >
                     <span class="global-nav__company-link-text"
-                      >有限会社富士</span
                     >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -775,10 +721,8 @@
                     href="https://fjkensetsu.jp/"
                     target="_blank"
                     class="global-nav__company-link"
-                    aria-label="FJ.建設株式会社のページへ"
                   >
                     <span class="global-nav__company-link-text"
-                      >FJ.建設株式会社</span
                     >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -818,13 +762,10 @@
           </div>
         </div>
       </nav>
-      <!-- ================================================== -->
-      <!-- /GLOBAL NAVIGATION SECTION -->
-      <!-- ================================================== -->
+      <!-- END SECTION: Global Navigation -->
       <section class="hero-section recruit-section">
         <div class="recruit__inner">
           <header class="recruit__header">
-            <!-- SectionTitle Component (title="RECRUIT", subTitle="採用情報", variant="red") -->
             <h1 class="section-title section-title--red">
               <span class="section-title-main">RECRUIT</span>
               <span class="section-title-sub">採用情報</span>
@@ -931,11 +872,8 @@
           </div>
         </div>
       </section>
-      <!-- ここから次のセクション -->
 
-      <!-- ================================================== -->
-      <!-- RECRUITMENT INFORMATION SECTION -->
-      <!-- ================================================== -->
+      <!-- SECTION: Recruitment Information -->
       <section class="recruitment-info" aria-label="各グループ会社の採用情報">
         <div class="recruitment-info__inner">
           <!-- Company Tabs -->
@@ -949,9 +887,7 @@
                 <a
                   href="#honda-company"
                   class="recruitment-info__tab-button recruitment-info__tab-button--active"
-                  aria-label="ホンダ自動車販売株式会社のセクションへ移動"
                 >
-                  ホンダ自動車販売株式会社
                   <svg
                     viewBox="0 0 35 32"
                     fill="none"
@@ -980,9 +916,7 @@
                 <a
                   href="#kains-company"
                   class="recruitment-info__tab-button"
-                  aria-label="株式会社ケインズのセクションへ移動"
                 >
-                  株式会社ケインズ
                   <svg
                     viewBox="0 0 35 32"
                     fill="none"
@@ -1011,9 +945,7 @@
                 <a
                   href="#fuji-company"
                   class="recruitment-info__tab-button"
-                  aria-label="有限会社富士のセクションへ移動"
                 >
-                  有限会社富士
                   <svg
                     viewBox="0 0 35 32"
                     fill="none"
@@ -1041,11 +973,9 @@
             </ul>
           </div>
           <div class="recruitment-info__companies">
-            <!-- ホンダ自動車販売株式会社 -->
             <section class="recruitment-company" id="honda-company">
               <header class="recruitment-company__header">
                 <h2 class="recruitment-company__title">
-                  ホンダ自動車販売株式会社
                 </h2>
               </header>
               <div class="recruitment-company__jobs">
@@ -1232,10 +1162,8 @@
               </div>
             </section>
 
-            <!-- 株式会社ケインズ -->
             <section class="recruitment-company" id="kains-company">
               <header class="recruitment-company__header">
-                <h2 class="recruitment-company__title">株式会社ケインズ</h2>
               </header>
               <div class="recruitment-company__jobs">
                 <article class="recruitment-job fade-in-up">
@@ -1525,10 +1453,8 @@
               </div>
             </section>
 
-            <!-- 有限会社富士 -->
             <section class="recruitment-company" id="fuji-company">
               <header class="recruitment-company__header">
-                <h2 class="recruitment-company__title">有限会社富士</h2>
               </header>
               <div class="recruitment-company__jobs">
                 <article class="recruitment-job fade-in-up">
@@ -1583,20 +1509,15 @@
         </div>
       </section>
 
-      <!-- ================================================== -->
-      <!-- Q&A SECTION -->
-      <!-- ================================================== -->
+<!-- SECTION: Q&A -->
       <section id="faq" class="qa-section" aria-label="よくあるご質問">
         <div class="qa-section__inner">
-          <!-- セクションヘッダー -->
           <header class="qa-section__header">
             <h2 class="qa-section__title">Q&A</h2>
             <p class="qa-section__subtitle">よくあるご質問</p>
           </header>
 
-          <!-- Q&Aリスト -->
           <div class="qa-section__list">
-            <!-- Q&A項目1 -->
             <article class="qa-item fade-in-up">
               <div class="qa-item__question">
                 <h3 class="qa-item__question-label" aria-label="質問">Q</h3>
@@ -1612,7 +1533,6 @@
               </div>
             </article>
 
-            <!-- Q&A項目2 -->
             <article class="qa-item fade-in-up">
               <div class="qa-item__question">
                 <h3 class="qa-item__question-label" aria-label="質問">Q</h3>
@@ -1628,7 +1548,6 @@
               </div>
             </article>
 
-            <!-- Q&A項目3 -->
             <article class="qa-item fade-in-up">
               <div class="qa-item__question">
                 <h3 class="qa-item__question-label" aria-label="質問">Q</h3>
@@ -1642,7 +1561,6 @@
               </div>
             </article>
 
-            <!-- Q&A項目4 -->
             <article class="qa-item fade-in-up">
               <div class="qa-item__question">
                 <h3 class="qa-item__question-label" aria-label="質問">Q</h3>
@@ -1658,7 +1576,6 @@
               </div>
             </article>
 
-            <!-- Q&A項目5 -->
             <article class="qa-item fade-in-up">
               <div class="qa-item__question">
                 <h3 class="qa-item__question-label" aria-label="質問">Q</h3>
@@ -1672,7 +1589,6 @@
               </div>
             </article>
 
-            <!-- Q&A項目6 -->
             <article class="qa-item fade-in-up">
               <div class="qa-item__question">
                 <h3 class="qa-item__question-label" aria-label="質問">Q</h3>
@@ -1691,9 +1607,7 @@
         </div>
       </section>
 
-      <!-- ================================================== -->
-      <!-- BOTTOM NAVIGATION SECTION -->
-      <!-- ================================================== -->
+      <!-- SECTION: Bottom Navigation -->
       <section class="bottom-nav-section" aria-label="関連ページナビゲーション">
         <div class="bottom-nav-section__inner fade-in-up">
           <a
@@ -1768,8 +1682,7 @@
       </section>
     </main>
 
-    <!-- ================================================== -->
-    <!-- breadcrumbs -->
+    <!-- SECTION: Breadcrumbs -->
     <nav class="breadcrumbs" aria-label="パンくずリスト">
       <div class="breadcrumbs__inner">
         <ol class="breadcrumbs__list">
@@ -1786,8 +1699,7 @@
       </div>
     </nav>
 
-    <!-- ================================================== -->
-    <!-- sp only sns -->
+    <!-- SECTION: Mobile SNS -->
     <div class="sp-only-sns">
       <a
         href="https://www.instagram.com/hondamotersales/"
@@ -1818,8 +1730,7 @@
       </a>
     </div>
 
-    <!-- ================================================== -->
-    <!-- sp only link -->
+    <!-- SECTION: Mobile Links -->
     <div class="recruit-page-sp-only-button-btn">
       <a href="#faq" class="recruit-page-sp-only-button-btn__link">
         <span class="recruit-page-sp-only-button-btn__text">
@@ -1854,8 +1765,7 @@
       </a>
     </div>
 
-    <!-- ================================================== -->
-    <!-- go to top -->
+    <!-- SECTION: Go To Top -->
     <div class="go-to-top">
       <a href="#" class="go-to-top__link">
         <svg
@@ -1884,8 +1794,7 @@
       </a>
     </div>
 
-    <!-- ================================================== -->
-    <!-- FOOTER -->
+    <!-- SECTION: Footer -->
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__content">
@@ -1963,40 +1872,24 @@
       </div>
     </footer>
 
-    <!-- ================================================== -->
-    <!-- EXTERNAL LIBRARIES -->
-    <!-- ================================================== -->
-    <!-- cssua -->
-    <script src="../assets/js/cssua.js"></script>
+    <!-- SECTION: External Libraries -->
 
-    <!-- Swiper JS -->
     <script src="../assets/js/swiper-bundle.min.js"></script>
 
-    <!-- GSAP -->
     <script src="../assets/js/gsap.min.js"></script>
 
-    <!-- ================================================== -->
-    <!-- PAGE SCRIPTS -->
-    <!-- ================================================== -->
-    <!-- Loading Screen Controller - ローディング画面制御（シンプル版） -->
+    <!-- SECTION: Page Scripts -->
     <script src="../js/loading-screen-controller.js"></script>
 
-    <!-- Text Animation - GSAPテキストアニメーション機能 -->
     <script src="../js/text-animation.js"></script>
 
-    <!-- Hero Swiper - ヒーローセクション用スライダー機能 -->
     <script src="../js/hero-swiper.js"></script>
 
-    <!-- Index Page - トップページ固有の初期化処理 -->
     <script src="../js/index-page.js"></script>
 
-    <!-- ================================================== -->
-    <!-- COMMON SCRIPTS -->
-    <!-- ================================================== -->
-    <!-- Menu Control Script - 全ページ共通 -->
+    <!-- SECTION: Common Scripts -->
     <script src="../js/menu-control.js"></script>
 
-    <!-- Scroll Fade - スクロールフェード機能 -->
     <script src="../js/scroll-fade.js"></script>
   </body>
 </html>
