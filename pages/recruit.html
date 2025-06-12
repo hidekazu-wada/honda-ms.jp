@@ -174,21 +174,8 @@
             media="(max-width: 767px)"
             type="image/webp"
           />
-          <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-          <source
-            srcset="../images/global/desktop-bg.png"
-            media="(min-width: 1024px)"
-            type="image/png"
-          />
-          <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-          <source
-            srcset="../images/global/tablet-bg.png"
-            media="(min-width: 768px) and (max-width: 1023px)"
-            type="image/png"
-          />
-          <!-- フォールバック画像 -->
           <img
-            src="../images/global/mobile-bg.png"
+            src="../images/global/mobile-bg.webp"
             alt="ヒーローイメージ"
             loading="eager"
             decoding="sync"
@@ -862,163 +849,83 @@
 
             <div class="recruit__gallery">
               <figure class="recruit__gallery-item section-visual01">
-                <picture>
-                  <!-- デスクトップ用 WebP -->
-                  <source
-                    srcset="../images/index/recruit/section-visual01.webp"
-                    media="(min-width: 1024px)"
-                    type="image/webp"
-                  />
-                  <!-- モバイル用 WebP -->
-                  <source
-                    srcset="../images/index/recruit/section-visual01.webp"
-                    media="(max-width: 1023px)"
-                    type="image/webp"
-                  />
-                  <!-- デスクトップ用 PNG -->
-                  <source
-                    srcset="
-                      ../images/index/recruit/fallback/section-visual01.png
-                    "
-                    media="(min-width: 1024px)"
-                    type="image/png"
-                  />
-                  <img
-                    src="../images/index/recruit/fallback/section-visual01.png"
-                    alt="エンジニアが車両整備を行っている様子"
-                    class="recruit__gallery-image"
-                    loading="eager"
-                    decoding="sync"
-                  />
-                </picture>
+                <img
+                  class="recruit__gallery-image"
+                  src="/images/index/recruit/section-visual01-sp.webp"
+                  srcset="
+                    /images/index/recruit/section-visual01-sp.webp     320w,
+                    /images/index/recruit/section-visual01-tab-up.webp 760w
+                  "
+                  sizes="
+                    (max-width: 767px) 50vw, 
+                    30vw
+                  "
+                  alt="エンジニアが車両整備を行っている様子"
+                />
               </figure>
 
               <figure class="recruit__gallery-item section-visual02">
-                <picture>
-                  <!-- デスクトップ用 WebP -->
-                  <source
-                    srcset="../images/index/recruit/section-visual02.webp"
-                    media="(min-width: 1024px)"
-                    type="image/webp"
-                  />
-                  <!-- モバイル用 WebP -->
-                  <source
-                    srcset="../images/index/recruit/section-visual02.webp"
-                    media="(max-width: 1023px)"
-                    type="image/webp"
-                  />
-                  <!-- デスクトップ用 PNG -->
-                  <source
-                    srcset="
-                      ../images/index/recruit/fallback/section-visual02.png
-                    "
-                    media="(min-width: 1024px)"
-                    type="image/png"
-                  />
-                  <img
-                    src="../images/index/recruit/fallback/section-visual02.png"
-                    alt="スーツ姿の男性が笑顔で電話対応している様子"
-                    class="recruit__gallery-image"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+                <img
+                  class="recruit__gallery-image"
+                  src="/images/index/recruit/section-visual02-sp.webp"
+                  srcset="
+                    /images/index/recruit/section-visual02-sp.webp     209w,
+                    /images/index/recruit/section-visual02-tab-up.webp 453w
+                  "
+                  sizes="
+                    (max-width: 767px) 30vw, 
+                    25vw
+                  "
+                  alt="スーツ姿の男性が笑顔で電話対応している様子"
+                />
               </figure>
 
               <figure class="recruit__gallery-item section-visual03">
-                <picture>
-                  <!-- デスクトップ用 WebP -->
-                  <source
-                    srcset="../images/index/recruit/section-visual03.webp"
-                    media="(min-width: 1024px)"
-                    type="image/webp"
-                  />
-                  <!-- モバイル用 WebP -->
-                  <source
-                    srcset="../images/index/recruit/section-visual03.webp"
-                    media="(max-width: 1023px)"
-                    type="image/webp"
-                  />
-                  <!-- デスクトップ用 PNG -->
-                  <source
-                    srcset="
-                      ../images/index/recruit/fallback/section-visual03.png
-                    "
-                    media="(min-width: 1024px)"
-                    type="image/png"
-                  />
-                  <img
-                    src="../images/index/recruit/fallback/section-visual03.png"
-                    alt="HONDAロゴ前で笑顔の受付女性"
-                    class="recruit__gallery-image"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+                <img
+                  class="recruit__gallery-image"
+                  src="/images/index/recruit/section-visual03-sp.webp"
+                  srcset="
+                    /images/index/recruit/section-visual03-sp.webp     559w,
+                    /images/index/recruit/section-visual03-tab-up.webp 906w
+                  "
+                  sizes="
+                    (max-width: 767px) 50vw, 
+                    90vw
+                  "
+                  alt="HONDAロゴ前で笑顔の受付女性"
+                />
               </figure>
 
               <figure class="recruit__gallery-item section-visual04">
-                <picture>
-                  <!-- デスクトップ用 WebP -->
-                  <source
-                    srcset="../images/index/recruit/section-visual04.webp"
-                    media="(min-width: 1024px)"
-                    type="image/webp"
-                  />
-                  <!-- モバイル用 WebP -->
-                  <source
-                    srcset="../images/index/recruit/section-visual04.webp"
-                    media="(max-width: 1023px)"
-                    type="image/webp"
-                  />
-                  <!-- デスクトップ用 PNG -->
-                  <source
-                    srcset="
-                      ../images/index/recruit/fallback/section-visual04.png
-                    "
-                    media="(min-width: 1024px)"
-                    type="image/png"
-                  />
-                  <img
-                    src="../images/index/recruit/fallback/section-visual04.png"
-                    alt="スーツ姿の男性が笑顔で電話対応している様子(ブラー)"
-                    class="recruit__gallery-image"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+                <img
+                  class="recruit__gallery-image"
+                  src="/images/index/recruit/section-visual04-sp.webp"
+                  srcset="
+                    /images/index/recruit/section-visual04-sp.webp     244w,
+                    /images/index/recruit/section-visual04-tab-up.webp 463w
+                  "
+                  sizes="
+                    (max-width: 767px) 20vw, 
+                    20vw
+                  "
+                  alt="スーツ姿の男性が笑顔で電話対応している様子(ブラー)"
+                />
               </figure>
 
               <figure class="recruit__gallery-item section-visual05">
-                <picture>
-                  <!-- デスクトップ用 WebP -->
-                  <source
-                    srcset="../images/index/recruit/section-visual05.webp"
-                    media="(min-width: 1024px)"
-                    type="image/webp"
-                  />
-                  <!-- モバイル用 WebP -->
-                  <source
-                    srcset="../images/index/recruit/section-visual05.webp"
-                    media="(max-width: 1023px)"
-                    type="image/webp"
-                  />
-                  <!-- デスクトップ用 PNG -->
-                  <source
-                    srcset="
-                      ../images/index/recruit/fallback/section-visual05.png
-                    "
-                    media="(min-width: 1024px)"
-                    type="image/png"
-                  />
-                  <img
-                    src="../images/index/recruit/fallback/section-visual05.png"
-                    alt="商談の様子（ブラー）"
-                    class="recruit__gallery-image"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+                <img
+                  class="recruit__gallery-image"
+                  src="/images/index/recruit/section-visual05-sp.webp"
+                  srcset="
+                    /images/index/recruit/section-visual05-sp.webp     172w,
+                    /images/index/recruit/section-visual05-tab-up.webp 290w
+                  "
+                  sizes="
+                    (max-width: 767px) 10vw, 
+                    20vw
+                  "
+                  alt="商談の様子（ブラー）"
+                />
               </figure>
             </div>
           </div>
@@ -1788,10 +1695,10 @@
       <!-- BOTTOM NAVIGATION SECTION -->
       <!-- ================================================== -->
       <section class="bottom-nav-section" aria-label="関連ページナビゲーション">
-        <div class="bottom-nav-section__inner">
+        <div class="bottom-nav-section__inner fade-in-up">
           <a
             href="../pages/mission.html"
-            class="bottom-nav-link fade-in-up"
+            class="bottom-nav-link"
             aria-label="企業理念ページへ"
           >
             <div class="bottom-nav-link__content">
@@ -1825,7 +1732,7 @@
           </a>
           <a
             href="../pages/about.html"
-            class="bottom-nav-link fade-in-up"
+            class="bottom-nav-link"
             aria-label="グループについてページへ"
           >
             <div class="bottom-nav-link__content">

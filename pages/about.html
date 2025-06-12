@@ -176,21 +176,8 @@
             media="(max-width: 767px)"
             type="image/webp"
           />
-          <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-          <source
-            srcset="../images/global/desktop-bg.png"
-            media="(min-width: 1024px)"
-            type="image/png"
-          />
-          <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-          <source
-            srcset="../images/global/tablet-bg.png"
-            media="(min-width: 768px) and (max-width: 1023px)"
-            type="image/png"
-          />
-          <!-- フォールバック画像 -->
           <img
-            src="../images/global/mobile-bg.png"
+            src="../images/global/mobile-bg.webp"
             alt="ヒーローイメージ"
             loading="eager"
             decoding="sync"
@@ -861,248 +848,100 @@
             class="about-section__gallery fade-in-up"
             aria-label="事業内容を表す画像"
           >
-            <picture>
-              <!-- デスクトップ用 WebP -->
-              <source
-                srcset="../images/about/hero/image01-desktop.webp"
-                media="(min-width: 1024px)"
-                type="image/webp"
-              />
-              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-              <source
-                srcset="../images/about/hero/image01-desktop.webp"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/webp"
-              />
-              <!-- モバイル用 WebP -->
-              <source
-                srcset="../images/about/hero/image01-mobile.webp"
-                media="(max-width: 767px)"
-                type="image/webp"
-              />
-              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-              <source
-                srcset="../images/about/hero/fallback/image01-desktop.png"
-                media="(min-width: 1024px)"
-                type="image/png"
-              />
-              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-              <source
-                srcset="../images/about/hero/fallback/image01-mobile.png"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/png"
-              />
-              <!-- フォールバック画像 -->
-              <img
-                src="../images/about/hero/fallback/image01-mobile.png"
-                class="about-section__gallery-image"
-                alt="自動車販売事業の様子"
-                loading="eager"
-                decoding="sync"
-              />
-            </picture>
+            <img
+              class="about-section__gallery-image"
+              src="../images/about/hero/image01-sp.webp"
+              srcset="
+                ../images/about/hero/image01-sp.webp     210w,
+                ../images/about/hero/image01-tab-up.webp 420w
+              "
+              sizes="
+                (max-width: 767px) 30vw, 
+                20vw
+              "
+              alt="自動車販売事業の様子"
+              loading="eager"
+              decoding="sync"
+            />
 
-            <picture>
-              <!-- デスクトップ用 WebP -->
-              <source
-                srcset="../images/about/hero/image02-desktop.webp"
-                media="(min-width: 1024px)"
-                type="image/webp"
-              />
-              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-              <source
-                srcset="../images/about/hero/image02-desktop.webp"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/webp"
-              />
-              <!-- モバイル用 WebP -->
-              <source
-                srcset="../images/about/hero/image02-mobile.webp"
-                media="(max-width: 767px)"
-                type="image/webp"
-              />
-              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-              <source
-                srcset="../images/about/hero/fallback/image02-desktop.png"
-                media="(min-width: 1024px)"
-                type="image/png"
-              />
-              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-              <source
-                srcset="../images/about/hero/fallback/image02-mobile.png"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/png"
-              />
-              <!-- フォールバック画像 -->
-              <img
-                src="../images/about/hero/fallback/image02-mobile.png"
-                class="about-section__gallery-image"
-                alt="整備事業の様子"
-                loading="eager"
-                decoding="sync"
-              />
-            </picture>
-            <picture>
-              <!-- デスクトップ用 WebP -->
-              <source
-                srcset="../images/about/hero/image03-desktop.webp"
-                media="(min-width: 1024px)"
-                type="image/webp"
-              />
-              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-              <source
-                srcset="../images/about/hero/image03-desktop.webp"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/webp"
-              />
-              <!-- モバイル用 WebP -->
-              <source
-                srcset="../images/about/hero/image03-mobile.webp"
-                media="(max-width: 767px)"
-                type="image/webp"
-              />
-              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-              <source
-                srcset="../images/about/hero/fallback/image03-desktop.png"
-                media="(min-width: 1024px)"
-                type="image/png"
-              />
-              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-              <source
-                srcset="../images/about/hero/fallback/image03-mobile.png"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/png"
-              />
-              <!-- フォールバック画像 -->
-              <img
-                src="../images/about/hero/fallback/image03-mobile.png"
-                class="about-section__gallery-image"
-                alt="接客サービスの様子"
-                loading="eager"
-                decoding="sync"
-              />
-            </picture>
-            <picture>
-              <!-- デスクトップ用 WebP -->
-              <source
-                srcset="../images/about/hero/image04-desktop.webp"
-                media="(min-width: 1024px)"
-                type="image/webp"
-              />
-              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-              <source
-                srcset="../images/about/hero/image04-desktop.webp"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/webp"
-              />
-              <!-- モバイル用 WebP -->
-              <source
-                srcset="../images/about/hero/image04-mobile.webp"
-                media="(max-width: 767px)"
-                type="image/webp"
-              />
-              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-              <source
-                srcset="../images/about/hero/fallback/image04-desktop.png"
-                media="(min-width: 1024px)"
-                type="image/png"
-              />
-              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-              <source
-                srcset="../images/about/hero/fallback/image04-mobile.png"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/png"
-              />
-              <!-- フォールバック画像 -->
-              <img
-                src="../images/about/hero/fallback/image04-mobile.png"
-                class="about-section__gallery-image"
-                alt="フィットネス事業の様子"
-                loading="eager"
-                decoding="sync"
-              />
-            </picture>
-            <picture>
-              <!-- デスクトップ用 WebP -->
-              <source
-                srcset="../images/about/hero/image05-desktop.webp"
-                media="(min-width: 1024px)"
-                type="image/webp"
-              />
-              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-              <source
-                srcset="../images/about/hero/image05-desktop.webp"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/webp"
-              />
-              <!-- モバイル用 WebP -->
-              <source
-                srcset="../images/about/hero/image05-mobile.webp"
-                media="(max-width: 767px)"
-                type="image/webp"
-              />
-              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-              <source
-                srcset="../images/about/hero/fallback/image05-desktop.png"
-                media="(min-width: 1024px)"
-                type="image/png"
-              />
-              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-              <source
-                srcset="../images/about/hero/fallback/image05-mobile.png"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/png"
-              />
-              <!-- フォールバック画像 -->
-              <img
-                src="../images/about/hero/fallback/image05-mobile.png"
-                class="about-section__gallery-image"
-                alt="飲食事業の様子"
-                loading="eager"
-                decoding="sync"
-              />
-            </picture>
+            <img
+              class="about-section__gallery-image"
+              src="../images/about/hero/image02-sp.webp"
+              srcset="
+                ../images/about/hero/image02-sp.webp     210w,
+                ../images/about/hero/image02-tab-up.webp 420w
+              "
+              sizes="
+                (max-width: 767px) 30vw, 
+                20vw
+              "
+              alt="整備事業の様子"
+              loading="eager"
+              decoding="sync"
+            />
+            <img
+              class="about-section__gallery-image"
+              src="../images/about/hero/image03-sp.webp"
+              srcset="
+                ../images/about/hero/image03-sp.webp     210w,
+                ../images/about/hero/image03-tab-up.webp 420w
+              "
+              sizes="
+                (max-width: 767px) 30vw, 
+                20vw
+              "
+              alt="接客サービスの様子"
+              loading="eager"
+              decoding="sync"
+            />
 
-            <picture>
-              <!-- デスクトップ用 WebP -->
-              <source
-                srcset="../images/about/hero/image06-desktop.webp"
-                media="(min-width: 1024px)"
-                type="image/webp"
-              />
-              <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-              <source
-                srcset="../images/about/hero/image06-desktop.webp"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/webp"
-              />
-              <!-- モバイル用 WebP -->
-              <source
-                srcset="../images/about/hero/image06-mobile.webp"
-                media="(max-width: 767px)"
-                type="image/webp"
-              />
-              <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-              <source
-                srcset="../images/about/hero/fallback/image06-desktop.png"
-                media="(min-width: 1024px)"
-                type="image/png"
-              />
-              <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-              <source
-                srcset="../images/about/hero/fallback/image06-mobile.png"
-                media="(min-width: 768px) and (max-width: 1023px)"
-                type="image/png"
-              />
-              <!-- フォールバック画像 -->
-              <img
-                src="../images/about/hero/fallback/image06-mobile.png"
-                class="about-section__gallery-image"
-                alt="建設事業の様子"
-                loading="eager"
-                decoding="sync"
-              />
-            </picture>
+            <img
+              class="about-section__gallery-image"
+              src="../images/about/hero/image04-sp.webp"
+              srcset="
+                ../images/about/hero/image04-sp.webp     210w,
+                ../images/about/hero/image04-tab-up.webp 420w
+              "
+              sizes="
+                (max-width: 767px) 30vw, 
+                20vw
+              "
+              alt="フィットネス事業の様子"
+              loading="eager"
+              decoding="sync"
+            />
+
+            <img
+              class="about-section__gallery-image"
+              src="../images/about/hero/image05-sp.webp"
+              srcset="
+                ../images/about/hero/image05-sp.webp     210w,
+                ../images/about/hero/image05-tab-up.webp 420w
+              "
+              sizes="
+                (max-width: 767px) 30vw, 
+                20vw
+              "
+              alt="飲食事業の様子"
+              loading="eager"
+              decoding="sync"
+            />
+
+            <img
+              class="about-section__gallery-image"
+              src="../images/about/hero/image06-sp.webp"
+              srcset="
+                ../images/about/hero/image06-sp.webp     210w,
+                ../images/about/hero/image06-tab-up.webp 420w
+              "
+              sizes="
+                (max-width: 767px) 30vw, 
+                20vw
+              "
+              alt="建設事業の様子"
+              loading="eager"
+              decoding="sync"
+            />
           </figure>
 
           <!-- メインコンテンツ -->
@@ -2066,10 +1905,10 @@
       <!-- BOTTOM NAVIGATION SECTION -->
       <!-- ================================================== -->
       <section class="bottom-nav-section" aria-label="関連ページナビゲーション">
-        <div class="bottom-nav-section__inner">
+        <div class="bottom-nav-section__inner fade-in-up">
           <a
             href="../pages/recruit.html"
-            class="bottom-nav-link fade-in-up"
+            class="bottom-nav-link"
             aria-label="企業理念ページへ"
           >
             <div class="bottom-nav-link__content">
@@ -2103,7 +1942,7 @@
           </a>
           <a
             href="../pages/mission.html"
-            class="bottom-nav-link fade-in-up"
+            class="bottom-nav-link"
             aria-label="グループについてページへ"
           >
             <div class="bottom-nav-link__content">

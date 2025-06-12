@@ -159,21 +159,8 @@
             media="(max-width: 767px)"
             type="image/webp"
           />
-          <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-          <source
-            srcset="../images/global/desktop-bg.png"
-            media="(min-width: 1024px)"
-            type="image/png"
-          />
-          <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-          <source
-            srcset="../images/global/tablet-bg.png"
-            media="(min-width: 768px) and (max-width: 1023px)"
-            type="image/png"
-          />
-          <!-- フォールバック画像 -->
           <img
-            src="../images/global/mobile-bg.png"
+            src="../images/global/mobile-bg.webp"
             alt="ヒーローイメージ"
             loading="eager"
             decoding="sync"

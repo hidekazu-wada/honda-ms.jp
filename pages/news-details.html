@@ -176,21 +176,8 @@
             media="(max-width: 767px)"
             type="image/webp"
           />
-          <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-          <source
-            srcset="../images/global/desktop-bg.png"
-            media="(min-width: 1024px)"
-            type="image/png"
-          />
-          <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-          <source
-            srcset="../images/global/tablet-bg.png"
-            media="(min-width: 768px) and (max-width: 1023px)"
-            type="image/png"
-          />
-          <!-- フォールバック画像 -->
           <img
-            src="../images/global/mobile-bg.png"
+            src="../images/global/mobile-bg.webp"
             alt="ヒーローイメージ"
             loading="eager"
             decoding="sync"
@@ -860,46 +847,21 @@
 
                 <figure class="news-detail__figure">
                   <!-- 画像: 制服を着た女性がコーヒーサーバーから飲み物を注いでいる様子 -->
-                  <picture>
-                    <!-- デスクトップ用 WebP -->
-                    <source
-                      srcset="../images/news-details/demo-desktop.webp"
-                      media="(min-width: 1024px)"
-                      type="image/webp"
-                    />
-                    <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
-                    <source
-                      srcset="../images/news-details/demo-mobile.webp"
-                      media="(min-width: 768px) and (max-width: 1023px)"
-                      type="image/webp"
-                    />
-                    <!-- モバイル用 WebP -->
-                    <source
-                      srcset="../images/news-details/demo-mobile.webp"
-                      media="(max-width: 767px)"
-                      type="image/webp"
-                    />
-                    <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-                    <source
-                      srcset="../images/news-details/demo-desktop.png"
-                      media="(min-width: 1024px)"
-                      type="image/png"
-                    />
-                    <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-                    <source
-                      srcset="../images/news-details/demo-mobile.png"
-                      media="(min-width: 768px) and (max-width: 1023px)"
-                      type="image/png"
-                    />
-                    <!-- フォールバック画像 -->
-                    <img
-                      src="../images/news-details/demo-mobile.png"
-                      class="news-detail__image"
-                      alt="制服を着た女性がコーヒーサーバーから飲み物を注いでいる様子"
-                      loading="eager"
-                      decoding="sync"
-                    />
-                  </picture>
+                  <img
+                    class="news-detail__image"
+                    src="/images/news-details/demo-sp.webp"
+                    srcset="
+                      /images/news-details/demo-sp.webp      544w,
+                      /images/news-details/demo-tab-up.webp 1600w
+                    "
+                    sizes="
+                      (max-width: 767px) 80vw, 
+                      80vw
+                    "
+                    alt="制服を着た女性がコーヒーサーバーから飲み物を注いでいる様子"
+                    loading="eager"
+                    decoding="sync"
+                  />
                 </figure>
 
                 <div class="news-detail__text">
