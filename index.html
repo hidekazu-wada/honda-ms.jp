@@ -34,14 +34,6 @@
     <link rel="manifest" href="../site.webmanifest" />
     <title>ホンダ自動車販売グループ｜HONDA MOTOR SALES GROUP</title>
 
-    <!-- ================================================== -->
-    <!-- EXTERNAL DEPENDENCIES -->
-    <!-- CSS Framework: destyle (via SCSS compilation) -->
-    <!-- Slider: Swiper.js -->
-    <!-- Animation: GSAP -->
-    <!-- Fonts: Google Fonts (Inter, Noto Sans JP, Noto Serif JP) -->
-    <!-- ================================================== -->
-
     <!-- 共通基盤CSS（背景コンポーネント含む）- 全ページ共通 -->
     <link rel="stylesheet" href="css/destyle.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -49,10 +41,6 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
 
-    <!-- ================================================== -->
-    <!-- CORE SCRIPTS: Font Loading (Critical - Inline) -->
-    <!-- Note: フォント読み込み部分は性能のためインライン維持 -->
-    <!-- ================================================== -->
     <script src="js/font-loader.js"></script>
     <script>
       // フォント読み込み処理（共通化版）
@@ -140,55 +128,28 @@
         </div>
       </div>
     </section>
-    <!-- ================================================== -->
-    <!-- /LOADING SCREEN -->
-    <!-- ================================================== -->
 
-    <!-- ================================================== -->
-    <!-- MAIN CONTENT -->
-    <!-- ================================================== -->
     <main>
-      <!-- ================================================== -->
       <!-- COMPONENT: Background Wrapper -->
-      <!-- Purpose: Main content background image -->
-      <!-- Dependencies: Responsive images (WebP/PNG fallback) -->
-      <!-- CMS Note: 背景画像のパスを動的化 -->
-      <!-- ================================================== -->
       <div class="bg-wrapper">
         <picture>
-          <!-- デスクトップ用 WebP -->
           <source
             srcset="images/global/desktop-bg.webp"
             media="(min-width: 1024px)"
             type="image/webp"
           />
-          <!-- タブレット用 WebP (現在はモバイル画像を使用) -->
           <source
             srcset="images/global/tablet-bg.webp"
             media="(min-width: 768px) and (max-width: 1023px)"
             type="image/webp"
           />
-          <!-- モバイル用 WebP -->
           <source
             srcset="images/global/mobile-bg.webp"
             media="(max-width: 767px)"
             type="image/webp"
           />
-          <!-- デスクトップ用 PNG（WebP非対応ブラウザ向け） -->
-          <source
-            srcset="images/global/desktop-bg.png"
-            media="(min-width: 1024px)"
-            type="image/png"
-          />
-          <!-- タブレット用 PNG (現在はモバイル画像を使用) -->
-          <source
-            srcset="images/global/tablet-bg.png"
-            media="(min-width: 768px) and (max-width: 1023px)"
-            type="image/png"
-          />
-          <!-- フォールバック画像 -->
           <img
-            src="images/global/mobile-bg.png"
+            src="images/global/mobile-bg.webp"
             alt="ヒーローイメージ"
             loading="eager"
             decoding="sync"
@@ -1080,33 +1041,19 @@
             </div>
 
             <figure class="mission__figure fade-in-up">
-              <picture>
-                <source
-                  srcset="images/index/mission/section-visual.webp"
-                  media="(min-width: 1024px)"
-                  type="image/webp"
-                  sizes="50vw"
-                />
-                <source
-                  srcset="images/index/mission/section-visual.webp"
-                  media="(max-width: 1023px)"
-                  type="image/webp"
-                  sizes="100vw"
-                />
-                <source
-                  srcset="images/index/mission/fallback/section-visual.png"
-                  media="(min-width: 1024px)"
-                  type="image/png"
-                  sizes="50vw"
-                />
-                <img
-                  src="images/index/mission/fallback/section-visual.png"
-                  alt="社員4名がオフィスでパソコンを見ながら笑顔で仕事をしている様子"
-                  class="mission__visual"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
+              <img
+                class="mission__visual"
+                src="/images/index/mission/section-visual-720.webp"
+                srcset="
+                  /images/index/mission/section-visual-sp.webp      602w,
+                  /images/index/mission/section-visual-tab-up.webp 1000w
+                "
+                sizes="
+                        (max-width: 767px) 90vw, 
+                        60vw
+                      "
+                alt="社員4名がオフィスでパソコンを見ながら笑顔で仕事をしている様子"
+              />
             </figure>
 
             <div class="mission__link-wrapper fade-in-up">
@@ -1177,153 +1124,83 @@
 
             <div class="recruit__gallery">
               <figure class="recruit__gallery-item section-visual01">
-                <picture>
-                  <!-- デスクトップ用 WebP -->
-                  <source
-                    srcset="images/index/recruit/section-visual01.webp"
-                    media="(min-width: 1024px)"
-                    type="image/webp"
-                  />
-                  <!-- モバイル用 WebP -->
-                  <source
-                    srcset="images/index/recruit/section-visual01.webp"
-                    media="(max-width: 1023px)"
-                    type="image/webp"
-                  />
-                  <!-- デスクトップ用 PNG -->
-                  <source
-                    srcset="images/index/recruit/fallback/section-visual01.png"
-                    media="(min-width: 1024px)"
-                    type="image/png"
-                  />
-                  <img
-                    src="images/index/recruit/fallback/section-visual01.png"
-                    alt="エンジニアが車両整備を行っている様子"
-                    class="recruit__gallery-image"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+                <img
+                  class="recruit__gallery-image"
+                  src="/images/index/recruit/section-visual01-sp.webp"
+                  srcset="
+                    /images/index/recruit/section-visual01-sp.webp     320w,
+                    /images/index/recruit/section-visual01-tab-up.webp 760w
+                  "
+                  sizes="
+                    (max-width: 767px) 50vw, 
+                    30vw
+                  "
+                  alt="エンジニアが車両整備を行っている様子"
+                />
               </figure>
 
               <figure class="recruit__gallery-item section-visual02">
-                <picture>
-                  <!-- デスクトップ用 WebP -->
-                  <source
-                    srcset="images/index/recruit/section-visual02.webp"
-                    media="(min-width: 1024px)"
-                    type="image/webp"
-                  />
-                  <!-- モバイル用 WebP -->
-                  <source
-                    srcset="images/index/recruit/section-visual02.webp"
-                    media="(max-width: 1023px)"
-                    type="image/webp"
-                  />
-                  <!-- デスクトップ用 PNG -->
-                  <source
-                    srcset="images/index/recruit/fallback/section-visual02.png"
-                    media="(min-width: 1024px)"
-                    type="image/png"
-                  />
-                  <img
-                    src="images/index/recruit/fallback/section-visual02.png"
-                    alt="スーツ姿の男性が笑顔で電話対応している様子"
-                    class="recruit__gallery-image"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+                <img
+                  class="recruit__gallery-image"
+                  src="/images/index/recruit/section-visual02-sp.webp"
+                  srcset="
+                    /images/index/recruit/section-visual02-sp.webp     209w,
+                    /images/index/recruit/section-visual02-tab-up.webp 453w
+                  "
+                  sizes="
+                    (max-width: 767px) 30vw, 
+                    25vw
+                  "
+                  alt="スーツ姿の男性が笑顔で電話対応している様子"
+                />
               </figure>
 
               <figure class="recruit__gallery-item section-visual03">
-                <picture>
-                  <!-- デスクトップ用 WebP -->
-                  <source
-                    srcset="images/index/recruit/section-visual03.webp"
-                    media="(min-width: 1024px)"
-                    type="image/webp"
-                  />
-                  <!-- モバイル用 WebP -->
-                  <source
-                    srcset="images/index/recruit/section-visual03.webp"
-                    media="(max-width: 1023px)"
-                    type="image/webp"
-                  />
-                  <!-- デスクトップ用 PNG -->
-                  <source
-                    srcset="images/index/recruit/fallback/section-visual03.png"
-                    media="(min-width: 1024px)"
-                    type="image/png"
-                  />
-                  <img
-                    src="images/index/recruit/fallback/section-visual03.png"
-                    alt="HONDAロゴ前で笑顔の受付女性"
-                    class="recruit__gallery-image"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+                <img
+                  class="recruit__gallery-image"
+                  src="/images/index/recruit/section-visual03-sp.webp"
+                  srcset="
+                    /images/index/recruit/section-visual03-sp.webp     559w,
+                    /images/index/recruit/section-visual03-tab-up.webp 906w
+                  "
+                  sizes="
+                    (max-width: 767px) 50vw, 
+                    90vw
+                  "
+                  alt="HONDAロゴ前で笑顔の受付女性"
+                />
               </figure>
 
               <figure class="recruit__gallery-item section-visual04">
-                <picture>
-                  <!-- デスクトップ用 WebP -->
-                  <source
-                    srcset="images/index/recruit/section-visual04.webp"
-                    media="(min-width: 1024px)"
-                    type="image/webp"
-                  />
-                  <!-- モバイル用 WebP -->
-                  <source
-                    srcset="images/index/recruit/section-visual04.webp"
-                    media="(max-width: 1023px)"
-                    type="image/webp"
-                  />
-                  <!-- デスクトップ用 PNG -->
-                  <source
-                    srcset="images/index/recruit/fallback/section-visual04.png"
-                    media="(min-width: 1024px)"
-                    type="image/png"
-                  />
-                  <img
-                    src="images/index/recruit/fallback/section-visual04.png"
-                    alt="スーツ姿の男性が笑顔で電話対応している様子(ブラー)"
-                    class="recruit__gallery-image"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+                <img
+                  class="recruit__gallery-image"
+                  src="/images/index/recruit/section-visual04-sp.webp"
+                  srcset="
+                    /images/index/recruit/section-visual04-sp.webp     244w,
+                    /images/index/recruit/section-visual04-tab-up.webp 463w
+                  "
+                  sizes="
+                    (max-width: 767px) 20vw, 
+                    20vw
+                  "
+                  alt="スーツ姿の男性が笑顔で電話対応している様子(ブラー)"
+                />
               </figure>
 
               <figure class="recruit__gallery-item section-visual05">
-                <picture>
-                  <!-- デスクトップ用 WebP -->
-                  <source
-                    srcset="images/index/recruit/section-visual05.webp"
-                    media="(min-width: 1024px)"
-                    type="image/webp"
-                  />
-                  <!-- モバイル用 WebP -->
-                  <source
-                    srcset="images/index/recruit/section-visual05.webp"
-                    media="(max-width: 1023px)"
-                    type="image/webp"
-                  />
-                  <!-- デスクトップ用 PNG -->
-                  <source
-                    srcset="images/index/recruit/fallback/section-visual05.png"
-                    media="(min-width: 1024px)"
-                    type="image/png"
-                  />
-                  <img
-                    src="images/index/recruit/fallback/section-visual05.png"
-                    alt="商談の様子（ブラー）"
-                    class="recruit__gallery-image"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+                <img
+                  class="recruit__gallery-image"
+                  src="/images/index/recruit/section-visual05-sp.webp"
+                  srcset="
+                    /images/index/recruit/section-visual05-sp.webp     172w,
+                    /images/index/recruit/section-visual05-tab-up.webp 290w
+                  "
+                  sizes="
+                    (max-width: 767px) 10vw, 
+                    20vw
+                  "
+                  alt="商談の様子（ブラー）"
+                />
               </figure>
             </div>
 
@@ -1388,30 +1265,13 @@
                 <figure class="news__image">
                   <a href="pages/news-details.html" class="news__image-link">
                     <!-- 画像: ニュース記事サムネイル01 -->
-                    <picture>
-                      <source
-                        srcset="images/index/news/demo-image.webp"
-                        media="(min-width: 1024px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="images/index/news/demo-image.webp"
-                        media="(max-width: 1023px)"
-                        type="image/webp"
-                      />
-                      <source
-                        srcset="images/index/news/fallback/demo-image.png"
-                        media="(min-width: 1024px)"
-                        type="image/png"
-                      />
-                      <img
-                        src="images/index/news/fallback/demo-image.png"
-                        alt="ニュース記事のサムネイル画像"
-                        class="news__item-image"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
+                    <img
+                      src="images/index/news/demo-image.webp"
+                      alt="ニュース記事のサムネイル画像"
+                      class="news__item-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </a>
                 </figure>
 
