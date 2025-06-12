@@ -80,8 +80,6 @@
                     width: ppx(1100);
                     margin-top: ppx(155);
                 }
-                &__header {
-                }
 
                 &__title {
                     font-family: $font-noto-serif-jp;
@@ -208,9 +206,6 @@
         @include desktop-up {
             padding-top: ppx(244);
             padding-bottom: ppx(303);
-        }
-
-        &__header {
         }
 
         &__content {
@@ -341,12 +336,6 @@
             cursor: not-allowed;
         }
 
-        &--prev {
-        }
-
-        &--next {
-        }
-
         &__icon {
             width: spx(31);
             height: auto;
@@ -373,15 +362,6 @@
         }
         @include desktop-up {
             width: ppx(951);
-        }
-
-        &--philosophy {
-        }
-
-        &--management {
-        }
-
-        &--action {
         }
 
         &__header {
@@ -465,9 +445,6 @@
             }
         }
 
-        &__text {
-        }
-
         &__paragraph {
             font-size: spx(31);
             font-weight: 500;
@@ -521,12 +498,6 @@
         &.swiper-button-disabled {
             background-color: $gray_2;
             cursor: not-allowed;
-        }
-
-        &--prev {
-        }
-
-        &--next {
         }
 
         &__icon {

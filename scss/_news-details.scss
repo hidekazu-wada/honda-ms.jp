@@ -27,25 +27,6 @@
             padding-top: ppx(160);
         }
         .news-detail {
-            @include tablet-up {
-            }
-            @include desktop-up {
-            }
-
-            &__inner {
-                @include tablet-up {
-                }
-                @include desktop-up {
-                }
-            }
-
-            &__header {
-                @include tablet-up {
-                }
-                @include desktop-up {
-                }
-            }
-
             &__title {
                 font-family: $font-noto-serif-jp;
                 color: $base_color_white;
@@ -163,43 +144,11 @@
                 }
             }
 
-            &__text {
-                @include tablet-up {
-                }
-                @include desktop-up {
-                }
-            }
-
-            &__paragraph {
-                @include tablet-up {
-                }
-                @include desktop-up {
-                }
-            }
-
-            &__figure {
-                @include tablet-up {
-                }
-                @include desktop-up {
-                }
-            }
-
             &__image {
                 width: 100%;
                 height: auto;
                 object-fit: cover;
                 display: block;
-                @include tablet-up {
-                }
-                @include desktop-up {
-                }
-            }
-
-            &__nav {
-                @include tablet-up {
-                }
-                @include desktop-up {
-                }
             }
 
             &__nav-buttons {
@@ -261,10 +210,6 @@
                 }
 
                 &--prev {
-                    @include tablet-up {
-                    }
-                    @include desktop-up {
-                    }
                     .news-detail__nav-text {
                         display: block;
                         padding-left: 4vw;
@@ -277,18 +222,7 @@
                     }
                 }
 
-                &--index {
-                    @include tablet-up {
-                    }
-                    @include desktop-up {
-                    }
-                }
-
                 &--next {
-                    @include tablet-up {
-                    }
-                    @include desktop-up {
-                    }
                     .news-detail__nav-text {
                         display: block;
                         padding-right: 4vw;

@@ -51,8 +51,6 @@
                 height: ppx(650);
             }
         }
-        &__inner {
-        }
 
         &__header {
             width: max-content;
@@ -136,8 +134,6 @@
     // SERVICE CONTENT COMPONENT
     // サービスコンテンツコンポーネント
     // ================================================
-    .service-section__content {
-    }
 
     .service-content {
         width: spx(600);
@@ -175,15 +171,6 @@
                     display: block;
                 }
             }
-        }
-    }
-
-    // ================================================
-    // COMPANY SECTION
-    // 会社情報セクション
-    // ================================================
-    .company-section {
-        &__inner {
         }
     }
 
@@ -437,9 +424,6 @@
                     display: none;
                 }
             }
-        }
-
-        &__tel-link {
         }
 
         &__website-link {
