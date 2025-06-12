@@ -86,9 +86,6 @@
         }
     }
 
-    &__logo {
-    }
-
     &__logo-image {
         display: block;
         width: spx(154);
@@ -99,9 +96,6 @@
         @include desktop-up {
             width: ppx(229);
         }
-    }
-
-    &__content {
     }
 
     &__title {
@@ -126,10 +120,6 @@
         @include desktop-up {
             height: ppx(42);
         }
-    }
-
-    // 2行目のコンテナ
-    &__title-second-row {
     }
 
     // 2行目の1番目の画像（Oの前の部分）

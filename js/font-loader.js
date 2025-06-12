@@ -1,7 +1,8 @@
 /**
- * Font Loader - 共通フォント読み込み処理
- * Honda Motor Sales Group
- *
+ * フォント読み込みを監視して body クラスを更新し、完了・タイムアウト時に
+ * コールバックを実行するユーティリティ。`initFontLoader` をグローバル公開する。
+ */
+/**
  * @param {Object} options - オプション設定
  * @param {number} options.timeout - フォールバックタイムアウト時間（ミリ秒）
  * @param {Function} options.onReady - フォント読み込み完了時のコールバック

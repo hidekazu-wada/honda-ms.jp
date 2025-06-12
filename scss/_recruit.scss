@@ -260,20 +260,8 @@
             padding: ppx(220) 0;
         }
 
-        &__inner {
-            @include tablet-up {
-            }
-            @include desktop-up {
-            }
-        }
 
         // Company Tabs
-        &__tabs {
-            @include tablet-up {
-            }
-            @include desktop-up {
-            }
-        }
 
         &__tab-list {
             display: flex;
@@ -291,12 +279,6 @@
             }
         }
 
-        &__tab-item {
-            @include tablet-up {
-            }
-            @include desktop-up {
-            }
-        }
 
         &__tab-button {
             position: relative;
@@ -338,12 +320,6 @@
                 }
             }
 
-            &--active {
-                @include tablet-up {
-                }
-                @include desktop-up {
-                }
-            }
         }
 
         &__tab-arrow {
@@ -387,12 +363,6 @@
         }
 
         .recruitment-company {
-            &__header {
-                @include tablet-up {
-                }
-                @include desktop-up {
-                }
-            }
 
             &__title {
                 color: $base_color_white;
@@ -454,12 +424,6 @@
                 padding: ppx(47) 0 ppx(56);
             }
 
-            &__meta {
-                @include tablet-up {
-                }
-                @include desktop-up {
-                }
-            }
 
             &__type {
                 color: $base_color_2;
@@ -744,8 +708,6 @@
         @include desktop-up {
             padding: ppx(170) 0 ppx(240);
         }
-        &__inner {
-        }
 
         &__header {
             text-align: center;
@@ -864,8 +826,6 @@
             font-weight: 700;
         }
 
-        &__question-text {
-        }
 
         &__answer {
             display: grid;
@@ -883,8 +843,6 @@
             font-weight: 700;
         }
 
-        &__answer-text {
-        }
         &::before {
             content: "";
             position: absolute;

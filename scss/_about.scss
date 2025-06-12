@@ -32,8 +32,6 @@
             padding-top: ppx(284);
             padding-bottom: ppx(324);
         }
-        &__inner {
-        }
 
         &__header {
             width: max-content;
@@ -185,12 +183,6 @@
             height: auto;
         }
 
-        &__content {
-        }
-
-        &__catchphrase {
-        }
-
         &__catchphrase-text {
             font-family: $font-noto-serif-jp;
             color: $base_color_white;
@@ -320,9 +312,6 @@
             padding-bottom: ppx(80);
         }
 
-        &__logo {
-        }
-
         &__logo-image {
             width: 100%;
             height: auto;
@@ -426,12 +415,6 @@
             .company-card__link {
                 background-color: $base_color_2;
             }
-
-            .company-card__link-text {
-            }
-
-            .company-card__link-icon {
-            }
         }
 
         // 株式会社ケインズ
@@ -464,12 +447,6 @@
 
             .company-card__link {
                 background-color: $kyne_color;
-            }
-
-            .company-card__link-text {
-            }
-
-            .company-card__link-icon {
             }
         }
 
@@ -504,12 +481,6 @@
             .company-card__link {
                 background-color: $fuji_color;
             }
-
-            .company-card__link-text {
-            }
-
-            .company-card__link-icon {
-            }
         }
 
         // FJ建設株式会社
@@ -542,12 +513,6 @@
 
             .company-card__link {
                 background-color: $fjkensetsu_color;
-            }
-
-            .company-card__link-text {
-            }
-
-            .company-card__link-icon {
             }
         }
 
@@ -675,10 +640,6 @@
             }
         }
 
-        // 役員情報
-        &__executives {
-        }
-
         &__executive {
             display: grid;
             grid-template-columns: max-content auto;
@@ -722,14 +683,6 @@
             white-space: nowrap;
         }
 
-        // 従業員数
-        &__employee-count {
-        }
-
-        // 売上高
-        &__sales-table {
-        }
-
         &__sales-row {
             display: grid;
             grid-template-columns: max-content auto;
@@ -740,23 +693,6 @@
             @include desktop-up {
                 gap: 0.7em;
             }
-        }
-
-        &__sales-year {
-        }
-
-        &__sales-amount {
-        }
-
-        // 主要取引先
-        &__business-partners {
-        }
-
-        &__business-partner {
-        }
-
-        // 取引銀行
-        &__banks {
         }
     }
 
@@ -773,12 +709,6 @@
         @include desktop-up {
             padding: ppx(190) 0 ppx(210);
         }
-        &__inner {
-        }
-
-        &__header {
-        }
-
         &__title {
             font-family: $font-noto-serif-jp;
             color: $base_color_white;
@@ -797,9 +727,6 @@
                 font-size: ppx(57);
                 letter-spacing: ppx(5.7);
             }
-        }
-
-        &__legend {
         }
 
         &__timeline {
@@ -957,9 +884,6 @@
                 @include desktop-up {
                     gap: ppx(62);
                 }
-            }
-
-            &__header {
             }
 
             &__year-group {
