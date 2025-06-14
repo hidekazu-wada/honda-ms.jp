@@ -745,13 +745,6 @@ svg {
 // フェードインアップコンポーネント
 // ================================================
 .fade-in-up {
+    //初期状態のみCSS、アニメーションはGSAPに委託
     opacity: 0;
-    transform: translateY(10px);
-    transition:
-        opacity 0.6s ease,
-        transform 0.6s ease;
-}
-.fade-in-up.is-inview {
-    opacity: 1;
-    transform: translateY(0);
 }
