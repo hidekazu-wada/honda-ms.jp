@@ -29,5 +29,6 @@
     "styleable",
     "stylesheet",
     "wght"
-  ]
+  ],
+  "liveServer.settings.port": 5501
 }
