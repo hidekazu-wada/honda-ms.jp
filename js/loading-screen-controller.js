@@ -1,12 +1,12 @@
 /**
- * 初回訪問時に表示するローディング画面を管理するクラス。
- * フォント読込状況や最低表示時間を考慮しフェードアウト後にテキストアニメーションを開始する。
+ * 改良版ローディング画面制御：画像読み込み完了後に即座にローディング画面を表示し、
+ * フォント読み込みを並行して行う。初回訪問時のユーザー体験を向上させる。
  */
 
 /**
  * ローディング画面制御
  */
-class SimpleLoadingController {
+class ImprovedLoadingController {
   constructor() {
     this.loadingElement = document.querySelector('#loading-screen');
     this.isFirstVisit = document.body.classList.contains('first-visit');
@@ -15,19 +15,179 @@ class SimpleLoadingController {
     this.debugMode = true;
     this.textPrepared = false; // テキスト準備完了フラグ
     this.fontLoaded = false; // フォント読み込み完了フラグ
-    this.loadingStartTime = Date.now(); // ローディング開始時刻
+    this.imagesLoaded = false; // 画像読み込み完了フラグ
+    this.loadingStartTime = null; // ローディング画面表示開始時刻（画像読み込み完了時）
+    this.initStartTime = Date.now(); // 初期化開始時刻
 
     if (this.debugMode) {
-      console.log('🎬 Loading controller created:', {
+      console.log('🎬 Improved Loading controller created:', {
         hasLoadingElement: !!this.loadingElement,
         isFirstVisit: this.isFirstVisit,
         bodyClasses: document.body.className,
+        initStartTime: this.initStartTime,
+      });
+    }
+
+    // 初期化処理を開始
+    this.init();
+  }
+
+  /**
+   * 初期化処理
+   */
+  init() {
+    // テキストアニメーションの準備（常に実行）
+    this.prepareTextIfNeeded();
+
+    // 初回訪問の場合のみローディング画面制御を実行
+    if (this.isFirstVisit && this.loadingElement) {
+      // 画像読み込みを監視
+      this.checkImagesLoaded();
+    } else {
+      // リピート訪問の場合は、フォント読み込み完了後に即座にコンテンツ表示
+      if (this.debugMode) {
+        console.log('🔄 Return visit - will show content directly after font loading');
+      }
+      // 既にフォント読み込みが完了している可能性をチェック
+      this.checkFontStatusOnInit();
+    }
+  }
+
+  /**
+   * 初期化時にフォント読み込み状況をチェック（遅延リトライ方式）
+   */
+  checkFontStatusOnInit() {
+    // document.fonts.ready でフォント読み込み状況を確認
+    if (document.fonts.ready) {
+      document.fonts.ready.then(() => {
+        if (this.debugMode) {
+          console.log('🔤 Font status check: fonts are ready - starting text animation');
+        }
+        this.handleFontLoaded();
+      }).catch(() => {
+        // フォント読み込み失敗時もアニメーション開始
+        if (this.debugMode) {
+          console.log('🔤 Font status check: fonts failed but continuing');
+        }
+        this.handleFontLoaded();
+      });
+    } else {
+      // フォールバック: 500ms後に強制開始
+      setTimeout(() => {
+        if (!this.fontLoaded) {
+          if (this.debugMode) {
+            console.log('🔤 Font status check: timeout fallback - starting animation');
+          }
+          this.handleFontLoaded();
+        }
+      }, 500);
+    }
+  }
+
+  /**
+   * ローディング画面の画像読み込み状況をチェック
+   */
+  checkImagesLoaded() {
+    if (this.debugMode) {
+      console.log('🖼️ Checking loading screen images...');
+    }
+
+    const loadingImages = this.loadingElement.querySelectorAll('img');
+    
+    if (loadingImages.length === 0) {
+      // 画像がない場合は即座に表示開始
+      this.handleImagesLoaded();
+      return;
+    }
+
+    let loadedCount = 0;
+    const totalImages = loadingImages.length;
+
+    const checkAllLoaded = () => {
+      if (loadedCount >= totalImages) {
+        this.handleImagesLoaded();
+      }
+    };
+
+    loadingImages.forEach((img, index) => {
+      if (img.complete && img.naturalHeight !== 0) {
+        // 既に読み込み済み
+        loadedCount++;
+        if (this.debugMode) {
+          console.log(`🖼️ Image ${index + 1} already loaded`);
+        }
+      } else {
+        // 読み込み待ち
+        img.addEventListener('load', () => {
+          loadedCount++;
+          if (this.debugMode) {
+            console.log(`🖼️ Image ${index + 1} loaded (${loadedCount}/${totalImages})`);
+          }
+          checkAllLoaded();
+        });
+
+        img.addEventListener('error', () => {
+          loadedCount++; // エラーでも進行
+          if (this.debugMode) {
+            console.warn(`🖼️ Image ${index + 1} failed to load, continuing anyway`);
+          }
+          checkAllLoaded();
+        });
+      }
+    });
+
+    // 既に全て読み込み済みの場合
+    checkAllLoaded();
+
+    // フォールバック：500ms後に強制的に開始
+    setTimeout(() => {
+      if (!this.imagesLoaded) {
+        if (this.debugMode) {
+          console.log('🖼️ Image loading timeout - starting anyway');
+        }
+        this.handleImagesLoaded();
+      }
+    }, 500);
+  }
+
+  /**
+   * 画像読み込み完了時の処理
+   */
+  handleImagesLoaded() {
+    if (this.imagesLoaded) return; // 重複実行防止
+    
+    this.imagesLoaded = true;
+    this.loadingStartTime = Date.now();
+
+    if (this.debugMode) {
+      const totalElapsed = this.loadingStartTime - this.initStartTime;
+      console.log('🖼️ Images loaded - showing loading screen:', {
+        totalElapsedFromInit: totalElapsed + 'ms',
         loadingStartTime: this.loadingStartTime,
       });
     }
 
-    // 初期化後にテキスト準備を実行
-    this.prepareTextIfNeeded();
+    // ローディング画面を表示
+    this.showLoadingScreen();
+
+    // フォント読み込みも完了している場合は最低表示時間をチェック
+    if (this.fontLoaded) {
+      this.checkMinimumLoadingTime();
+    }
+  }
+
+  /**
+   * ローディング画面を表示（初回訪問時のみ）
+   */
+  showLoadingScreen() {
+    if (!this.loadingElement) return;
+
+    if (this.debugMode) {
+      console.log('🌟 Showing loading screen');
+    }
+
+    // ローディング画面を即座に表示（CSSのgridレイアウトを保持）
+    this.loadingElement.style.opacity = '1';
   }
 
   /**
@@ -60,12 +220,15 @@ class SimpleLoadingController {
     this.fontLoaded = true;
 
     if (this.debugMode) {
-      const elapsedTime = Date.now() - this.loadingStartTime;
+      const elapsedFromInit = Date.now() - this.initStartTime;
+      const elapsedFromLoading = this.loadingStartTime ? Date.now() - this.loadingStartTime : 0;
       console.log('🔤 handleFontLoaded called:', {
         isFirstVisit: this.isFirstVisit,
         hasLoadingElement: !!this.loadingElement,
         textPrepared: this.textPrepared,
-        elapsedTime: elapsedTime + 'ms',
+        imagesLoaded: this.imagesLoaded,
+        elapsedFromInit: elapsedFromInit + 'ms',
+        elapsedFromLoading: elapsedFromLoading + 'ms',
       });
     }
 
@@ -80,14 +243,33 @@ class SimpleLoadingController {
       return;
     }
 
-    // 初回訪問時：最低表示時間をチェック
-    this.checkMinimumLoadingTime();
+    // 初回訪問時：画像読み込み完了を待ってから最低表示時間をチェック
+    if (this.imagesLoaded) {
+      this.checkMinimumLoadingTime();
+    } else {
+      // 画像読み込みがまだ完了していない場合は待機
+      if (this.debugMode) {
+        console.log('🔤 Font loaded but images not ready yet - waiting for images');
+      }
+    }
   }
 
   /**
    * 最低表示時間をチェックしてローディング画面を制御
+   * 画像読み込み完了時とフォント読み込み完了時の両方から呼び出される
    */
   checkMinimumLoadingTime() {
+    // 画像とフォントの両方が完了している場合のみ進行
+    if (!this.imagesLoaded || !this.fontLoaded) {
+      if (this.debugMode) {
+        console.log('⏱️ Waiting for both images and fonts:', {
+          imagesLoaded: this.imagesLoaded,
+          fontLoaded: this.fontLoaded,
+        });
+      }
+      return;
+    }
+
     const elapsedTime = Date.now() - this.loadingStartTime;
     const remainingTime = this.minLoadingTime - elapsedTime;
 
@@ -95,6 +277,7 @@ class SimpleLoadingController {
       console.log('⏱️ Checking minimum loading time:', {
         elapsedTime: elapsedTime + 'ms',
         remainingTime: remainingTime + 'ms',
+        imagesLoaded: this.imagesLoaded,
         fontLoaded: this.fontLoaded,
       });
     }
@@ -197,7 +380,7 @@ let loadingController = null;
  * 初期化
  */
 document.addEventListener('DOMContentLoaded', () => {
-  loadingController = new SimpleLoadingController();
+  loadingController = new ImprovedLoadingController();
 
   // グローバルAPIとして公開
   window.LoadingScreenController = {
@@ -211,5 +394,5 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   };
 
-  console.log('🎬 Simple Loading Controller initialized');
+  console.log('🎬 Improved Loading Controller initialized');
 });
