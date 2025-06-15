@@ -54,21 +54,25 @@
     <!-- ================================================== -->
     <script src="../js/font-loader.js"></script>
     <script>
-      // フォント読み込み処理（共通化版）
+      // 改良版フォント読み込み処理：ローディング画面と並行してバックグラウンドで実行
       initFontLoader({
         timeout: 3000, // フォント読み込みタイムアウト（ミリ秒）
         onReady: () => {
-          // フォント読み込み完了後にローディング制御を通知
+          // フォント読み込み完了後にローディング制御に通知
+          // 改良版では画像読み込み完了も待ってからローディング画面を終了
           if (window.LoadingScreenController) {
             window.LoadingScreenController.handleFontLoaded();
           } else {
+            // LoadingScreenControllerがまだ読み込まれていない場合の対応
+            console.log('🔤 Font loaded but LoadingScreenController not ready yet');
           }
         },
         onTimeout: () => {
-          // フォールバック時もローディング制御を通知
+          // フォント読み込みタイムアウト時もローディング制御に通知
           if (window.LoadingScreenController) {
             window.LoadingScreenController.handleFontLoaded();
           } else {
+            console.log('🔤 Font loading timeout but LoadingScreenController not ready yet');
           }
         },
       });
