@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="format-detection"
+      content="telephone=no, address=no, email=no, date=no"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="ホンダ自動車販売グループが提供するもの。それは「人のくらしを幸せにするもの」。ルーツである自動車販売から始まり、通信事業、フィットネス、建設、飲食など、山梨県を中心に、埼玉県、千葉県、神奈川県、東京都をフィールドとして事業展開しています。"
+    />
+    <meta
+      name="keywords"
+      content="ホンダ自動車販売グループ,通信事業,フィットネス,建設,飲食,求人,リクルート,山梨県,埼玉県,千葉県,神奈川県,東京都"
+    />
+    <!-- Favicon -->
+    <link rel="icon" href="../images/global/favicon.svg" />
+    <link rel="apple-touch-icon" href="../images/global/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/global/favicon.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/global/favicon.svg"
+    />
+
+    <title>ホンダ自動車販売グループ｜HONDA MOTOR SALES GROUP</title>
+
+    <!-- 共通基盤CSS（背景コンポーネント含む）- 全ページ共通 -->
+    <link rel="stylesheet" href="css/destyle.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+
+    <script src="js/font-loader.js"></script>
+    <script>
+      // フォント読み込み処理（共通化版）
+      initFontLoader({
+        timeout: 3000, // フォント読み込みタイムアウト（ミリ秒）
+        onReady: () => {
+          // フォント読み込み完了後にローディング制御を通知
+          if (window.LoadingScreenController) {
+            window.LoadingScreenController.handleFontLoaded();
+          } else {
+          }
+        },
+        onTimeout: () => {
+          // フォールバック時もローディング制御を通知
+          if (window.LoadingScreenController) {
+            window.LoadingScreenController.handleFontLoaded();
+          } else {
+          }
+        },
+      });
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Noto+Sans+JP:wght@500;700&family=Noto+Serif+JP:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- First Visit Detector -->
+    <script src="js/first-visit-detector.js"></script>
+  </head>
