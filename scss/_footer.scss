@@ -32,6 +32,7 @@
         display: flex;
         flex-flow: column;
         gap: spx(100);
+        align-items: center;
         @include tablet-up {
             margin: 0 ppx(220 * $pc-to-tab-ratio);
             flex-flow: row;

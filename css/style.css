@@ -1243,7 +1243,7 @@ svg {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   color: #c11313;
-  font-size: 3vw;
+  font-size: 3.4vw;
   font-weight: 700;
   line-height: 100%;
   letter-spacing: -0.1083333333vw;
@@ -1769,6 +1769,9 @@ svg {
       -ms-flex-flow: column;
           flex-flow: column;
   gap: 13.8888888889vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media (min-width: 768px) {
   .footer__inner {
@@ -2242,7 +2245,7 @@ svg {
 @media (min-width: 1024px) {
   .top-page .hero-section .hero-swiper #main-title #line2 {
     font-size: 5.6640625vw;
-    margin-top: -1.718vw;
+    margin-top: -3.718vw;
   }
 }
 .top-page .hero-section .hero-swiper #main-title span {

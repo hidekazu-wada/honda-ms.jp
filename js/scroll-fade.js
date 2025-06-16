@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // アニメーション設定
   const animationConfig = {
-    duration: 0.6,
+    duration: 1,
     ease: 'power2.out',
-    translateY: 10,
+    translateY: 20,
   };
 
   // .fade-in-up クラスを持つ全ての要素を取得
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: animationConfig.ease,
         scrollTrigger: {
           trigger: element,
-          start: 'top 90%', // 要素の上端が画面の90%位置に来たら開始
+          start: 'top 85%', // 要素の上端が画面の90%位置に来たら開始
           end: 'bottom 10%', // 要素の下端が画面の10%位置に来たら終了
           toggleActions: 'play none none none', // 一度だけ再生
           // markers: true, // デバッグ用（本番では削除）
