@@ -10,9 +10,10 @@ class ImprovedLoadingController {
   constructor() {
     this.loadingElement = document.querySelector('#loading-screen');
     this.isFirstVisit = document.body.classList.contains('first-visit');
+    this.hasHashInUrl = this.checkForHashInUrl(); // ハッシュ検出を追加
     this.fadeOutDuration = 0.8; // フェードアウト時間（秒）
     this.minLoadingTime = 3000; // 最低表示時間（ミリ秒）
-    this.debugMode = true;
+    this.debugMode = false;
     this.textPrepared = false; // テキスト準備完了フラグ
     this.fontLoaded = false; // フォント読み込み完了フラグ
     this.imagesLoaded = false; // 画像読み込み完了フラグ
@@ -23,6 +24,8 @@ class ImprovedLoadingController {
       console.log('🎬 Improved Loading controller created:', {
         hasLoadingElement: !!this.loadingElement,
         isFirstVisit: this.isFirstVisit,
+        hasHashInUrl: this.hasHashInUrl,
+        currentHash: window.location.hash,
         bodyClasses: document.body.className,
         initStartTime: this.initStartTime,
       });
@@ -33,11 +36,26 @@ class ImprovedLoadingController {
   }
 
   /**
+   * URLにハッシュパラメータが含まれているかチェック
+   * @returns {boolean} ハッシュが存在する場合はtrue
+   */
+  checkForHashInUrl() {
+    const hash = window.location.hash;
+    return hash && hash.length > 1; // #以外に文字が含まれている場合
+  }
+
+  /**
    * 初期化処理
    */
   init() {
     // テキストアニメーションの準備（常に実行）
     this.prepareTextIfNeeded();
+
+    // ハッシュパラメータが含まれている場合はローディング制御をスキップ
+    if (this.hasHashInUrl) {
+      this.skipLoadingAndShowContent();
+      return;
+    }
 
     // 初回訪問の場合のみローディング画面制御を実行
     if (this.isFirstVisit && this.loadingElement) {
@@ -340,6 +358,43 @@ class ImprovedLoadingController {
         this.startTextAnimation();
       },
     });
+  }
+
+  /**
+   * ハッシュナビゲーション時のローディングスキップ処理
+   */
+  skipLoadingAndShowContent() {
+    const hash = window.location.hash;
+    const targetElement = hash ? document.querySelector(hash) : null;
+
+    // ローディング画面を即座に非表示
+    if (this.loadingElement) {
+      this.loadingElement.style.display = 'none';
+    }
+
+    // is-loadingクラスを即座に削除
+    document.body.classList.remove('is-loading');
+
+    // ハッシュターゲットが存在する場合は手動でナビゲーション実行
+    if (targetElement) {
+      this.executeHashNavigation(targetElement);
+    }
+  }
+
+  /**
+   * 手動でハッシュナビゲーションを実行
+   * @param {HTMLElement} targetElement - ジャンプ先の要素
+   */
+  executeHashNavigation(targetElement) {
+    // 少し遅延してからスクロール実行（DOMの安定を待つ）
+    setTimeout(() => {
+      // scrollIntoViewでスムーススクロール
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
+    }, 50);
   }
 
   /**

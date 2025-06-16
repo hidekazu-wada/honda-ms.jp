@@ -29,6 +29,12 @@ function prepareTextAnimation() {
   const line1 = document.getElementById('line1');
   const line2 = document.getElementById('line2');
 
+  // 必要な要素が存在しない場合は処理をスキップ
+  if (!line1 || !line2) {
+    console.log('📝 Text animation elements not found - skipping preparation');
+    return false;
+  }
+
   if (line1) wrapChars(line1);
   if (line2) wrapChars(line2);
 
@@ -37,6 +43,8 @@ function prepareTextAnimation() {
     mainTitle.classList.add('text-ready');
     console.log('📝 Text preparation complete - title now visible');
   }
+  
+  return true;
 }
 
 /**
@@ -44,6 +52,15 @@ function prepareTextAnimation() {
  */
 function startGsapAnimation() {
   console.log('📝 Starting GSAP animation');
+
+  // 必要な要素の存在確認
+  const line1 = document.getElementById('line1');
+  const line2 = document.getElementById('line2');
+  
+  if (!line1 || !line2) {
+    console.log('📝 Text animation elements not found - skipping animation');
+    return;
+  }
 
   // テキストアニメーション設定（直接定義）
   const config = {
@@ -54,12 +71,21 @@ function startGsapAnimation() {
   };
 
   // 準備が完了していない場合は準備から実行
-  const line1 = document.getElementById('line1');
-  const line2 = document.getElementById('line2');
-
-  if (!line1 || !line1.querySelector('span')) {
+  if (!line1.querySelector('span')) {
     console.log('📝 Text not prepared - preparing now');
-    prepareTextAnimation();
+    const prepared = prepareTextAnimation();
+    if (!prepared) {
+      return; // 準備に失敗した場合は処理を終了
+    }
+  }
+
+  // line1のspanが存在する場合のみアニメーション実行
+  const line1Spans = line1.querySelectorAll('span');
+  const line2Spans = line2.querySelectorAll('span');
+  
+  if (line1Spans.length === 0) {
+    console.warn('📝 No spans found in line1 - animation skipped');
+    return;
   }
 
   gsap.to('#line1 span', {
@@ -68,14 +94,16 @@ function startGsapAnimation() {
     stagger: config.line1Stagger,
     ease: 'power2.out',
     onComplete: () => {
-      setTimeout(() => {
-        gsap.to('#line2 span', {
-          opacity: 1,
-          duration: config.duration,
-          stagger: config.line2Stagger,
-          ease: 'power2.out',
-        });
-      }, config.lineDelay);
+      if (line2Spans.length > 0) {
+        setTimeout(() => {
+          gsap.to('#line2 span', {
+            opacity: 1,
+            duration: config.duration,
+            stagger: config.line2Stagger,
+            ease: 'power2.out',
+          });
+        }, config.lineDelay);
+      }
     },
   });
 }
