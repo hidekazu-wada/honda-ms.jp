@@ -10,6 +10,7 @@ class ImprovedLoadingController {
   constructor() {
     this.loadingElement = document.querySelector('#loading-screen');
     this.isFirstVisit = document.body.classList.contains('first-visit');
+    this.hasHashInUrl = this.checkForHashInUrl(); // ハッシュ検出を追加
     this.fadeOutDuration = 0.8; // フェードアウト時間（秒）
     this.minLoadingTime = 3000; // 最低表示時間（ミリ秒）
     this.debugMode = true;
@@ -23,6 +24,8 @@ class ImprovedLoadingController {
       console.log('🎬 Improved Loading controller created:', {
         hasLoadingElement: !!this.loadingElement,
         isFirstVisit: this.isFirstVisit,
+        hasHashInUrl: this.hasHashInUrl,
+        currentHash: window.location.hash,
         bodyClasses: document.body.className,
         initStartTime: this.initStartTime,
       });
@@ -33,11 +36,29 @@ class ImprovedLoadingController {
   }
 
   /**
+   * URLにハッシュパラメータが含まれているかチェック
+   * @returns {boolean} ハッシュが存在する場合はtrue
+   */
+  checkForHashInUrl() {
+    const hash = window.location.hash;
+    return hash && hash.length > 1; // #以外に文字が含まれている場合
+  }
+
+  /**
    * 初期化処理
    */
   init() {
     // テキストアニメーションの準備（常に実行）
     this.prepareTextIfNeeded();
+
+    // ハッシュパラメータが含まれている場合はローディング制御をスキップ
+    if (this.hasHashInUrl) {
+      if (this.debugMode) {
+        console.log('🔗 Hash parameter detected - skipping loading control for immediate navigation');
+      }
+      this.skipLoadingAndShowContent();
+      return;
+    }
 
     // 初回訪問の場合のみローディング画面制御を実行
     if (this.isFirstVisit && this.loadingElement) {
@@ -340,6 +361,112 @@ class ImprovedLoadingController {
         this.startTextAnimation();
       },
     });
+  }
+
+  /**
+   * ハッシュナビゲーション時のローディングスキップ処理
+   */
+  skipLoadingAndShowContent() {
+    const hash = window.location.hash;
+    const targetElement = hash ? document.querySelector(hash) : null;
+    
+    if (this.debugMode) {
+      console.log('🚀 Skipping loading control for hash navigation', {
+        hash: hash,
+        targetFound: !!targetElement,
+        currentScrollY: window.scrollY,
+        bodyClasses: document.body.className,
+        loadingElementVisible: this.loadingElement ? this.loadingElement.style.display !== 'none' : false
+      });
+    }
+
+    // ローディング画面を即座に非表示
+    if (this.loadingElement) {
+      this.loadingElement.style.display = 'none';
+      if (this.debugMode) {
+        console.log('🚀 Loading screen hidden');
+      }
+    }
+
+    // is-loadingクラスを即座に削除
+    document.body.classList.remove('is-loading');
+    if (this.debugMode) {
+      console.log('🚀 is-loading class removed, new classes:', document.body.className);
+    }
+
+    // ハッシュターゲットが存在するかチェック
+    if (targetElement) {
+      const rect = targetElement.getBoundingClientRect();
+      if (this.debugMode) {
+        console.log('🎯 Hash target element found', {
+          id: targetElement.id,
+          tagName: targetElement.tagName,
+          classes: targetElement.className,
+          position: {
+            top: rect.top,
+            left: rect.left,
+            offsetTop: targetElement.offsetTop
+          },
+          visible: rect.width > 0 && rect.height > 0
+        });
+      }
+
+      // 手動でハッシュナビゲーションを実行
+      this.executeHashNavigation(targetElement);
+    } else if (this.debugMode) {
+      console.warn('⚠️ Hash target element not found:', hash);
+    }
+
+    // テキストアニメーションはハッシュナビゲーション時はスキップ
+    if (this.debugMode) {
+      console.log('🔗 Content shown immediately for hash navigation');
+    }
+  }
+
+  /**
+   * 手動でハッシュナビゲーションを実行
+   * @param {HTMLElement} targetElement - ジャンプ先の要素
+   */
+  executeHashNavigation(targetElement) {
+    if (this.debugMode) {
+      console.log('🚀 Executing manual hash navigation');
+    }
+
+    // 少し遅延してからスクロール実行（DOMの安定を待つ）
+    setTimeout(() => {
+      const beforeScrollY = window.scrollY;
+      
+      if (this.debugMode) {
+        console.log('📍 Before manual scroll', {
+          currentScrollY: beforeScrollY,
+          targetOffsetTop: targetElement.offsetTop,
+          targetRect: targetElement.getBoundingClientRect()
+        });
+      }
+
+      // scrollIntoViewでスムーススクロール
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
+
+      // スクロール完了をチェック
+      setTimeout(() => {
+        const afterScrollY = window.scrollY;
+        const targetRect = targetElement.getBoundingClientRect();
+        
+        if (this.debugMode) {
+          console.log('✅ After manual scroll', {
+            beforeScrollY: beforeScrollY,
+            afterScrollY: afterScrollY,
+            scrolled: Math.abs(afterScrollY - beforeScrollY) > 10,
+            targetDistanceFromTop: targetRect.top,
+            reachedTarget: Math.abs(targetRect.top) < 100
+          });
+        }
+      }, 500);
+    }, 50);
   }
 
   /**
