@@ -2200,7 +2200,7 @@ svg {
 }
 @media (min-width: 1024px) {
   .top-page .hero-section .hero-swiper #main-title {
-    top: 50%;
+    top: 48%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     left: 7.265625vw;
