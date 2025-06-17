@@ -852,6 +852,10 @@ svg {
   opacity: 0;
 }
 
+button {
+  outline: none !important;
+}
+
 /**
  * Main SCSS Entry Point - 統合版
  * 全てのpartialファイルを読み込んで統合CSSを生成
