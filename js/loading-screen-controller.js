@@ -51,6 +51,15 @@ class ImprovedLoadingController {
     // テキストアニメーションの準備（常に実行）
     this.prepareTextIfNeeded();
 
+    // ページ内リンクの設定を追加
+    if (document.readyState === 'complete') {
+      this.setupInPageNavigation();
+    } else {
+      window.addEventListener('load', () => {
+        this.setupInPageNavigation();
+      });
+    }
+
     // ハッシュパラメータが含まれている場合はローディング制御をスキップ
     if (this.hasHashInUrl) {
       this.skipLoadingAndShowContent();
@@ -375,9 +384,18 @@ class ImprovedLoadingController {
     // is-loadingクラスを即座に削除
     document.body.classList.remove('is-loading');
 
+    // 一時的にスムーズスクロールを無効化
+    const originalScrollBehavior = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = 'auto';
+
     // ハッシュターゲットが存在する場合は手動でナビゲーション実行
     if (targetElement) {
       this.executeHashNavigation(targetElement);
+      
+      // スクロール完了後に元に戻す
+      setTimeout(() => {
+        document.documentElement.style.scrollBehavior = originalScrollBehavior || '';
+      }, 1000);
     }
   }
 
@@ -386,15 +404,75 @@ class ImprovedLoadingController {
    * @param {HTMLElement} targetElement - ジャンプ先の要素
    */
   executeHashNavigation(targetElement) {
-    // 少し遅延してからスクロール実行（DOMの安定を待つ）
+    // CSSのscroll-padding-topの値を取得する関数
+    const getScrollPaddingTop = () => {
+      const computedStyle = window.getComputedStyle(document.documentElement);
+      const scrollPaddingTop = computedStyle.getPropertyValue('scroll-padding-top');
+      return parseInt(scrollPaddingTop, 10) || 0;
+    };
+    
+    // GSAPやその他のアニメーション完了を待つ
+    const waitTime = this.isFirstVisit ? 500 : 300;
+    
     setTimeout(() => {
-      // scrollIntoViewでスムーススクロール
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest'
+      // まず一旦ページトップにスクロール（即座に）
+      window.scrollTo({
+        top: 0,
+        behavior: 'instant'
       });
-    }, 50);
+      
+      // 少し待ってから目的地へスムーズスクロール
+      setTimeout(() => {
+        const scrollOffset = getScrollPaddingTop();
+        const targetPosition = targetElement.offsetTop - scrollOffset;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }, 100); // 100ms後にスムーズスクロール開始
+    }, waitTime);
+  }
+
+  /**
+   * ページ内リンクのナビゲーション設定
+   */
+  setupInPageNavigation() {
+    // CSSのscroll-padding-topの値を取得する関数
+    const getScrollPaddingTop = () => {
+      const computedStyle = window.getComputedStyle(document.documentElement);
+      const scrollPaddingTop = computedStyle.getPropertyValue('scroll-padding-top');
+      return parseInt(scrollPaddingTop, 10) || 0;
+    };
+
+    // ページ内リンクを取得
+    const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+    
+    anchorLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        // 既存ページ内でのリンククリック時
+        const hash = link.getAttribute('href');
+        const target = document.querySelector(hash);
+        
+        if (target) {
+          e.preventDefault();
+          const scrollOffset = getScrollPaddingTop();
+          const targetPosition = target.offsetTop - scrollOffset;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          
+          // URLハッシュを更新
+          history.pushState(null, null, hash);
+        }
+      });
+    });
+
+    if (this.debugMode) {
+      console.log(`🔗 Set up in-page navigation for ${anchorLinks.length} links`);
+    }
   }
 
   /**
