@@ -13,12 +13,36 @@ class ImprovedLoadingController {
     this.hasHashInUrl = this.checkForHashInUrl(); // ハッシュ検出を追加
     this.fadeOutDuration = 0.8; // フェードアウト時間（秒）
     this.minLoadingTime = 3000; // 最低表示時間（ミリ秒）
+    this.maxLoadingTime = 7000; // 絶対的な最大表示時間（ミリ秒）
     this.debugMode = false;
     this.textPrepared = false; // テキスト準備完了フラグ
     this.fontLoaded = false; // フォント読み込み完了フラグ
     this.imagesLoaded = false; // 画像読み込み完了フラグ
     this.loadingStartTime = null; // ローディング画面表示開始時刻（画像読み込み完了時）
     this.initStartTime = Date.now(); // 初期化開始時刻
+    this.absoluteTimeoutId = null; // 絶対的タイムアウトのタイマーID
+    this.isLoadingHidden = false; // ローディング画面が既に非表示になったかどうか
+
+    // 状態管理オブジェクト
+    this.loadingState = {
+      initialized: false,
+      imagesStarted: false,
+      imagesCompleted: false,
+      fontStarted: false,
+      fontCompleted: false,
+      animationStarted: false,
+      loadingHidden: false,
+      errors: [],
+      timestamps: {
+        init: Date.now(),
+        imagesStart: null,
+        imagesComplete: null,
+        fontStart: null,
+        fontComplete: null,
+        loadingHide: null,
+        animationStart: null,
+      },
+    };
 
     if (this.debugMode) {
       console.log('🎬 Improved Loading controller created:', {
@@ -36,6 +60,44 @@ class ImprovedLoadingController {
   }
 
   /**
+   * 状態を更新し、ログに記録
+   * @param {string} key - 状態のキー
+   * @param {any} value - 設定する値
+   */
+  updateState(key, value) {
+    this.loadingState[key] = value;
+    
+    // タイムスタンプを記録
+    if (key.endsWith('Started')) {
+      const timestampKey = key.replace('Started', 'Start');
+      if (this.loadingState.timestamps.hasOwnProperty(timestampKey)) {
+        this.loadingState.timestamps[timestampKey] = Date.now();
+      }
+    } else if (key.endsWith('Completed')) {
+      const timestampKey = key.replace('Completed', 'Complete');
+      if (this.loadingState.timestamps.hasOwnProperty(timestampKey)) {
+        this.loadingState.timestamps[timestampKey] = Date.now();
+      }
+    }
+
+    if (this.debugMode) {
+      this.logStateTransition(key, value);
+    }
+  }
+
+  /**
+   * 現在の状態をログに出力
+   * @param {string} changedKey - 変更されたキー
+   * @param {any} newValue - 新しい値
+   */
+  logStateTransition(changedKey, newValue) {
+    const elapsedTime = Date.now() - this.loadingState.timestamps.init;
+    console.log(`📊 State change [${elapsedTime}ms]: ${changedKey} = ${newValue}`, {
+      currentState: { ...this.loadingState },
+    });
+  }
+
+  /**
    * URLにハッシュパラメータが含まれているかチェック
    * @returns {boolean} ハッシュが存在する場合はtrue
    */
@@ -48,6 +110,11 @@ class ImprovedLoadingController {
    * 初期化処理
    */
   init() {
+    this.updateState('initialized', true);
+
+    // エラーハンドラを設定
+    this.setupErrorHandler();
+
     // テキストアニメーションの準備（常に実行）
     this.prepareTextIfNeeded();
 
@@ -68,6 +135,8 @@ class ImprovedLoadingController {
 
     // 初回訪問の場合のみローディング画面制御を実行
     if (this.isFirstVisit && this.loadingElement) {
+      // 絶対的タイムアウトを設定（7秒後に強制的にローディング画面を非表示）
+      this.setAbsoluteTimeout();
       // 画像読み込みを監視
       this.checkImagesLoaded();
     } else {
@@ -77,6 +146,106 @@ class ImprovedLoadingController {
       }
       // 既にフォント読み込みが完了している可能性をチェック
       this.checkFontStatusOnInit();
+    }
+  }
+
+  /**
+   * 絶対的タイムアウトを設定（初回訪問時のみ）
+   */
+  setAbsoluteTimeout() {
+    if (this.debugMode) {
+      console.log(`⏱️ Setting absolute timeout: ${this.maxLoadingTime}ms`);
+    }
+
+    this.absoluteTimeoutId = setTimeout(() => {
+      if (!this.isLoadingHidden) {
+        console.warn('⚠️ Absolute timeout reached - forcing loading screen to hide');
+        this.forceHideLoadingScreen();
+      }
+    }, this.maxLoadingTime);
+  }
+
+  /**
+   * グローバルエラーハンドラを設定
+   */
+  setupErrorHandler() {
+    // 既存のエラーハンドラを保持
+    const originalOnError = window.onerror;
+
+    window.onerror = (message, source, lineno, colno, error) => {
+      // ローディング画面が表示中でまだ非表示になっていない場合
+      if (this.isFirstVisit && this.loadingElement && !this.isLoadingHidden) {
+        console.error('🚨 Global error detected during loading:', {
+          message,
+          source,
+          lineno,
+          colno,
+          error,
+        });
+
+        // エラー情報を記録
+        this.loadingState.errors.push({
+          type: 'global-error',
+          message: message.toString(),
+          source,
+          timestamp: Date.now(),
+        });
+
+        // ローディング画面を強制的に非表示
+        this.forceHideLoadingScreen();
+      }
+
+      // 元のエラーハンドラを呼び出す
+      if (originalOnError) {
+        return originalOnError(message, source, lineno, colno, error);
+      }
+      return false;
+    };
+  }
+
+  /**
+   * 強制的にローディング画面を非表示にする
+   */
+  forceHideLoadingScreen() {
+    if (this.isLoadingHidden) return;
+
+    console.error('🚨 Loading screen forced to hide due to timeout', {
+      elapsedTime: Date.now() - this.initStartTime + 'ms',
+      imagesLoaded: this.imagesLoaded,
+      fontLoaded: this.fontLoaded,
+      loadingStartTime: this.loadingStartTime,
+    });
+
+    // 強制的に非表示にする
+    if (this.loadingElement) {
+      // GSAPが利用可能な場合はフェードアウト、そうでない場合は即座に非表示
+      if (typeof gsap !== 'undefined') {
+        gsap.to(this.loadingElement, {
+          opacity: 0,
+          duration: 0.3, // 通常より短い時間でフェードアウト
+          ease: 'power2.out',
+          onComplete: () => {
+            this.loadingElement.style.display = 'none';
+            this.startTextAnimation();
+          },
+        });
+      } else {
+        // GSAPが利用できない場合は即座に非表示
+        this.loadingElement.style.transition = 'opacity 0.3s ease-out';
+        this.loadingElement.style.opacity = '0';
+        setTimeout(() => {
+          this.loadingElement.style.display = 'none';
+          this.startTextAnimation();
+        }, 300);
+      }
+    }
+
+    this.isLoadingHidden = true;
+    
+    // タイムアウトをクリア
+    if (this.absoluteTimeoutId) {
+      clearTimeout(this.absoluteTimeoutId);
+      this.absoluteTimeoutId = null;
     }
   }
 
@@ -115,66 +284,86 @@ class ImprovedLoadingController {
    * ローディング画面の画像読み込み状況をチェック
    */
   checkImagesLoaded() {
-    if (this.debugMode) {
-      console.log('🖼️ Checking loading screen images...');
-    }
-
-    const loadingImages = this.loadingElement.querySelectorAll('img');
-    
-    if (loadingImages.length === 0) {
-      // 画像がない場合は即座に表示開始
-      this.handleImagesLoaded();
-      return;
-    }
-
-    let loadedCount = 0;
-    const totalImages = loadingImages.length;
-
-    const checkAllLoaded = () => {
-      if (loadedCount >= totalImages) {
-        this.handleImagesLoaded();
+    try {
+      this.updateState('imagesStarted', true);
+      
+      if (this.debugMode) {
+        console.log('🖼️ Checking loading screen images...');
       }
-    };
 
-    loadingImages.forEach((img, index) => {
-      if (img.complete && img.naturalHeight !== 0) {
-        // 既に読み込み済み
-        loadedCount++;
-        if (this.debugMode) {
-          console.log(`🖼️ Image ${index + 1} already loaded`);
+      const loadingImages = this.loadingElement.querySelectorAll('img');
+      
+      if (loadingImages.length === 0) {
+        // 画像がない場合は即座に表示開始
+        this.handleImagesLoaded();
+        return;
+      }
+
+      let loadedCount = 0;
+      const totalImages = loadingImages.length;
+
+      const checkAllLoaded = () => {
+        if (loadedCount >= totalImages) {
+          this.handleImagesLoaded();
         }
-      } else {
-        // 読み込み待ち
-        img.addEventListener('load', () => {
+      };
+
+      loadingImages.forEach((img, index) => {
+        if (img.complete && img.naturalHeight !== 0) {
+          // 既に読み込み済み
           loadedCount++;
           if (this.debugMode) {
-            console.log(`🖼️ Image ${index + 1} loaded (${loadedCount}/${totalImages})`);
+            console.log(`🖼️ Image ${index + 1} already loaded`);
           }
-          checkAllLoaded();
-        });
+        } else {
+          // 読み込み待ち
+          img.addEventListener('load', () => {
+            loadedCount++;
+            if (this.debugMode) {
+              console.log(`🖼️ Image ${index + 1} loaded (${loadedCount}/${totalImages})`);
+            }
+            checkAllLoaded();
+          });
 
-        img.addEventListener('error', () => {
-          loadedCount++; // エラーでも進行
-          if (this.debugMode) {
-            console.warn(`🖼️ Image ${index + 1} failed to load, continuing anyway`);
-          }
-          checkAllLoaded();
-        });
-      }
-    });
-
-    // 既に全て読み込み済みの場合
-    checkAllLoaded();
-
-    // フォールバック：500ms後に強制的に開始
-    setTimeout(() => {
-      if (!this.imagesLoaded) {
-        if (this.debugMode) {
-          console.log('🖼️ Image loading timeout - starting anyway');
+          img.addEventListener('error', () => {
+            loadedCount++; // エラーでも進行
+            if (this.debugMode) {
+              console.warn(`🖼️ Image ${index + 1} failed to load, continuing anyway`);
+            }
+            // エラー情報を記録
+            this.loadingState.errors.push({
+              type: 'image-load-error',
+              message: `Failed to load image ${index + 1}`,
+              timestamp: Date.now(),
+            });
+            checkAllLoaded();
+          });
         }
-        this.handleImagesLoaded();
-      }
-    }, 500);
+      });
+
+      // 既に全て読み込み済みの場合
+      checkAllLoaded();
+
+      // フォールバック：500ms後に強制的に開始
+      setTimeout(() => {
+        if (!this.imagesLoaded) {
+          if (this.debugMode) {
+            console.log('🖼️ Image loading timeout - starting anyway');
+          }
+          this.handleImagesLoaded();
+        }
+      }, 500);
+    } catch (error) {
+      console.error('🚨 Error in checkImagesLoaded:', error);
+      // エラー情報を記録
+      this.loadingState.errors.push({
+        type: 'check-images-error',
+        message: error.message,
+        timestamp: Date.now(),
+      });
+      // エラー時も進行
+      this.handleImagesLoaded();
+    }
   }
 
   /**
@@ -184,6 +373,7 @@ class ImprovedLoadingController {
     if (this.imagesLoaded) return; // 重複実行防止
     
     this.imagesLoaded = true;
+    this.updateState('imagesCompleted', true);
     this.loadingStartTime = Date.now();
 
     if (this.debugMode) {
@@ -244,7 +434,9 @@ class ImprovedLoadingController {
    * フォント読み込み完了時の処理（外部から呼び出される）
    */
   handleFontLoaded() {
-    this.fontLoaded = true;
+    try {
+      this.fontLoaded = true;
+      this.updateState('fontCompleted', true);
 
     if (this.debugMode) {
       const elapsedFromInit = Date.now() - this.initStartTime;
@@ -277,6 +469,19 @@ class ImprovedLoadingController {
       // 画像読み込みがまだ完了していない場合は待機
       if (this.debugMode) {
         console.log('🔤 Font loaded but images not ready yet - waiting for images');
+      }
+    }
+    } catch (error) {
+      console.error('🚨 Error in handleFontLoaded:', error);
+      // エラー情報を記録
+      this.loadingState.errors.push({
+        type: 'font-loaded-error',
+        message: error.message,
+        timestamp: Date.now(),
+      });
+      // エラー時もローディング画面を非表示に
+      if (this.isFirstVisit && this.loadingElement && !this.isLoadingHidden) {
+        this.forceHideLoadingScreen();
       }
     }
   }
@@ -338,9 +543,30 @@ class ImprovedLoadingController {
    * ローディング画面をフェードアウト
    */
   hideLoadingScreen() {
+    // 既に非表示になっている場合は何もしない
+    if (this.isLoadingHidden) {
+      if (this.debugMode) {
+        console.log('🌅 Loading screen already hidden - skipping');
+      }
+      return;
+    }
+
     if (this.debugMode) {
       console.log('🌅 Starting loading screen fade out');
     }
+
+    // 絶対的タイムアウトをクリア
+    if (this.absoluteTimeoutId) {
+      clearTimeout(this.absoluteTimeoutId);
+      this.absoluteTimeoutId = null;
+      if (this.debugMode) {
+        console.log('✅ Cleared absolute timeout');
+      }
+    }
+
+    // 非表示フラグを設定
+    this.isLoadingHidden = true;
+    this.updateState('loadingHidden', true);
 
     // GSAPが利用可能かチェック
     if (typeof gsap === 'undefined') {
@@ -373,7 +599,8 @@ class ImprovedLoadingController {
    * ハッシュナビゲーション時のローディングスキップ処理
    */
   skipLoadingAndShowContent() {
-    const hash = window.location.hash;
+    // 保存されたハッシュがある場合はそれを使用（早期介入スクリプトから）
+    const hash = window.__savedHash || window.location.hash;
     const targetElement = hash ? document.querySelector(hash) : null;
 
     // ローディング画面を即座に非表示
@@ -384,18 +611,9 @@ class ImprovedLoadingController {
     // is-loadingクラスを即座に削除
     document.body.classList.remove('is-loading');
 
-    // 一時的にスムーズスクロールを無効化
-    const originalScrollBehavior = document.documentElement.style.scrollBehavior;
-    document.documentElement.style.scrollBehavior = 'auto';
-
     // ハッシュターゲットが存在する場合は手動でナビゲーション実行
     if (targetElement) {
       this.executeHashNavigation(targetElement);
-      
-      // スクロール完了後に元に戻す
-      setTimeout(() => {
-        document.documentElement.style.scrollBehavior = originalScrollBehavior || '';
-      }, 1000);
     }
   }
 
@@ -411,26 +629,21 @@ class ImprovedLoadingController {
       return parseInt(scrollPaddingTop, 10) || 0;
     };
     
-    // GSAPやその他のアニメーション完了を待つ
-    const waitTime = this.isFirstVisit ? 500 : 300;
+    // アニメーション完了を待つ（早期介入により短縮可能）
+    const waitTime = this.isFirstVisit ? 300 : 200;
     
     setTimeout(() => {
-      // まず一旦ページトップにスクロール（即座に）
-      window.scrollTo({
-        top: 0,
-        behavior: 'instant'
-      });
+      // 早期介入スクリプトにより既にページトップにいるため、直接目的地へスクロール
+      const scrollOffset = getScrollPaddingTop();
+      const targetPosition = targetElement.offsetTop - scrollOffset;
       
-      // 少し待ってから目的地へスムーズスクロール
-      setTimeout(() => {
-        const scrollOffset = getScrollPaddingTop();
-        const targetPosition = targetElement.offsetTop - scrollOffset;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }, 100); // 100ms後にスムーズスクロール開始
+      // スムーズスクロールを有効化
+      document.documentElement.style.scrollBehavior = 'smooth';
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
     }, waitTime);
   }
 
@@ -479,6 +692,8 @@ class ImprovedLoadingController {
    * テキストアニメーションを開始
    */
   startTextAnimation() {
+    this.updateState('animationStarted', true);
+    
     if (this.debugMode) {
       console.log(
         '📝 startTextAnimation called - textPrepared:',

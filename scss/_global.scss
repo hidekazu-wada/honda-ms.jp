@@ -640,6 +640,7 @@ svg {
         @include tablet-up {
             font-size: ppx(50 * $pc-to-tab-ratio);
             letter-spacing: ppx(3 * $pc-to-tab-ratio);
+            margin-left: ppx(40 * $pc-to-tab-ratio);
         }
 
         @include desktop-up {
@@ -747,4 +748,8 @@ svg {
 .fade-in-up {
     //初期状態のみCSS、アニメーションはGSAPに委託
     opacity: 0;
+}
+
+button {
+    outline: none !important;
 }
