@@ -731,6 +731,7 @@ svg {
   .recruit-page-sp-only-button-btn__text-primary {
     font-size: 2.1484375vw;
     letter-spacing: 0.12890625vw;
+    margin-left: 1.71875vw;
   }
 }
 @media (min-width: 1024px) {
