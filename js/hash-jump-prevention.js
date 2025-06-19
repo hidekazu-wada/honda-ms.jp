@@ -12,14 +12,21 @@
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
     
-    // DOMContentLoaded後に解除
-    document.addEventListener('DOMContentLoaded', function() {
-      // 少し遅延を入れて確実に制御
-      setTimeout(function() {
-        document.documentElement.style.overflow = '';
-        document.body.style.overflow = '';
-        document.documentElement.style.scrollBehavior = '';
-      }, 100);
-    });
+    // スクロール制御を解除する関数
+    function releaseScrollLock() {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      document.documentElement.style.scrollBehavior = '';
+    }
+    
+    // DOMContentLoadedが既に発火している場合
+    if (document.readyState === 'interactive' || document.readyState === 'complete') {
+      setTimeout(releaseScrollLock, 100);
+    } else {
+      // DOMContentLoaded後に解除
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(releaseScrollLock, 100);
+      });
+    }
   }
 })();
