@@ -599,7 +599,8 @@ class ImprovedLoadingController {
    * ハッシュナビゲーション時のローディングスキップ処理
    */
   skipLoadingAndShowContent() {
-    const hash = window.location.hash;
+    // 保存されたハッシュがある場合はそれを使用（早期介入スクリプトから）
+    const hash = window.__savedHash || window.location.hash;
     const targetElement = hash ? document.querySelector(hash) : null;
 
     // ローディング画面を即座に非表示
@@ -610,18 +611,9 @@ class ImprovedLoadingController {
     // is-loadingクラスを即座に削除
     document.body.classList.remove('is-loading');
 
-    // 一時的にスムーズスクロールを無効化
-    const originalScrollBehavior = document.documentElement.style.scrollBehavior;
-    document.documentElement.style.scrollBehavior = 'auto';
-
     // ハッシュターゲットが存在する場合は手動でナビゲーション実行
     if (targetElement) {
       this.executeHashNavigation(targetElement);
-      
-      // スクロール完了後に元に戻す
-      setTimeout(() => {
-        document.documentElement.style.scrollBehavior = originalScrollBehavior || '';
-      }, 1000);
     }
   }
 
@@ -637,26 +629,21 @@ class ImprovedLoadingController {
       return parseInt(scrollPaddingTop, 10) || 0;
     };
     
-    // GSAPやその他のアニメーション完了を待つ
-    const waitTime = this.isFirstVisit ? 500 : 300;
+    // アニメーション完了を待つ（早期介入により短縮可能）
+    const waitTime = this.isFirstVisit ? 300 : 200;
     
     setTimeout(() => {
-      // まず一旦ページトップにスクロール（即座に）
-      window.scrollTo({
-        top: 0,
-        behavior: 'instant'
-      });
+      // 早期介入スクリプトにより既にページトップにいるため、直接目的地へスクロール
+      const scrollOffset = getScrollPaddingTop();
+      const targetPosition = targetElement.offsetTop - scrollOffset;
       
-      // 少し待ってから目的地へスムーズスクロール
-      setTimeout(() => {
-        const scrollOffset = getScrollPaddingTop();
-        const targetPosition = targetElement.offsetTop - scrollOffset;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }, 100); // 100ms後にスムーズスクロール開始
+      // スムーズスクロールを有効化
+      document.documentElement.style.scrollBehavior = 'smooth';
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
     }, waitTime);
   }
 
