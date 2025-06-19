@@ -10,12 +10,18 @@
     // 一時的にスクロールを無効化
     document.documentElement.style.scrollBehavior = 'auto';
     document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
+    
+    // bodyが存在する場合のみ設定
+    if (document.body) {
+      document.body.style.overflow = 'hidden';
+    }
     
     // スクロール制御を解除する関数
     function releaseScrollLock() {
       document.documentElement.style.overflow = '';
-      document.body.style.overflow = '';
+      if (document.body) {
+        document.body.style.overflow = '';
+      }
       document.documentElement.style.scrollBehavior = '';
     }
     
