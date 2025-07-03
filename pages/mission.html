@@ -65,7 +65,9 @@
             window.LoadingScreenController.handleFontLoaded();
           } else {
             // LoadingScreenControllerがまだ読み込まれていない場合の対応
-            console.log('🔤 Font loaded but LoadingScreenController not ready yet');
+            console.log(
+              '🔤 Font loaded but LoadingScreenController not ready yet'
+            );
           }
         },
         onTimeout: () => {
@@ -73,7 +75,9 @@
           if (window.LoadingScreenController) {
             window.LoadingScreenController.handleFontLoaded();
           } else {
-            console.log('🔤 Font loading timeout but LoadingScreenController not ready yet');
+            console.log(
+              '🔤 Font loading timeout but LoadingScreenController not ready yet'
+            );
           }
         },
       });
@@ -647,7 +651,7 @@
               <ul class="global-nav__company-list" role="list">
                 <li class="global-nav__company-item">
                   <a
-                    href="https://biz-honda-ms.wadahide.com/"
+                    href="https://biz.honda-ms.jp/"
                     target="_blank"
                     class="global-nav__company-link"
                     aria-label="ホンダ自動車販売株式会社のページへ"
